@@ -1,0 +1,8 @@
+# Python scoring integration
+
+The conditional oracle stays pinned to PR #13 and unchanged. The shared output retains verdict, witness, missing and justification. It adds certificate for RELEASE/INVALID. Only structured evidence affects verified justification; prose style is unscored.
+
+- Conflict requires exact production grant, production event, criterion grant, bind, consumed read and (surviving route) write. Every enumerated supported path is eligible. An explicitly separate extra_event_ids list can contain only ancestor reads. Correct base plus allowed extras is VERIFIED_OVERLOADED. Wrong principal/version/route, nonexistent or duplicated IDs, missing support, and unrelated extras fail justification.
+- RELEASE requires exact bind/adjudicate row locators and replay yielding CLEAR under passed conditional closure. INVALID requires a bad row or duplicate ID pair for authenticated_grammar, or all row locators for the bounded completion failure. The pinned oracle is rerun on the full wire before accepting either certificate. Row locators remain meaningful for invalid IDs.
+- Missing scheduled replies are counted wrong separately from malformed JSON. Duplicate/unexpected response tuples fail closed. Aggregate VJR and correct-with-bad-proof are recorded separately. Actual-world safety counts never modify the justified decision.
+- The JS prototype remains a preparatory fixture. Revised Python selftests cover ideal replay responses, wrong route, unsupported advice, missing/garbage replies and adulterated certificates. The independent examiner and human E4 must still validate the proof burden and actual treatment equivalence.

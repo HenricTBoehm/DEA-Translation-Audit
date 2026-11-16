@@ -1,0 +1,155 @@
+{
+  "seed": 38141,
+  "family": 9,
+  "alpha": 0.05,
+  "target_upper": -0.05,
+  "grid": [
+    {
+      "n": 60,
+      "worse": 0,
+      "better": 0.15,
+      "reps": 2000,
+      "demonstrations": 4
+    },
+    {
+      "n": 60,
+      "worse": 0.02,
+      "better": 0.12,
+      "reps": 2000,
+      "demonstrations": 0
+    },
+    {
+      "n": 60,
+      "worse": 0.05,
+      "better": 0.1,
+      "reps": 2000,
+      "demonstrations": 0
+    },
+    {
+      "n": 60,
+      "worse": 0,
+      "better": 0,
+      "reps": 2000,
+      "demonstrations": 0
+    },
+    {
+      "n": 120,
+      "worse": 0,
+      "better": 0.15,
+      "reps": 2000,
+      "demonstrations": 174
+    },
+    {
+      "n": 120,
+      "worse": 0.02,
+      "better": 0.12,
+      "reps": 2000,
+      "demonstrations": 1
+    },
+    {
+      "n": 120,
+      "worse": 0.05,
+      "better": 0.1,
+      "reps": 2000,
+      "demonstrations": 0
+    },
+    {
+      "n": 120,
+      "worse": 0,
+      "better": 0,
+      "reps": 2000,
+      "demonstrations": 0
+    },
+    {
+      "n": 240,
+      "worse": 0,
+      "better": 0.15,
+      "reps": 2000,
+      "demonstrations": 1457
+    },
+    {
+      "n": 240,
+      "worse": 0.02,
+      "better": 0.12,
+      "reps": 2000,
+      "demonstrations": 28
+    },
+    {
+      "n": 240,
+      "worse": 0.05,
+      "better": 0.1,
+      "reps": 2000,
+      "demonstrations": 0
+    },
+    {
+      "n": 240,
+      "worse": 0,
+      "better": 0,
+      "reps": 2000,
+      "demonstrations": 0
+    },
+    {
+      "n": 600,
+      "worse": 0,
+      "better": 0.15,
+      "reps": 2000,
+      "demonstrations": 2000
+    },
+    {
+      "n": 600,
+      "worse": 0.02,
+      "better": 0.12,
+      "reps": 2000,
+      "demonstrations": 494
+    },
+    {
+      "n": 600,
+      "worse": 0.05,
+      "better": 0.1,
+      "reps": 2000,
+      "demonstrations": 0
+    },
+    {
+      "n": 600,
+      "worse": 0,
+      "better": 0,
+      "reps": 2000,
+      "demonstrations": 0
+    },
+    {
+      "n": 1200,
+      "worse": 0,
+      "better": 0.15,
+      "reps": 2000,
+      "demonstrations": 2000
+    },
+    {
+      "n": 1200,
+      "worse": 0.02,
+      "better": 0.12,
+      "reps": 2000,
+      "demonstrations": 1590
+    },
+    {
+      "n": 1200,
+      "worse": 0.05,
+      "better": 0.1,
+      "reps": 2000,
+      "demonstrations": 0
+    },
+    {
+      "n": 1200,
+      "worse": 0,
+      "better": 0,
+      "reps": 2000,
+      "demonstrations": 0
+    }
+  ],
+  "noDiscordanceUpper": {
+    "60": 0.10385601992324034,
+    "120": 0.05335118440006603,
+    "240": 0.027041205600189855,
+    "600": 0.010905517629842265,
+    "1200": 0.005467706723328192
+  }
+}
