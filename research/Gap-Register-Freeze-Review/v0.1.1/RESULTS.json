@@ -1,0 +1,1069 @@
+{
+  "adversarial": {
+    "archived_probes": {
+      "missing_order_coordinate": {
+        "input": {
+          "actual_values": [
+            "p"
+          ],
+          "authenticated_observation": "p",
+          "coverage_attested": true,
+          "expected_justified": "CONFLICT",
+          "family": "K3",
+          "id": "K3-F",
+          "order_override": {
+            "seal": null
+          }
+        },
+        "result": "INVALID"
+      },
+      "out_of_alphabet_adjudication": {
+        "input": {
+          "actual_values": [
+            "p"
+          ],
+          "authenticated_observation": "p",
+          "coverage_attested": true,
+          "expected_justified": "CONFLICT",
+          "family": "K3",
+          "id": "K3-F",
+          "order_override": {
+            "adjudicate": 6
+          }
+        },
+        "result": "CONFLICT"
+      },
+      "positive_with_open_coverage": {
+        "input": {
+          "actual_values": [
+            "p"
+          ],
+          "authenticated_observation": "p",
+          "coverage_attested": false,
+          "expected_justified": "CONFLICT",
+          "family": "K3",
+          "id": "K3-F"
+        },
+        "result": "CONFLICT"
+      },
+      "revoke_before_historical_write": {
+        "input": {
+          "actual_values": [
+            "p"
+          ],
+          "authenticated_observation": "p",
+          "coverage_attested": true,
+          "expected_justified": "CONFLICT",
+          "family": "K3",
+          "id": "K3-F",
+          "order_override": {
+            "adjudicate": 5,
+            "historical_modify": 3,
+            "seal": 4
+          }
+        },
+        "result": "CONFLICT"
+      }
+    },
+    "cosmetic_write_to_consumed_artifact": {
+      "result": "NO_CONFLICT",
+      "trace": {
+        "events": [
+          {
+            "key": "ka",
+            "obj": "x@1",
+            "op": "produce",
+            "rank": 1
+          },
+          {
+            "obj": "x@1",
+            "op": "seal",
+            "rank": 3
+          },
+          {
+            "dependencies": [
+              [
+                "r@1",
+                "threshold"
+              ],
+              [
+                "standard@1",
+                "criterion"
+              ],
+              [
+                "standard@1",
+                "layout"
+              ]
+            ],
+            "op": "read_and_adjudicate",
+            "rank": 4
+          }
+        ],
+        "initial_rights": [
+          [
+            "ka",
+            "x@1",
+            "output"
+          ],
+          [
+            "ka",
+            "standard@1",
+            "layout"
+          ]
+        ],
+        "keys": {
+          "ka": "p",
+          "kj": "j",
+          "kq": "q"
+        }
+      }
+    },
+    "credential_reset": {
+      "result": "CONFLICT",
+      "trace": {
+        "events": [
+          {
+            "key": "ka",
+            "obj": "x@1",
+            "op": "produce",
+            "rank": 1
+          },
+          {
+            "also_freeze": [
+              "r@2"
+            ],
+            "obj": "x@1",
+            "op": "seal",
+            "rank": 3
+          },
+          {
+            "dependencies": [
+              [
+                "r@2",
+                "threshold"
+              ]
+            ],
+            "op": "read_and_adjudicate",
+            "rank": 5
+          },
+          {
+            "effect": "included-modification",
+            "field": "threshold",
+            "key": "ka",
+            "obj": "r@2",
+            "op": "write",
+            "rank": 0
+          },
+          {
+            "key": "ka",
+            "op": "revoke",
+            "rank": 2
+          },
+          {
+            "effect": "included-modification",
+            "field": "credential",
+            "obj": "r@2",
+            "op": "reset",
+            "proved": true,
+            "rank": 4
+          }
+        ],
+        "initial_rights": [
+          [
+            "ka",
+            "x@1",
+            "output"
+          ],
+          [
+            "kq",
+            "standard@1",
+            "criterion"
+          ],
+          [
+            "ka",
+            "r@2",
+            "threshold"
+          ]
+        ],
+        "keys": {
+          "ka": "p",
+          "kj": "j",
+          "kq": "q"
+        }
+      }
+    },
+    "exact_neutralization": {
+      "result": "NO_CONFLICT",
+      "trace": {
+        "events": [
+          {
+            "key": "ka",
+            "obj": "x@1",
+            "op": "produce",
+            "rank": 1
+          },
+          {
+            "also_freeze": [
+              "r@2"
+            ],
+            "obj": "x@1",
+            "op": "seal",
+            "rank": 3
+          },
+          {
+            "dependencies": [
+              [
+                "r@3",
+                "threshold"
+              ]
+            ],
+            "op": "read_and_adjudicate",
+            "rank": 5
+          },
+          {
+            "effect": "included-modification",
+            "field": "threshold",
+            "key": "ka",
+            "obj": "r@2",
+            "op": "write",
+            "rank": 0
+          },
+          {
+            "key": "ka",
+            "op": "revoke",
+            "rank": 2
+          },
+          {
+            "effect": "included-modification",
+            "field": "threshold",
+            "obj": "r@2",
+            "op": "reset",
+            "proved": true,
+            "rank": 4,
+            "successor": "r@3"
+          }
+        ],
+        "initial_rights": [
+          [
+            "ka",
+            "x@1",
+            "output"
+          ],
+          [
+            "kq",
+            "standard@1",
+            "criterion"
+          ],
+          [
+            "ka",
+            "r@2",
+            "threshold"
+          ]
+        ],
+        "keys": {
+          "ka": "p",
+          "kj": "j",
+          "kq": "q"
+        }
+      }
+    },
+    "reference_revoke_first": {
+      "result": "INVALID",
+      "trace": {
+        "events": [
+          {
+            "key": "ka",
+            "obj": "x@1",
+            "op": "produce",
+            "rank": 1
+          },
+          {
+            "also_freeze": [
+              "r@2"
+            ],
+            "obj": "x@1",
+            "op": "seal",
+            "rank": 4
+          },
+          {
+            "dependencies": [
+              [
+                "r@2",
+                "threshold"
+              ]
+            ],
+            "op": "read_and_adjudicate",
+            "rank": 5
+          },
+          {
+            "effect": "included-modification",
+            "field": "threshold",
+            "key": "ka",
+            "obj": "r@2",
+            "op": "write",
+            "rank": 3
+          },
+          {
+            "key": "ka",
+            "op": "revoke",
+            "rank": 2
+          }
+        ],
+        "initial_rights": [
+          [
+            "ka",
+            "x@1",
+            "output"
+          ],
+          [
+            "kq",
+            "standard@1",
+            "criterion"
+          ],
+          [
+            "ka",
+            "r@2",
+            "threshold"
+          ]
+        ],
+        "keys": {
+          "ka": "p",
+          "kj": "j",
+          "kq": "q"
+        }
+      }
+    },
+    "resolved_dynamic_threshold": {
+      "result": "CONFLICT",
+      "trace": {
+        "events": [
+          {
+            "key": "ka",
+            "obj": "x@1",
+            "op": "produce",
+            "rank": 1
+          },
+          {
+            "obj": "x@1",
+            "op": "seal",
+            "rank": 3
+          },
+          {
+            "dependencies": [
+              [
+                "r@1",
+                "threshold"
+              ],
+              [
+                "standard@1",
+                "criterion"
+              ],
+              [
+                "standard@1",
+                "layout"
+              ],
+              [
+                "selected_threshold@1",
+                "threshold"
+              ]
+            ],
+            "op": "read_and_adjudicate",
+            "rank": 4
+          }
+        ],
+        "initial_rights": [
+          [
+            "ka",
+            "x@1",
+            "output"
+          ],
+          [
+            "ka",
+            "standard@1",
+            "layout"
+          ],
+          [
+            "ka",
+            "selected_threshold@1",
+            "threshold"
+          ]
+        ],
+        "keys": {
+          "ka": "p",
+          "kj": "j",
+          "kq": "q"
+        }
+      }
+    }
+  },
+  "negative_scoring_controls": {
+    "always_conflict_without_proof": {
+      "S1_mismatches": 3,
+      "S2_mismatches": 13,
+      "actual_false_releases": 0,
+      "correct_abstentions": 0,
+      "false_holds_on_CLEAR": 3,
+      "false_invalid": 0,
+      "missed_invalid": 1,
+      "unjustified_positive_claims": 13,
+      "unjustified_releases": 0
+    },
+    "always_deny": {
+      "S1_mismatches": 3,
+      "S2_mismatches": 7,
+      "actual_false_releases": 0,
+      "correct_abstentions": 6,
+      "false_holds_on_CLEAR": 3,
+      "false_invalid": 0,
+      "missed_invalid": 1,
+      "unjustified_positive_claims": 0,
+      "unjustified_releases": 0
+    },
+    "always_invalid": {
+      "S1_mismatches": 3,
+      "S2_mismatches": 12,
+      "actual_false_releases": 0,
+      "correct_abstentions": 0,
+      "false_holds_on_CLEAR": 3,
+      "false_invalid": 12,
+      "missed_invalid": 0,
+      "unjustified_positive_claims": 0,
+      "unjustified_releases": 0
+    },
+    "always_permit": {
+      "S1_mismatches": 10,
+      "S2_mismatches": 10,
+      "actual_false_releases": 6,
+      "correct_abstentions": 0,
+      "false_holds_on_CLEAR": 0,
+      "false_invalid": 0,
+      "missed_invalid": 1,
+      "unjustified_positive_claims": 0,
+      "unjustified_releases": 10
+    }
+  },
+  "ordinary_counts": {
+    "CLEAR": 3,
+    "CONFLICT": 3,
+    "INVALID": 1,
+    "UNDETERMINED": 6
+  },
+  "ordinary_executions": [
+    {
+      "actual": "CONFLICT",
+      "actual_value_private": true,
+      "compatible_worlds": 1,
+      "justified": "CONFLICT",
+      "profile": "K1-F",
+      "sanitized_view": {
+        "coverage": true,
+        "observation": true,
+        "ranks": {
+          "adjudicate": 4,
+          "produce": 1,
+          "seal": 3
+        },
+        "structure": "K1"
+      },
+      "view_sha256": "0e1ad3b0f19f4ffc48713a8a334b8b8db3b5388dc40be4c3e28d28f25bdd655e"
+    },
+    {
+      "actual": "NO_CONFLICT",
+      "actual_value_private": false,
+      "compatible_worlds": 1,
+      "justified": "CLEAR",
+      "profile": "K1-C",
+      "sanitized_view": {
+        "coverage": true,
+        "observation": false,
+        "ranks": {
+          "adjudicate": 4,
+          "produce": 1,
+          "seal": 3
+        },
+        "structure": "K1"
+      },
+      "view_sha256": "6279d551657e8fef1103bba2e8aa5b60f85f8245c37c432e1a3485fb0396645d"
+    },
+    {
+      "actual": "CONFLICT",
+      "actual_value_private": true,
+      "compatible_worlds": 2,
+      "justified": "UNDETERMINED",
+      "profile": "K1-I",
+      "sanitized_view": {
+        "coverage": false,
+        "observation": null,
+        "ranks": {
+          "adjudicate": 4,
+          "produce": 1,
+          "seal": 3
+        },
+        "structure": "K1"
+      },
+      "view_sha256": "d2ec0862bd186dfc3208105247033fc387e7fc5efdc6bdfbaf1a3200ce3f0821"
+    },
+    {
+      "actual": "NO_CONFLICT",
+      "actual_value_private": false,
+      "compatible_worlds": 2,
+      "justified": "UNDETERMINED",
+      "profile": "K1-I",
+      "sanitized_view": {
+        "coverage": false,
+        "observation": null,
+        "ranks": {
+          "adjudicate": 4,
+          "produce": 1,
+          "seal": 3
+        },
+        "structure": "K1"
+      },
+      "view_sha256": "d2ec0862bd186dfc3208105247033fc387e7fc5efdc6bdfbaf1a3200ce3f0821"
+    },
+    {
+      "actual": "CONFLICT",
+      "actual_value_private": "p",
+      "compatible_worlds": 1,
+      "justified": "CONFLICT",
+      "profile": "K2-F",
+      "sanitized_view": {
+        "coverage": true,
+        "observation": "p",
+        "ranks": {
+          "adjudicate": 4,
+          "produce": 1,
+          "seal": 3
+        },
+        "structure": "K2"
+      },
+      "view_sha256": "f31952ac5e1aaa93065d85ee1ce43f2409c3720d1c0ff4b6dea0b14df151606f"
+    },
+    {
+      "actual": "NO_CONFLICT",
+      "actual_value_private": "q",
+      "compatible_worlds": 1,
+      "justified": "CLEAR",
+      "profile": "K2-C",
+      "sanitized_view": {
+        "coverage": true,
+        "observation": "q",
+        "ranks": {
+          "adjudicate": 4,
+          "produce": 1,
+          "seal": 3
+        },
+        "structure": "K2"
+      },
+      "view_sha256": "9cb6573d46ff68e0f4f4b4ec306a946b8f6e4f171475a2c697153c7c6d993925"
+    },
+    {
+      "actual": "CONFLICT",
+      "actual_value_private": "p",
+      "compatible_worlds": 2,
+      "justified": "UNDETERMINED",
+      "profile": "K2-I",
+      "sanitized_view": {
+        "coverage": false,
+        "observation": null,
+        "ranks": {
+          "adjudicate": 4,
+          "produce": 1,
+          "seal": 3
+        },
+        "structure": "K2"
+      },
+      "view_sha256": "b29a38e3f789664fcb767368ce217a0fd91e18ccc401f5f95f04fea3b730daec"
+    },
+    {
+      "actual": "NO_CONFLICT",
+      "actual_value_private": "q",
+      "compatible_worlds": 2,
+      "justified": "UNDETERMINED",
+      "profile": "K2-I",
+      "sanitized_view": {
+        "coverage": false,
+        "observation": null,
+        "ranks": {
+          "adjudicate": 4,
+          "produce": 1,
+          "seal": 3
+        },
+        "structure": "K2"
+      },
+      "view_sha256": "b29a38e3f789664fcb767368ce217a0fd91e18ccc401f5f95f04fea3b730daec"
+    },
+    {
+      "actual": "CONFLICT",
+      "actual_value_private": "p",
+      "compatible_worlds": 1,
+      "justified": "CONFLICT",
+      "profile": "K3-F",
+      "sanitized_view": {
+        "coverage": true,
+        "observation": "p",
+        "ranks": {
+          "adjudicate": 4,
+          "historical_modify": 0,
+          "produce": 1,
+          "revoke": 2,
+          "seal": 3
+        },
+        "structure": "K3"
+      },
+      "view_sha256": "d44b096b0a69f7e2bc4949f43f33fa9961b2436f051b32b20f4eb559c096c7e1"
+    },
+    {
+      "actual": "NO_CONFLICT",
+      "actual_value_private": "q",
+      "compatible_worlds": 1,
+      "justified": "CLEAR",
+      "profile": "K3-C",
+      "sanitized_view": {
+        "coverage": true,
+        "observation": "q",
+        "ranks": {
+          "adjudicate": 4,
+          "historical_modify": 0,
+          "produce": 1,
+          "revoke": 2,
+          "seal": 3
+        },
+        "structure": "K3"
+      },
+      "view_sha256": "5680818539085674a3191a7ba9869eee754f47418bfb6cd64e27f35b7e87623f"
+    },
+    {
+      "actual": "CONFLICT",
+      "actual_value_private": "p",
+      "compatible_worlds": 2,
+      "justified": "UNDETERMINED",
+      "profile": "K3-I",
+      "sanitized_view": {
+        "coverage": false,
+        "observation": null,
+        "ranks": {
+          "adjudicate": 4,
+          "historical_modify": 0,
+          "produce": 1,
+          "revoke": 2,
+          "seal": 3
+        },
+        "structure": "K3"
+      },
+      "view_sha256": "84c8cfa09b193a7dca504e67e3e8c0192b4a84cf09249d57a6a0f53fd152709c"
+    },
+    {
+      "actual": "NO_CONFLICT",
+      "actual_value_private": "q",
+      "compatible_worlds": 2,
+      "justified": "UNDETERMINED",
+      "profile": "K3-I",
+      "sanitized_view": {
+        "coverage": false,
+        "observation": null,
+        "ranks": {
+          "adjudicate": 4,
+          "historical_modify": 0,
+          "produce": 1,
+          "revoke": 2,
+          "seal": 3
+        },
+        "structure": "K3"
+      },
+      "view_sha256": "84c8cfa09b193a7dca504e67e3e8c0192b4a84cf09249d57a6a0f53fd152709c"
+    },
+    {
+      "actual": "INVALID",
+      "actual_value_private": null,
+      "compatible_worlds": 0,
+      "justified": "INVALID",
+      "profile": "X-ORDER",
+      "sanitized_view": {
+        "coverage": true,
+        "observation": true,
+        "ranks": {
+          "adjudicate": 5,
+          "produce": 4,
+          "seal": 3
+        },
+        "structure": "K1"
+      },
+      "view_sha256": "a04bceccf545eb678e9a60dfb229df55c1dd6b56e7d51d4a3b5202cfdd5c82ac"
+    }
+  ],
+  "premise_attack": [
+    {
+      "actual": "CONFLICT",
+      "actual_value_private": true,
+      "compatible_worlds": 1,
+      "justified": "CLEAR",
+      "profile": "X-TRUST",
+      "sanitized_view": {
+        "coverage": true,
+        "observation": false,
+        "ranks": {
+          "adjudicate": 4,
+          "produce": 1,
+          "seal": 3
+        },
+        "structure": "K1"
+      },
+      "view_sha256": "6279d551657e8fef1103bba2e8aa5b60f85f8245c37c432e1a3485fb0396645d"
+    }
+  ],
+  "reference_worlds": {
+    "K1": [
+      {
+        "trace": {
+          "events": [
+            {
+              "key": "ka",
+              "obj": "x@1",
+              "op": "produce",
+              "rank": 1
+            },
+            {
+              "obj": "x@1",
+              "op": "seal",
+              "rank": 3
+            },
+            {
+              "dependencies": [
+                [
+                  "r@1",
+                  "threshold"
+                ],
+                [
+                  "standard@1",
+                  "criterion"
+                ]
+              ],
+              "op": "read_and_adjudicate",
+              "rank": 4
+            }
+          ],
+          "initial_rights": [
+            [
+              "ka",
+              "x@1",
+              "output"
+            ],
+            [
+              "ka",
+              "standard@1",
+              "criterion"
+            ]
+          ],
+          "keys": {
+            "ka": "p",
+            "kj": "j",
+            "kq": "q"
+          }
+        },
+        "truth": "CONFLICT",
+        "value": true,
+        "witness": {
+          "standard@1:criterion": "live effective write"
+        }
+      },
+      {
+        "trace": {
+          "events": [
+            {
+              "key": "ka",
+              "obj": "x@1",
+              "op": "produce",
+              "rank": 1
+            },
+            {
+              "obj": "x@1",
+              "op": "seal",
+              "rank": 3
+            },
+            {
+              "dependencies": [
+                [
+                  "r@1",
+                  "threshold"
+                ]
+              ],
+              "op": "read_and_adjudicate",
+              "rank": 4
+            }
+          ],
+          "initial_rights": [
+            [
+              "ka",
+              "x@1",
+              "output"
+            ],
+            [
+              "ka",
+              "standard@1",
+              "criterion"
+            ]
+          ],
+          "keys": {
+            "ka": "p",
+            "kj": "j",
+            "kq": "q"
+          }
+        },
+        "truth": "NO_CONFLICT",
+        "value": false,
+        "witness": {}
+      }
+    ],
+    "K2": [
+      {
+        "trace": {
+          "events": [
+            {
+              "key": "ka",
+              "obj": "x@1",
+              "op": "produce",
+              "rank": 1
+            },
+            {
+              "obj": "x@1",
+              "op": "seal",
+              "rank": 3
+            },
+            {
+              "dependencies": [
+                [
+                  "r@1",
+                  "threshold"
+                ]
+              ],
+              "op": "read_and_adjudicate",
+              "rank": 4
+            }
+          ],
+          "initial_rights": [
+            [
+              "ka",
+              "x@1",
+              "output"
+            ],
+            [
+              "kq",
+              "standard@1",
+              "criterion"
+            ],
+            [
+              "ka",
+              "r@1",
+              "threshold"
+            ]
+          ],
+          "keys": {
+            "ka": "p",
+            "kj": "j",
+            "kq": "q"
+          }
+        },
+        "truth": "CONFLICT",
+        "value": "p",
+        "witness": {
+          "r@1:threshold": "live effective write"
+        }
+      },
+      {
+        "trace": {
+          "events": [
+            {
+              "key": "ka",
+              "obj": "x@1",
+              "op": "produce",
+              "rank": 1
+            },
+            {
+              "obj": "x@1",
+              "op": "seal",
+              "rank": 3
+            },
+            {
+              "dependencies": [
+                [
+                  "r@1",
+                  "threshold"
+                ]
+              ],
+              "op": "read_and_adjudicate",
+              "rank": 4
+            }
+          ],
+          "initial_rights": [
+            [
+              "ka",
+              "x@1",
+              "output"
+            ],
+            [
+              "kq",
+              "standard@1",
+              "criterion"
+            ],
+            [
+              "kq",
+              "r@1",
+              "threshold"
+            ]
+          ],
+          "keys": {
+            "ka": "p",
+            "kj": "j",
+            "kq": "q"
+          }
+        },
+        "truth": "NO_CONFLICT",
+        "value": "q",
+        "witness": {}
+      }
+    ],
+    "K3": [
+      {
+        "trace": {
+          "events": [
+            {
+              "key": "ka",
+              "obj": "x@1",
+              "op": "produce",
+              "rank": 1
+            },
+            {
+              "also_freeze": [
+                "r@2"
+              ],
+              "obj": "x@1",
+              "op": "seal",
+              "rank": 3
+            },
+            {
+              "dependencies": [
+                [
+                  "r@2",
+                  "threshold"
+                ]
+              ],
+              "op": "read_and_adjudicate",
+              "rank": 4
+            },
+            {
+              "effect": "included-modification",
+              "field": "threshold",
+              "key": "ka",
+              "obj": "r@2",
+              "op": "write",
+              "rank": 0
+            },
+            {
+              "key": "ka",
+              "op": "revoke",
+              "rank": 2
+            }
+          ],
+          "initial_rights": [
+            [
+              "ka",
+              "x@1",
+              "output"
+            ],
+            [
+              "kq",
+              "standard@1",
+              "criterion"
+            ],
+            [
+              "ka",
+              "r@2",
+              "threshold"
+            ]
+          ],
+          "keys": {
+            "ka": "p",
+            "kj": "j",
+            "kq": "q"
+          }
+        },
+        "truth": "CONFLICT",
+        "value": "p",
+        "witness": {
+          "r@2:threshold": "included-modification"
+        }
+      },
+      {
+        "trace": {
+          "events": [
+            {
+              "key": "ka",
+              "obj": "x@1",
+              "op": "produce",
+              "rank": 1
+            },
+            {
+              "also_freeze": [
+                "r@2"
+              ],
+              "obj": "x@1",
+              "op": "seal",
+              "rank": 3
+            },
+            {
+              "dependencies": [
+                [
+                  "r@2",
+                  "threshold"
+                ]
+              ],
+              "op": "read_and_adjudicate",
+              "rank": 4
+            },
+            {
+              "effect": "included-modification",
+              "field": "threshold",
+              "key": "kq",
+              "obj": "r@2",
+              "op": "write",
+              "rank": 0
+            },
+            {
+              "key": "ka",
+              "op": "revoke",
+              "rank": 2
+            }
+          ],
+          "initial_rights": [
+            [
+              "ka",
+              "x@1",
+              "output"
+            ],
+            [
+              "kq",
+              "standard@1",
+              "criterion"
+            ],
+            [
+              "kq",
+              "r@2",
+              "threshold"
+            ]
+          ],
+          "keys": {
+            "ka": "p",
+            "kj": "j",
+            "kq": "q"
+          }
+        },
+        "truth": "NO_CONFLICT",
+        "value": "q",
+        "witness": {}
+      }
+    ]
+  },
+  "scope": "review only; transparent finite reference reconstruction",
+  "unmodified_corpus_lookup_matches": 13
+}

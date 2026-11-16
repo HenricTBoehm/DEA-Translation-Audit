@@ -1,0 +1,8 @@
+# What remains open
+
+1. Bind the chosen SR-1 harm and criterion materiality to a narrowly stated operational objective. Approve the production-versus-adjudication effects and evaluate the cosmetic countercontrol before freeze.
+2. Approve a complete schema with explicit observed/withheld assertions, exact role/version binding, key assignment and validity, content lineage, and post-effect neutralization. Record which claims were observed, stipulated or independently authenticated. Add a fair authenticated proof form for positives under open global coverage.
+3. Freeze the two separately reported evidence strata. Specify identical inputs in the consumer stratum and identical raw access plus declared budgets in the end-to-end stratum. Put assessor-only truth in a separate store and preregister hidden structural holdouts and a minimum tester evidence packet.
+4. Commit exact software/container hashes and replayable mappings, L classifications for gate and producer, absent-evidence fallbacks and equal cost units. Codify the full decision, evidence/proof, security, availability and real premise outcome matrix before scoring.
+5. Obtain an independent human protocol/oracle sign-off with recorded date and exact hashes. Evaluate the v0.1.2 design and revised oracles without seeing comparator results. Treat an inability to independently verify capture as missing evidence, irrespective of which method supplies it.
+6. Actual controlled comparison, machine performance, human issuer costs and operational capture are NOT EXECUTED. The six worlds cannot establish claims about arbitrary histories or full equivalence. Record a null result if a matched established composition meets the same obligations, and report any D0 or D1 failures separately.
