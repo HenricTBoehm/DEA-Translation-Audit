@@ -1,0 +1,14 @@
+7ddda5e74cac543d16f3a4d3a11a90ad1de8ea7e4470325011dfbde28cfd838a  ./README.md
+351e35ad3ac1dcc669ca73519d5d5ff0cfd72c3c2f515b4ecce5765948d31d8b  ./claim-evidence-table.csv
+faffe908e55ff9f959e7751885d74560aaf7965c8c84f138391a4a5fae3549ba  ./counterexamples.md
+458b358844001c43b6fb4b2ae88470b408afe0541b6dbdba59860b9c4d366b1e  ./crosswalk-corrections.csv
+fd51e2b96128a943f719ccf1824b8549f70deda036840e171c9c7bae27ef1c7f  ./patches/CHANGELOG.md
+7e140f6073905985d9dc9532e1129f71702852071368178fd38a91d100c75761  ./patches/VP-1a-rbac_li-partial-order.patch
+2a2c93d75b16abc5384fb262a51b34e8932f404da5b774cc962273b35538bfa2  ./patches/VP-1b-rsl99-partial-order.patch
+36a18f05ccd6d02f3ca86f05e6b33fdb4833488207daaab4dc98f80434e1766e  ./patches/VP-1c-translations-state-guard.patch
+3a0331e7013001d29cb6abd3caa237b9ff1ac78d60efe2c54bce41dd635b6e89  ./patches/VP-2-3-5-run_audit.patch
+a85333b32d4446293474607ad0e7468a9eda0fe47d8ea910fcbd1c7913d0b04a  ./patches/VP-4-spec-erratum.patch
+44be72b547c015d64dbccc45344668aa71b4f6022b84962a7a08942d160d6963  ./patches/patched-remediation-results.json
+47ddc1af054eaf2de28135d8d538a4ae09c988654edf5680fa93fe02ba6204ff  ./results/verification-results.json
+245fcb2f73da79d723490e146a44ce3904a6d0a295067c471f2df4dd97b25269  ./verification-report.md
+f16380256e3e8fbc70655a4f9ac721a268002c141714ff3904279140b891fcdf  ./verify.py
