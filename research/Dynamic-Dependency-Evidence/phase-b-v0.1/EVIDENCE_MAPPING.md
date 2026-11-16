@@ -1,0 +1,25 @@
+# Observation profiles, evidence mapping and control semantics
+
+| Fact | E1 | E2 | Separate reference |
+|---|---|---|---|
+| Path and digest | Process asserts path and SHA computed at its read. Registry independently matches the reported digest to the named immutable object, conditional on actual read identity. | Kernel reports open/access in the watched directory. Artifact identities and digests are reconstructed via pinned snapshots, not syscall byte capture. | Child /proc descriptor link/device/inode and offset 0→size; independent manifest fingerprints. |
+| Resolver | Process asserts checked and used resolver plus order. | Reconstruct checked and later resolver files from separated queues and actual pointer access, with scope limited to this private single-child interval. | Controller independently records the initial pointer and any replacement. Threshold FD confirms what was opened, not all selector work. |
+| Output and causation | Claims predicate and result. Child stdout supplies the executed result. | No independent semantic telemetry. Combine read identity, artifact data and stdout and check the finite predicate. | Arithmetic is re-evaluated by a different expression. Output agreement alone can leave the threshold unresolved (B08). |
+| Control and history | Same controlled ledger as E2 | Same controlled ledger as E1 | Independent backward lookup on the ledger and assessor-confirmed FD; trusted controlled administration rather than observed OS rights. |
+
+E1 and E2 use the same runs and file registry, identically authorized observations and roles, and no distinct production permissions. E2 does not consume E1's records. E2 observes directory event names and ordering, without process IDs, precise read bytes, universal dependency completeness or reliable event counts under coalescing. The quiet private directory and run fencing are essential. Queue overflow forces abstention. The common parent examines digest/contents outside the observation interval. Fusion withholds contradictions without deciding which source is dishonest.
+
+For a complete bounded projection, typed history from the controller is joined to the observed initial binding, actual exact threshold read and attempted adjudication. This reproduces the existing Phase A wire and facts. A positive history claim requires this fixture's authority/immutable history assumptions. Incomplete observation passes an open wire so existing consumers abstain. B10 passes different exact versions in the bind and read fields, producing the original wire contradiction. Cross-source conflict in B08 is a Phase B epistemic extension: the adapter uses the existing contradictory-event input status with an explicit `inconsistent_runtime_attestations` reason and no invented events; this signifies invalid **evidence**, not an invalid executed numeric evaluation. Neither labels, independent reference, intervention schedule nor expected verdicts enter the consumer. All three receive exactly the same Phase A wire/derived pair for each selected evidence profile. No policy code was edited.
+
+## Separate capability and decision semantics
+
+A logical update publishes a new immutable version. Effective control of the old contents requires its own evidence. The right to publish a new threshold version is distinct from authority to alter the resolver pointer. A selection right over two existing thresholds with different values yields a material capability for admissible scores, even when no threshold write is available. Actual fixed binding and semantic procedure authority are separate facts. Procedure ownership belongs to the issuer throughout.
+
+| Producer can author alternative | Producer can select | Case | Frozen D0 / D1 / SR-1 | Additional selection hypothesis |
+|---|---|---|---|---|
+| No | No | B01 | clear / clear / clear | No path |
+| Yes | No | B03 | clear / clear / clear | Alternative exists; selected version remains independent |
+| No | Yes | B04 | clear / clear / clear | Material via resolver, with witnessed alternatives and actor's stipulated selection right |
+| Yes | Yes | B02 | clear / conflict / conflict | Both creation and selection, plus a surviving effect on the bound version |
+
+D0 is identity-only on this profile; D1 includes surviving influence on the actually bound version. SR-1 additionally counts a live right to create an eligible successor of the bound head. B03 selects the older version, so that SR-1 route also does not fire. The experiment does not silently encode the new resolver as some existing threshold field. The selector extension records role, allowed roots and values outside the frozen consumers. B04 therefore exposes an uncovered material selection path under **the additional research hypothesis**, not an observed D1-versus-SR-1 disagreement. A richer P-01 mapping might model the resolver as its own mandatory dependency; this remains a separate hypothesis. The B07 and B08 changes across E1/E2 are evidentiary, while D0 versus D1 in B02 and B05 is a defined semantic difference.
