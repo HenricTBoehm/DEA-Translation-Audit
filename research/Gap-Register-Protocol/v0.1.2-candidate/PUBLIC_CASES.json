@@ -1,0 +1,6613 @@
+[
+  {
+    "evidence": {
+      "dependencies_closed": true,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "s",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 11,
+          "key": "kj",
+          "kind": "read",
+          "parent": "r@0",
+          "rank": 11,
+          "time": 11,
+          "version": "s@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": true
+    },
+    "expected": "CONFLICT",
+    "expected_truth": "CONFLICT",
+    "label": "K1-F",
+    "premise": "SUPPORTED",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "s",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 11,
+          "key": "kj",
+          "kind": "read",
+          "parent": "r@0",
+          "rank": 11,
+          "time": 11,
+          "version": "s@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": true,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "s",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": true
+    },
+    "expected": "CLEAR",
+    "expected_truth": "NO_CONFLICT",
+    "label": "K1-C",
+    "premise": "SUPPORTED",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "s",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": true,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": true
+    },
+    "expected": "CONFLICT",
+    "expected_truth": "CONFLICT",
+    "label": "K2-F",
+    "premise": "SUPPORTED",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": true,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "kq",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": true
+    },
+    "expected": "CLEAR",
+    "expected_truth": "NO_CONFLICT",
+    "label": "K2-C",
+    "premise": "SUPPORTED",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "kq",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": true,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "channel": "threshold",
+          "id": 2,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 2,
+          "subject": "kq",
+          "target": "r",
+          "time": 2
+        },
+        {
+          "base": "r@0",
+          "channel": "threshold",
+          "id": 3,
+          "key": "ka",
+          "kind": "modify",
+          "rank": 3,
+          "time": 3,
+          "value": 1,
+          "version": "r@1"
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 5,
+          "key": "ki",
+          "kind": "revoke",
+          "rank": 5,
+          "subject": "ka",
+          "time": 5
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@1",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@1"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": true
+    },
+    "expected": "CONFLICT",
+    "expected_truth": "CONFLICT",
+    "label": "K3-F",
+    "premise": "SUPPORTED",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "channel": "threshold",
+          "id": 2,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 2,
+          "subject": "kq",
+          "target": "r",
+          "time": 2
+        },
+        {
+          "base": "r@0",
+          "channel": "threshold",
+          "id": 3,
+          "key": "ka",
+          "kind": "modify",
+          "rank": 3,
+          "time": 3,
+          "value": 1,
+          "version": "r@1"
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 5,
+          "key": "ki",
+          "kind": "revoke",
+          "rank": 5,
+          "subject": "ka",
+          "time": 5
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@1",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@1"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": true,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "channel": "threshold",
+          "id": 2,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 2,
+          "subject": "kq",
+          "target": "r",
+          "time": 2
+        },
+        {
+          "base": "r@0",
+          "channel": "threshold",
+          "id": 3,
+          "key": "kq",
+          "kind": "modify",
+          "rank": 3,
+          "time": 3,
+          "value": 1,
+          "version": "r@1"
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 5,
+          "key": "ki",
+          "kind": "revoke",
+          "rank": 5,
+          "subject": "ka",
+          "time": 5
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@1",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@1"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": true
+    },
+    "expected": "CLEAR",
+    "expected_truth": "NO_CONFLICT",
+    "label": "K3-C",
+    "premise": "SUPPORTED",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "channel": "threshold",
+          "id": 2,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 2,
+          "subject": "kq",
+          "target": "r",
+          "time": 2
+        },
+        {
+          "base": "r@0",
+          "channel": "threshold",
+          "id": 3,
+          "key": "kq",
+          "kind": "modify",
+          "rank": 3,
+          "time": 3,
+          "value": 1,
+          "version": "r@1"
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 5,
+          "key": "ki",
+          "kind": "revoke",
+          "rank": 5,
+          "subject": "ka",
+          "time": 5
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@1",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@1"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": false,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "s",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": true
+    },
+    "expected": "UNDETERMINED",
+    "expected_truth": "CONFLICT",
+    "label": "K1-I-a",
+    "premise": "OPEN",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "s",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 11,
+          "key": "kj",
+          "kind": "read",
+          "parent": "r@0",
+          "rank": 11,
+          "time": 11,
+          "version": "s@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": false,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "s",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": true
+    },
+    "expected": "UNDETERMINED",
+    "expected_truth": "NO_CONFLICT",
+    "label": "K1-I-b",
+    "premise": "OPEN",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "s",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": false,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": false
+    },
+    "expected": "UNDETERMINED",
+    "expected_truth": "CONFLICT",
+    "label": "K2-I-a",
+    "premise": "OPEN",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": false,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": false
+    },
+    "expected": "UNDETERMINED",
+    "expected_truth": "NO_CONFLICT",
+    "label": "K2-I-b",
+    "premise": "OPEN",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "kq",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": false,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "channel": "threshold",
+          "id": 2,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 2,
+          "subject": "kq",
+          "target": "r",
+          "time": 2
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 5,
+          "key": "ki",
+          "kind": "revoke",
+          "rank": 5,
+          "subject": "ka",
+          "time": 5
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@1",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@1"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": false
+    },
+    "expected": "UNDETERMINED",
+    "expected_truth": "CONFLICT",
+    "label": "K3-I-a",
+    "premise": "OPEN",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "channel": "threshold",
+          "id": 2,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 2,
+          "subject": "kq",
+          "target": "r",
+          "time": 2
+        },
+        {
+          "base": "r@0",
+          "channel": "threshold",
+          "id": 3,
+          "key": "ka",
+          "kind": "modify",
+          "rank": 3,
+          "time": 3,
+          "value": 1,
+          "version": "r@1"
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 5,
+          "key": "ki",
+          "kind": "revoke",
+          "rank": 5,
+          "subject": "ka",
+          "time": 5
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@1",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@1"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": false,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "channel": "threshold",
+          "id": 2,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 2,
+          "subject": "kq",
+          "target": "r",
+          "time": 2
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 5,
+          "key": "ki",
+          "kind": "revoke",
+          "rank": 5,
+          "subject": "ka",
+          "time": 5
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@1",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@1"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": false
+    },
+    "expected": "UNDETERMINED",
+    "expected_truth": "NO_CONFLICT",
+    "label": "K3-I-b",
+    "premise": "OPEN",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "channel": "threshold",
+          "id": 2,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 2,
+          "subject": "kq",
+          "target": "r",
+          "time": 2
+        },
+        {
+          "base": "r@0",
+          "channel": "threshold",
+          "id": 3,
+          "key": "kq",
+          "kind": "modify",
+          "rank": 3,
+          "time": 3,
+          "value": 1,
+          "version": "r@1"
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 5,
+          "key": "ki",
+          "kind": "revoke",
+          "rank": 5,
+          "subject": "ka",
+          "time": 5
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@1",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@1"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": true,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "s",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 3,
+          "time": 3,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 11,
+          "key": "kj",
+          "kind": "read",
+          "parent": "r@0",
+          "rank": 11,
+          "time": 11,
+          "version": "s@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": true
+    },
+    "expected": "INVALID",
+    "expected_truth": "MODEL_INVALID",
+    "label": "X-ORDER",
+    "premise": "SUPPORTED",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "s",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 3,
+          "time": 3,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 11,
+          "key": "kj",
+          "kind": "read",
+          "parent": "r@0",
+          "rank": 11,
+          "time": 11,
+          "version": "s@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": true,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "s",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": true
+    },
+    "expected": "CLEAR",
+    "expected_truth": "CONFLICT",
+    "label": "X-TRUST",
+    "premise": "CONTRADICTED",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "s",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 11,
+          "key": "kj",
+          "kind": "read",
+          "parent": "r@0",
+          "rank": 11,
+          "time": 11,
+          "version": "s@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": true,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "base": "r@0",
+          "channel": "threshold",
+          "id": 2,
+          "key": "ka",
+          "kind": "modify",
+          "rank": 2,
+          "time": 2,
+          "value": 1,
+          "version": "r@1"
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@1",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@1"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": true
+    },
+    "expected": "CONFLICT",
+    "expected_truth": "CONFLICT",
+    "label": "M1-material",
+    "premise": "SUPPORTED",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "base": "r@0",
+          "channel": "threshold",
+          "id": 2,
+          "key": "ka",
+          "kind": "modify",
+          "rank": 2,
+          "time": 2,
+          "value": 1,
+          "version": "r@1"
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@1",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@1"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": true,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "layout",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "base": "r@0",
+          "channel": "layout",
+          "id": 2,
+          "key": "ka",
+          "kind": "modify",
+          "rank": 2,
+          "time": 2,
+          "value": 1,
+          "version": "r@1"
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@1",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@1"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": true
+    },
+    "expected": "CLEAR",
+    "expected_truth": "NO_CONFLICT",
+    "label": "M2-cosmetic",
+    "premise": "SUPPORTED",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "layout",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "base": "r@0",
+          "channel": "layout",
+          "id": 2,
+          "key": "ka",
+          "kind": "modify",
+          "rank": 2,
+          "time": 2,
+          "value": 1,
+          "version": "r@1"
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@1",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@1"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": false,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "s",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": true
+    },
+    "expected": "UNDETERMINED",
+    "expected_truth": "CONFLICT",
+    "label": "M3-dynamic-hidden",
+    "premise": "OPEN",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "s",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 11,
+          "key": "kj",
+          "kind": "read",
+          "parent": "r@0",
+          "rank": 11,
+          "time": 11,
+          "version": "s@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": true,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "t",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 11,
+          "key": "kj",
+          "kind": "read",
+          "parent": "r@0",
+          "rank": 11,
+          "time": 11,
+          "version": "s@0"
+        },
+        {
+          "id": 12,
+          "key": "kj",
+          "kind": "read",
+          "parent": "s@0",
+          "rank": 12,
+          "time": 12,
+          "version": "t@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": true
+    },
+    "expected": "CONFLICT",
+    "expected_truth": "CONFLICT",
+    "label": "M3-indirect",
+    "premise": "SUPPORTED",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "t",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 11,
+          "key": "kj",
+          "kind": "read",
+          "parent": "r@0",
+          "rank": 11,
+          "time": 11,
+          "version": "s@0"
+        },
+        {
+          "id": 12,
+          "key": "kj",
+          "kind": "read",
+          "parent": "s@0",
+          "rank": 12,
+          "time": 12,
+          "version": "t@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": true,
+      "events": [
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": true
+    },
+    "expected": "CLEAR",
+    "expected_truth": "NO_CONFLICT",
+    "label": "M4-signature-only",
+    "premise": "SUPPORTED",
+    "world": {
+      "events": [
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": true,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "base": "r@0",
+          "channel": "threshold",
+          "id": 3,
+          "key": "ka",
+          "kind": "modify",
+          "rank": 3,
+          "time": 3,
+          "value": 1,
+          "version": "r@1"
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "channel": "threshold",
+          "id": 5,
+          "key": "ki",
+          "kind": "retract",
+          "rank": 5,
+          "subject": "ka",
+          "target": "r",
+          "time": 5
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@1",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@1"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": true
+    },
+    "expected": "CONFLICT",
+    "expected_truth": "CONFLICT",
+    "label": "M5-retract-effect",
+    "premise": "SUPPORTED",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "base": "r@0",
+          "channel": "threshold",
+          "id": 3,
+          "key": "ka",
+          "kind": "modify",
+          "rank": 3,
+          "time": 3,
+          "value": 1,
+          "version": "r@1"
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "channel": "threshold",
+          "id": 5,
+          "key": "ki",
+          "kind": "retract",
+          "rank": 5,
+          "subject": "ka",
+          "target": "r",
+          "time": 5
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@1",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@1"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": true,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 5,
+          "key": "ki",
+          "kind": "revoke",
+          "rank": 5,
+          "subject": "ka",
+          "time": 5
+        },
+        {
+          "base": "r@0",
+          "channel": "threshold",
+          "id": 6,
+          "key": "ka",
+          "kind": "modify",
+          "rank": 6,
+          "time": 6,
+          "value": 1,
+          "version": "r@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@1",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@1"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": true
+    },
+    "expected": "INVALID",
+    "expected_truth": "MODEL_INVALID",
+    "label": "revoked-write",
+    "premise": "SUPPORTED",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 5,
+          "key": "ki",
+          "kind": "revoke",
+          "rank": 5,
+          "subject": "ka",
+          "time": 5
+        },
+        {
+          "base": "r@0",
+          "channel": "threshold",
+          "id": 6,
+          "key": "ka",
+          "kind": "modify",
+          "rank": 6,
+          "time": 6,
+          "value": 1,
+          "version": "r@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@1",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@1"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": true,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "channel": "threshold",
+          "id": 2,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 2,
+          "subject": "kq",
+          "target": "r",
+          "time": 2
+        },
+        {
+          "base": "r@0",
+          "channel": "threshold",
+          "id": 3,
+          "key": "ka",
+          "kind": "modify",
+          "rank": 3,
+          "time": 3,
+          "value": 1,
+          "version": "r@1"
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 5,
+          "key": "ki",
+          "kind": "revoke",
+          "rank": 5,
+          "subject": "ka",
+          "time": 5
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": null,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@1",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@1"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": true
+    },
+    "expected": "UNDETERMINED",
+    "expected_truth": "CONFLICT",
+    "label": "missing-rank",
+    "premise": "SUPPORTED",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "channel": "threshold",
+          "id": 2,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 2,
+          "subject": "kq",
+          "target": "r",
+          "time": 2
+        },
+        {
+          "base": "r@0",
+          "channel": "threshold",
+          "id": 3,
+          "key": "ka",
+          "kind": "modify",
+          "rank": 3,
+          "time": 3,
+          "value": 1,
+          "version": "r@1"
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 5,
+          "key": "ki",
+          "kind": "revoke",
+          "rank": 5,
+          "subject": "ka",
+          "time": 5
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@1",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@1"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": true,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "channel": "threshold",
+          "id": 2,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 2,
+          "subject": "kq",
+          "target": "r",
+          "time": 2
+        },
+        {
+          "base": "r@0",
+          "channel": "threshold",
+          "id": 3,
+          "key": "ka",
+          "kind": "modify",
+          "rank": 3,
+          "time": 3,
+          "value": 1,
+          "version": "r@1"
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 5,
+          "key": "ki",
+          "kind": "revoke",
+          "rank": 5,
+          "subject": "ka",
+          "time": 5
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 2,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@1",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@1"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": true
+    },
+    "expected": "INVALID",
+    "expected_truth": "CONFLICT",
+    "label": "contradictory-rank",
+    "premise": "SUPPORTED",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "channel": "threshold",
+          "id": 2,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 2,
+          "subject": "kq",
+          "target": "r",
+          "time": 2
+        },
+        {
+          "base": "r@0",
+          "channel": "threshold",
+          "id": 3,
+          "key": "ka",
+          "kind": "modify",
+          "rank": 3,
+          "time": 3,
+          "value": 1,
+          "version": "r@1"
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 5,
+          "key": "ki",
+          "kind": "revoke",
+          "rank": 5,
+          "subject": "ka",
+          "time": 5
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@1",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@1"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": true,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "channel": "threshold",
+          "id": 2,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 2,
+          "subject": "kq",
+          "target": "r",
+          "time": 2
+        },
+        {
+          "base": "r@0",
+          "channel": "threshold",
+          "id": 3,
+          "key": "ka",
+          "kind": "modify",
+          "rank": 3,
+          "time": 3,
+          "value": 1,
+          "version": "r@1"
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 5,
+          "key": "ki",
+          "kind": "revoke",
+          "rank": 5,
+          "subject": "ka",
+          "time": 5
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@1",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@1"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 16,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": true
+    },
+    "expected": "INVALID",
+    "expected_truth": "CONFLICT",
+    "label": "outside-rank",
+    "premise": "SUPPORTED",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "channel": "threshold",
+          "id": 2,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 2,
+          "subject": "kq",
+          "target": "r",
+          "time": 2
+        },
+        {
+          "base": "r@0",
+          "channel": "threshold",
+          "id": 3,
+          "key": "ka",
+          "kind": "modify",
+          "rank": 3,
+          "time": 3,
+          "value": 1,
+          "version": "r@1"
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 5,
+          "key": "ki",
+          "kind": "revoke",
+          "rank": 5,
+          "subject": "ka",
+          "time": 5
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@1",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@1"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": true,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "channel": "threshold",
+          "id": 2,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 2,
+          "subject": "kq",
+          "target": "r",
+          "time": 2
+        },
+        {
+          "base": "r@0",
+          "channel": "threshold",
+          "id": 3,
+          "key": "ka",
+          "kind": "modify",
+          "rank": 3,
+          "time": 3,
+          "value": 1,
+          "version": "r@1"
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 5,
+          "key": "ki",
+          "kind": "revoke",
+          "rank": 5,
+          "subject": "ka",
+          "time": 5
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": null,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@1",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@1"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": true
+    },
+    "expected": "UNDETERMINED",
+    "expected_truth": "CONFLICT",
+    "label": "unverified-rank-ignored",
+    "premise": "SUPPORTED",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "channel": "threshold",
+          "id": 2,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 2,
+          "subject": "kq",
+          "target": "r",
+          "time": 2
+        },
+        {
+          "base": "r@0",
+          "channel": "threshold",
+          "id": 3,
+          "key": "ka",
+          "kind": "modify",
+          "rank": 3,
+          "time": 3,
+          "value": 1,
+          "version": "r@1"
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 5,
+          "key": "ki",
+          "kind": "revoke",
+          "rank": 5,
+          "subject": "ka",
+          "time": 5
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@1",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@1"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": true,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "channel": "threshold",
+          "id": 2,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 2,
+          "subject": "kq",
+          "target": "r",
+          "time": 2
+        },
+        {
+          "base": "r@0",
+          "channel": "threshold",
+          "id": 3,
+          "key": "ka",
+          "kind": "modify",
+          "rank": 3,
+          "time": 3,
+          "value": 1,
+          "version": "r@1"
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 5,
+          "key": "ki",
+          "kind": "revoke",
+          "rank": 5,
+          "subject": "ka",
+          "time": 5
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@1",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@1"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": false
+    },
+    "expected": "UNDETERMINED",
+    "expected_truth": "CONFLICT",
+    "label": "missing-history-record",
+    "premise": "OPEN",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "channel": "threshold",
+          "id": 2,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 2,
+          "subject": "kq",
+          "target": "r",
+          "time": 2
+        },
+        {
+          "base": "r@0",
+          "channel": "threshold",
+          "id": 3,
+          "key": "ka",
+          "kind": "modify",
+          "rank": 3,
+          "time": 3,
+          "value": 1,
+          "version": "r@1"
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 5,
+          "key": "ki",
+          "kind": "revoke",
+          "rank": 5,
+          "subject": "ka",
+          "time": 5
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@1",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@1"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": false,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "s",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 3,
+          "time": 3,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 11,
+          "key": "kj",
+          "kind": "read",
+          "parent": "r@0",
+          "rank": 11,
+          "time": 11,
+          "version": "s@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": false
+    },
+    "expected": "INVALID",
+    "expected_truth": "MODEL_INVALID",
+    "label": "open-history-but-contradiction",
+    "premise": "OPEN",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "s",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 3,
+          "time": 3,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 11,
+          "key": "kj",
+          "kind": "read",
+          "parent": "r@0",
+          "rank": 11,
+          "time": 11,
+          "version": "s@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": true,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "channel": "threshold",
+          "id": 2,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 2,
+          "subject": "kq",
+          "target": "r",
+          "time": 2
+        },
+        {
+          "base": "r@0",
+          "channel": "threshold",
+          "id": 3,
+          "key": "ka",
+          "kind": "modify",
+          "rank": 3,
+          "time": 3,
+          "value": 1,
+          "version": "r@1"
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 5,
+          "key": "ki",
+          "kind": "revoke",
+          "rank": 5,
+          "subject": "ka",
+          "time": 4
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@1",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@1"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": true
+    },
+    "expected": "CONFLICT",
+    "expected_truth": "CONFLICT",
+    "label": "same-time-resolved",
+    "premise": "SUPPORTED",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "channel": "threshold",
+          "id": 2,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 2,
+          "subject": "kq",
+          "target": "r",
+          "time": 2
+        },
+        {
+          "base": "r@0",
+          "channel": "threshold",
+          "id": 3,
+          "key": "ka",
+          "kind": "modify",
+          "rank": 3,
+          "time": 3,
+          "value": 1,
+          "version": "r@1"
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 5,
+          "key": "ki",
+          "kind": "revoke",
+          "rank": 5,
+          "subject": "ka",
+          "time": 4
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@1",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@1"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": true,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "base": "r@0",
+          "channel": "threshold",
+          "id": 9,
+          "key": "ka",
+          "kind": "modify",
+          "rank": 9,
+          "time": 9,
+          "value": 1,
+          "version": "r@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@1"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": true
+    },
+    "expected": "INVALID",
+    "expected_truth": "MODEL_INVALID",
+    "label": "post-binding-other-version",
+    "premise": "SUPPORTED",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "base": "r@0",
+          "channel": "threshold",
+          "id": 9,
+          "key": "ka",
+          "kind": "modify",
+          "rank": 9,
+          "time": 9,
+          "value": 1,
+          "version": "r@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@1"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": true,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "base": "r@0",
+          "channel": "threshold",
+          "id": 9,
+          "key": "ka",
+          "kind": "modify",
+          "rank": 9,
+          "time": 9,
+          "value": 1,
+          "version": "r@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": true
+    },
+    "expected": "CONFLICT",
+    "expected_truth": "CONFLICT",
+    "label": "frozen-read-original",
+    "premise": "SUPPORTED",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "base": "r@0",
+          "channel": "threshold",
+          "id": 9,
+          "key": "ka",
+          "kind": "modify",
+          "rank": 9,
+          "time": 9,
+          "value": 1,
+          "version": "r@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": true,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "base": "r@0",
+          "channel": "threshold",
+          "id": 3,
+          "key": "ka",
+          "kind": "modify",
+          "rank": 3,
+          "time": 3,
+          "value": 1,
+          "version": "r@1"
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 5,
+          "key": "ki",
+          "kind": "revoke",
+          "rank": 5,
+          "subject": "ka",
+          "time": 5
+        },
+        {
+          "base": "r@1",
+          "channel": "layout",
+          "id": 6,
+          "key": "ki",
+          "kind": "reset",
+          "rank": 6,
+          "time": 6,
+          "version": "r@2"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@2",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@2"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": true
+    },
+    "expected": "CONFLICT",
+    "expected_truth": "CONFLICT",
+    "label": "partial-reset",
+    "premise": "SUPPORTED",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "base": "r@0",
+          "channel": "threshold",
+          "id": 3,
+          "key": "ka",
+          "kind": "modify",
+          "rank": 3,
+          "time": 3,
+          "value": 1,
+          "version": "r@1"
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 5,
+          "key": "ki",
+          "kind": "revoke",
+          "rank": 5,
+          "subject": "ka",
+          "time": 5
+        },
+        {
+          "base": "r@1",
+          "channel": "layout",
+          "id": 6,
+          "key": "ki",
+          "kind": "reset",
+          "rank": 6,
+          "time": 6,
+          "version": "r@2"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@2",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@2"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": true,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "base": "r@0",
+          "channel": "threshold",
+          "id": 3,
+          "key": "ka",
+          "kind": "modify",
+          "rank": 3,
+          "time": 3,
+          "value": 1,
+          "version": "r@1"
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 5,
+          "key": "ki",
+          "kind": "revoke",
+          "rank": 5,
+          "subject": "ka",
+          "time": 5
+        },
+        {
+          "base": "r@1",
+          "channel": "threshold",
+          "id": 6,
+          "key": "ki",
+          "kind": "reset",
+          "rank": 6,
+          "time": 6,
+          "version": "r@2"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@2",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@2"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": true
+    },
+    "expected": "CLEAR",
+    "expected_truth": "NO_CONFLICT",
+    "label": "complete-reset",
+    "premise": "SUPPORTED",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "base": "r@0",
+          "channel": "threshold",
+          "id": 3,
+          "key": "ka",
+          "kind": "modify",
+          "rank": 3,
+          "time": 3,
+          "value": 1,
+          "version": "r@1"
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 5,
+          "key": "ki",
+          "kind": "revoke",
+          "rank": 5,
+          "subject": "ka",
+          "time": 5
+        },
+        {
+          "base": "r@1",
+          "channel": "threshold",
+          "id": 6,
+          "key": "ki",
+          "kind": "reset",
+          "rank": 6,
+          "time": 6,
+          "version": "r@2"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@2",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@2"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": true,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "base": "r@0",
+          "channel": "threshold",
+          "id": 3,
+          "key": "ka",
+          "kind": "modify",
+          "rank": 3,
+          "time": 3,
+          "value": 1,
+          "version": "r@1"
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 5,
+          "key": "ki",
+          "kind": "revoke",
+          "rank": 5,
+          "subject": "ka",
+          "time": 5
+        },
+        {
+          "base": "r@1",
+          "channel": "threshold",
+          "id": 6,
+          "key": "ki",
+          "kind": "reset",
+          "rank": 6,
+          "time": 6,
+          "version": "r@2"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@1",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@1"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": true
+    },
+    "expected": "CONFLICT",
+    "expected_truth": "CONFLICT",
+    "label": "reset-unbound",
+    "premise": "SUPPORTED",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "base": "r@0",
+          "channel": "threshold",
+          "id": 3,
+          "key": "ka",
+          "kind": "modify",
+          "rank": 3,
+          "time": 3,
+          "value": 1,
+          "version": "r@1"
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 5,
+          "key": "ki",
+          "kind": "revoke",
+          "rank": 5,
+          "subject": "ka",
+          "time": 5
+        },
+        {
+          "base": "r@1",
+          "channel": "threshold",
+          "id": 6,
+          "key": "ki",
+          "kind": "reset",
+          "rank": 6,
+          "time": 6,
+          "version": "r@2"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@1",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@1"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": false,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": true
+    },
+    "expected": "CONFLICT",
+    "expected_truth": "CONFLICT",
+    "label": "open-global-proved-positive",
+    "premise": "OPEN",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": false,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": false
+    },
+    "expected": "UNDETERMINED",
+    "expected_truth": "CONFLICT",
+    "label": "open-no-positive",
+    "premise": "OPEN",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "r",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": false,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "s",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 9,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": true
+    },
+    "expected": "INVALID",
+    "expected_truth": "NO_CONFLICT",
+    "label": "open-root-no-free-rank",
+    "premise": "SUPPORTED",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "s",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": true,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "t",
+          "time": 1
+        },
+        {
+          "channel": "threshold",
+          "id": 2,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 2,
+          "subject": "ka",
+          "target": "s",
+          "time": 2
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "t@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "t@0"
+        },
+        {
+          "id": 11,
+          "key": "kj",
+          "kind": "read",
+          "parent": "t@0",
+          "rank": 11,
+          "time": 11,
+          "version": "s@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": true
+    },
+    "expected": "CONFLICT",
+    "expected_truth": "CONFLICT",
+    "label": "two-witness-versions",
+    "premise": "SUPPORTED",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "t",
+          "time": 1
+        },
+        {
+          "channel": "threshold",
+          "id": 2,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 2,
+          "subject": "ka",
+          "target": "s",
+          "time": 2
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "t@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "t@0"
+        },
+        {
+          "id": 11,
+          "key": "kj",
+          "kind": "read",
+          "parent": "t@0",
+          "rank": 11,
+          "time": 11,
+          "version": "s@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  },
+  {
+    "evidence": {
+      "dependencies_closed": true,
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "s",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 4,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ],
+      "history_closed": true
+    },
+    "expected": "INVALID",
+    "expected_truth": "NO_CONFLICT",
+    "label": "duplicate-id",
+    "premise": "SUPPORTED",
+    "world": {
+      "events": [
+        {
+          "channel": "score",
+          "id": 0,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 0,
+          "subject": "ka",
+          "target": "x",
+          "time": 0
+        },
+        {
+          "channel": "threshold",
+          "id": 1,
+          "key": "ki",
+          "kind": "grant",
+          "rank": 1,
+          "subject": "ka",
+          "target": "s",
+          "time": 1
+        },
+        {
+          "id": 4,
+          "key": "ka",
+          "kind": "produce",
+          "rank": 4,
+          "time": 4,
+          "value": 0,
+          "version": "x@1"
+        },
+        {
+          "id": 7,
+          "key": "kj",
+          "kind": "seal",
+          "policy": "sum-thresholds@1",
+          "rank": 7,
+          "time": 7,
+          "version": "x@1"
+        },
+        {
+          "id": 8,
+          "key": "kj",
+          "kind": "bind",
+          "policy": "sum-thresholds@1",
+          "rank": 8,
+          "root": "r@0",
+          "time": 8,
+          "version": "x@1"
+        },
+        {
+          "id": 10,
+          "key": "kj",
+          "kind": "read",
+          "parent": null,
+          "rank": 10,
+          "time": 10,
+          "version": "r@0"
+        },
+        {
+          "id": 14,
+          "key": "kj",
+          "kind": "adjudicate",
+          "policy": "sum-thresholds@1",
+          "rank": 14,
+          "time": 14,
+          "version": "x@1"
+        }
+      ]
+    }
+  }
+]

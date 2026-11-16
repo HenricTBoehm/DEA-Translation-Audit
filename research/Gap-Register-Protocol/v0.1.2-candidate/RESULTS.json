@@ -1,0 +1,3801 @@
+{
+  "generated_complete_histories": {
+    "CONFLICT": 12,
+    "MODEL_INVALID": 48,
+    "NO_CONFLICT": 84
+  },
+  "lookup_regular_exact": [
+    13,
+    13
+  ],
+  "public_results": [
+    {
+      "justified": "CONFLICT",
+      "label": "K1-F",
+      "premise": "SUPPORTED",
+      "proof_reason": "scoped_replay",
+      "truth": "CONFLICT",
+      "wire_sha256": "adc3b6ebfacfffe941e63c947fdc2a82b022b74df7139b183585cf0e326a3034",
+      "witness": [
+        "p",
+        0,
+        4,
+        "s@0",
+        "potential",
+        1,
+        8,
+        11
+      ]
+    },
+    {
+      "justified": "CLEAR",
+      "label": "K1-C",
+      "premise": "SUPPORTED",
+      "proof_reason": "scoped_replay_and_dependency_coverage",
+      "truth": "NO_CONFLICT",
+      "wire_sha256": "7a27325f3a8a3197866d4a903c8c6e6109be5c417249c645fcf777ee4251718b",
+      "witness": null
+    },
+    {
+      "justified": "CONFLICT",
+      "label": "K2-F",
+      "premise": "SUPPORTED",
+      "proof_reason": "scoped_replay",
+      "truth": "CONFLICT",
+      "wire_sha256": "9b3c9631a0c36604c6209ae3fccb649d483ca90a76281d9adb1b334220976366",
+      "witness": [
+        "p",
+        0,
+        4,
+        "r@0",
+        "potential",
+        1,
+        8,
+        10
+      ]
+    },
+    {
+      "justified": "CLEAR",
+      "label": "K2-C",
+      "premise": "SUPPORTED",
+      "proof_reason": "scoped_replay_and_dependency_coverage",
+      "truth": "NO_CONFLICT",
+      "wire_sha256": "9dc43f334f7757267f909b536853fd1f2041fecbac99e28bf3131dbcec9199f0",
+      "witness": null
+    },
+    {
+      "justified": "CONFLICT",
+      "label": "K3-F",
+      "premise": "SUPPORTED",
+      "proof_reason": "scoped_replay",
+      "truth": "CONFLICT",
+      "wire_sha256": "7ec95356b007882a38be32a26ab298758476b5655b79e5e8df1c6534736b679d",
+      "witness": [
+        "p",
+        0,
+        4,
+        "r@1",
+        "surviving",
+        1,
+        3,
+        8,
+        10
+      ]
+    },
+    {
+      "justified": "CLEAR",
+      "label": "K3-C",
+      "premise": "SUPPORTED",
+      "proof_reason": "scoped_replay_and_dependency_coverage",
+      "truth": "NO_CONFLICT",
+      "wire_sha256": "1da0c70a4438981063b941860b283c653173a45b521d9377a551cfa9e784dff0",
+      "witness": null
+    },
+    {
+      "justified": "UNDETERMINED",
+      "label": "K1-I-a",
+      "premise": "OPEN",
+      "proof_reason": "dependency_coverage_open",
+      "truth": "CONFLICT",
+      "wire_sha256": "9e78e6f17d77f9fadb9f374f769b5da3e4ca2f56879a696cc872a4455b0817be",
+      "witness": null
+    },
+    {
+      "justified": "UNDETERMINED",
+      "label": "K1-I-b",
+      "premise": "OPEN",
+      "proof_reason": "dependency_coverage_open",
+      "truth": "NO_CONFLICT",
+      "wire_sha256": "9e78e6f17d77f9fadb9f374f769b5da3e4ca2f56879a696cc872a4455b0817be",
+      "witness": null
+    },
+    {
+      "justified": "UNDETERMINED",
+      "label": "K2-I-a",
+      "premise": "OPEN",
+      "proof_reason": "history_open",
+      "truth": "CONFLICT",
+      "wire_sha256": "d7a62b0adcf711ad4b8d38a72a2615c2d2f8f2d5910bbfb3bc2dd3e6af442050",
+      "witness": null
+    },
+    {
+      "justified": "UNDETERMINED",
+      "label": "K2-I-b",
+      "premise": "OPEN",
+      "proof_reason": "history_open",
+      "truth": "NO_CONFLICT",
+      "wire_sha256": "d7a62b0adcf711ad4b8d38a72a2615c2d2f8f2d5910bbfb3bc2dd3e6af442050",
+      "witness": null
+    },
+    {
+      "justified": "UNDETERMINED",
+      "label": "K3-I-a",
+      "premise": "OPEN",
+      "proof_reason": "history_open",
+      "truth": "CONFLICT",
+      "wire_sha256": "4b61975b46b673eb022c5dfb559e6b70a112986b97db4f2b523fc3c26582fdc5",
+      "witness": null
+    },
+    {
+      "justified": "UNDETERMINED",
+      "label": "K3-I-b",
+      "premise": "OPEN",
+      "proof_reason": "history_open",
+      "truth": "NO_CONFLICT",
+      "wire_sha256": "4b61975b46b673eb022c5dfb559e6b70a112986b97db4f2b523fc3c26582fdc5",
+      "witness": null
+    },
+    {
+      "justified": "INVALID",
+      "label": "X-ORDER",
+      "premise": "SUPPORTED",
+      "proof_reason": "no_closed_completion",
+      "truth": "MODEL_INVALID",
+      "wire_sha256": "303b44a855ac596799468b40503763dd5d58c30b91fe7c254269655d173a6692",
+      "witness": null
+    },
+    {
+      "justified": "CLEAR",
+      "label": "X-TRUST",
+      "premise": "CONTRADICTED",
+      "proof_reason": "scoped_replay_and_dependency_coverage",
+      "truth": "CONFLICT",
+      "wire_sha256": "7a27325f3a8a3197866d4a903c8c6e6109be5c417249c645fcf777ee4251718b",
+      "witness": null
+    },
+    {
+      "justified": "CONFLICT",
+      "label": "M1-material",
+      "premise": "SUPPORTED",
+      "proof_reason": "scoped_replay",
+      "truth": "CONFLICT",
+      "wire_sha256": "d1a9e1bd9f13db18831251b2c6c8a400e9904e8625b0a6beb7e1c0349718bf86",
+      "witness": [
+        "p",
+        0,
+        4,
+        "r@1",
+        "potential",
+        1,
+        8,
+        10
+      ]
+    },
+    {
+      "justified": "CLEAR",
+      "label": "M2-cosmetic",
+      "premise": "SUPPORTED",
+      "proof_reason": "scoped_replay_and_dependency_coverage",
+      "truth": "NO_CONFLICT",
+      "wire_sha256": "d9b4251fd68503deaa0298c97c82b9fe29599310e6188b1ef131e0a4cd052307",
+      "witness": null
+    },
+    {
+      "justified": "UNDETERMINED",
+      "label": "M3-dynamic-hidden",
+      "premise": "OPEN",
+      "proof_reason": "dependency_coverage_open",
+      "truth": "CONFLICT",
+      "wire_sha256": "9e78e6f17d77f9fadb9f374f769b5da3e4ca2f56879a696cc872a4455b0817be",
+      "witness": null
+    },
+    {
+      "justified": "CONFLICT",
+      "label": "M3-indirect",
+      "premise": "SUPPORTED",
+      "proof_reason": "scoped_replay",
+      "truth": "CONFLICT",
+      "wire_sha256": "9cabbf8e0a0cbed76466fa2df0db90b65a738695d202f0beb6bdfc2a0d9546c9",
+      "witness": [
+        "p",
+        0,
+        4,
+        "t@0",
+        "potential",
+        1,
+        8,
+        12
+      ]
+    },
+    {
+      "justified": "CLEAR",
+      "label": "M4-signature-only",
+      "premise": "SUPPORTED",
+      "proof_reason": "scoped_replay_and_dependency_coverage",
+      "truth": "NO_CONFLICT",
+      "wire_sha256": "ce995c1c2fb266265bc1eb5389d05e60974fba19808056979bf3d1a5ba29d576",
+      "witness": null
+    },
+    {
+      "justified": "CONFLICT",
+      "label": "M5-retract-effect",
+      "premise": "SUPPORTED",
+      "proof_reason": "scoped_replay",
+      "truth": "CONFLICT",
+      "wire_sha256": "2365a4089b1763ef3e7702b13d39e1bcf32144c85891c80776f4816e1715a0ab",
+      "witness": [
+        "p",
+        0,
+        4,
+        "r@1",
+        "surviving",
+        1,
+        3,
+        8,
+        10
+      ]
+    },
+    {
+      "justified": "INVALID",
+      "label": "revoked-write",
+      "premise": "SUPPORTED",
+      "proof_reason": "no_closed_completion",
+      "truth": "MODEL_INVALID",
+      "wire_sha256": "b03f055ccb896540b5f42b6f5af53d52f3c0953070c5e9716beb1d4ac019363b",
+      "witness": null
+    },
+    {
+      "justified": "UNDETERMINED",
+      "label": "missing-rank",
+      "premise": "SUPPORTED",
+      "proof_reason": "rank_unverified",
+      "truth": "CONFLICT",
+      "wire_sha256": "8f65e3fe9ac0421c3b02c8bd817f869e5aab363e3e59f52076efe7d898d1cb27",
+      "witness": null
+    },
+    {
+      "justified": "INVALID",
+      "label": "contradictory-rank",
+      "premise": "SUPPORTED",
+      "proof_reason": "no_closed_completion",
+      "truth": "CONFLICT",
+      "wire_sha256": "2d6f074d4ca5be137d11a29bd804218fbf955f951fded5e221c355a66ac46cdd",
+      "witness": null
+    },
+    {
+      "justified": "INVALID",
+      "label": "outside-rank",
+      "premise": "SUPPORTED",
+      "proof_reason": "authenticated_grammar",
+      "truth": "CONFLICT",
+      "wire_sha256": "a0f228405ec0dda86ae41eabcee60b4fe622814dd542345a5ff13cc2d107d60b",
+      "witness": null
+    },
+    {
+      "justified": "UNDETERMINED",
+      "label": "unverified-rank-ignored",
+      "premise": "SUPPORTED",
+      "proof_reason": "rank_unverified",
+      "truth": "CONFLICT",
+      "wire_sha256": "8f65e3fe9ac0421c3b02c8bd817f869e5aab363e3e59f52076efe7d898d1cb27",
+      "witness": null
+    },
+    {
+      "justified": "UNDETERMINED",
+      "label": "missing-history-record",
+      "premise": "OPEN",
+      "proof_reason": "history_open",
+      "truth": "CONFLICT",
+      "wire_sha256": "9f8adf8a3597b783e3195a0195ee16bf6d068556528a1ac867324d3a1a470919",
+      "witness": null
+    },
+    {
+      "justified": "INVALID",
+      "label": "open-history-but-contradiction",
+      "premise": "OPEN",
+      "proof_reason": "no_structural_completion",
+      "truth": "MODEL_INVALID",
+      "wire_sha256": "8039007b9e72bc7893457d6c4552d7e752a885cc20a7adbc4a30e1bea28e3624",
+      "witness": null
+    },
+    {
+      "justified": "CONFLICT",
+      "label": "same-time-resolved",
+      "premise": "SUPPORTED",
+      "proof_reason": "scoped_replay",
+      "truth": "CONFLICT",
+      "wire_sha256": "d85d263d6f6b2d36d788aded0461d7a0a5dc76695c3e4fb2fabd93c9fc46028a",
+      "witness": [
+        "p",
+        0,
+        4,
+        "r@1",
+        "surviving",
+        1,
+        3,
+        8,
+        10
+      ]
+    },
+    {
+      "justified": "INVALID",
+      "label": "post-binding-other-version",
+      "premise": "SUPPORTED",
+      "proof_reason": "no_closed_completion",
+      "truth": "MODEL_INVALID",
+      "wire_sha256": "6bdc8cb2482117655f2bc3b8670e95ff30642c7357365e567ac941246dc1c989",
+      "witness": null
+    },
+    {
+      "justified": "CONFLICT",
+      "label": "frozen-read-original",
+      "premise": "SUPPORTED",
+      "proof_reason": "scoped_replay",
+      "truth": "CONFLICT",
+      "wire_sha256": "5b5cce92b0574b6559749ab84e158b9147372f20ec0ea4b07043731268417d08",
+      "witness": [
+        "p",
+        0,
+        4,
+        "r@0",
+        "potential",
+        1,
+        8,
+        10
+      ]
+    },
+    {
+      "justified": "CONFLICT",
+      "label": "partial-reset",
+      "premise": "SUPPORTED",
+      "proof_reason": "scoped_replay",
+      "truth": "CONFLICT",
+      "wire_sha256": "9d6969e20216bdb566d51b59170c74f6502f3b0ec0414ea90bda2ea64170c2a6",
+      "witness": [
+        "p",
+        0,
+        4,
+        "r@2",
+        "surviving",
+        1,
+        3,
+        8,
+        10
+      ]
+    },
+    {
+      "justified": "CLEAR",
+      "label": "complete-reset",
+      "premise": "SUPPORTED",
+      "proof_reason": "scoped_replay_and_dependency_coverage",
+      "truth": "NO_CONFLICT",
+      "wire_sha256": "252bf3bc5c3a73838007d039628b6e3ffc8368d10f0db7326cf1f4b7a3ecc1e7",
+      "witness": null
+    },
+    {
+      "justified": "CONFLICT",
+      "label": "reset-unbound",
+      "premise": "SUPPORTED",
+      "proof_reason": "scoped_replay",
+      "truth": "CONFLICT",
+      "wire_sha256": "2d57a14b1aecd70ce21c27ac60b8bb79872389e13e57ebfe9723f4211a3200c6",
+      "witness": [
+        "p",
+        0,
+        4,
+        "r@1",
+        "surviving",
+        1,
+        3,
+        8,
+        10
+      ]
+    },
+    {
+      "justified": "CONFLICT",
+      "label": "open-global-proved-positive",
+      "premise": "OPEN",
+      "proof_reason": "scoped_replay",
+      "truth": "CONFLICT",
+      "wire_sha256": "91b1653bd941a9393da1600861933511ebf2944257892f539753a24a5d240b76",
+      "witness": [
+        "p",
+        0,
+        4,
+        "r@0",
+        "potential",
+        1,
+        8,
+        10
+      ]
+    },
+    {
+      "justified": "UNDETERMINED",
+      "label": "open-no-positive",
+      "premise": "OPEN",
+      "proof_reason": "history_open",
+      "truth": "CONFLICT",
+      "wire_sha256": "d7a62b0adcf711ad4b8d38a72a2615c2d2f8f2d5910bbfb3bc2dd3e6af442050",
+      "witness": null
+    },
+    {
+      "justified": "INVALID",
+      "label": "open-root-no-free-rank",
+      "premise": "SUPPORTED",
+      "proof_reason": "no_closed_completion",
+      "truth": "NO_CONFLICT",
+      "wire_sha256": "2902fb838a09e5975f258737f754f67a4458983aac3686310b89d2a0463bb189",
+      "witness": null
+    },
+    {
+      "justified": "CONFLICT",
+      "label": "two-witness-versions",
+      "premise": "SUPPORTED",
+      "proof_reason": "scoped_replay",
+      "truth": "CONFLICT",
+      "wire_sha256": "a861f9621588dbcb7d47d9b2d9c8bfe493a7876483db0840b4003948cda9c316",
+      "witness": [
+        "p",
+        0,
+        4,
+        "s@0",
+        "potential",
+        2,
+        8,
+        11
+      ]
+    },
+    {
+      "justified": "INVALID",
+      "label": "duplicate-id",
+      "premise": "SUPPORTED",
+      "proof_reason": "authenticated_grammar",
+      "truth": "NO_CONFLICT",
+      "wire_sha256": "ff6b6055f7743f82863922602b4afe464aaa5ef7f9a5850908892b686d943613",
+      "witness": null
+    }
+  ],
+  "regular_justified_counts": {
+    "CLEAR": 3,
+    "CONFLICT": 3,
+    "INVALID": 1,
+    "UNDETERMINED": 6
+  },
+  "regular_truth_counts": {
+    "CONFLICT": 6,
+    "MODEL_INVALID": 1,
+    "NO_CONFLICT": 6
+  },
+  "scoring_controls": {
+    "always_deny": {
+      "distinct_views": {
+        "correct_abstention": [
+          0,
+          3
+        ],
+        "false_hold_justified": [
+          3,
+          3
+        ],
+        "false_invalid": [
+          0,
+          9
+        ],
+        "false_release_justified": [
+          0,
+          7
+        ],
+        "fidelity_FAIL": [
+          0,
+          10
+        ],
+        "fidelity_NOT EXECUTED": [
+          10,
+          10
+        ],
+        "fidelity_PASS": [
+          0,
+          10
+        ],
+        "fidelity_UNDETERMINED": [
+          0,
+          10
+        ],
+        "invalid_with_unverified_proof": [
+          0,
+          0
+        ],
+        "justified_release": [
+          0,
+          3
+        ],
+        "miss_invalid": [
+          1,
+          1
+        ],
+        "no_decision": [
+          0,
+          10
+        ],
+        "premise_CONTRADICTED": [
+          0,
+          10
+        ],
+        "premise_NOT EXECUTED": [
+          0,
+          10
+        ],
+        "premise_OPEN": [
+          3,
+          10
+        ],
+        "premise_SUPPORTED": [
+          7,
+          10
+        ],
+        "proofless_correct_conflict_label": [
+          0,
+          3
+        ],
+        "release_on_justified_conflict": [
+          0,
+          3
+        ],
+        "release_on_justified_invalid": [
+          0,
+          1
+        ],
+        "release_on_justified_undetermined": [
+          0,
+          3
+        ],
+        "unjustified_conflict": [
+          0,
+          7
+        ],
+        "unverified_conflict": [
+          0,
+          0
+        ],
+        "verdict_exact": [
+          3,
+          10
+        ],
+        "verdict_verified": [
+          0,
+          10
+        ],
+        "verified_conflict": [
+          0,
+          3
+        ],
+        "verified_release": [
+          0,
+          3
+        ]
+      },
+      "premise_attack": {
+        "correct_abstention": [
+          0,
+          0
+        ],
+        "false_hold_justified": [
+          1,
+          1
+        ],
+        "false_invalid": [
+          0,
+          1
+        ],
+        "false_release_justified": [
+          0,
+          0
+        ],
+        "false_release_truth": [
+          0,
+          1
+        ],
+        "fidelity_FAIL": [
+          0,
+          1
+        ],
+        "fidelity_NOT EXECUTED": [
+          1,
+          1
+        ],
+        "fidelity_PASS": [
+          0,
+          1
+        ],
+        "fidelity_UNDETERMINED": [
+          0,
+          1
+        ],
+        "holds_on_actual_no_conflict": [
+          0,
+          0
+        ],
+        "invalid_with_unverified_proof": [
+          0,
+          0
+        ],
+        "justified_release": [
+          0,
+          1
+        ],
+        "miss_actual_invalid": [
+          0,
+          0
+        ],
+        "miss_invalid": [
+          0,
+          0
+        ],
+        "no_decision": [
+          0,
+          1
+        ],
+        "premise_CONTRADICTED": [
+          1,
+          1
+        ],
+        "premise_NOT EXECUTED": [
+          0,
+          1
+        ],
+        "premise_OPEN": [
+          0,
+          1
+        ],
+        "premise_SUPPORTED": [
+          0,
+          1
+        ],
+        "proofless_correct_conflict_label": [
+          0,
+          0
+        ],
+        "release_invalid_truth": [
+          0,
+          0
+        ],
+        "release_on_justified_conflict": [
+          0,
+          0
+        ],
+        "release_on_justified_invalid": [
+          0,
+          0
+        ],
+        "release_on_justified_undetermined": [
+          0,
+          0
+        ],
+        "unjustified_conflict": [
+          0,
+          1
+        ],
+        "unverified_conflict": [
+          0,
+          0
+        ],
+        "verdict_exact": [
+          0,
+          1
+        ],
+        "verdict_verified": [
+          0,
+          1
+        ],
+        "verified_conflict": [
+          0,
+          0
+        ],
+        "verified_release": [
+          0,
+          1
+        ]
+      },
+      "regular": {
+        "correct_abstention": [
+          0,
+          6
+        ],
+        "false_hold_justified": [
+          3,
+          3
+        ],
+        "false_invalid": [
+          0,
+          12
+        ],
+        "false_release_justified": [
+          0,
+          10
+        ],
+        "false_release_truth": [
+          0,
+          6
+        ],
+        "fidelity_FAIL": [
+          0,
+          13
+        ],
+        "fidelity_NOT EXECUTED": [
+          13,
+          13
+        ],
+        "fidelity_PASS": [
+          0,
+          13
+        ],
+        "fidelity_UNDETERMINED": [
+          0,
+          13
+        ],
+        "holds_on_actual_no_conflict": [
+          6,
+          6
+        ],
+        "invalid_with_unverified_proof": [
+          0,
+          0
+        ],
+        "justified_release": [
+          0,
+          3
+        ],
+        "miss_actual_invalid": [
+          1,
+          1
+        ],
+        "miss_invalid": [
+          1,
+          1
+        ],
+        "no_decision": [
+          0,
+          13
+        ],
+        "premise_CONTRADICTED": [
+          0,
+          13
+        ],
+        "premise_NOT EXECUTED": [
+          0,
+          13
+        ],
+        "premise_OPEN": [
+          6,
+          13
+        ],
+        "premise_SUPPORTED": [
+          7,
+          13
+        ],
+        "proofless_correct_conflict_label": [
+          0,
+          3
+        ],
+        "release_invalid_truth": [
+          0,
+          1
+        ],
+        "release_on_justified_conflict": [
+          0,
+          3
+        ],
+        "release_on_justified_invalid": [
+          0,
+          1
+        ],
+        "release_on_justified_undetermined": [
+          0,
+          6
+        ],
+        "unjustified_conflict": [
+          0,
+          10
+        ],
+        "unverified_conflict": [
+          0,
+          0
+        ],
+        "verdict_exact": [
+          6,
+          13
+        ],
+        "verdict_verified": [
+          0,
+          13
+        ],
+        "verified_conflict": [
+          0,
+          3
+        ],
+        "verified_release": [
+          0,
+          3
+        ]
+      },
+      "supplement": {
+        "correct_abstention": [
+          0,
+          5
+        ],
+        "false_hold_justified": [
+          3,
+          3
+        ],
+        "false_invalid": [
+          0,
+          17
+        ],
+        "false_release_justified": [
+          0,
+          21
+        ],
+        "false_release_truth": [
+          0,
+          16
+        ],
+        "fidelity_FAIL": [
+          0,
+          24
+        ],
+        "fidelity_NOT EXECUTED": [
+          24,
+          24
+        ],
+        "fidelity_PASS": [
+          0,
+          24
+        ],
+        "fidelity_UNDETERMINED": [
+          0,
+          24
+        ],
+        "holds_on_actual_no_conflict": [
+          5,
+          5
+        ],
+        "invalid_with_unverified_proof": [
+          0,
+          0
+        ],
+        "justified_release": [
+          0,
+          3
+        ],
+        "miss_actual_invalid": [
+          3,
+          3
+        ],
+        "miss_invalid": [
+          7,
+          7
+        ],
+        "no_decision": [
+          0,
+          24
+        ],
+        "premise_CONTRADICTED": [
+          0,
+          24
+        ],
+        "premise_NOT EXECUTED": [
+          0,
+          24
+        ],
+        "premise_OPEN": [
+          5,
+          24
+        ],
+        "premise_SUPPORTED": [
+          19,
+          24
+        ],
+        "proofless_correct_conflict_label": [
+          0,
+          9
+        ],
+        "release_invalid_truth": [
+          0,
+          3
+        ],
+        "release_on_justified_conflict": [
+          0,
+          9
+        ],
+        "release_on_justified_invalid": [
+          0,
+          7
+        ],
+        "release_on_justified_undetermined": [
+          0,
+          5
+        ],
+        "unjustified_conflict": [
+          0,
+          15
+        ],
+        "unverified_conflict": [
+          0,
+          0
+        ],
+        "verdict_exact": [
+          5,
+          24
+        ],
+        "verdict_verified": [
+          0,
+          24
+        ],
+        "verified_conflict": [
+          0,
+          9
+        ],
+        "verified_release": [
+          0,
+          3
+        ]
+      }
+    },
+    "always_invalid": {
+      "distinct_views": {
+        "correct_abstention": [
+          0,
+          3
+        ],
+        "false_hold_justified": [
+          3,
+          3
+        ],
+        "false_invalid": [
+          9,
+          9
+        ],
+        "false_release_justified": [
+          0,
+          7
+        ],
+        "fidelity_FAIL": [
+          0,
+          10
+        ],
+        "fidelity_NOT EXECUTED": [
+          10,
+          10
+        ],
+        "fidelity_PASS": [
+          0,
+          10
+        ],
+        "fidelity_UNDETERMINED": [
+          0,
+          10
+        ],
+        "invalid_with_unverified_proof": [
+          1,
+          1
+        ],
+        "justified_release": [
+          0,
+          3
+        ],
+        "miss_invalid": [
+          0,
+          1
+        ],
+        "no_decision": [
+          0,
+          10
+        ],
+        "premise_CONTRADICTED": [
+          0,
+          10
+        ],
+        "premise_NOT EXECUTED": [
+          0,
+          10
+        ],
+        "premise_OPEN": [
+          3,
+          10
+        ],
+        "premise_SUPPORTED": [
+          7,
+          10
+        ],
+        "proofless_correct_conflict_label": [
+          0,
+          3
+        ],
+        "release_on_justified_conflict": [
+          0,
+          3
+        ],
+        "release_on_justified_invalid": [
+          0,
+          1
+        ],
+        "release_on_justified_undetermined": [
+          0,
+          3
+        ],
+        "unjustified_conflict": [
+          0,
+          7
+        ],
+        "unverified_conflict": [
+          0,
+          0
+        ],
+        "verdict_exact": [
+          1,
+          10
+        ],
+        "verdict_verified": [
+          0,
+          10
+        ],
+        "verified_conflict": [
+          0,
+          3
+        ],
+        "verified_release": [
+          0,
+          3
+        ]
+      },
+      "premise_attack": {
+        "correct_abstention": [
+          0,
+          0
+        ],
+        "false_hold_justified": [
+          1,
+          1
+        ],
+        "false_invalid": [
+          1,
+          1
+        ],
+        "false_release_justified": [
+          0,
+          0
+        ],
+        "false_release_truth": [
+          0,
+          1
+        ],
+        "fidelity_FAIL": [
+          0,
+          1
+        ],
+        "fidelity_NOT EXECUTED": [
+          1,
+          1
+        ],
+        "fidelity_PASS": [
+          0,
+          1
+        ],
+        "fidelity_UNDETERMINED": [
+          0,
+          1
+        ],
+        "holds_on_actual_no_conflict": [
+          0,
+          0
+        ],
+        "invalid_with_unverified_proof": [
+          0,
+          0
+        ],
+        "justified_release": [
+          0,
+          1
+        ],
+        "miss_actual_invalid": [
+          0,
+          0
+        ],
+        "miss_invalid": [
+          0,
+          0
+        ],
+        "no_decision": [
+          0,
+          1
+        ],
+        "premise_CONTRADICTED": [
+          1,
+          1
+        ],
+        "premise_NOT EXECUTED": [
+          0,
+          1
+        ],
+        "premise_OPEN": [
+          0,
+          1
+        ],
+        "premise_SUPPORTED": [
+          0,
+          1
+        ],
+        "proofless_correct_conflict_label": [
+          0,
+          0
+        ],
+        "release_invalid_truth": [
+          0,
+          0
+        ],
+        "release_on_justified_conflict": [
+          0,
+          0
+        ],
+        "release_on_justified_invalid": [
+          0,
+          0
+        ],
+        "release_on_justified_undetermined": [
+          0,
+          0
+        ],
+        "unjustified_conflict": [
+          0,
+          1
+        ],
+        "unverified_conflict": [
+          0,
+          0
+        ],
+        "verdict_exact": [
+          0,
+          1
+        ],
+        "verdict_verified": [
+          0,
+          1
+        ],
+        "verified_conflict": [
+          0,
+          0
+        ],
+        "verified_release": [
+          0,
+          1
+        ]
+      },
+      "regular": {
+        "correct_abstention": [
+          0,
+          6
+        ],
+        "false_hold_justified": [
+          3,
+          3
+        ],
+        "false_invalid": [
+          12,
+          12
+        ],
+        "false_release_justified": [
+          0,
+          10
+        ],
+        "false_release_truth": [
+          0,
+          6
+        ],
+        "fidelity_FAIL": [
+          0,
+          13
+        ],
+        "fidelity_NOT EXECUTED": [
+          13,
+          13
+        ],
+        "fidelity_PASS": [
+          0,
+          13
+        ],
+        "fidelity_UNDETERMINED": [
+          0,
+          13
+        ],
+        "holds_on_actual_no_conflict": [
+          6,
+          6
+        ],
+        "invalid_with_unverified_proof": [
+          1,
+          1
+        ],
+        "justified_release": [
+          0,
+          3
+        ],
+        "miss_actual_invalid": [
+          0,
+          1
+        ],
+        "miss_invalid": [
+          0,
+          1
+        ],
+        "no_decision": [
+          0,
+          13
+        ],
+        "premise_CONTRADICTED": [
+          0,
+          13
+        ],
+        "premise_NOT EXECUTED": [
+          0,
+          13
+        ],
+        "premise_OPEN": [
+          6,
+          13
+        ],
+        "premise_SUPPORTED": [
+          7,
+          13
+        ],
+        "proofless_correct_conflict_label": [
+          0,
+          3
+        ],
+        "release_invalid_truth": [
+          0,
+          1
+        ],
+        "release_on_justified_conflict": [
+          0,
+          3
+        ],
+        "release_on_justified_invalid": [
+          0,
+          1
+        ],
+        "release_on_justified_undetermined": [
+          0,
+          6
+        ],
+        "unjustified_conflict": [
+          0,
+          10
+        ],
+        "unverified_conflict": [
+          0,
+          0
+        ],
+        "verdict_exact": [
+          1,
+          13
+        ],
+        "verdict_verified": [
+          0,
+          13
+        ],
+        "verified_conflict": [
+          0,
+          3
+        ],
+        "verified_release": [
+          0,
+          3
+        ]
+      },
+      "supplement": {
+        "correct_abstention": [
+          0,
+          5
+        ],
+        "false_hold_justified": [
+          3,
+          3
+        ],
+        "false_invalid": [
+          17,
+          17
+        ],
+        "false_release_justified": [
+          0,
+          21
+        ],
+        "false_release_truth": [
+          0,
+          16
+        ],
+        "fidelity_FAIL": [
+          0,
+          24
+        ],
+        "fidelity_NOT EXECUTED": [
+          24,
+          24
+        ],
+        "fidelity_PASS": [
+          0,
+          24
+        ],
+        "fidelity_UNDETERMINED": [
+          0,
+          24
+        ],
+        "holds_on_actual_no_conflict": [
+          5,
+          5
+        ],
+        "invalid_with_unverified_proof": [
+          7,
+          7
+        ],
+        "justified_release": [
+          0,
+          3
+        ],
+        "miss_actual_invalid": [
+          0,
+          3
+        ],
+        "miss_invalid": [
+          0,
+          7
+        ],
+        "no_decision": [
+          0,
+          24
+        ],
+        "premise_CONTRADICTED": [
+          0,
+          24
+        ],
+        "premise_NOT EXECUTED": [
+          0,
+          24
+        ],
+        "premise_OPEN": [
+          5,
+          24
+        ],
+        "premise_SUPPORTED": [
+          19,
+          24
+        ],
+        "proofless_correct_conflict_label": [
+          0,
+          9
+        ],
+        "release_invalid_truth": [
+          0,
+          3
+        ],
+        "release_on_justified_conflict": [
+          0,
+          9
+        ],
+        "release_on_justified_invalid": [
+          0,
+          7
+        ],
+        "release_on_justified_undetermined": [
+          0,
+          5
+        ],
+        "unjustified_conflict": [
+          0,
+          15
+        ],
+        "unverified_conflict": [
+          0,
+          0
+        ],
+        "verdict_exact": [
+          7,
+          24
+        ],
+        "verdict_verified": [
+          0,
+          24
+        ],
+        "verified_conflict": [
+          0,
+          9
+        ],
+        "verified_release": [
+          0,
+          3
+        ]
+      }
+    },
+    "always_no_decision": {
+      "distinct_views": {
+        "correct_abstention": [
+          0,
+          3
+        ],
+        "false_hold_justified": [
+          3,
+          3
+        ],
+        "false_invalid": [
+          0,
+          9
+        ],
+        "false_release_justified": [
+          0,
+          7
+        ],
+        "fidelity_FAIL": [
+          0,
+          10
+        ],
+        "fidelity_NOT EXECUTED": [
+          10,
+          10
+        ],
+        "fidelity_PASS": [
+          0,
+          10
+        ],
+        "fidelity_UNDETERMINED": [
+          0,
+          10
+        ],
+        "invalid_with_unverified_proof": [
+          0,
+          0
+        ],
+        "justified_release": [
+          0,
+          3
+        ],
+        "miss_invalid": [
+          1,
+          1
+        ],
+        "no_decision": [
+          10,
+          10
+        ],
+        "premise_CONTRADICTED": [
+          0,
+          10
+        ],
+        "premise_NOT EXECUTED": [
+          0,
+          10
+        ],
+        "premise_OPEN": [
+          3,
+          10
+        ],
+        "premise_SUPPORTED": [
+          7,
+          10
+        ],
+        "proofless_correct_conflict_label": [
+          0,
+          3
+        ],
+        "release_on_justified_conflict": [
+          0,
+          3
+        ],
+        "release_on_justified_invalid": [
+          0,
+          1
+        ],
+        "release_on_justified_undetermined": [
+          0,
+          3
+        ],
+        "unjustified_conflict": [
+          0,
+          7
+        ],
+        "unverified_conflict": [
+          0,
+          0
+        ],
+        "verdict_exact": [
+          0,
+          10
+        ],
+        "verdict_verified": [
+          0,
+          10
+        ],
+        "verified_conflict": [
+          0,
+          3
+        ],
+        "verified_release": [
+          0,
+          3
+        ]
+      },
+      "premise_attack": {
+        "correct_abstention": [
+          0,
+          0
+        ],
+        "false_hold_justified": [
+          1,
+          1
+        ],
+        "false_invalid": [
+          0,
+          1
+        ],
+        "false_release_justified": [
+          0,
+          0
+        ],
+        "false_release_truth": [
+          0,
+          1
+        ],
+        "fidelity_FAIL": [
+          0,
+          1
+        ],
+        "fidelity_NOT EXECUTED": [
+          1,
+          1
+        ],
+        "fidelity_PASS": [
+          0,
+          1
+        ],
+        "fidelity_UNDETERMINED": [
+          0,
+          1
+        ],
+        "holds_on_actual_no_conflict": [
+          0,
+          0
+        ],
+        "invalid_with_unverified_proof": [
+          0,
+          0
+        ],
+        "justified_release": [
+          0,
+          1
+        ],
+        "miss_actual_invalid": [
+          0,
+          0
+        ],
+        "miss_invalid": [
+          0,
+          0
+        ],
+        "no_decision": [
+          1,
+          1
+        ],
+        "premise_CONTRADICTED": [
+          1,
+          1
+        ],
+        "premise_NOT EXECUTED": [
+          0,
+          1
+        ],
+        "premise_OPEN": [
+          0,
+          1
+        ],
+        "premise_SUPPORTED": [
+          0,
+          1
+        ],
+        "proofless_correct_conflict_label": [
+          0,
+          0
+        ],
+        "release_invalid_truth": [
+          0,
+          0
+        ],
+        "release_on_justified_conflict": [
+          0,
+          0
+        ],
+        "release_on_justified_invalid": [
+          0,
+          0
+        ],
+        "release_on_justified_undetermined": [
+          0,
+          0
+        ],
+        "unjustified_conflict": [
+          0,
+          1
+        ],
+        "unverified_conflict": [
+          0,
+          0
+        ],
+        "verdict_exact": [
+          0,
+          1
+        ],
+        "verdict_verified": [
+          0,
+          1
+        ],
+        "verified_conflict": [
+          0,
+          0
+        ],
+        "verified_release": [
+          0,
+          1
+        ]
+      },
+      "regular": {
+        "correct_abstention": [
+          0,
+          6
+        ],
+        "false_hold_justified": [
+          3,
+          3
+        ],
+        "false_invalid": [
+          0,
+          12
+        ],
+        "false_release_justified": [
+          0,
+          10
+        ],
+        "false_release_truth": [
+          0,
+          6
+        ],
+        "fidelity_FAIL": [
+          0,
+          13
+        ],
+        "fidelity_NOT EXECUTED": [
+          13,
+          13
+        ],
+        "fidelity_PASS": [
+          0,
+          13
+        ],
+        "fidelity_UNDETERMINED": [
+          0,
+          13
+        ],
+        "holds_on_actual_no_conflict": [
+          6,
+          6
+        ],
+        "invalid_with_unverified_proof": [
+          0,
+          0
+        ],
+        "justified_release": [
+          0,
+          3
+        ],
+        "miss_actual_invalid": [
+          1,
+          1
+        ],
+        "miss_invalid": [
+          1,
+          1
+        ],
+        "no_decision": [
+          13,
+          13
+        ],
+        "premise_CONTRADICTED": [
+          0,
+          13
+        ],
+        "premise_NOT EXECUTED": [
+          0,
+          13
+        ],
+        "premise_OPEN": [
+          6,
+          13
+        ],
+        "premise_SUPPORTED": [
+          7,
+          13
+        ],
+        "proofless_correct_conflict_label": [
+          0,
+          3
+        ],
+        "release_invalid_truth": [
+          0,
+          1
+        ],
+        "release_on_justified_conflict": [
+          0,
+          3
+        ],
+        "release_on_justified_invalid": [
+          0,
+          1
+        ],
+        "release_on_justified_undetermined": [
+          0,
+          6
+        ],
+        "unjustified_conflict": [
+          0,
+          10
+        ],
+        "unverified_conflict": [
+          0,
+          0
+        ],
+        "verdict_exact": [
+          0,
+          13
+        ],
+        "verdict_verified": [
+          0,
+          13
+        ],
+        "verified_conflict": [
+          0,
+          3
+        ],
+        "verified_release": [
+          0,
+          3
+        ]
+      },
+      "supplement": {
+        "correct_abstention": [
+          0,
+          5
+        ],
+        "false_hold_justified": [
+          3,
+          3
+        ],
+        "false_invalid": [
+          0,
+          17
+        ],
+        "false_release_justified": [
+          0,
+          21
+        ],
+        "false_release_truth": [
+          0,
+          16
+        ],
+        "fidelity_FAIL": [
+          0,
+          24
+        ],
+        "fidelity_NOT EXECUTED": [
+          24,
+          24
+        ],
+        "fidelity_PASS": [
+          0,
+          24
+        ],
+        "fidelity_UNDETERMINED": [
+          0,
+          24
+        ],
+        "holds_on_actual_no_conflict": [
+          5,
+          5
+        ],
+        "invalid_with_unverified_proof": [
+          0,
+          0
+        ],
+        "justified_release": [
+          0,
+          3
+        ],
+        "miss_actual_invalid": [
+          3,
+          3
+        ],
+        "miss_invalid": [
+          7,
+          7
+        ],
+        "no_decision": [
+          24,
+          24
+        ],
+        "premise_CONTRADICTED": [
+          0,
+          24
+        ],
+        "premise_NOT EXECUTED": [
+          0,
+          24
+        ],
+        "premise_OPEN": [
+          5,
+          24
+        ],
+        "premise_SUPPORTED": [
+          19,
+          24
+        ],
+        "proofless_correct_conflict_label": [
+          0,
+          9
+        ],
+        "release_invalid_truth": [
+          0,
+          3
+        ],
+        "release_on_justified_conflict": [
+          0,
+          9
+        ],
+        "release_on_justified_invalid": [
+          0,
+          7
+        ],
+        "release_on_justified_undetermined": [
+          0,
+          5
+        ],
+        "unjustified_conflict": [
+          0,
+          15
+        ],
+        "unverified_conflict": [
+          0,
+          0
+        ],
+        "verdict_exact": [
+          0,
+          24
+        ],
+        "verdict_verified": [
+          0,
+          24
+        ],
+        "verified_conflict": [
+          0,
+          9
+        ],
+        "verified_release": [
+          0,
+          3
+        ]
+      }
+    },
+    "always_permit": {
+      "distinct_views": {
+        "correct_abstention": [
+          0,
+          3
+        ],
+        "false_hold_justified": [
+          0,
+          3
+        ],
+        "false_invalid": [
+          0,
+          9
+        ],
+        "false_release_justified": [
+          7,
+          7
+        ],
+        "fidelity_FAIL": [
+          0,
+          10
+        ],
+        "fidelity_NOT EXECUTED": [
+          10,
+          10
+        ],
+        "fidelity_PASS": [
+          0,
+          10
+        ],
+        "fidelity_UNDETERMINED": [
+          0,
+          10
+        ],
+        "invalid_with_unverified_proof": [
+          0,
+          0
+        ],
+        "justified_release": [
+          3,
+          3
+        ],
+        "miss_invalid": [
+          1,
+          1
+        ],
+        "no_decision": [
+          0,
+          10
+        ],
+        "premise_CONTRADICTED": [
+          0,
+          10
+        ],
+        "premise_NOT EXECUTED": [
+          0,
+          10
+        ],
+        "premise_OPEN": [
+          3,
+          10
+        ],
+        "premise_SUPPORTED": [
+          7,
+          10
+        ],
+        "proofless_correct_conflict_label": [
+          0,
+          3
+        ],
+        "release_on_justified_conflict": [
+          3,
+          3
+        ],
+        "release_on_justified_invalid": [
+          1,
+          1
+        ],
+        "release_on_justified_undetermined": [
+          3,
+          3
+        ],
+        "unjustified_conflict": [
+          0,
+          7
+        ],
+        "unverified_conflict": [
+          0,
+          0
+        ],
+        "verdict_exact": [
+          3,
+          10
+        ],
+        "verdict_verified": [
+          0,
+          10
+        ],
+        "verified_conflict": [
+          0,
+          3
+        ],
+        "verified_release": [
+          0,
+          3
+        ]
+      },
+      "premise_attack": {
+        "correct_abstention": [
+          0,
+          0
+        ],
+        "false_hold_justified": [
+          0,
+          1
+        ],
+        "false_invalid": [
+          0,
+          1
+        ],
+        "false_release_justified": [
+          0,
+          0
+        ],
+        "false_release_truth": [
+          1,
+          1
+        ],
+        "fidelity_FAIL": [
+          0,
+          1
+        ],
+        "fidelity_NOT EXECUTED": [
+          1,
+          1
+        ],
+        "fidelity_PASS": [
+          0,
+          1
+        ],
+        "fidelity_UNDETERMINED": [
+          0,
+          1
+        ],
+        "holds_on_actual_no_conflict": [
+          0,
+          0
+        ],
+        "invalid_with_unverified_proof": [
+          0,
+          0
+        ],
+        "justified_release": [
+          1,
+          1
+        ],
+        "miss_actual_invalid": [
+          0,
+          0
+        ],
+        "miss_invalid": [
+          0,
+          0
+        ],
+        "no_decision": [
+          0,
+          1
+        ],
+        "premise_CONTRADICTED": [
+          1,
+          1
+        ],
+        "premise_NOT EXECUTED": [
+          0,
+          1
+        ],
+        "premise_OPEN": [
+          0,
+          1
+        ],
+        "premise_SUPPORTED": [
+          0,
+          1
+        ],
+        "proofless_correct_conflict_label": [
+          0,
+          0
+        ],
+        "release_invalid_truth": [
+          0,
+          0
+        ],
+        "release_on_justified_conflict": [
+          0,
+          0
+        ],
+        "release_on_justified_invalid": [
+          0,
+          0
+        ],
+        "release_on_justified_undetermined": [
+          0,
+          0
+        ],
+        "unjustified_conflict": [
+          0,
+          1
+        ],
+        "unverified_conflict": [
+          0,
+          0
+        ],
+        "verdict_exact": [
+          1,
+          1
+        ],
+        "verdict_verified": [
+          0,
+          1
+        ],
+        "verified_conflict": [
+          0,
+          0
+        ],
+        "verified_release": [
+          0,
+          1
+        ]
+      },
+      "regular": {
+        "correct_abstention": [
+          0,
+          6
+        ],
+        "false_hold_justified": [
+          0,
+          3
+        ],
+        "false_invalid": [
+          0,
+          12
+        ],
+        "false_release_justified": [
+          10,
+          10
+        ],
+        "false_release_truth": [
+          6,
+          6
+        ],
+        "fidelity_FAIL": [
+          0,
+          13
+        ],
+        "fidelity_NOT EXECUTED": [
+          13,
+          13
+        ],
+        "fidelity_PASS": [
+          0,
+          13
+        ],
+        "fidelity_UNDETERMINED": [
+          0,
+          13
+        ],
+        "holds_on_actual_no_conflict": [
+          0,
+          6
+        ],
+        "invalid_with_unverified_proof": [
+          0,
+          0
+        ],
+        "justified_release": [
+          3,
+          3
+        ],
+        "miss_actual_invalid": [
+          1,
+          1
+        ],
+        "miss_invalid": [
+          1,
+          1
+        ],
+        "no_decision": [
+          0,
+          13
+        ],
+        "premise_CONTRADICTED": [
+          0,
+          13
+        ],
+        "premise_NOT EXECUTED": [
+          0,
+          13
+        ],
+        "premise_OPEN": [
+          6,
+          13
+        ],
+        "premise_SUPPORTED": [
+          7,
+          13
+        ],
+        "proofless_correct_conflict_label": [
+          0,
+          3
+        ],
+        "release_invalid_truth": [
+          1,
+          1
+        ],
+        "release_on_justified_conflict": [
+          3,
+          3
+        ],
+        "release_on_justified_invalid": [
+          1,
+          1
+        ],
+        "release_on_justified_undetermined": [
+          6,
+          6
+        ],
+        "unjustified_conflict": [
+          0,
+          10
+        ],
+        "unverified_conflict": [
+          0,
+          0
+        ],
+        "verdict_exact": [
+          3,
+          13
+        ],
+        "verdict_verified": [
+          0,
+          13
+        ],
+        "verified_conflict": [
+          0,
+          3
+        ],
+        "verified_release": [
+          0,
+          3
+        ]
+      },
+      "supplement": {
+        "correct_abstention": [
+          0,
+          5
+        ],
+        "false_hold_justified": [
+          0,
+          3
+        ],
+        "false_invalid": [
+          0,
+          17
+        ],
+        "false_release_justified": [
+          21,
+          21
+        ],
+        "false_release_truth": [
+          16,
+          16
+        ],
+        "fidelity_FAIL": [
+          0,
+          24
+        ],
+        "fidelity_NOT EXECUTED": [
+          24,
+          24
+        ],
+        "fidelity_PASS": [
+          0,
+          24
+        ],
+        "fidelity_UNDETERMINED": [
+          0,
+          24
+        ],
+        "holds_on_actual_no_conflict": [
+          0,
+          5
+        ],
+        "invalid_with_unverified_proof": [
+          0,
+          0
+        ],
+        "justified_release": [
+          3,
+          3
+        ],
+        "miss_actual_invalid": [
+          3,
+          3
+        ],
+        "miss_invalid": [
+          7,
+          7
+        ],
+        "no_decision": [
+          0,
+          24
+        ],
+        "premise_CONTRADICTED": [
+          0,
+          24
+        ],
+        "premise_NOT EXECUTED": [
+          0,
+          24
+        ],
+        "premise_OPEN": [
+          5,
+          24
+        ],
+        "premise_SUPPORTED": [
+          19,
+          24
+        ],
+        "proofless_correct_conflict_label": [
+          0,
+          9
+        ],
+        "release_invalid_truth": [
+          3,
+          3
+        ],
+        "release_on_justified_conflict": [
+          9,
+          9
+        ],
+        "release_on_justified_invalid": [
+          7,
+          7
+        ],
+        "release_on_justified_undetermined": [
+          5,
+          5
+        ],
+        "unjustified_conflict": [
+          0,
+          15
+        ],
+        "unverified_conflict": [
+          0,
+          0
+        ],
+        "verdict_exact": [
+          3,
+          24
+        ],
+        "verdict_verified": [
+          0,
+          24
+        ],
+        "verified_conflict": [
+          0,
+          9
+        ],
+        "verified_release": [
+          0,
+          3
+        ]
+      }
+    },
+    "ideal": {
+      "distinct_views": {
+        "correct_abstention": [
+          3,
+          3
+        ],
+        "false_hold_justified": [
+          0,
+          3
+        ],
+        "false_invalid": [
+          0,
+          9
+        ],
+        "false_release_justified": [
+          0,
+          7
+        ],
+        "fidelity_FAIL": [
+          0,
+          10
+        ],
+        "fidelity_NOT EXECUTED": [
+          10,
+          10
+        ],
+        "fidelity_PASS": [
+          0,
+          10
+        ],
+        "fidelity_UNDETERMINED": [
+          0,
+          10
+        ],
+        "invalid_with_unverified_proof": [
+          0,
+          1
+        ],
+        "justified_release": [
+          3,
+          3
+        ],
+        "miss_invalid": [
+          0,
+          1
+        ],
+        "no_decision": [
+          0,
+          10
+        ],
+        "premise_CONTRADICTED": [
+          0,
+          10
+        ],
+        "premise_NOT EXECUTED": [
+          0,
+          10
+        ],
+        "premise_OPEN": [
+          3,
+          10
+        ],
+        "premise_SUPPORTED": [
+          7,
+          10
+        ],
+        "proofless_correct_conflict_label": [
+          0,
+          3
+        ],
+        "release_on_justified_conflict": [
+          0,
+          3
+        ],
+        "release_on_justified_invalid": [
+          0,
+          1
+        ],
+        "release_on_justified_undetermined": [
+          0,
+          3
+        ],
+        "unjustified_conflict": [
+          0,
+          7
+        ],
+        "unverified_conflict": [
+          0,
+          3
+        ],
+        "verdict_exact": [
+          10,
+          10
+        ],
+        "verdict_verified": [
+          10,
+          10
+        ],
+        "verified_conflict": [
+          3,
+          3
+        ],
+        "verified_release": [
+          3,
+          3
+        ]
+      },
+      "premise_attack": {
+        "correct_abstention": [
+          0,
+          0
+        ],
+        "false_hold_justified": [
+          0,
+          1
+        ],
+        "false_invalid": [
+          0,
+          1
+        ],
+        "false_release_justified": [
+          0,
+          0
+        ],
+        "false_release_truth": [
+          1,
+          1
+        ],
+        "fidelity_FAIL": [
+          0,
+          1
+        ],
+        "fidelity_NOT EXECUTED": [
+          1,
+          1
+        ],
+        "fidelity_PASS": [
+          0,
+          1
+        ],
+        "fidelity_UNDETERMINED": [
+          0,
+          1
+        ],
+        "holds_on_actual_no_conflict": [
+          0,
+          0
+        ],
+        "invalid_with_unverified_proof": [
+          0,
+          0
+        ],
+        "justified_release": [
+          1,
+          1
+        ],
+        "miss_actual_invalid": [
+          0,
+          0
+        ],
+        "miss_invalid": [
+          0,
+          0
+        ],
+        "no_decision": [
+          0,
+          1
+        ],
+        "premise_CONTRADICTED": [
+          1,
+          1
+        ],
+        "premise_NOT EXECUTED": [
+          0,
+          1
+        ],
+        "premise_OPEN": [
+          0,
+          1
+        ],
+        "premise_SUPPORTED": [
+          0,
+          1
+        ],
+        "proofless_correct_conflict_label": [
+          0,
+          0
+        ],
+        "release_invalid_truth": [
+          0,
+          0
+        ],
+        "release_on_justified_conflict": [
+          0,
+          0
+        ],
+        "release_on_justified_invalid": [
+          0,
+          0
+        ],
+        "release_on_justified_undetermined": [
+          0,
+          0
+        ],
+        "unjustified_conflict": [
+          0,
+          1
+        ],
+        "unverified_conflict": [
+          0,
+          0
+        ],
+        "verdict_exact": [
+          1,
+          1
+        ],
+        "verdict_verified": [
+          1,
+          1
+        ],
+        "verified_conflict": [
+          0,
+          0
+        ],
+        "verified_release": [
+          1,
+          1
+        ]
+      },
+      "regular": {
+        "correct_abstention": [
+          6,
+          6
+        ],
+        "false_hold_justified": [
+          0,
+          3
+        ],
+        "false_invalid": [
+          0,
+          12
+        ],
+        "false_release_justified": [
+          0,
+          10
+        ],
+        "false_release_truth": [
+          0,
+          6
+        ],
+        "fidelity_FAIL": [
+          0,
+          13
+        ],
+        "fidelity_NOT EXECUTED": [
+          13,
+          13
+        ],
+        "fidelity_PASS": [
+          0,
+          13
+        ],
+        "fidelity_UNDETERMINED": [
+          0,
+          13
+        ],
+        "holds_on_actual_no_conflict": [
+          3,
+          6
+        ],
+        "invalid_with_unverified_proof": [
+          0,
+          1
+        ],
+        "justified_release": [
+          3,
+          3
+        ],
+        "miss_actual_invalid": [
+          0,
+          1
+        ],
+        "miss_invalid": [
+          0,
+          1
+        ],
+        "no_decision": [
+          0,
+          13
+        ],
+        "premise_CONTRADICTED": [
+          0,
+          13
+        ],
+        "premise_NOT EXECUTED": [
+          0,
+          13
+        ],
+        "premise_OPEN": [
+          6,
+          13
+        ],
+        "premise_SUPPORTED": [
+          7,
+          13
+        ],
+        "proofless_correct_conflict_label": [
+          0,
+          3
+        ],
+        "release_invalid_truth": [
+          0,
+          1
+        ],
+        "release_on_justified_conflict": [
+          0,
+          3
+        ],
+        "release_on_justified_invalid": [
+          0,
+          1
+        ],
+        "release_on_justified_undetermined": [
+          0,
+          6
+        ],
+        "unjustified_conflict": [
+          0,
+          10
+        ],
+        "unverified_conflict": [
+          0,
+          3
+        ],
+        "verdict_exact": [
+          13,
+          13
+        ],
+        "verdict_verified": [
+          13,
+          13
+        ],
+        "verified_conflict": [
+          3,
+          3
+        ],
+        "verified_release": [
+          3,
+          3
+        ]
+      },
+      "supplement": {
+        "correct_abstention": [
+          5,
+          5
+        ],
+        "false_hold_justified": [
+          0,
+          3
+        ],
+        "false_invalid": [
+          0,
+          17
+        ],
+        "false_release_justified": [
+          0,
+          21
+        ],
+        "false_release_truth": [
+          0,
+          16
+        ],
+        "fidelity_FAIL": [
+          0,
+          24
+        ],
+        "fidelity_NOT EXECUTED": [
+          24,
+          24
+        ],
+        "fidelity_PASS": [
+          0,
+          24
+        ],
+        "fidelity_UNDETERMINED": [
+          0,
+          24
+        ],
+        "holds_on_actual_no_conflict": [
+          2,
+          5
+        ],
+        "invalid_with_unverified_proof": [
+          0,
+          7
+        ],
+        "justified_release": [
+          3,
+          3
+        ],
+        "miss_actual_invalid": [
+          0,
+          3
+        ],
+        "miss_invalid": [
+          0,
+          7
+        ],
+        "no_decision": [
+          0,
+          24
+        ],
+        "premise_CONTRADICTED": [
+          0,
+          24
+        ],
+        "premise_NOT EXECUTED": [
+          0,
+          24
+        ],
+        "premise_OPEN": [
+          5,
+          24
+        ],
+        "premise_SUPPORTED": [
+          19,
+          24
+        ],
+        "proofless_correct_conflict_label": [
+          0,
+          9
+        ],
+        "release_invalid_truth": [
+          0,
+          3
+        ],
+        "release_on_justified_conflict": [
+          0,
+          9
+        ],
+        "release_on_justified_invalid": [
+          0,
+          7
+        ],
+        "release_on_justified_undetermined": [
+          0,
+          5
+        ],
+        "unjustified_conflict": [
+          0,
+          15
+        ],
+        "unverified_conflict": [
+          0,
+          9
+        ],
+        "verdict_exact": [
+          24,
+          24
+        ],
+        "verdict_verified": [
+          24,
+          24
+        ],
+        "verified_conflict": [
+          9,
+          9
+        ],
+        "verified_release": [
+          3,
+          3
+        ]
+      }
+    },
+    "proofless_conflict": {
+      "distinct_views": {
+        "correct_abstention": [
+          0,
+          3
+        ],
+        "false_hold_justified": [
+          3,
+          3
+        ],
+        "false_invalid": [
+          0,
+          9
+        ],
+        "false_release_justified": [
+          0,
+          7
+        ],
+        "fidelity_FAIL": [
+          0,
+          10
+        ],
+        "fidelity_NOT EXECUTED": [
+          10,
+          10
+        ],
+        "fidelity_PASS": [
+          0,
+          10
+        ],
+        "fidelity_UNDETERMINED": [
+          0,
+          10
+        ],
+        "invalid_with_unverified_proof": [
+          0,
+          0
+        ],
+        "justified_release": [
+          0,
+          3
+        ],
+        "miss_invalid": [
+          1,
+          1
+        ],
+        "no_decision": [
+          0,
+          10
+        ],
+        "premise_CONTRADICTED": [
+          0,
+          10
+        ],
+        "premise_NOT EXECUTED": [
+          0,
+          10
+        ],
+        "premise_OPEN": [
+          3,
+          10
+        ],
+        "premise_SUPPORTED": [
+          7,
+          10
+        ],
+        "proofless_correct_conflict_label": [
+          3,
+          3
+        ],
+        "release_on_justified_conflict": [
+          0,
+          3
+        ],
+        "release_on_justified_invalid": [
+          0,
+          1
+        ],
+        "release_on_justified_undetermined": [
+          0,
+          3
+        ],
+        "unjustified_conflict": [
+          7,
+          7
+        ],
+        "unverified_conflict": [
+          10,
+          10
+        ],
+        "verdict_exact": [
+          3,
+          10
+        ],
+        "verdict_verified": [
+          0,
+          10
+        ],
+        "verified_conflict": [
+          0,
+          3
+        ],
+        "verified_release": [
+          0,
+          3
+        ]
+      },
+      "premise_attack": {
+        "correct_abstention": [
+          0,
+          0
+        ],
+        "false_hold_justified": [
+          1,
+          1
+        ],
+        "false_invalid": [
+          0,
+          1
+        ],
+        "false_release_justified": [
+          0,
+          0
+        ],
+        "false_release_truth": [
+          0,
+          1
+        ],
+        "fidelity_FAIL": [
+          0,
+          1
+        ],
+        "fidelity_NOT EXECUTED": [
+          1,
+          1
+        ],
+        "fidelity_PASS": [
+          0,
+          1
+        ],
+        "fidelity_UNDETERMINED": [
+          0,
+          1
+        ],
+        "holds_on_actual_no_conflict": [
+          0,
+          0
+        ],
+        "invalid_with_unverified_proof": [
+          0,
+          0
+        ],
+        "justified_release": [
+          0,
+          1
+        ],
+        "miss_actual_invalid": [
+          0,
+          0
+        ],
+        "miss_invalid": [
+          0,
+          0
+        ],
+        "no_decision": [
+          0,
+          1
+        ],
+        "premise_CONTRADICTED": [
+          1,
+          1
+        ],
+        "premise_NOT EXECUTED": [
+          0,
+          1
+        ],
+        "premise_OPEN": [
+          0,
+          1
+        ],
+        "premise_SUPPORTED": [
+          0,
+          1
+        ],
+        "proofless_correct_conflict_label": [
+          0,
+          0
+        ],
+        "release_invalid_truth": [
+          0,
+          0
+        ],
+        "release_on_justified_conflict": [
+          0,
+          0
+        ],
+        "release_on_justified_invalid": [
+          0,
+          0
+        ],
+        "release_on_justified_undetermined": [
+          0,
+          0
+        ],
+        "unjustified_conflict": [
+          1,
+          1
+        ],
+        "unverified_conflict": [
+          1,
+          1
+        ],
+        "verdict_exact": [
+          0,
+          1
+        ],
+        "verdict_verified": [
+          0,
+          1
+        ],
+        "verified_conflict": [
+          0,
+          0
+        ],
+        "verified_release": [
+          0,
+          1
+        ]
+      },
+      "regular": {
+        "correct_abstention": [
+          0,
+          6
+        ],
+        "false_hold_justified": [
+          3,
+          3
+        ],
+        "false_invalid": [
+          0,
+          12
+        ],
+        "false_release_justified": [
+          0,
+          10
+        ],
+        "false_release_truth": [
+          0,
+          6
+        ],
+        "fidelity_FAIL": [
+          0,
+          13
+        ],
+        "fidelity_NOT EXECUTED": [
+          13,
+          13
+        ],
+        "fidelity_PASS": [
+          0,
+          13
+        ],
+        "fidelity_UNDETERMINED": [
+          0,
+          13
+        ],
+        "holds_on_actual_no_conflict": [
+          6,
+          6
+        ],
+        "invalid_with_unverified_proof": [
+          0,
+          0
+        ],
+        "justified_release": [
+          0,
+          3
+        ],
+        "miss_actual_invalid": [
+          1,
+          1
+        ],
+        "miss_invalid": [
+          1,
+          1
+        ],
+        "no_decision": [
+          0,
+          13
+        ],
+        "premise_CONTRADICTED": [
+          0,
+          13
+        ],
+        "premise_NOT EXECUTED": [
+          0,
+          13
+        ],
+        "premise_OPEN": [
+          6,
+          13
+        ],
+        "premise_SUPPORTED": [
+          7,
+          13
+        ],
+        "proofless_correct_conflict_label": [
+          3,
+          3
+        ],
+        "release_invalid_truth": [
+          0,
+          1
+        ],
+        "release_on_justified_conflict": [
+          0,
+          3
+        ],
+        "release_on_justified_invalid": [
+          0,
+          1
+        ],
+        "release_on_justified_undetermined": [
+          0,
+          6
+        ],
+        "unjustified_conflict": [
+          10,
+          10
+        ],
+        "unverified_conflict": [
+          13,
+          13
+        ],
+        "verdict_exact": [
+          3,
+          13
+        ],
+        "verdict_verified": [
+          0,
+          13
+        ],
+        "verified_conflict": [
+          0,
+          3
+        ],
+        "verified_release": [
+          0,
+          3
+        ]
+      },
+      "supplement": {
+        "correct_abstention": [
+          0,
+          5
+        ],
+        "false_hold_justified": [
+          3,
+          3
+        ],
+        "false_invalid": [
+          0,
+          17
+        ],
+        "false_release_justified": [
+          0,
+          21
+        ],
+        "false_release_truth": [
+          0,
+          16
+        ],
+        "fidelity_FAIL": [
+          0,
+          24
+        ],
+        "fidelity_NOT EXECUTED": [
+          24,
+          24
+        ],
+        "fidelity_PASS": [
+          0,
+          24
+        ],
+        "fidelity_UNDETERMINED": [
+          0,
+          24
+        ],
+        "holds_on_actual_no_conflict": [
+          5,
+          5
+        ],
+        "invalid_with_unverified_proof": [
+          0,
+          0
+        ],
+        "justified_release": [
+          0,
+          3
+        ],
+        "miss_actual_invalid": [
+          3,
+          3
+        ],
+        "miss_invalid": [
+          7,
+          7
+        ],
+        "no_decision": [
+          0,
+          24
+        ],
+        "premise_CONTRADICTED": [
+          0,
+          24
+        ],
+        "premise_NOT EXECUTED": [
+          0,
+          24
+        ],
+        "premise_OPEN": [
+          5,
+          24
+        ],
+        "premise_SUPPORTED": [
+          19,
+          24
+        ],
+        "proofless_correct_conflict_label": [
+          9,
+          9
+        ],
+        "release_invalid_truth": [
+          0,
+          3
+        ],
+        "release_on_justified_conflict": [
+          0,
+          9
+        ],
+        "release_on_justified_invalid": [
+          0,
+          7
+        ],
+        "release_on_justified_undetermined": [
+          0,
+          5
+        ],
+        "unjustified_conflict": [
+          15,
+          15
+        ],
+        "unverified_conflict": [
+          24,
+          24
+        ],
+        "verdict_exact": [
+          9,
+          24
+        ],
+        "verdict_verified": [
+          0,
+          24
+        ],
+        "verified_conflict": [
+          0,
+          9
+        ],
+        "verified_release": [
+          0,
+          3
+        ]
+      }
+    },
+    "public_lookup": {
+      "distinct_views": {
+        "correct_abstention": [
+          0,
+          3
+        ],
+        "false_hold_justified": [
+          0,
+          3
+        ],
+        "false_invalid": [
+          0,
+          9
+        ],
+        "false_release_justified": [
+          0,
+          7
+        ],
+        "fidelity_FAIL": [
+          0,
+          10
+        ],
+        "fidelity_NOT EXECUTED": [
+          10,
+          10
+        ],
+        "fidelity_PASS": [
+          0,
+          10
+        ],
+        "fidelity_UNDETERMINED": [
+          0,
+          10
+        ],
+        "invalid_with_unverified_proof": [
+          1,
+          1
+        ],
+        "justified_release": [
+          3,
+          3
+        ],
+        "miss_invalid": [
+          0,
+          1
+        ],
+        "no_decision": [
+          0,
+          10
+        ],
+        "premise_CONTRADICTED": [
+          0,
+          10
+        ],
+        "premise_NOT EXECUTED": [
+          0,
+          10
+        ],
+        "premise_OPEN": [
+          3,
+          10
+        ],
+        "premise_SUPPORTED": [
+          7,
+          10
+        ],
+        "proofless_correct_conflict_label": [
+          3,
+          3
+        ],
+        "release_on_justified_conflict": [
+          0,
+          3
+        ],
+        "release_on_justified_invalid": [
+          0,
+          1
+        ],
+        "release_on_justified_undetermined": [
+          0,
+          3
+        ],
+        "unjustified_conflict": [
+          0,
+          7
+        ],
+        "unverified_conflict": [
+          3,
+          3
+        ],
+        "verdict_exact": [
+          10,
+          10
+        ],
+        "verdict_verified": [
+          0,
+          10
+        ],
+        "verified_conflict": [
+          0,
+          3
+        ],
+        "verified_release": [
+          0,
+          3
+        ]
+      },
+      "premise_attack": {
+        "correct_abstention": [
+          0,
+          0
+        ],
+        "false_hold_justified": [
+          0,
+          1
+        ],
+        "false_invalid": [
+          0,
+          1
+        ],
+        "false_release_justified": [
+          0,
+          0
+        ],
+        "false_release_truth": [
+          1,
+          1
+        ],
+        "fidelity_FAIL": [
+          0,
+          1
+        ],
+        "fidelity_NOT EXECUTED": [
+          1,
+          1
+        ],
+        "fidelity_PASS": [
+          0,
+          1
+        ],
+        "fidelity_UNDETERMINED": [
+          0,
+          1
+        ],
+        "holds_on_actual_no_conflict": [
+          0,
+          0
+        ],
+        "invalid_with_unverified_proof": [
+          0,
+          0
+        ],
+        "justified_release": [
+          1,
+          1
+        ],
+        "miss_actual_invalid": [
+          0,
+          0
+        ],
+        "miss_invalid": [
+          0,
+          0
+        ],
+        "no_decision": [
+          0,
+          1
+        ],
+        "premise_CONTRADICTED": [
+          1,
+          1
+        ],
+        "premise_NOT EXECUTED": [
+          0,
+          1
+        ],
+        "premise_OPEN": [
+          0,
+          1
+        ],
+        "premise_SUPPORTED": [
+          0,
+          1
+        ],
+        "proofless_correct_conflict_label": [
+          0,
+          0
+        ],
+        "release_invalid_truth": [
+          0,
+          0
+        ],
+        "release_on_justified_conflict": [
+          0,
+          0
+        ],
+        "release_on_justified_invalid": [
+          0,
+          0
+        ],
+        "release_on_justified_undetermined": [
+          0,
+          0
+        ],
+        "unjustified_conflict": [
+          0,
+          1
+        ],
+        "unverified_conflict": [
+          0,
+          0
+        ],
+        "verdict_exact": [
+          1,
+          1
+        ],
+        "verdict_verified": [
+          0,
+          1
+        ],
+        "verified_conflict": [
+          0,
+          0
+        ],
+        "verified_release": [
+          0,
+          1
+        ]
+      },
+      "regular": {
+        "correct_abstention": [
+          0,
+          6
+        ],
+        "false_hold_justified": [
+          0,
+          3
+        ],
+        "false_invalid": [
+          0,
+          12
+        ],
+        "false_release_justified": [
+          0,
+          10
+        ],
+        "false_release_truth": [
+          0,
+          6
+        ],
+        "fidelity_FAIL": [
+          0,
+          13
+        ],
+        "fidelity_NOT EXECUTED": [
+          13,
+          13
+        ],
+        "fidelity_PASS": [
+          0,
+          13
+        ],
+        "fidelity_UNDETERMINED": [
+          0,
+          13
+        ],
+        "holds_on_actual_no_conflict": [
+          3,
+          6
+        ],
+        "invalid_with_unverified_proof": [
+          1,
+          1
+        ],
+        "justified_release": [
+          3,
+          3
+        ],
+        "miss_actual_invalid": [
+          0,
+          1
+        ],
+        "miss_invalid": [
+          0,
+          1
+        ],
+        "no_decision": [
+          0,
+          13
+        ],
+        "premise_CONTRADICTED": [
+          0,
+          13
+        ],
+        "premise_NOT EXECUTED": [
+          0,
+          13
+        ],
+        "premise_OPEN": [
+          6,
+          13
+        ],
+        "premise_SUPPORTED": [
+          7,
+          13
+        ],
+        "proofless_correct_conflict_label": [
+          3,
+          3
+        ],
+        "release_invalid_truth": [
+          0,
+          1
+        ],
+        "release_on_justified_conflict": [
+          0,
+          3
+        ],
+        "release_on_justified_invalid": [
+          0,
+          1
+        ],
+        "release_on_justified_undetermined": [
+          0,
+          6
+        ],
+        "unjustified_conflict": [
+          0,
+          10
+        ],
+        "unverified_conflict": [
+          3,
+          3
+        ],
+        "verdict_exact": [
+          13,
+          13
+        ],
+        "verdict_verified": [
+          0,
+          13
+        ],
+        "verified_conflict": [
+          0,
+          3
+        ],
+        "verified_release": [
+          0,
+          3
+        ]
+      },
+      "supplement": {
+        "correct_abstention": [
+          0,
+          5
+        ],
+        "false_hold_justified": [
+          3,
+          3
+        ],
+        "false_invalid": [
+          0,
+          17
+        ],
+        "false_release_justified": [
+          0,
+          21
+        ],
+        "false_release_truth": [
+          0,
+          16
+        ],
+        "fidelity_FAIL": [
+          0,
+          24
+        ],
+        "fidelity_NOT EXECUTED": [
+          24,
+          24
+        ],
+        "fidelity_PASS": [
+          0,
+          24
+        ],
+        "fidelity_UNDETERMINED": [
+          0,
+          24
+        ],
+        "holds_on_actual_no_conflict": [
+          5,
+          5
+        ],
+        "invalid_with_unverified_proof": [
+          0,
+          0
+        ],
+        "justified_release": [
+          0,
+          3
+        ],
+        "miss_actual_invalid": [
+          3,
+          3
+        ],
+        "miss_invalid": [
+          7,
+          7
+        ],
+        "no_decision": [
+          22,
+          24
+        ],
+        "premise_CONTRADICTED": [
+          0,
+          24
+        ],
+        "premise_NOT EXECUTED": [
+          0,
+          24
+        ],
+        "premise_OPEN": [
+          5,
+          24
+        ],
+        "premise_SUPPORTED": [
+          19,
+          24
+        ],
+        "proofless_correct_conflict_label": [
+          0,
+          9
+        ],
+        "release_invalid_truth": [
+          0,
+          3
+        ],
+        "release_on_justified_conflict": [
+          0,
+          9
+        ],
+        "release_on_justified_invalid": [
+          0,
+          7
+        ],
+        "release_on_justified_undetermined": [
+          0,
+          5
+        ],
+        "unjustified_conflict": [
+          0,
+          15
+        ],
+        "unverified_conflict": [
+          0,
+          0
+        ],
+        "verdict_exact": [
+          2,
+          24
+        ],
+        "verdict_verified": [
+          0,
+          24
+        ],
+        "verified_conflict": [
+          0,
+          9
+        ],
+        "verified_release": [
+          0,
+          3
+        ]
+      }
+    }
+  },
+  "status": "public synthetic checks; no comparators, custody or authentication run",
+  "supplement_not_in_regular_lookup": 22
+}

@@ -1,0 +1,16 @@
+# Scoped differential hypotheses and decision rule
+
+Pre-register X as the private reference visits meeting the fixed domain and eligibility criteria, with synthetic truth executions and distinct observable views preserved. B is the exact approved established gate or composition at the selected L class, artifact digest, evidence stratum and resource cap. Compare D0 vs B and D1 vs B separately. Report A and B strata independently. Public cases calibrate the assay and do not count as advantage evidence.
+
+For each eligible x define a binary loss vector consisting of unjustified release, actual conflict/invalid release, false justified hold, wrong justified verdict, wrong or absent proof for the required response, unsupported conflict accusation, incorrect INVALID, missing actual contradiction and, in B, premise control loss (false premises accepted or unsupported required capture). Reason-coded NO_DECISION incurs appropriate hold, verdict and proof losses. Report overlapping components individually. S3 is a threshold eligibility condition. S4 supported/contradicted/open findings are explicit and independent of the conditional decision. An unassessable mandatory component leaves that comparison UNDETERMINED. No safety violation may offset another component's improvement.
+
+Use componentwise order and a preregistered material case family. Scoped strict advantage requires D's vector to be no larger on every evaluated x, and strictly smaller on at least one prespecified consequential probe, replicated in a second structurally distinct probe from its family. If the loss vectors are indistinguishable on the tested set, report scoped observed parity with costs and trust assumptions, without claiming a general theorem. If B dominates use the same rule to report a DEA deficit; report tradeoffs if the vectors cross and name the affected obligations. Asymmetry of source or data makes the comparison inconclusive. Decide diagnosis advantage on verified witnesses/abstention separately, and never relabel cheaper integration as a semantic advantage.
+
+Before implementation the signoff must choose the consequential probe families (candidate choices are false releases on K2 or K3 and verified conditional positives under open dependencies), comparator B profile, N and the stopping rule. An acceptable prospective secondary integration threshold is a reproducible difference of at least 20% and 60 person-minutes in measured setup within the same performance/correctness class, with no extra trust assumption. Report that as pilot workload only. Other cost differences are descriptive.
+
+| Result class | Additional evidentiary need |
+|---|---|
+| Semantic | Distinguishing behavioral case under equal observations/options, respecting all profile limits. General expression-limit claim requires a formal counterexample, such as identical observations with incompatible required verdicts under a precisely stated projection. |
+| Evidence or diagnostic | Independently verified extra witness, valid abstention, or premise/capture quality under matched raw access. |
+| Integration | Equivalent operational control outcomes with demonstrably different reproducible resource/setup cost and no added unacknowledged trust. |
+| No demonstrated advantage | Scoped parity, DEA deficit, inconclusive execution, or crossed outcomes; name which occurred and why. |
