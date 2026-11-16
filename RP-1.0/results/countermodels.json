@@ -1,0 +1,1085 @@
+[
+ {
+  "dea": [
+   "1"
+  ],
+  "direction": "forward",
+  "failures_in_class": 160,
+  "kind": "translation",
+  "model": {
+   "adj": [
+    "a",
+    "a"
+   ],
+   "disp": [
+    "Hold",
+    "Hold"
+   ],
+   "exec": [
+    "a",
+    "b"
+   ],
+   "exec_perm_revoked": [],
+   "grants": [
+    [
+     "a",
+     0,
+     "Hold"
+    ],
+    [
+     "a",
+     1,
+     "Hold"
+    ]
+   ],
+   "n": 2
+  },
+  "models_in_class": 1440,
+  "regime": "A",
+  "target": [],
+  "test": "EJ-A-BER-1"
+ },
+ {
+  "dea": [],
+  "direction": "backward",
+  "failures_in_class": 512,
+  "kind": "translation",
+  "model": {
+   "adj": [
+    "b"
+   ],
+   "disp": [
+    "Accept"
+   ],
+   "exec": [
+    "a"
+   ],
+   "exec_perm_revoked": [],
+   "grants": [
+    [
+     "b",
+     0,
+     "Hold"
+    ]
+   ],
+   "n": 1
+  },
+  "models_in_class": 1440,
+  "regime": "A",
+  "target": [
+   "0"
+  ],
+  "test": "EJ-A-BER-1"
+ },
+ {
+  "dea": [],
+  "direction": "backward",
+  "failures_in_class": 608,
+  "kind": "translation",
+  "model": {
+   "adj": [
+    "b"
+   ],
+   "disp": [
+    "Accept"
+   ],
+   "exec": [
+    "a"
+   ],
+   "exec_perm_revoked": [],
+   "grants": [
+    [
+     "b",
+     0,
+     "Hold"
+    ]
+   ],
+   "n": 1
+  },
+  "models_in_class": 1440,
+  "regime": "A",
+  "target": [
+   "0"
+  ],
+  "test": "EJ-A-WL-1"
+ },
+ {
+  "dea": [],
+  "direction": "backward",
+  "failures_in_class": 100,
+  "kind": "translation",
+  "model": {
+   "adj": [
+    "a"
+   ],
+   "disp": [
+    "Hold"
+   ],
+   "exec": [
+    "a"
+   ],
+   "exec_perm_revoked": [
+    "a"
+   ],
+   "grants": [
+    [
+     "a",
+     0,
+     "Hold"
+    ]
+   ],
+   "n": 1
+  },
+  "models_in_class": 1440,
+  "regime": "A",
+  "target": [
+   "0"
+  ],
+  "test": "EJ-A-LI"
+ },
+ {
+  "dea": [],
+  "direction": "backward",
+  "failures_in_class": 100,
+  "kind": "translation",
+  "model": {
+   "adj": [
+    "a"
+   ],
+   "disp": [
+    "Hold"
+   ],
+   "exec": [
+    "a"
+   ],
+   "exec_perm_revoked": [
+    "a"
+   ],
+   "grants": [
+    [
+     "a",
+     0,
+     "Hold"
+    ]
+   ],
+   "n": 1
+  },
+  "models_in_class": 1440,
+  "regime": "A",
+  "target": [
+   "0"
+  ],
+  "test": "EJ-A-RSL"
+ },
+ {
+  "dea": [
+   "1"
+  ],
+  "direction": "forward",
+  "failures_in_class": 36,
+  "kind": "translation",
+  "model": {
+   "acc": [
+    "a",
+    "a"
+   ],
+   "exec": [
+    "a",
+    "b"
+   ],
+   "scope": "a"
+  },
+  "models_in_class": 243,
+  "regime": "A",
+  "target": [],
+  "test": "T3-A-BER-1"
+ },
+ {
+  "dea": [
+   "ext"
+  ],
+  "direction": "forward",
+  "failures_in_class": 6,
+  "kind": "translation",
+  "model": {
+   "ext": "b",
+   "gate": "a",
+   "scope": "a"
+  },
+  "models_in_class": 12,
+  "regime": "A",
+  "target": [],
+  "test": "DE-A-WL-1"
+ },
+ {
+  "dea": [],
+  "direction": "backward",
+  "failures_in_class": 4,
+  "kind": "translation",
+  "model": {
+   "ext": "a",
+   "gate": "a",
+   "scope": "a"
+  },
+  "models_in_class": 12,
+  "regime": "A",
+  "target": [
+   "ext"
+  ],
+  "test": "DE-A-WL-2"
+ },
+ {
+  "dea": [],
+  "direction": "backward",
+  "failures_in_class": 8160,
+  "kind": "translation",
+  "model": {
+   "edges": {
+    "o->a": "E",
+    "o->j": "J"
+   }
+  },
+  "models_in_class": 16807,
+  "regime": "A",
+  "target": [
+   "effective"
+  ],
+  "test": "CTRL-A-WL-snap/A"
+ },
+ {
+  "dea": [
+   "effective"
+  ],
+  "direction": "forward",
+  "failures_in_class": 72,
+  "kind": "ORACLE-EMBEDDING",
+  "model": {
+   "edges": {
+    "o->j": "J_late",
+    "p->a": "E",
+    "p->o": "J_early"
+   }
+  },
+  "models_in_class": 16807,
+  "regime": "oracle",
+  "target": [],
+  "test": "CTRL-ORACLE-WL[B]/A"
+ },
+ {
+  "dea": [
+   "effective"
+  ],
+  "direction": "forward",
+  "failures_in_class": 72,
+  "kind": "translation",
+  "model": {
+   "edges": {
+    "o->j": "J_late",
+    "p->a": "E",
+    "p->o": "J_early"
+   }
+  },
+  "models_in_class": 16807,
+  "regime": "B",
+  "target": [],
+  "test": "CTRL-B-BER[B]/A"
+ },
+ {
+  "dea": [
+   "effective"
+  ],
+  "direction": "forward",
+  "failures_in_class": 72,
+  "kind": "translation",
+  "model": {
+   "edges": {
+    "o->j": "J_late",
+    "p->a": "E",
+    "p->o": "J_early"
+   }
+  },
+  "models_in_class": 16807,
+  "regime": "B",
+  "target": [],
+  "test": "CTRL-B-LI-RH[B]/A"
+ },
+ {
+  "dea": [
+   "effective"
+  ],
+  "direction": "forward",
+  "failures_in_class": 72,
+  "kind": "translation",
+  "model": {
+   "edges": {
+    "o->j": "J_late",
+    "p->a": "E",
+    "p->o": "J_early"
+   }
+  },
+  "models_in_class": 16807,
+  "regime": "B",
+  "target": [],
+  "test": "CTRL-B-RSL-RH[B]/A"
+ },
+ {
+  "dea": [],
+  "direction": "backward",
+  "failures_in_class": 8160,
+  "kind": "translation",
+  "model": {
+   "edges": {
+    "o->a": "E",
+    "o->j": "J"
+   }
+  },
+  "models_in_class": 16807,
+  "regime": "A",
+  "target": [
+   "effective"
+  ],
+  "test": "CTRL-A-LI/A"
+ },
+ {
+  "dea": [],
+  "direction": "backward",
+  "failures_in_class": 8160,
+  "kind": "translation",
+  "model": {
+   "edges": {
+    "o->a": "E",
+    "o->j": "J"
+   }
+  },
+  "models_in_class": 16807,
+  "regime": "A",
+  "target": [
+   "effective"
+  ],
+  "test": "CTRL-A-RSL-CU/A"
+ },
+ {
+  "dea": [],
+  "direction": "backward",
+  "failures_in_class": 8232,
+  "kind": "translation",
+  "model": {
+   "edges": {
+    "o->a": "E",
+    "o->j": "J"
+   }
+  },
+  "models_in_class": 16807,
+  "regime": "A",
+  "target": [
+   "effective"
+  ],
+  "test": "CTRL-A-WL-snap/B"
+ },
+ {
+  "dea": [],
+  "direction": "backward",
+  "failures_in_class": 72,
+  "kind": "ORACLE-EMBEDDING",
+  "model": {
+   "edges": {
+    "o->j": "J_late",
+    "p->a": "E",
+    "p->o": "J_early"
+   }
+  },
+  "models_in_class": 16807,
+  "regime": "oracle",
+  "target": [
+   "effective"
+  ],
+  "test": "CTRL-ORACLE-WL[A]/B"
+ },
+ {
+  "dea": [],
+  "direction": "backward",
+  "failures_in_class": 72,
+  "kind": "translation",
+  "model": {
+   "edges": {
+    "o->j": "J_late",
+    "p->a": "E",
+    "p->o": "J_early"
+   }
+  },
+  "models_in_class": 16807,
+  "regime": "B",
+  "target": [
+   "effective"
+  ],
+  "test": "CTRL-B-BER[A]/B"
+ },
+ {
+  "dea": [],
+  "direction": "backward",
+  "failures_in_class": 72,
+  "kind": "translation",
+  "model": {
+   "edges": {
+    "o->j": "J_late",
+    "p->a": "E",
+    "p->o": "J_early"
+   }
+  },
+  "models_in_class": 16807,
+  "regime": "B",
+  "target": [
+   "effective"
+  ],
+  "test": "CTRL-B-LI-RH[A]/B"
+ },
+ {
+  "dea": [],
+  "direction": "backward",
+  "failures_in_class": 72,
+  "kind": "translation",
+  "model": {
+   "edges": {
+    "o->j": "J_late",
+    "p->a": "E",
+    "p->o": "J_early"
+   }
+  },
+  "models_in_class": 16807,
+  "regime": "B",
+  "target": [
+   "effective"
+  ],
+  "test": "CTRL-B-RSL-RH[A]/B"
+ },
+ {
+  "dea": [],
+  "direction": "backward",
+  "failures_in_class": 8232,
+  "kind": "translation",
+  "model": {
+   "edges": {
+    "o->a": "E",
+    "o->j": "J"
+   }
+  },
+  "models_in_class": 16807,
+  "regime": "A",
+  "target": [
+   "effective"
+  ],
+  "test": "CTRL-A-LI/B"
+ },
+ {
+  "dea": [],
+  "direction": "backward",
+  "failures_in_class": 8232,
+  "kind": "translation",
+  "model": {
+   "edges": {
+    "o->a": "E",
+    "o->j": "J"
+   }
+  },
+  "models_in_class": 16807,
+  "regime": "A",
+  "target": [
+   "effective"
+  ],
+  "test": "CTRL-A-RSL-CU/B"
+ },
+ {
+  "dea": [
+   "2"
+  ],
+  "direction": "forward",
+  "failures_in_class": 2,
+  "kind": "translation",
+  "model": {
+   "B": 1,
+   "events": [
+    [
+     "term",
+     "W1",
+     "X",
+     "beta"
+    ],
+    [
+     "reopen",
+     "W2",
+     "X",
+     "beta",
+     true
+    ],
+    [
+     "cont",
+     "W1",
+     "X",
+     "beta"
+    ]
+   ]
+  },
+  "models_in_class": 2954,
+  "regime": "A",
+  "target": [],
+  "test": "LED-A-BER-INST"
+ },
+ {
+  "dea": [
+   "0"
+  ],
+  "direction": "backward",
+  "failures_in_class": 384,
+  "kind": "translation",
+  "model": {
+   "B": 1,
+   "events": [
+    [
+     "cont",
+     "W1",
+     "X",
+     "beta"
+    ],
+    [
+     "cont",
+     "W2",
+     "X",
+     "beta"
+    ]
+   ]
+  },
+  "models_in_class": 2954,
+  "regime": "A",
+  "target": [
+   "0",
+   "1"
+  ],
+  "test": "LED-A-BER-INST"
+ },
+ {
+  "dea": [
+   "0",
+   "1"
+  ],
+  "direction": "forward",
+  "failures_in_class": 792,
+  "kind": "detection-only",
+  "model": {
+   "B": 1,
+   "events": [
+    [
+     "cont",
+     "W1",
+     "X",
+     "beta"
+    ],
+    [
+     "cont",
+     "W1",
+     "Y",
+     "beta"
+    ]
+   ]
+  },
+  "models_in_class": 2954,
+  "regime": "A",
+  "target": [
+   "0"
+  ],
+  "test": "LED-A-BER-DETECT"
+ },
+ {
+  "dea": [
+   "0"
+  ],
+  "direction": "backward",
+  "failures_in_class": 384,
+  "kind": "detection-only",
+  "model": {
+   "B": 1,
+   "events": [
+    [
+     "cont",
+     "W1",
+     "X",
+     "beta"
+    ],
+    [
+     "cont",
+     "W2",
+     "X",
+     "beta"
+    ]
+   ]
+  },
+  "models_in_class": 2954,
+  "regime": "A",
+  "target": [
+   "0",
+   "1"
+  ],
+  "test": "LED-A-BER-DETECT"
+ },
+ {
+  "dea": [
+   "0"
+  ],
+  "direction": "backward",
+  "failures_in_class": 756,
+  "kind": "translation",
+  "model": {
+   "B": 1,
+   "events": [
+    [
+     "cont",
+     "W1",
+     "X",
+     "beta"
+    ],
+    [
+     "cont",
+     "W1",
+     "X",
+     "beta"
+    ]
+   ]
+  },
+  "models_in_class": 2954,
+  "regime": "A",
+  "target": [
+   "0",
+   "1"
+  ],
+  "test": "LED-A-WL"
+ },
+ {
+  "dea": [
+   "NAP"
+  ],
+  "direction": "forward",
+  "failures_in_class": 26,
+  "kind": "translation",
+  "model": {
+   "edges": [],
+   "goals": [],
+   "start": "0",
+   "states": [
+    "0"
+   ]
+  },
+  "models_in_class": 26262,
+  "regime": "A",
+  "target": [],
+  "test": "NAP-A-WSP-1"
+ },
+ {
+  "dea": [],
+  "direction": "backward",
+  "failures_in_class": 13818,
+  "kind": "translation",
+  "model": {
+   "edges": [
+    [
+     "e0",
+     "0",
+     "0",
+     false
+    ]
+   ],
+   "goals": [
+    "0"
+   ],
+   "start": "0",
+   "states": [
+    "0"
+   ]
+  },
+  "models_in_class": 26262,
+  "regime": "A",
+  "target": [
+   "NAP"
+  ],
+  "test": "NAP-A-WSP-1"
+ },
+ {
+  "dea": [
+   "NAP"
+  ],
+  "direction": "forward",
+  "failures_in_class": 4202,
+  "kind": "translation",
+  "model": {
+   "edges": [
+    [
+     "e0",
+     "0",
+     "0",
+     true
+    ]
+   ],
+   "goals": [],
+   "start": "0",
+   "states": [
+    "0"
+   ]
+  },
+  "models_in_class": 26262,
+  "regime": "A",
+  "target": [],
+  "test": "NAP-A-WSP-2"
+ },
+ {
+  "dea": [],
+  "direction": "backward",
+  "failures_in_class": 8200,
+  "kind": "translation",
+  "model": {
+   "edges": [],
+   "goals": [
+    "0"
+   ],
+   "start": "0",
+   "states": [
+    "0"
+   ]
+  },
+  "models_in_class": 26262,
+  "regime": "A",
+  "target": [
+   "NAP"
+  ],
+  "test": "NAP-A-WSP-2"
+ },
+ {
+  "dea": [
+   "NAP"
+  ],
+  "direction": "forward",
+  "failures_in_class": 334,
+  "kind": "translation",
+  "model": {
+   "edges": [],
+   "goals": [],
+   "start": "0",
+   "states": [
+    "0"
+   ]
+  },
+  "models_in_class": 26262,
+  "regime": "A",
+  "target": [],
+  "test": "NAP-A-BAS-OBS"
+ },
+ {
+  "dea": [],
+  "direction": "backward",
+  "failures_in_class": 13510,
+  "kind": "translation",
+  "model": {
+   "edges": [
+    [
+     "e0",
+     "0",
+     "0",
+     false
+    ]
+   ],
+   "goals": [
+    "0"
+   ],
+   "start": "0",
+   "states": [
+    "0"
+   ]
+  },
+  "models_in_class": 26262,
+  "regime": "A",
+  "target": [
+   "NAP"
+  ],
+  "test": "NAP-A-BAS-OBS"
+ },
+ {
+  "proof": "PRF-NAP3",
+  "status": "REFUTED as stated; NON-EXPRESSIBILITY NOT ESTABLISHED for WSP",
+  "witness": {
+   "m1": {
+    "edges": [
+     [
+      "diag",
+      "0",
+      "0",
+      true
+     ]
+    ],
+    "goals": [
+     "1"
+    ],
+    "start": "0",
+    "states": [
+     "0",
+     "1"
+    ]
+   },
+   "m2": {
+    "edges": [
+     [
+      "diag",
+      "0",
+      "1",
+      true
+     ]
+    ],
+    "goals": [
+     "1"
+    ],
+    "start": "0",
+    "states": [
+     "0",
+     "1"
+    ]
+   }
+  }
+ },
+ {
+  "proof": "PRF-NAP-HANF",
+  "status": "PROVEN-NON-EXPRESSIBLE under stated assumptions (class T_loc(r), r<=2 checked)",
+  "witness": {
+   "A_edges": [
+    [
+     "s",
+     "x1"
+    ],
+    [
+     "x1",
+     "x2"
+    ],
+    [
+     "x2",
+     "x3"
+    ],
+    [
+     "x3",
+     "x4"
+    ],
+    [
+     "x4",
+     "x5"
+    ],
+    [
+     "x5",
+     "x6"
+    ],
+    [
+     "x6",
+     "g"
+    ],
+    [
+     "y0",
+     "y1"
+    ],
+    [
+     "y1",
+     "y2"
+    ],
+    [
+     "y2",
+     "y3"
+    ],
+    [
+     "y3",
+     "y4"
+    ],
+    [
+     "y4",
+     "y5"
+    ],
+    [
+     "y5",
+     "y6"
+    ],
+    [
+     "y6",
+     "z1"
+    ],
+    [
+     "z1",
+     "z2"
+    ],
+    [
+     "z2",
+     "z3"
+    ],
+    [
+     "z3",
+     "z4"
+    ],
+    [
+     "z4",
+     "z5"
+    ],
+    [
+     "z5",
+     "z6"
+    ],
+    [
+     "z6",
+     "z1"
+    ]
+   ],
+   "B_edges": [
+    [
+     "s",
+     "x1"
+    ],
+    [
+     "x1",
+     "x2"
+    ],
+    [
+     "x2",
+     "x3"
+    ],
+    [
+     "x3",
+     "x4"
+    ],
+    [
+     "x4",
+     "x5"
+    ],
+    [
+     "x5",
+     "x6"
+    ],
+    [
+     "x6",
+     "z1"
+    ],
+    [
+     "z1",
+     "z2"
+    ],
+    [
+     "z2",
+     "z3"
+    ],
+    [
+     "z3",
+     "z4"
+    ],
+    [
+     "z4",
+     "z5"
+    ],
+    [
+     "z5",
+     "z6"
+    ],
+    [
+     "z6",
+     "z1"
+    ],
+    [
+     "y0",
+     "y1"
+    ],
+    [
+     "y1",
+     "y2"
+    ],
+    [
+     "y2",
+     "y3"
+    ],
+    [
+     "y3",
+     "y4"
+    ],
+    [
+     "y4",
+     "y5"
+    ],
+    [
+     "y5",
+     "y6"
+    ],
+    [
+     "y6",
+     "g"
+    ]
+   ],
+   "NAP_A": false,
+   "NAP_B": true
+  }
+ },
+ {
+  "proof": "PRF-LED4",
+  "status": "PROVEN-NON-EXPRESSIBLE under stated assumptions (A-INST-LOCAL)",
+  "witness": {
+   "dea_1": true,
+   "dea_2": false,
+   "instance_projection": [
+    [
+     "cont",
+     "W2",
+     "X",
+     "beta"
+    ]
+   ],
+   "model_1": [
+    [
+     "cont",
+     "W2",
+     "X",
+     "beta"
+    ]
+   ],
+   "model_2": [
+    [
+     "cont",
+     "W1",
+     "X",
+     "beta"
+    ],
+    [
+     "cont",
+     "W2",
+     "X",
+     "beta"
+    ]
+   ]
+  }
+ },
+ {
+  "proof": "PRF-CTRL-WL-MONO",
+  "status": "PROVEN-NON-EXPRESSIBLE under stated assumptions (A-STEP + LOCAL-REL)",
+  "witness": {
+   "m0": {
+    "edges": {}
+   },
+   "m1": {
+    "edges": {
+     "p->a": "E",
+     "p->j": "J"
+    }
+   }
+  }
+ },
+ {
+  "proof": "PRF-CTRL6B",
+  "status": "ARCHITECTURAL AMBIGUITY (outcome-relevant)",
+  "witness": {
+   "A_effective": true,
+   "B_effective": false,
+   "mc_ctrl_disagreements": 72,
+   "model": {
+    "edges": {
+     "o->j": "J_late",
+     "p->a": "E",
+     "p->o": "J_early"
+    }
+   }
+  }
+ }
+]

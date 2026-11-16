@@ -1,0 +1,2734 @@
+{
+ "counts": {
+  "of_which_oracle_embeddings": 4,
+  "proof_or_refutation_records": 6,
+  "regression_cases": 44,
+  "translation_comparisons": 54
+ },
+ "coverage": {
+  "excluded": [
+   "NAP hybrid cases (dea-nap-hybrid-cases.py): continuous flows; no discrete target semantics in the four formalisms; not translated",
+   "G1 placement-vs-disposition cases: typing only (P(x) not in Sigma_adj); no target counterpart tested"
+  ],
+  "historical_scripts_rerun_previously": "The original package's '53/53, 32/32' figures refer to v0.3.4.2/v0.3.4.1 semantics; they are NOT counted here. Regression cases above are re-encoded and re-evaluated under v0.3.4.3.",
+  "unavailable": [
+   "Wang & Li 2010 TISSEC: all comparisons SOURCE-UNVERIFIED",
+   "DEA v0.3.4.3 .tex source: not in workspace (PDF used)"
+  ]
+ },
+ "meta": {
+  "baseline_sha256": "51a2553e8bb13fe80bc3f0e6245ba0c4dcbe0a31db03ad577a3f3f26f8c97c33",
+  "caveat": "Finite agreement is bounded regression evidence, not a general equivalence theorem.",
+  "harness_sha256": {
+   "harness/dea_ref.py": "79cb942cf79f8295987f78e132403c3ca7705bfdf8b8d2aab50f633ac6607cb2",
+   "harness/engines/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "harness/engines/bertino.py": "59d83557c510371d876e388b6be4ae5c551d991bb4103f2d6829f46e471dd574",
+   "harness/engines/datalog.py": "01cddbd4a850f3cd2c0fd717c2318809b0af08bee1e7d46392e3f4b91afeca79",
+   "harness/engines/lts.py": "7aa753d87f6274bf224c5c79723db69232a03c97a7d0a4aba022c23351e407ae",
+   "harness/engines/r2bac.py": "b342206c3731a2109fec8ba3898bc9a2c4ce554b1b2c4adfde70361f2a060c4c",
+   "harness/engines/rbac_li.py": "f617f03ba0260b6819abd7540db8174479827f7bbb1b761046fcca3b56339084",
+   "harness/engines/rsl99.py": "4c1a0948b6413018c3cc27db1c9719cb89787eea7b8ebafd3601e860aef495f4",
+   "harness/models.py": "8e3bf18b076e665909862a6a6697b7965eb43260fab4e7d0848ad4241d29adf1",
+   "harness/run_audit.py": "3b842ff52058f4e208b342af2422180aebf571260ed6d75af70f21a2c82fa63b",
+   "harness/translations.py": "2b8f0bf64559c50f6718a539caf50a9302ccbfff7e1e9b44bfd5a2e26c8d233b"
+  },
+  "protocol_sha256": "107a9793d29df592a26665aeeda34a80de5772a6c2d641f8d2b270cb207e3dac",
+  "python": "3.14.4",
+  "static_independence": "passed: no engine/translation module imports dea_ref"
+ },
+ "proofs": [
+  {
+   "argument": "The invariance pair (grant Hold vs grant Accept) has DIFFERENT images under the uniform A-IDX translations EJ-A-BER-2 and EJ-A-WL-2, which preserve outcomes on all of MC-EJ. The original argument quantified only over translations with one adjudication task per output.",
+   "assumptions": "A-IDX (tasks/steps are uninterpreted labels: Bertino Def 2.1; W&L Def 2)",
+   "construct": "AuthorizedForDisposition",
+   "id": "PRF-EJ7",
+   "machine_check_passed": true,
+   "statement": "Original EJ-7: disposition-specific authorization NOT-EXPRESSIBLE in Regime A for Bertino and W&L.",
+   "status": "REFUTED (original claim withdrawn)",
+   "witness": null
+  },
+  {
+   "argument": "(i) m1/m2 differ in a 1-local feature (allowed edge from start into a goal), so an element-local translation can separate them; identical images were shown only for translations ignoring edge endpoints. (ii) Exact WSP reductions exist (NAP-R-WSP-LABEL, NAP-R-WSP-PATH); they repurpose users, so they violate R3, but they show the obstacle is the sort discipline, not expressive power.",
+   "assumptions": "Original R3; element-local translations",
+   "construct": "goal-relative NAP",
+   "id": "PRF-NAP3",
+   "machine_check_passed": true,
+   "statement": "Original NAP-3: NAP not expressible in WSP/R2BAC under R3, by an invariance pair.",
+   "status": "REFUTED as stated; NON-EXPRESSIBILITY NOT ESTABLISHED for WSP",
+   "witness": {
+    "m1": {
+     "edges": [
+      [
+       "diag",
+       "0",
+       "0",
+       true
+      ]
+     ],
+     "goals": [
+      "1"
+     ],
+     "start": "0",
+     "states": [
+      "0",
+      "1"
+     ]
+    },
+    "m2": {
+     "edges": [
+      [
+       "diag",
+       "0",
+       "1",
+       true
+      ]
+     ],
+     "goals": [
+      "1"
+     ],
+     "start": "0",
+     "states": [
+      "0",
+      "1"
+     ]
+    }
+   }
+  },
+  {
+   "argument": "Machine check: graphs A and B have identical multisets of r-types (r = 1, 2) but NAP(A) != NAP(B).",
+   "assumptions": "T_loc(r): includes WSP translations in which every step has a single authorised user and every constraint is generated from an r-neighbourhood (verdict = conjunction of locally fixed truth values). Does NOT cover translations with >= 2 candidate users per step (CSP search is global) -- see NAP-R-WSP-LABEL.",
+   "construct": "goal-relative NAP",
+   "id": "PRF-NAP-HANF",
+   "machine_check_passed": true,
+   "statement": "No translation whose target verdict is a function of the multiset of radius-r neighbourhood types of the DEA state graph (labels: start, goal, authorised) preserves NAP, for r = 1, 2 (and any r with L, M > 2r+1).",
+   "status": "PROVEN-NON-EXPRESSIBLE under stated assumptions (class T_loc(r), r<=2 checked)",
+   "witness": {
+    "A_edges": [
+     [
+      "s",
+      "x1"
+     ],
+     [
+      "x1",
+      "x2"
+     ],
+     [
+      "x2",
+      "x3"
+     ],
+     [
+      "x3",
+      "x4"
+     ],
+     [
+      "x4",
+      "x5"
+     ],
+     [
+      "x5",
+      "x6"
+     ],
+     [
+      "x6",
+      "g"
+     ],
+     [
+      "y0",
+      "y1"
+     ],
+     [
+      "y1",
+      "y2"
+     ],
+     [
+      "y2",
+      "y3"
+     ],
+     [
+      "y3",
+      "y4"
+     ],
+     [
+      "y4",
+      "y5"
+     ],
+     [
+      "y5",
+      "y6"
+     ],
+     [
+      "y6",
+      "z1"
+     ],
+     [
+      "z1",
+      "z2"
+     ],
+     [
+      "z2",
+      "z3"
+     ],
+     [
+      "z3",
+      "z4"
+     ],
+     [
+      "z4",
+      "z5"
+     ],
+     [
+      "z5",
+      "z6"
+     ],
+     [
+      "z6",
+      "z1"
+     ]
+    ],
+    "B_edges": [
+     [
+      "s",
+      "x1"
+     ],
+     [
+      "x1",
+      "x2"
+     ],
+     [
+      "x2",
+      "x3"
+     ],
+     [
+      "x3",
+      "x4"
+     ],
+     [
+      "x4",
+      "x5"
+     ],
+     [
+      "x5",
+      "x6"
+     ],
+     [
+      "x6",
+      "z1"
+     ],
+     [
+      "z1",
+      "z2"
+     ],
+     [
+      "z2",
+      "z3"
+     ],
+     [
+      "z3",
+      "z4"
+     ],
+     [
+      "z4",
+      "z5"
+     ],
+     [
+      "z5",
+      "z6"
+     ],
+     [
+      "z6",
+      "z1"
+     ],
+     [
+      "y0",
+      "y1"
+     ],
+     [
+      "y1",
+      "y2"
+     ],
+     [
+      "y2",
+      "y3"
+     ],
+     [
+      "y3",
+      "y4"
+     ],
+     [
+      "y4",
+      "y5"
+     ],
+     [
+      "y5",
+      "y6"
+     ],
+     [
+      "y6",
+      "g"
+     ]
+    ],
+    "NAP_A": false,
+    "NAP_B": true
+   }
+  },
+  {
+   "argument": "The permit/deny verdict for an event in instance W is a function of W's CB, spec and history, all of which are functions of W's own event projection. The witness gives two models with identical projection of W up to the event and different DEA verdicts; hence any A-INST-LOCAL translation errs on one of them. Dropping A-INST-LOCAL (LED-A-BER-MERGE, LED-B-BER) removes the obstruction.",
+   "assumptions": "A-INST-LOCAL; Def 4.7 (CB(W) per workflow); execution predicates range over the activations of W only (Tab. II: 'within a workflow').",
+   "construct": "case/blocker ledger",
+   "id": "PRF-LED4",
+   "machine_check_passed": true,
+   "statement": "No Bertino translation preserves the ledger if each DEA workflow maps to its own Bertino instance and the constraint base and facts of an instance are functions of that instance's own events (A-INST-LOCAL).",
+   "status": "PROVEN-NON-EXPRESSIBLE under stated assumptions (A-INST-LOCAL)",
+   "witness": {
+    "dea_1": true,
+    "dea_2": false,
+    "instance_projection": [
+     [
+      "cont",
+      "W2",
+      "X",
+      "beta"
+     ]
+    ],
+    "model_1": [
+     [
+      "cont",
+      "W2",
+      "X",
+      "beta"
+     ]
+    ],
+    "model_2": [
+     [
+      "cont",
+      "W1",
+      "X",
+      "beta"
+     ],
+     [
+      "cont",
+      "W2",
+      "X",
+      "beta"
+     ]
+    ]
+   }
+  },
+  {
+   "argument": "Lemma (monotonicity): adding fresh users and relation pairs that each contain a fresh user leaves UR, SA and every relation on old users unchanged, so every valid (partial) plan over old users stays valid. DEA pair: m0 (no edges, effective) and m1 = m0 + principal p with p->a in theta_E and p->j in theta_J (conflict). Under A-STEP + LOCAL-REL, tr(m1) extends tr(m0) by fresh user p, so the target permits in m1 and errs. Machine check: lemma verified on all enumerated 2-step instances with one fresh user; pair verified.",
+   "assumptions": "W&L-07 Defs 1-5; A-STEP; LOCAL-REL; both DEA closure readings.",
+   "construct": "Ctrl_theta ExecConflict",
+   "id": "PRF-CTRL-WL-MONO",
+   "machine_check_passed": true,
+   "statement": "No W&L-07 translation preserves ExecConflict if (A-STEP) steps, order, SA and constraints depend only on DEA acts and grants, not on the set of non-acting principals, and (LOCAL-REL) each control edge contributes only pairs containing its endpoints.",
+   "status": "PROVEN-NON-EXPRESSIBLE under stated assumptions (A-STEP + LOCAL-REL)",
+   "witness": {
+    "m0": {
+     "edges": {}
+    },
+    "m1": {
+     "edges": {
+      "p->a": "E",
+      "p->j": "J"
+     }
+    }
+   }
+  },
+  {
+   "argument": "Boundary model: p->o only at t=2, o->j only at t=3, p->a in theta_E. A: no conflict; B: conflict. Disagreements inside MC-CTRL: 72 of 16807.",
+   "assumptions": "Windows theta_E=[0,1], theta_J=[2,3]; MC-CTRL with 7 interval options.",
+   "construct": "Ctrl_theta closure timing (DEA-internal)",
+   "id": "PRF-CTRL6B",
+   "machine_check_passed": true,
+   "statement": "Per-instant closure (A) and window-union closure (B) give different ExecConflict decisions; DEA v0.3.4.3 p.8 does not select either.",
+   "status": "ARCHITECTURAL AMBIGUITY (outcome-relevant)",
+   "witness": {
+    "A_effective": true,
+    "B_effective": false,
+    "mc_ctrl_disagreements": 72,
+    "model": {
+     "edges": {
+      "o->j": "J_late",
+      "p->a": "E",
+      "p->o": "J_early"
+     }
+    }
+   }
+  }
+ ],
+ "regression": [
+  {
+   "case": "S1_compliant",
+   "dea_v0343": [
+    false,
+    false,
+    false
+   ],
+   "diverges_from_v0342": false,
+   "expected_v0343": [
+    false,
+    false,
+    false
+   ],
+   "matches_expected": true,
+   "note": "",
+   "status": "included",
+   "suite": "G2",
+   "targets": {
+    "Li-RH H_EJ": false
+   },
+   "v0342_intent": [
+    false,
+    false,
+    false
+   ]
+  },
+  {
+   "case": "S2_one_operator_shared_credential",
+   "dea_v0343": [
+    true,
+    true,
+    true
+   ],
+   "diverges_from_v0342": false,
+   "expected_v0343": [
+    true,
+    true,
+    true
+   ],
+   "matches_expected": true,
+   "note": "",
+   "status": "included",
+   "suite": "G2",
+   "targets": {
+    "Li-RH H_EJ": true
+   },
+   "v0342_intent": [
+    true,
+    true,
+    true
+   ]
+  },
+  {
+   "case": "S3_same_model_separate_control",
+   "dea_v0343": [
+    false,
+    false,
+    false
+   ],
+   "diverges_from_v0342": false,
+   "expected_v0343": [
+    false,
+    false,
+    false
+   ],
+   "matches_expected": true,
+   "note": "",
+   "status": "included",
+   "suite": "G2",
+   "targets": {
+    "Li-RH H_EJ": false
+   },
+   "v0342_intent": [
+    false,
+    false,
+    false
+   ]
+  },
+  {
+   "case": "S4_shared_readable_state",
+   "dea_v0343": [
+    false,
+    false,
+    false
+   ],
+   "diverges_from_v0342": false,
+   "expected_v0343": [
+    false,
+    false,
+    false
+   ],
+   "matches_expected": true,
+   "note": "",
+   "status": "included",
+   "suite": "G2",
+   "targets": {
+    "Li-RH H_EJ": false
+   },
+   "v0342_intent": [
+    false,
+    false,
+    false
+   ]
+  },
+  {
+   "case": "S5_controller_behind_E_and_J",
+   "dea_v0343": [
+    false,
+    true,
+    false
+   ],
+   "diverges_from_v0342": false,
+   "expected_v0343": [
+    false,
+    true,
+    false
+   ],
+   "matches_expected": true,
+   "note": "",
+   "status": "included",
+   "suite": "G2",
+   "targets": {
+    "Li-RH H_EJ": true
+   },
+   "v0342_intent": [
+    false,
+    true,
+    false
+   ]
+  },
+  {
+   "case": "S6_E_writes_J_decision_record",
+   "dea_v0343": [
+    false,
+    true,
+    false
+   ],
+   "diverges_from_v0342": false,
+   "expected_v0343": [
+    false,
+    true,
+    false
+   ],
+   "matches_expected": true,
+   "note": "",
+   "status": "included",
+   "suite": "G2",
+   "targets": {
+    "Li-RH H_EJ": true
+   },
+   "v0342_intent": [
+    false,
+    true,
+    false
+   ]
+  },
+  {
+   "case": "S7_D_alters_E_caps_mid_stage",
+   "dea_v0343": [
+    false,
+    false,
+    true
+   ],
+   "diverges_from_v0342": false,
+   "expected_v0343": [
+    false,
+    false,
+    true
+   ],
+   "matches_expected": true,
+   "note": "",
+   "status": "included",
+   "suite": "G2",
+   "targets": {
+    "Li-RH H_EJ": false
+   },
+   "v0342_intent": [
+    false,
+    false,
+    true
+   ]
+  },
+  {
+   "case": "S8_TCB_admin_not_role_holder",
+   "dea_v0343": [
+    true,
+    true,
+    true
+   ],
+   "diverges_from_v0342": true,
+   "expected_v0343": [
+    true,
+    true,
+    true
+   ],
+   "matches_expected": true,
+   "note": "v0.3.4.3 p.8-9: TCB not exempt",
+   "status": "included",
+   "suite": "G2",
+   "targets": {
+    "Li-RH H_EJ": true
+   },
+   "v0342_intent": [
+    false,
+    false,
+    false
+   ]
+  },
+  {
+   "case": "S9_TCB_admin_also_acts_as_D",
+   "dea_v0343": [
+    true,
+    true,
+    true
+   ],
+   "diverges_from_v0342": false,
+   "expected_v0343": [
+    true,
+    true,
+    true
+   ],
+   "matches_expected": true,
+   "note": "",
+   "status": "included",
+   "suite": "G2",
+   "targets": {
+    "Li-RH H_EJ": true
+   },
+   "v0342_intent": [
+    true,
+    true,
+    true
+   ]
+  },
+  {
+   "case": "S10_orchestrator_spawns_subagents_with_own_token",
+   "dea_v0343": [
+    false,
+    true,
+    false
+   ],
+   "diverges_from_v0342": false,
+   "expected_v0343": [
+    false,
+    true,
+    false
+   ],
+   "matches_expected": true,
+   "note": "",
+   "status": "included",
+   "suite": "G2",
+   "targets": {
+    "Li-RH H_EJ": true
+   },
+   "v0342_intent": [
+    false,
+    true,
+    false
+   ]
+  },
+  {
+   "case": "S11_E_supplies_verifier_run_by_J0",
+   "dea_v0343": [
+    false,
+    true,
+    false
+   ],
+   "diverges_from_v0342": false,
+   "expected_v0343": [
+    false,
+    true,
+    false
+   ],
+   "matches_expected": true,
+   "note": "",
+   "status": "included",
+   "suite": "G2",
+   "targets": {
+    "Li-RH H_EJ": true
+   },
+   "v0342_intent": [
+    false,
+    true,
+    false
+   ]
+  },
+  {
+   "case": "S12_D_rubric_fixed_in_prestage_manifest",
+   "dea_v0343": [
+    false,
+    false,
+    false
+   ],
+   "diverges_from_v0342": false,
+   "expected_v0343": [
+    false,
+    false,
+    false
+   ],
+   "matches_expected": true,
+   "note": "",
+   "status": "included",
+   "suite": "G2",
+   "targets": {
+    "Li-RH H_EJ": false
+   },
+   "v0342_intent": [
+    false,
+    false,
+    false
+   ]
+  },
+  {
+   "case": "S13_transitive_P_orc_e (new)",
+   "dea_v0343": [
+    false,
+    true,
+    false
+   ],
+   "diverges_from_v0342": false,
+   "expected_v0343": [
+    false,
+    true,
+    false
+   ],
+   "matches_expected": true,
+   "note": "transitive control P->orc->e plus P->j",
+   "status": "newly constructed",
+   "suite": "G2",
+   "targets": {
+    "Li-RH H_EJ": true
+   },
+   "v0342_intent": null
+  },
+  {
+   "case": "M1_independent",
+   "dea_v0343": 1,
+   "diverges_from_v0342": false,
+   "expected_v0343": 1,
+   "matches_expected": true,
+   "note": "",
+   "status": "included",
+   "suite": "G3",
+   "targets": {
+    "Bertino A-IDX": 1,
+    "W&L-07 A-IDX": 1
+   },
+   "v0342_intent": 1
+  },
+  {
+   "case": "M2_self_unauthorized (v0.3.4.1)",
+   "dea_v0343": 0,
+   "diverges_from_v0342": false,
+   "expected_v0343": 0,
+   "matches_expected": true,
+   "note": "",
+   "status": "included",
+   "suite": "G3",
+   "targets": {
+    "Bertino A-IDX": 0,
+    "W&L-07 A-IDX": 0
+   },
+   "v0342_intent": 0
+  },
+  {
+   "case": "M3_self_granted",
+   "dea_v0343": 0,
+   "diverges_from_v0342": false,
+   "expected_v0343": 0,
+   "matches_expected": true,
+   "note": "",
+   "status": "included",
+   "suite": "G3",
+   "targets": {
+    "Bertino A-IDX": 0,
+    "W&L-07 A-IDX": 0
+   },
+   "v0342_intent": 0
+  },
+  {
+   "case": "M4_self_granted_unused (v0.3.4.1)",
+   "dea_v0343": 0,
+   "diverges_from_v0342": false,
+   "expected_v0343": 0,
+   "matches_expected": true,
+   "note": "",
+   "status": "included",
+   "suite": "G3",
+   "targets": {},
+   "v0342_intent": 0
+  },
+  {
+   "case": "M5_proxy_judge_same_controller",
+   "dea_v0343": 0,
+   "diverges_from_v0342": false,
+   "expected_v0343": 0,
+   "matches_expected": true,
+   "note": "; targets see identities only (proxy collapse not representable in A)",
+   "status": "included",
+   "suite": "G3",
+   "targets": {
+    "Bertino A-IDX": 1,
+    "W&L-07 A-IDX": 1
+   },
+   "v0342_intent": 0
+  },
+  {
+   "case": "M6_J_verifies_then_accepts_E_output",
+   "dea_v0343": 1,
+   "diverges_from_v0342": false,
+   "expected_v0343": 1,
+   "matches_expected": true,
+   "note": "",
+   "status": "included",
+   "suite": "G3",
+   "targets": {
+    "Bertino A-IDX": 1,
+    "W&L-07 A-IDX": 1
+   },
+   "v0342_intent": 1
+  },
+  {
+   "case": "M7_J_accepts_own_repair",
+   "dea_v0343": 0,
+   "diverges_from_v0342": false,
+   "expected_v0343": 0,
+   "matches_expected": true,
+   "note": "",
+   "status": "included",
+   "suite": "G3",
+   "targets": {
+    "Bertino A-IDX": 0,
+    "W&L-07 A-IDX": 0
+   },
+   "v0342_intent": 0
+  },
+  {
+   "case": "M8_self_hold",
+   "dea_v0343": 0,
+   "diverges_from_v0342": true,
+   "expected_v0343": 0,
+   "matches_expected": true,
+   "note": "v0.3.4.3 p.10: guard covers every s in Sigma_adj",
+   "status": "included",
+   "suite": "G3",
+   "targets": {
+    "Bertino A-IDX": 0,
+    "W&L-07 A-IDX": 0
+   },
+   "v0342_intent": 1
+  },
+  {
+   "case": "M9_timing_grant_before_output",
+   "dea_v0343": 0,
+   "diverges_from_v0342": false,
+   "expected_v0343": 0,
+   "matches_expected": true,
+   "note": "",
+   "status": "included",
+   "suite": "G3",
+   "targets": {
+    "Bertino A-IDX": 0,
+    "W&L-07 A-IDX": 0
+   },
+   "v0342_intent": 0
+  },
+  {
+   "case": "A1_renamed_workflows_x5",
+   "dea_v0343": 1,
+   "diverges_from_v0342": false,
+   "expected_v0343": 1,
+   "matches_expected": true,
+   "note": "Case(x) computed by the DEA reference and supplied to targets as an input attribute",
+   "status": "included",
+   "suite": "G4",
+   "targets": {
+    "Bertino A-INST": 5,
+    "Bertino A-MERGE": 1,
+    "Bertino B": 1
+   },
+   "v0342_intent": 1
+  },
+  {
+   "case": "A2_renamed_manifest_same_workflow",
+   "dea_v0343": 1,
+   "diverges_from_v0342": false,
+   "expected_v0343": 1,
+   "matches_expected": true,
+   "note": "Case(x) computed by the DEA reference and supplied to targets as an input attribute",
+   "status": "included",
+   "suite": "G4",
+   "targets": {
+    "Bertino A-INST": 1,
+    "Bertino A-MERGE": 1,
+    "Bertino B": 1
+   },
+   "v0342_intent": 1
+  },
+  {
+   "case": "A3_restaging_same_workflow",
+   "dea_v0343": 1,
+   "diverges_from_v0342": false,
+   "expected_v0343": 1,
+   "matches_expected": true,
+   "note": "Case(x) computed by the DEA reference and supplied to targets as an input attribute",
+   "status": "included",
+   "suite": "G4",
+   "targets": {
+    "Bertino A-INST": 1,
+    "Bertino A-MERGE": 1,
+    "Bertino B": 1
+   },
+   "v0342_intent": 1
+  },
+  {
+   "case": "A4_relabelled_object_same_content",
+   "dea_v0343": 1,
+   "diverges_from_v0342": false,
+   "expected_v0343": 1,
+   "matches_expected": true,
+   "note": "Case(x) computed by the DEA reference and supplied to targets as an input attribute",
+   "status": "included",
+   "suite": "G4",
+   "targets": {
+    "Bertino A-INST": 4,
+    "Bertino A-MERGE": 1,
+    "Bertino B": 1
+   },
+   "v0342_intent": 1
+  },
+  {
+   "case": "A5_edited_object_with_lineage",
+   "dea_v0343": 1,
+   "diverges_from_v0342": false,
+   "expected_v0343": 1,
+   "matches_expected": true,
+   "note": "Case(x) computed by the DEA reference and supplied to targets as an input attribute",
+   "status": "included",
+   "suite": "G4",
+   "targets": {
+    "Bertino A-INST": 4,
+    "Bertino A-MERGE": 1,
+    "Bertino B": 1
+   },
+   "v0342_intent": 1
+  },
+  {
+   "case": "A6_reextraction_same_locator",
+   "dea_v0343": 1,
+   "diverges_from_v0342": false,
+   "expected_v0343": 1,
+   "matches_expected": true,
+   "note": "Case(x) computed by the DEA reference and supplied to targets as an input attribute",
+   "status": "included",
+   "suite": "G4",
+   "targets": {
+    "Bertino A-INST": 4,
+    "Bertino A-MERGE": 1,
+    "Bertino B": 1
+   },
+   "v0342_intent": 1
+  },
+  {
+   "case": "A7_near_duplicate_shifted_locator",
+   "dea_v0343": 4,
+   "diverges_from_v0342": false,
+   "expected_v0343": 4,
+   "matches_expected": true,
+   "note": "Case(x) computed by the DEA reference and supplied to targets as an input attribute; documented DEA residual",
+   "status": "included",
+   "suite": "G4",
+   "targets": {
+    "Bertino A-INST": 4,
+    "Bertino A-MERGE": 4,
+    "Bertino B": 4
+   },
+   "v0342_intent": 4
+  },
+  {
+   "case": "A8_self_reopen_after_terminal",
+   "dea_v0343": 1,
+   "diverges_from_v0342": false,
+   "expected_v0343": 1,
+   "matches_expected": true,
+   "note": "Case(x) computed by the DEA reference and supplied to targets as an input attribute",
+   "status": "included",
+   "suite": "G4",
+   "targets": {
+    "Bertino A-INST": 2,
+    "Bertino A-MERGE": 1,
+    "Bertino B": 1
+   },
+   "v0342_intent": 1
+  },
+  {
+   "case": "L1_new_object_same_blocker_type",
+   "dea_v0343": 2,
+   "diverges_from_v0342": false,
+   "expected_v0343": 2,
+   "matches_expected": true,
+   "note": "Case(x) computed by the DEA reference and supplied to targets as an input attribute",
+   "status": "included",
+   "suite": "G4",
+   "targets": {
+    "Bertino A-INST": 2,
+    "Bertino A-MERGE": 2,
+    "Bertino B": 2
+   },
+   "v0342_intent": 2
+  },
+  {
+   "case": "L2_same_object_new_blocker",
+   "dea_v0343": 2,
+   "diverges_from_v0342": false,
+   "expected_v0343": 2,
+   "matches_expected": true,
+   "note": "Case(x) computed by the DEA reference and supplied to targets as an input attribute",
+   "status": "included",
+   "suite": "G4",
+   "targets": {
+    "Bertino A-INST": 2,
+    "Bertino A-MERGE": 2,
+    "Bertino B": 2
+   },
+   "v0342_intent": 2
+  },
+  {
+   "case": "L3_independent_logged_reopen",
+   "dea_v0343": 2,
+   "diverges_from_v0342": false,
+   "expected_v0343": 2,
+   "matches_expected": true,
+   "note": "Case(x) computed by the DEA reference and supplied to targets as an input attribute",
+   "status": "included",
+   "suite": "G4",
+   "targets": {
+    "Bertino A-INST": 2,
+    "Bertino A-MERGE": 2,
+    "Bertino B": 2
+   },
+   "v0342_intent": 2
+  },
+  {
+   "case": "L4_multistage_after_accept_no_blocker",
+   "dea_v0343": 4,
+   "diverges_from_v0342": false,
+   "expected_v0343": 4,
+   "matches_expected": true,
+   "note": "Case(x) computed by the DEA reference and supplied to targets as an input attribute",
+   "status": "included",
+   "suite": "G4",
+   "targets": {
+    "Bertino A-INST": 4,
+    "Bertino A-MERGE": 4,
+    "Bertino B": 4
+   },
+   "v0342_intent": 4
+  },
+  {
+   "case": "N1_term_reopen_cont_cont (new)",
+   "dea_v0343": 1,
+   "diverges_from_v0342": false,
+   "expected_v0343": 1,
+   "matches_expected": true,
+   "note": "Case(x) computed by the DEA reference and supplied to targets as an input attribute",
+   "status": "newly constructed",
+   "suite": "G4",
+   "targets": {
+    "Bertino A-INST": 1,
+    "Bertino A-MERGE": 2,
+    "Bertino B": 1
+   },
+   "v0342_intent": null
+  },
+  {
+   "case": "N2_double_term_single_reopen (new)",
+   "dea_v0343": 1,
+   "diverges_from_v0342": false,
+   "expected_v0343": 1,
+   "matches_expected": true,
+   "note": "Case(x) computed by the DEA reference and supplied to targets as an input attribute",
+   "status": "newly constructed",
+   "suite": "G4",
+   "targets": {
+    "Bertino A-INST": 1,
+    "Bertino A-MERGE": 1,
+    "Bertino B": 1
+   },
+   "v0342_intent": null
+  },
+  {
+   "case": "A_no_actions_goal_unsatisfied",
+   "dea_v0343": true,
+   "diverges_from_v0342": false,
+   "expected_v0343": true,
+   "matches_expected": true,
+   "note": "",
+   "status": "included",
+   "suite": "NAP",
+   "targets": {
+    "Basin-TICK": true,
+    "Bertino-B": true,
+    "Li-RH": true,
+    "WSP-A1": false,
+    "WSP-LABEL": true
+   },
+   "v0342_intent": null
+  },
+  {
+   "case": "B_authorized_irrelevant_action",
+   "dea_v0343": true,
+   "diverges_from_v0342": false,
+   "expected_v0343": true,
+   "matches_expected": true,
+   "note": "",
+   "status": "included",
+   "suite": "NAP",
+   "targets": {
+    "Basin-TICK": true,
+    "Bertino-B": true,
+    "Li-RH": true,
+    "WSP-A1": false,
+    "WSP-LABEL": true
+   },
+   "v0342_intent": null
+  },
+  {
+   "case": "C_blocked_direct_authorized_alternative",
+   "dea_v0343": false,
+   "diverges_from_v0342": false,
+   "expected_v0343": false,
+   "matches_expected": true,
+   "note": "",
+   "status": "included",
+   "suite": "NAP",
+   "targets": {
+    "Basin-TICK": false,
+    "Bertino-B": false,
+    "Li-RH": false,
+    "WSP-A1": true,
+    "WSP-LABEL": false
+   },
+   "v0342_intent": null
+  },
+  {
+   "case": "D_goal_already_satisfied",
+   "dea_v0343": false,
+   "diverges_from_v0342": false,
+   "expected_v0343": false,
+   "matches_expected": true,
+   "note": "",
+   "status": "included",
+   "suite": "NAP",
+   "targets": {
+    "Basin-TICK": false,
+    "Bertino-B": false,
+    "Li-RH": false,
+    "WSP-A1": false,
+    "WSP-LABEL": false
+   },
+   "v0342_intent": null
+  },
+  {
+   "case": "minimal_self_loop_no_goal",
+   "dea_v0343": true,
+   "diverges_from_v0342": false,
+   "expected_v0343": true,
+   "matches_expected": true,
+   "note": "",
+   "status": "included",
+   "suite": "NAP",
+   "targets": {
+    "Basin-TICK": true,
+    "Bertino-B": true,
+    "Li-RH": true,
+    "WSP-A1": false,
+    "WSP-LABEL": true
+   },
+   "v0342_intent": null
+  },
+  {
+   "case": "diag_only_p19",
+   "dea_v0343": true,
+   "diverges_from_v0342": false,
+   "expected_v0343": true,
+   "matches_expected": true,
+   "note": "",
+   "status": "included",
+   "suite": "NAP",
+   "targets": {
+    "Basin-TICK": true,
+    "Bertino-B": true,
+    "Li-RH": true,
+    "WSP-A1": false,
+    "WSP-LABEL": true
+   },
+   "v0342_intent": null
+  },
+  {
+   "case": "diag_goal_twin",
+   "dea_v0343": false,
+   "diverges_from_v0342": false,
+   "expected_v0343": false,
+   "matches_expected": true,
+   "note": "",
+   "status": "included",
+   "suite": "NAP",
+   "targets": {
+    "Basin-TICK": false,
+    "Bertino-B": false,
+    "Li-RH": false,
+    "WSP-A1": false,
+    "WSP-LABEL": false
+   },
+   "v0342_intent": null
+  },
+  {
+   "case": "diagnostic_bound_depth2 (new)",
+   "dea_v0343": "undetermined",
+   "diverges_from_v0342": false,
+   "expected_v0343": "undetermined",
+   "matches_expected": true,
+   "note": "",
+   "status": "newly constructed",
+   "suite": "NAP",
+   "targets": {
+    "note": "no compared formalism has a three-valued verdict"
+   },
+   "v0342_intent": null
+  }
+ ],
+ "translations": [
+  {
+   "assumptions": "",
+   "backward_failures": 512,
+   "backward_min_countermodel": {
+    "dea": [],
+    "model": {
+     "adj": [
+      "b"
+     ],
+     "disp": [
+      "Accept"
+     ],
+     "exec": [
+      "a"
+     ],
+     "exec_perm_revoked": [],
+     "grants": [
+      [
+       "b",
+       0,
+       "Hold"
+      ]
+     ],
+     "n": 1
+    },
+    "target": [
+     "0"
+    ]
+   },
+   "backward_preserved": false,
+   "construct": "H_EJ + AuthorizedForDisposition",
+   "forward_failures": 160,
+   "forward_min_countermodel": {
+    "dea": [
+     "1"
+    ],
+    "model": {
+     "adj": [
+      "a",
+      "a"
+     ],
+     "disp": [
+      "Hold",
+      "Hold"
+     ],
+     "exec": [
+      "a",
+      "b"
+     ],
+     "exec_perm_revoked": [],
+     "grants": [
+      [
+       "a",
+       0,
+       "Hold"
+      ],
+      [
+       "a",
+       1,
+       "Hold"
+      ]
+     ],
+     "n": 2
+    },
+    "target": []
+   },
+   "forward_preserved": false,
+   "id": "EJ-A-BER-1",
+   "informativeness": "",
+   "kind": "translation",
+   "models": 1440,
+   "regime": "A",
+   "source": "Tab. I-III pp.73-75; Def 4.2",
+   "target": "Bertino, Ferrari & Atluri 1999",
+   "translation": "original encoding: one T_exec, one T_adj; cannot_dou(U,T_adj) <- executeu(U,T_exec,K)"
+  },
+  {
+   "assumptions": "A-IDX; output count fixed in the specification",
+   "backward_failures": 0,
+   "backward_min_countermodel": null,
+   "backward_preserved": true,
+   "construct": "H_EJ + AuthorizedForDisposition",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "EJ-A-BER-2",
+   "informativeness": "",
+   "kind": "translation",
+   "models": 1440,
+   "regime": "A",
+   "source": "Def 2.1 p.71; Tab. I-III; Def 4.2",
+   "target": "Bertino, Ferrari & Atluri 1999",
+   "translation": "A-IDX: tasks T_exec_k, T_adj_k_s; roles R_adj_k_s from grants; cannot_dou(U,T_adj_k_s) <- executeu(U,T_exec_k,K)"
+  },
+  {
+   "assumptions": "dynamic object binding",
+   "backward_failures": 0,
+   "backward_min_countermodel": null,
+   "backward_preserved": true,
+   "construct": "H_EJ + AuthorizedForDisposition",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "EJ-B-BER",
+   "informativeness": "RESTATEMENT",
+   "kind": "translation",
+   "models": 1440,
+   "regime": "B",
+   "source": "Defs 4.2, 4.7; Prop. 4.1",
+   "target": "Bertino, Ferrari & Atluri 1999",
+   "translation": "aux produced/2, granted/3, req/2, cand/1; prevention via cannot_dou"
+  },
+  {
+   "assumptions": "",
+   "backward_failures": 608,
+   "backward_min_countermodel": {
+    "dea": [],
+    "model": {
+     "adj": [
+      "b"
+     ],
+     "disp": [
+      "Accept"
+     ],
+     "exec": [
+      "a"
+     ],
+     "exec_perm_revoked": [],
+     "grants": [
+      [
+       "b",
+       0,
+       "Hold"
+      ]
+     ],
+     "n": 1
+    },
+    "target": [
+     "0"
+    ]
+   },
+   "backward_preserved": false,
+   "construct": "H_EJ + AuthorizedForDisposition",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "EJ-A-WL-1",
+   "informativeness": "",
+   "kind": "translation",
+   "models": 1440,
+   "regime": "A",
+   "source": "Defs 1-5 pp.6-7",
+   "target": "Wang & Li ESORICS 2007 (NOT the 2010 article)",
+   "translation": "original encoding: steps s_exec_k, s_adj_k; <!=(s_adj_k, s_exec_k)>"
+  },
+  {
+   "assumptions": "A-IDX; output count fixed in S",
+   "backward_failures": 0,
+   "backward_min_countermodel": null,
+   "backward_preserved": true,
+   "construct": "H_EJ + AuthorizedForDisposition",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "EJ-A-WL-2",
+   "informativeness": "",
+   "kind": "translation",
+   "models": 1440,
+   "regime": "A",
+   "source": "Defs 1-5 pp.6-7",
+   "target": "Wang & Li ESORICS 2007 (NOT the 2010 article)",
+   "translation": "A-IDX: step s_adj_k_s for the requested disposition; SA from grants with that disposition"
+  },
+  {
+   "assumptions": "",
+   "backward_failures": 100,
+   "backward_min_countermodel": {
+    "dea": [],
+    "model": {
+     "adj": [
+      "a"
+     ],
+     "disp": [
+      "Hold"
+     ],
+     "exec": [
+      "a"
+     ],
+     "exec_perm_revoked": [
+      "a"
+     ],
+     "grants": [
+      [
+       "a",
+       0,
+       "Hold"
+      ]
+     ],
+     "n": 1
+    },
+    "target": [
+     "0"
+    ]
+   },
+   "backward_preserved": false,
+   "construct": "H_EJ + AuthorizedForDisposition",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "EJ-A-LI",
+   "informativeness": "",
+   "kind": "translation",
+   "models": 1440,
+   "regime": "A",
+   "source": "Notation 1 p.9; Def 3 p.10",
+   "target": "Li, Tripunitara & Bizri 2007",
+   "translation": "ssod<{p_exec_k, p_adj_k_s},2> on the current RBAC state"
+  },
+  {
+   "assumptions": "",
+   "backward_failures": 100,
+   "backward_min_countermodel": {
+    "dea": [],
+    "model": {
+     "adj": [
+      "a"
+     ],
+     "disp": [
+      "Hold"
+     ],
+     "exec": [
+      "a"
+     ],
+     "exec_perm_revoked": [
+      "a"
+     ],
+     "grants": [
+      [
+       "a",
+       0,
+       "Hold"
+      ]
+     ],
+     "n": 1
+    },
+    "target": [
+     "0"
+    ]
+   },
+   "backward_preserved": false,
+   "construct": "H_EJ + AuthorizedForDisposition",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "EJ-A-RSL",
+   "informativeness": "",
+   "kind": "translation",
+   "models": 1440,
+   "regime": "A",
+   "source": "Table 1 #1 p.53; p.47 snapshot",
+   "target": "Ahn & Sandhu 1999 (RSL99)",
+   "translation": "SSOD-CR with CR={{Rex_k, Radj_k_s}} on the current snapshot"
+  },
+  {
+   "assumptions": "UA reinterpreted as acted-as record",
+   "backward_failures": 0,
+   "backward_min_countermodel": null,
+   "backward_preserved": true,
+   "construct": "H_EJ + AuthorizedForDisposition",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "EJ-B-LI-HIST",
+   "informativeness": "RESTATEMENT",
+   "kind": "translation",
+   "models": 1440,
+   "regime": "B",
+   "source": "Notation 1 p.9; Def 3 p.10",
+   "target": "Li, Tripunitara & Bizri 2007",
+   "translation": "A-HIST: UA records past execution irrespective of revocation; ssod<{p_exec_k, p_adj_k_s},2>"
+  },
+  {
+   "assumptions": "UA reinterpreted as acted-as record",
+   "backward_failures": 0,
+   "backward_min_countermodel": null,
+   "backward_preserved": true,
+   "construct": "H_EJ + AuthorizedForDisposition",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "EJ-B-RSL-HIST",
+   "informativeness": "RESTATEMENT",
+   "kind": "translation",
+   "models": 1440,
+   "regime": "B",
+   "source": "Table 1 #1; p.44 history-based SoD",
+   "target": "Ahn & Sandhu 1999 (RSL99)",
+   "translation": "A-HIST snapshot; SSOD-CR"
+  },
+  {
+   "assumptions": "",
+   "backward_failures": 0,
+   "backward_min_countermodel": null,
+   "backward_preserved": true,
+   "construct": "T3 (Eq.31)",
+   "forward_failures": 36,
+   "forward_min_countermodel": {
+    "dea": [
+     "1"
+    ],
+    "model": {
+     "acc": [
+      "a",
+      "a"
+     ],
+     "exec": [
+      "a",
+      "b"
+     ],
+     "scope": "a"
+    },
+    "target": []
+   },
+   "forward_preserved": false,
+   "id": "T3-A-BER-1",
+   "informativeness": "",
+   "kind": "translation",
+   "models": 243,
+   "regime": "A",
+   "source": "Tab. III; Def 4.2",
+   "target": "Bertino, Ferrari & Atluri 1999",
+   "translation": "original: cannot_dou(U,T_acc) <- executeu(U,T_scope,_), executeu(U,T_exec,_)"
+  },
+  {
+   "assumptions": "A-IDX",
+   "backward_failures": 0,
+   "backward_min_countermodel": null,
+   "backward_preserved": true,
+   "construct": "T3 (Eq.31)",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "T3-A-BER-2",
+   "informativeness": "",
+   "kind": "translation",
+   "models": 243,
+   "regime": "A",
+   "source": "Tab. III; Def 4.2",
+   "target": "Bertino, Ferrari & Atluri 1999",
+   "translation": "A-IDX: cannot_dou(U,T_acc_k) <- executeu(U,T_scope,_), executeu(U,T_exec_k,_)"
+  },
+  {
+   "assumptions": "A-IDX",
+   "backward_failures": 0,
+   "backward_min_countermodel": null,
+   "backward_preserved": true,
+   "construct": "T3 (Eq.31)",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "T3-A-WL",
+   "informativeness": "",
+   "kind": "translation",
+   "models": 243,
+   "regime": "A",
+   "source": "Def 2 form 2 p.6",
+   "target": "Wang & Li ESORICS 2007 (NOT the 2010 article)",
+   "translation": "<!=(EXISTS{s_scope, s_exec_k}, s_acc_k)>"
+  },
+  {
+   "assumptions": "A-IDX; UA reinterpreted as acted-as record",
+   "backward_failures": 0,
+   "backward_min_countermodel": null,
+   "backward_preserved": true,
+   "construct": "T3 (Eq.31)",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "T3-B-RSL-HIST",
+   "informativeness": "RESTATEMENT",
+   "kind": "translation",
+   "models": 243,
+   "regime": "B",
+   "source": "Fig. 3 size bound; Table 1 #1",
+   "target": "Ahn & Sandhu 1999 (RSL99)",
+   "translation": "A-HIST: performing a function = holding its role; for all u, cr: |roles(u) & {Scope, Exec_k, Acc_k}| <= 2"
+  },
+  {
+   "assumptions": "UA reinterpreted as acted-as record",
+   "backward_failures": 0,
+   "backward_min_countermodel": null,
+   "backward_preserved": true,
+   "construct": "T3 (Eq.31)",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "T3-B-LI-HIST",
+   "informativeness": "RESTATEMENT",
+   "kind": "translation",
+   "models": 243,
+   "regime": "B",
+   "source": "Notation 1; Def 3 (k-n SSoD)",
+   "target": "Li, Tripunitara & Bizri 2007",
+   "translation": "A-HIST: performing a function = holding its role; ssod<{p_scope,p_exec_k,p_acc_k},2>"
+  },
+  {
+   "assumptions": "",
+   "backward_failures": 0,
+   "backward_min_countermodel": null,
+   "backward_preserved": true,
+   "construct": "H_DE^ext (Eq.33)",
+   "forward_failures": 6,
+   "forward_min_countermodel": {
+    "dea": [
+     "ext"
+    ],
+    "model": {
+     "ext": "b",
+     "gate": "a",
+     "scope": "a"
+    },
+    "target": []
+   },
+   "forward_preserved": false,
+   "id": "DE-A-WL-1",
+   "informativeness": "",
+   "kind": "translation",
+   "models": 12,
+   "regime": "A",
+   "source": "Defs 2-3",
+   "target": "Wang & Li ESORICS 2007 (NOT the 2010 article)",
+   "translation": "mandatory gate step, != constraints"
+  },
+  {
+   "assumptions": "",
+   "backward_failures": 4,
+   "backward_min_countermodel": {
+    "dea": [],
+    "model": {
+     "ext": "a",
+     "gate": "a",
+     "scope": "a"
+    },
+    "target": [
+     "ext"
+    ]
+   },
+   "backward_preserved": false,
+   "construct": "H_DE^ext (Eq.33)",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "DE-A-WL-2",
+   "informativeness": "",
+   "kind": "translation",
+   "models": 12,
+   "regime": "A",
+   "source": "Def 2",
+   "target": "Wang & Li ESORICS 2007 (NOT the 2010 article)",
+   "translation": "no gate step"
+  },
+  {
+   "assumptions": "pseudo-user",
+   "backward_failures": 0,
+   "backward_min_countermodel": null,
+   "backward_preserved": true,
+   "construct": "H_DE^ext (Eq.33)",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "DE-B-WL",
+   "informativeness": "REDUCTION",
+   "kind": "translation",
+   "models": 12,
+   "regime": "B",
+   "source": "Def 1 (user-defined relation), Def 2 form 2",
+   "target": "Wang & Li ESORICS 2007 (NOT the 2010 article)",
+   "translation": "declared pseudo-user nu; rho* = {(u,v): u != v, u != nu}; <rho*(EXISTS{s_gate,s_scope}, s_ext)>"
+  },
+  {
+   "assumptions": "optional gate task (runtime does not force completion)",
+   "backward_failures": 0,
+   "backward_min_countermodel": null,
+   "backward_preserved": true,
+   "construct": "H_DE^ext (Eq.33)",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "DE-A-BER",
+   "informativeness": "",
+   "kind": "translation",
+   "models": 12,
+   "regime": "A",
+   "source": "Def 4.2; Tab. IV count",
+   "target": "Bertino, Ferrari & Atluri 1999",
+   "translation": "cannot_dou(U,T_ext) <- executeu(U,T_scope,K), count(executeu(V,T_gate,K2), V != U) = 0"
+  },
+  {
+   "assumptions": "A-STEP",
+   "backward_failures": 8160,
+   "backward_min_countermodel": {
+    "dea": [],
+    "model": {
+     "edges": {
+      "o->a": "E",
+      "o->j": "J"
+     }
+    },
+    "target": [
+     "effective"
+    ]
+   },
+   "backward_preserved": false,
+   "construct": "Ctrl_theta ExecConflict vs DEA-A per-instant",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "CTRL-A-WL-snap/A",
+   "informativeness": "",
+   "kind": "translation",
+   "models": 16807,
+   "regime": "A",
+   "source": "Def 1; p.7 runtime",
+   "target": "Wang & Li ESORICS 2007 (NOT the 2010 article)",
+   "translation": "element-local: ctl = direct edges active at t=3; <~ctl(s_J,s_E)>, <~ctl(s_E,s_J)>"
+  },
+  {
+   "assumptions": "excluded as evidence",
+   "backward_failures": 0,
+   "backward_min_countermodel": null,
+   "backward_preserved": true,
+   "construct": "Ctrl_theta vs DEA-A per-instant",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "CTRL-ORACLE-WL[A]/A",
+   "informativeness": "",
+   "kind": "ORACLE-EMBEDDING",
+   "models": 16807,
+   "regime": "oracle",
+   "source": "Def 1",
+   "target": "Wang & Li ESORICS 2007 (NOT the 2010 article)",
+   "translation": "B := co-control relation precomputed under reading A"
+  },
+  {
+   "assumptions": "recursion added",
+   "backward_failures": 0,
+   "backward_min_countermodel": null,
+   "backward_preserved": true,
+   "construct": "Ctrl_theta vs DEA-A per-instant",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "CTRL-B-BER[A]/A",
+   "informativeness": "RESTATEMENT",
+   "kind": "translation",
+   "models": 16807,
+   "regime": "B",
+   "source": "Prop. 4.1 + declared recursive IDB",
+   "target": "Bertino, Ferrari & Atluri 1999",
+   "translation": "aux edge/3 + positive recursion, closure reading A"
+  },
+  {
+   "assumptions": "roles reinterpreted as (principal, time) scopes",
+   "backward_failures": 0,
+   "backward_min_countermodel": null,
+   "backward_preserved": true,
+   "construct": "Ctrl_theta vs DEA-A per-instant",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "CTRL-B-LI-RH[A]/A",
+   "informativeness": "REDUCTION",
+   "kind": "translation",
+   "models": 16807,
+   "regime": "B",
+   "source": "Notation 2 + RH* p.10; Def 3",
+   "target": "Li, Tripunitara & Bizri 2007",
+   "translation": "principal-as-role reduction, RH from edges (reading A); ssod<{p_exec,p_adj},2>"
+  },
+  {
+   "assumptions": "roles reinterpreted; time-indexed copies",
+   "backward_failures": 0,
+   "backward_min_countermodel": null,
+   "backward_preserved": true,
+   "construct": "Ctrl_theta vs DEA-A per-instant",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "CTRL-B-RSL-RH[A]/A",
+   "informativeness": "REDUCTION",
+   "kind": "translation",
+   "models": 16807,
+   "regime": "B",
+   "source": "Fig. 1 roles* p.46; Table 1 #2",
+   "target": "Ahn & Sandhu 1999 (RSL99)",
+   "translation": "principal-as-role reduction; MOD-CP (reading A)"
+  },
+  {
+   "assumptions": "excluded as evidence",
+   "backward_failures": 0,
+   "backward_min_countermodel": null,
+   "backward_preserved": true,
+   "construct": "Ctrl_theta vs DEA-A per-instant",
+   "forward_failures": 72,
+   "forward_min_countermodel": {
+    "dea": [
+     "effective"
+    ],
+    "model": {
+     "edges": {
+      "o->j": "J_late",
+      "p->a": "E",
+      "p->o": "J_early"
+     }
+    },
+    "target": []
+   },
+   "forward_preserved": false,
+   "id": "CTRL-ORACLE-WL[B]/A",
+   "informativeness": "",
+   "kind": "ORACLE-EMBEDDING",
+   "models": 16807,
+   "regime": "oracle",
+   "source": "Def 1",
+   "target": "Wang & Li ESORICS 2007 (NOT the 2010 article)",
+   "translation": "B := co-control relation precomputed under reading B"
+  },
+  {
+   "assumptions": "recursion added",
+   "backward_failures": 0,
+   "backward_min_countermodel": null,
+   "backward_preserved": true,
+   "construct": "Ctrl_theta vs DEA-A per-instant",
+   "forward_failures": 72,
+   "forward_min_countermodel": {
+    "dea": [
+     "effective"
+    ],
+    "model": {
+     "edges": {
+      "o->j": "J_late",
+      "p->a": "E",
+      "p->o": "J_early"
+     }
+    },
+    "target": []
+   },
+   "forward_preserved": false,
+   "id": "CTRL-B-BER[B]/A",
+   "informativeness": "RESTATEMENT",
+   "kind": "translation",
+   "models": 16807,
+   "regime": "B",
+   "source": "Prop. 4.1 + declared recursive IDB",
+   "target": "Bertino, Ferrari & Atluri 1999",
+   "translation": "aux edge/3 + positive recursion, closure reading B"
+  },
+  {
+   "assumptions": "roles reinterpreted as (principal, time) scopes",
+   "backward_failures": 0,
+   "backward_min_countermodel": null,
+   "backward_preserved": true,
+   "construct": "Ctrl_theta vs DEA-A per-instant",
+   "forward_failures": 72,
+   "forward_min_countermodel": {
+    "dea": [
+     "effective"
+    ],
+    "model": {
+     "edges": {
+      "o->j": "J_late",
+      "p->a": "E",
+      "p->o": "J_early"
+     }
+    },
+    "target": []
+   },
+   "forward_preserved": false,
+   "id": "CTRL-B-LI-RH[B]/A",
+   "informativeness": "REDUCTION",
+   "kind": "translation",
+   "models": 16807,
+   "regime": "B",
+   "source": "Notation 2 + RH* p.10; Def 3",
+   "target": "Li, Tripunitara & Bizri 2007",
+   "translation": "principal-as-role reduction, RH from edges (reading B); ssod<{p_exec,p_adj},2>"
+  },
+  {
+   "assumptions": "roles reinterpreted; time-indexed copies",
+   "backward_failures": 0,
+   "backward_min_countermodel": null,
+   "backward_preserved": true,
+   "construct": "Ctrl_theta vs DEA-A per-instant",
+   "forward_failures": 72,
+   "forward_min_countermodel": {
+    "dea": [
+     "effective"
+    ],
+    "model": {
+     "edges": {
+      "o->j": "J_late",
+      "p->a": "E",
+      "p->o": "J_early"
+     }
+    },
+    "target": []
+   },
+   "forward_preserved": false,
+   "id": "CTRL-B-RSL-RH[B]/A",
+   "informativeness": "REDUCTION",
+   "kind": "translation",
+   "models": 16807,
+   "regime": "B",
+   "source": "Fig. 1 roles* p.46; Table 1 #2",
+   "target": "Ahn & Sandhu 1999 (RSL99)",
+   "translation": "principal-as-role reduction; MOD-CP (reading B)"
+  },
+  {
+   "assumptions": "",
+   "backward_failures": 8160,
+   "backward_min_countermodel": {
+    "dea": [],
+    "model": {
+     "edges": {
+      "o->a": "E",
+      "o->j": "J"
+     }
+    },
+    "target": [
+     "effective"
+    ]
+   },
+   "backward_preserved": false,
+   "construct": "Ctrl_theta vs DEA-A per-instant",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "CTRL-A-LI/A",
+   "informativeness": "",
+   "kind": "translation",
+   "models": 16807,
+   "regime": "A",
+   "source": "Notation 1-2; Def 3",
+   "target": "Li, Tripunitara & Bizri 2007",
+   "translation": "users atomic; ssod<{pex,padj},2>"
+  },
+  {
+   "assumptions": "",
+   "backward_failures": 8160,
+   "backward_min_countermodel": {
+    "dea": [],
+    "model": {
+     "edges": {
+      "o->a": "E",
+      "o->j": "J"
+     }
+    },
+    "target": [
+     "effective"
+    ]
+   },
+   "backward_preserved": false,
+   "construct": "Ctrl_theta vs DEA-A per-instant",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "CTRL-A-RSL-CU/A",
+   "informativeness": "",
+   "kind": "translation",
+   "models": 16807,
+   "regime": "A",
+   "source": "Table 1 #5 p.53; p.47",
+   "target": "Ahn & Sandhu 1999 (RSL99)",
+   "translation": "CU = direct edges at check time; SSOD-CU"
+  },
+  {
+   "assumptions": "A-STEP",
+   "backward_failures": 8232,
+   "backward_min_countermodel": {
+    "dea": [],
+    "model": {
+     "edges": {
+      "o->a": "E",
+      "o->j": "J"
+     }
+    },
+    "target": [
+     "effective"
+    ]
+   },
+   "backward_preserved": false,
+   "construct": "Ctrl_theta ExecConflict vs DEA-B window-union",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "CTRL-A-WL-snap/B",
+   "informativeness": "",
+   "kind": "translation",
+   "models": 16807,
+   "regime": "A",
+   "source": "Def 1; p.7 runtime",
+   "target": "Wang & Li ESORICS 2007 (NOT the 2010 article)",
+   "translation": "element-local: ctl = direct edges active at t=3; <~ctl(s_J,s_E)>, <~ctl(s_E,s_J)>"
+  },
+  {
+   "assumptions": "excluded as evidence",
+   "backward_failures": 72,
+   "backward_min_countermodel": {
+    "dea": [],
+    "model": {
+     "edges": {
+      "o->j": "J_late",
+      "p->a": "E",
+      "p->o": "J_early"
+     }
+    },
+    "target": [
+     "effective"
+    ]
+   },
+   "backward_preserved": false,
+   "construct": "Ctrl_theta vs DEA-B window-union",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "CTRL-ORACLE-WL[A]/B",
+   "informativeness": "",
+   "kind": "ORACLE-EMBEDDING",
+   "models": 16807,
+   "regime": "oracle",
+   "source": "Def 1",
+   "target": "Wang & Li ESORICS 2007 (NOT the 2010 article)",
+   "translation": "B := co-control relation precomputed under reading A"
+  },
+  {
+   "assumptions": "recursion added",
+   "backward_failures": 72,
+   "backward_min_countermodel": {
+    "dea": [],
+    "model": {
+     "edges": {
+      "o->j": "J_late",
+      "p->a": "E",
+      "p->o": "J_early"
+     }
+    },
+    "target": [
+     "effective"
+    ]
+   },
+   "backward_preserved": false,
+   "construct": "Ctrl_theta vs DEA-B window-union",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "CTRL-B-BER[A]/B",
+   "informativeness": "RESTATEMENT",
+   "kind": "translation",
+   "models": 16807,
+   "regime": "B",
+   "source": "Prop. 4.1 + declared recursive IDB",
+   "target": "Bertino, Ferrari & Atluri 1999",
+   "translation": "aux edge/3 + positive recursion, closure reading A"
+  },
+  {
+   "assumptions": "roles reinterpreted as (principal, time) scopes",
+   "backward_failures": 72,
+   "backward_min_countermodel": {
+    "dea": [],
+    "model": {
+     "edges": {
+      "o->j": "J_late",
+      "p->a": "E",
+      "p->o": "J_early"
+     }
+    },
+    "target": [
+     "effective"
+    ]
+   },
+   "backward_preserved": false,
+   "construct": "Ctrl_theta vs DEA-B window-union",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "CTRL-B-LI-RH[A]/B",
+   "informativeness": "REDUCTION",
+   "kind": "translation",
+   "models": 16807,
+   "regime": "B",
+   "source": "Notation 2 + RH* p.10; Def 3",
+   "target": "Li, Tripunitara & Bizri 2007",
+   "translation": "principal-as-role reduction, RH from edges (reading A); ssod<{p_exec,p_adj},2>"
+  },
+  {
+   "assumptions": "roles reinterpreted; time-indexed copies",
+   "backward_failures": 72,
+   "backward_min_countermodel": {
+    "dea": [],
+    "model": {
+     "edges": {
+      "o->j": "J_late",
+      "p->a": "E",
+      "p->o": "J_early"
+     }
+    },
+    "target": [
+     "effective"
+    ]
+   },
+   "backward_preserved": false,
+   "construct": "Ctrl_theta vs DEA-B window-union",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "CTRL-B-RSL-RH[A]/B",
+   "informativeness": "REDUCTION",
+   "kind": "translation",
+   "models": 16807,
+   "regime": "B",
+   "source": "Fig. 1 roles* p.46; Table 1 #2",
+   "target": "Ahn & Sandhu 1999 (RSL99)",
+   "translation": "principal-as-role reduction; MOD-CP (reading A)"
+  },
+  {
+   "assumptions": "excluded as evidence",
+   "backward_failures": 0,
+   "backward_min_countermodel": null,
+   "backward_preserved": true,
+   "construct": "Ctrl_theta vs DEA-B window-union",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "CTRL-ORACLE-WL[B]/B",
+   "informativeness": "",
+   "kind": "ORACLE-EMBEDDING",
+   "models": 16807,
+   "regime": "oracle",
+   "source": "Def 1",
+   "target": "Wang & Li ESORICS 2007 (NOT the 2010 article)",
+   "translation": "B := co-control relation precomputed under reading B"
+  },
+  {
+   "assumptions": "recursion added",
+   "backward_failures": 0,
+   "backward_min_countermodel": null,
+   "backward_preserved": true,
+   "construct": "Ctrl_theta vs DEA-B window-union",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "CTRL-B-BER[B]/B",
+   "informativeness": "RESTATEMENT",
+   "kind": "translation",
+   "models": 16807,
+   "regime": "B",
+   "source": "Prop. 4.1 + declared recursive IDB",
+   "target": "Bertino, Ferrari & Atluri 1999",
+   "translation": "aux edge/3 + positive recursion, closure reading B"
+  },
+  {
+   "assumptions": "roles reinterpreted as (principal, time) scopes",
+   "backward_failures": 0,
+   "backward_min_countermodel": null,
+   "backward_preserved": true,
+   "construct": "Ctrl_theta vs DEA-B window-union",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "CTRL-B-LI-RH[B]/B",
+   "informativeness": "REDUCTION",
+   "kind": "translation",
+   "models": 16807,
+   "regime": "B",
+   "source": "Notation 2 + RH* p.10; Def 3",
+   "target": "Li, Tripunitara & Bizri 2007",
+   "translation": "principal-as-role reduction, RH from edges (reading B); ssod<{p_exec,p_adj},2>"
+  },
+  {
+   "assumptions": "roles reinterpreted; time-indexed copies",
+   "backward_failures": 0,
+   "backward_min_countermodel": null,
+   "backward_preserved": true,
+   "construct": "Ctrl_theta vs DEA-B window-union",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "CTRL-B-RSL-RH[B]/B",
+   "informativeness": "REDUCTION",
+   "kind": "translation",
+   "models": 16807,
+   "regime": "B",
+   "source": "Fig. 1 roles* p.46; Table 1 #2",
+   "target": "Ahn & Sandhu 1999 (RSL99)",
+   "translation": "principal-as-role reduction; MOD-CP (reading B)"
+  },
+  {
+   "assumptions": "",
+   "backward_failures": 8232,
+   "backward_min_countermodel": {
+    "dea": [],
+    "model": {
+     "edges": {
+      "o->a": "E",
+      "o->j": "J"
+     }
+    },
+    "target": [
+     "effective"
+    ]
+   },
+   "backward_preserved": false,
+   "construct": "Ctrl_theta vs DEA-B window-union",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "CTRL-A-LI/B",
+   "informativeness": "",
+   "kind": "translation",
+   "models": 16807,
+   "regime": "A",
+   "source": "Notation 1-2; Def 3",
+   "target": "Li, Tripunitara & Bizri 2007",
+   "translation": "users atomic; ssod<{pex,padj},2>"
+  },
+  {
+   "assumptions": "",
+   "backward_failures": 8232,
+   "backward_min_countermodel": {
+    "dea": [],
+    "model": {
+     "edges": {
+      "o->a": "E",
+      "o->j": "J"
+     }
+    },
+    "target": [
+     "effective"
+    ]
+   },
+   "backward_preserved": false,
+   "construct": "Ctrl_theta vs DEA-B window-union",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "CTRL-A-RSL-CU/B",
+   "informativeness": "",
+   "kind": "translation",
+   "models": 16807,
+   "regime": "A",
+   "source": "Table 1 #5 p.53; p.47",
+   "target": "Ahn & Sandhu 1999 (RSL99)",
+   "translation": "CU = direct edges at check time; SSOD-CU"
+  },
+  {
+   "assumptions": "A-INST; A-IDX; B=1",
+   "backward_failures": 384,
+   "backward_min_countermodel": {
+    "dea": [
+     "0"
+    ],
+    "model": {
+     "B": 1,
+     "events": [
+      [
+       "cont",
+       "W1",
+       "X",
+       "beta"
+      ],
+      [
+       "cont",
+       "W2",
+       "X",
+       "beta"
+      ]
+     ]
+    },
+    "target": [
+     "0",
+     "1"
+    ]
+   },
+   "backward_preserved": false,
+   "construct": "case/blocker ledger",
+   "forward_failures": 2,
+   "forward_min_countermodel": {
+    "dea": [
+     "2"
+    ],
+    "model": {
+     "B": 1,
+     "events": [
+      [
+       "term",
+       "W1",
+       "X",
+       "beta"
+      ],
+      [
+       "reopen",
+       "W2",
+       "X",
+       "beta",
+       true
+      ],
+      [
+       "cont",
+       "W1",
+       "X",
+       "beta"
+      ]
+     ]
+    },
+    "target": []
+   },
+   "forward_preserved": false,
+   "id": "LED-A-BER-INST",
+   "informativeness": "",
+   "kind": "translation",
+   "models": 2954,
+   "regime": "A",
+   "source": "Def 4.7 CB(W); C6 p.72; Tab. IV",
+   "target": "Bertino, Ferrari & Atluri 1999",
+   "translation": "one instance per (workflow, case, blocker); native count rules; cannot_dou PREVENTION"
+  },
+  {
+   "assumptions": "A-INST; panic is not enforcement",
+   "backward_failures": 384,
+   "backward_min_countermodel": {
+    "dea": [
+     "0"
+    ],
+    "model": {
+     "B": 1,
+     "events": [
+      [
+       "cont",
+       "W1",
+       "X",
+       "beta"
+      ],
+      [
+       "cont",
+       "W2",
+       "X",
+       "beta"
+      ]
+     ]
+    },
+    "target": [
+     "0",
+     "1"
+    ]
+   },
+   "backward_preserved": false,
+   "construct": "case/blocker ledger",
+   "forward_failures": 792,
+   "forward_min_countermodel": {
+    "dea": [
+     "0",
+     "1"
+    ],
+    "model": {
+     "B": 1,
+     "events": [
+      [
+       "cont",
+       "W1",
+       "X",
+       "beta"
+      ],
+      [
+       "cont",
+       "W1",
+       "Y",
+       "beta"
+      ]
+     ]
+    },
+    "target": [
+     "0"
+    ]
+   },
+   "forward_preserved": false,
+   "id": "LED-A-BER-DETECT",
+   "informativeness": "",
+   "kind": "detection-only",
+   "models": 2954,
+   "regime": "A",
+   "source": "Def 4.4 (integrity rule)",
+   "target": "Bertino, Ferrari & Atluri 1999",
+   "translation": "original LED-1 label: panic <- count(success(T_cont,K),N), N > B per workflow (DETECTION observable)"
+  },
+  {
+   "assumptions": "A-MERGE (instance boundary reinterpreted); B=1",
+   "backward_failures": 0,
+   "backward_min_countermodel": null,
+   "backward_preserved": true,
+   "construct": "case/blocker ledger",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "LED-A-BER-MERGE",
+   "informativeness": "",
+   "kind": "translation",
+   "models": 2954,
+   "regime": "A*",
+   "source": "Def 4.7; Tab. IV",
+   "target": "Bertino, Ferrari & Atluri 1999",
+   "translation": "one instance per (case, blocker) across DEA workflows (non-standard instance mapping)"
+  },
+  {
+   "assumptions": "persistence added",
+   "backward_failures": 0,
+   "backward_min_countermodel": null,
+   "backward_preserved": true,
+   "construct": "case/blocker ledger",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "LED-B-BER",
+   "informativeness": "RESTATEMENT",
+   "kind": "translation",
+   "models": 2954,
+   "regime": "B",
+   "source": "Prop. 4.1 + declared persistent store",
+   "target": "Bertino, Ferrari & Atluri 1999",
+   "translation": "persistent cross-instance aux facts led/term/opn; count/max aggregates; cannot_dou prevention"
+  },
+  {
+   "assumptions": "",
+   "backward_failures": 756,
+   "backward_min_countermodel": {
+    "dea": [
+     "0"
+    ],
+    "model": {
+     "B": 1,
+     "events": [
+      [
+       "cont",
+       "W1",
+       "X",
+       "beta"
+      ],
+      [
+       "cont",
+       "W1",
+       "X",
+       "beta"
+      ]
+     ]
+    },
+    "target": [
+     "0",
+     "1"
+    ]
+   },
+   "backward_preserved": false,
+   "construct": "case/blocker ledger",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "LED-A-WL",
+   "informativeness": "",
+   "kind": "translation",
+   "models": 2954,
+   "regime": "A",
+   "source": "Def 2",
+   "target": "Wang & Li ESORICS 2007 (NOT the 2010 article)",
+   "translation": "no counting form"
+  },
+  {
+   "assumptions": "",
+   "backward_failures": 13818,
+   "backward_min_countermodel": {
+    "dea": [],
+    "model": {
+     "edges": [
+      [
+       "e0",
+       "0",
+       "0",
+       false
+      ]
+     ],
+     "goals": [
+      "0"
+     ],
+     "start": "0",
+     "states": [
+      "0"
+     ]
+    },
+    "target": [
+     "NAP"
+    ]
+   },
+   "backward_preserved": false,
+   "construct": "goal-relative NAP",
+   "forward_failures": 26,
+   "forward_min_countermodel": {
+    "dea": [
+     "NAP"
+    ],
+    "model": {
+     "edges": [],
+     "goals": [],
+     "start": "0",
+     "states": [
+      "0"
+     ]
+    },
+    "target": []
+   },
+   "forward_preserved": false,
+   "id": "NAP-A-WSP-1",
+   "informativeness": "",
+   "kind": "translation",
+   "models": 26262,
+   "regime": "A",
+   "source": "Defs 3-4 p.7",
+   "target": "Wang & Li ESORICS 2007 (NOT the 2010 article)",
+   "translation": "S = all carrier actions; NAP := unsatisfiable"
+  },
+  {
+   "assumptions": "",
+   "backward_failures": 8200,
+   "backward_min_countermodel": {
+    "dea": [],
+    "model": {
+     "edges": [],
+     "goals": [
+      "0"
+     ],
+     "start": "0",
+     "states": [
+      "0"
+     ]
+    },
+    "target": [
+     "NAP"
+    ]
+   },
+   "backward_preserved": false,
+   "construct": "goal-relative NAP",
+   "forward_failures": 4202,
+   "forward_min_countermodel": {
+    "dea": [
+     "NAP"
+    ],
+    "model": {
+     "edges": [
+      [
+       "e0",
+       "0",
+       "0",
+       true
+      ]
+     ],
+     "goals": [],
+     "start": "0",
+     "states": [
+      "0"
+     ]
+    },
+    "target": []
+   },
+   "forward_preserved": false,
+   "id": "NAP-A-WSP-2",
+   "informativeness": "",
+   "kind": "translation",
+   "models": 26262,
+   "regime": "A",
+   "source": "Defs 3-4 p.7",
+   "target": "Wang & Li ESORICS 2007 (NOT the 2010 article)",
+   "translation": "S = authorised actions; NAP := S empty"
+  },
+  {
+   "assumptions": "users repurposed as labels",
+   "backward_failures": 0,
+   "backward_min_countermodel": null,
+   "backward_preserved": true,
+   "construct": "goal-relative NAP",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "NAP-R-WSP-LABEL",
+   "informativeness": "REDUCTION",
+   "kind": "reduction",
+   "models": 26262,
+   "regime": "R3-violating reduction",
+   "source": "Defs 1-4",
+   "target": "Wang & Li ESORICS 2007 (NOT the 2010 article)",
+   "translation": "users {R,N} as reachability labels; <imp(s_x,s_y)> per allowed edge; NAP := satisfiable"
+  },
+  {
+   "assumptions": "users repurposed as transitions",
+   "backward_failures": 0,
+   "backward_min_countermodel": null,
+   "backward_preserved": true,
+   "construct": "goal-relative NAP",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "NAP-R-WSP-PATH",
+   "informativeness": "REDUCTION",
+   "kind": "reduction",
+   "models": 26262,
+   "regime": "R3-violating reduction",
+   "source": "Defs 1-4",
+   "target": "Wang & Li ESORICS 2007 (NOT the 2010 article)",
+   "translation": "users := allowed edges + idle; slots 1..|S|; rho_chain"
+  },
+  {
+   "assumptions": "recursion added",
+   "backward_failures": 0,
+   "backward_min_countermodel": null,
+   "backward_preserved": true,
+   "construct": "goal-relative NAP",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "NAP-B-BER",
+   "informativeness": "RESTATEMENT",
+   "kind": "translation",
+   "models": 26262,
+   "regime": "B",
+   "source": "Prop. 4.1 + declared recursive IDB",
+   "target": "Bertino, Ferrari & Atluri 1999",
+   "translation": "reach/1 positive recursion; nap <- not reached"
+  },
+  {
+   "assumptions": "roles reinterpreted as states",
+   "backward_failures": 0,
+   "backward_min_countermodel": null,
+   "backward_preserved": true,
+   "construct": "goal-relative NAP",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "NAP-B-LI-RH",
+   "informativeness": "REDUCTION",
+   "kind": "translation",
+   "models": 26262,
+   "regime": "B",
+   "source": "Notation 2, RH* p.10",
+   "target": "Li, Tripunitara & Bizri 2007",
+   "translation": "roles-as-states: allowed edge -> RH; probe user at start; NAP iff probe lacks p_goal"
+  },
+  {
+   "assumptions": "roles reinterpreted as states",
+   "backward_failures": 0,
+   "backward_min_countermodel": null,
+   "backward_preserved": true,
+   "construct": "goal-relative NAP",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "NAP-B-RSL-RH",
+   "informativeness": "REDUCTION",
+   "kind": "translation",
+   "models": 26262,
+   "regime": "B",
+   "source": "Fig. 1 roles* p.46; Fig. 3",
+   "target": "Ahn & Sandhu 1999 (RSL99)",
+   "translation": "roles-as-states: allowed edge -> RH; probe at r_start; NAP iff |permissions(roles*(probe)) & {p_goal}| <= 0"
+  },
+  {
+   "assumptions": "",
+   "backward_failures": 13510,
+   "backward_min_countermodel": {
+    "dea": [],
+    "model": {
+     "edges": [
+      [
+       "e0",
+       "0",
+       "0",
+       false
+      ]
+     ],
+     "goals": [
+      "0"
+     ],
+     "start": "0",
+     "states": [
+      "0"
+     ]
+    },
+    "target": [
+     "NAP"
+    ]
+   },
+   "backward_preserved": false,
+   "construct": "goal-relative NAP",
+   "forward_failures": 334,
+   "forward_min_countermodel": {
+    "dea": [
+     "NAP"
+    ],
+    "model": {
+     "edges": [],
+     "goals": [],
+     "start": "0",
+     "states": [
+      "0"
+     ]
+    },
+    "target": []
+   },
+   "forward_preserved": false,
+   "id": "NAP-A-BAS-OBS",
+   "informativeness": "",
+   "kind": "translation",
+   "models": 26262,
+   "regime": "A",
+   "source": "Def 7 p.14",
+   "target": "Basin, Burri & Karjoth (extended CSF'11)",
+   "translation": "NAP := obstructed"
+  },
+  {
+   "assumptions": "goal termination added",
+   "backward_failures": 0,
+   "backward_min_countermodel": null,
+   "backward_preserved": true,
+   "construct": "goal-relative NAP",
+   "forward_failures": 0,
+   "forward_min_countermodel": null,
+   "forward_preserved": true,
+   "id": "NAP-B-BAS-TICK",
+   "informativeness": "REDUCTION",
+   "kind": "translation",
+   "models": 26262,
+   "regime": "B",
+   "source": "Defs 1-8 + declared goal termination",
+   "target": "Basin, Burri & Karjoth (extended CSF'11)",
+   "translation": "TICK enabled exactly in goal states; NAP := no authorised trace ends in TICK (word enumeration)"
+  }
+ ]
+}

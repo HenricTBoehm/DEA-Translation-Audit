@@ -1,0 +1,16 @@
+# Local evidence and sensitive machine state
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+# Large/private baseline and source PDFs are intentionally excluded
+*.pdf
+# Local generated outputs; versioned RP-1.0/results are tracked explicitly
+scratch/
+work/
