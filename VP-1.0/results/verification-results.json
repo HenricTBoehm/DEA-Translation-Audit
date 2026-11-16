@@ -1,0 +1,834 @@
+{
+ "baseline_sha256": "51a2553e8bb13fe80bc3f0e6245ba0c4dcbe0a31db03ad577a3f3f26f8c97c33",
+ "checks": [
+  {
+   "claim": "Package checksums (SHA256SUMS) verify after clean extraction",
+   "counterexample": null,
+   "evidence": "29 files checked; mismatches: []",
+   "id": "R1",
+   "implementation": "",
+   "source": "",
+   "status": "PASS"
+  },
+  {
+   "claim": "Baseline PDF SHA-256 equals 51a2553e...7c33",
+   "counterexample": null,
+   "evidence": "51a2553e8bb13fe80bc3f0e6245ba0c4dcbe0a31db03ad577a3f3f26f8c97c33",
+   "id": "R2",
+   "implementation": "",
+   "source": "",
+   "status": "PASS"
+  },
+  {
+   "claim": "Protocol SHA-256 matches the value embedded in run_audit.py",
+   "counterexample": null,
+   "evidence": "107a9793d29df592a26665aeeda34a80de5772a6c2d641f8d2b270cb207e3dac",
+   "id": "R3",
+   "implementation": "",
+   "source": "",
+   "status": "PASS"
+  },
+  {
+   "claim": "Missing/altered inputs exit non-zero and write no results",
+   "counterexample": null,
+   "evidence": [
+    {
+     "case": "no baseline argument",
+     "exit": 2,
+     "expected_exit": 2,
+     "output_written": false,
+     "stderr": "INTEGRITY/PRECONDITION FAILURE: no baseline path given (--baseline or DEA_BASELINE)\nNo results were written."
+    },
+    {
+     "case": "nonexistent baseline",
+     "exit": 2,
+     "expected_exit": 2,
+     "output_written": false,
+     "stderr": "INTEGRITY/PRECONDITION FAILURE: baseline not found: /nonexistent.pdf\nNo results were written."
+    },
+    {
+     "case": "baseline with one appended byte",
+     "exit": 2,
+     "expected_exit": 2,
+     "output_written": false,
+     "stderr": "INTEGRITY/PRECONDITION FAILURE: baseline SHA-256 mismatch: 4eac71f1ab1fc0bf6d1e81248588709539485209bb1cec15e6d6aa8e14d92335\nNo results were written."
+    },
+    {
+     "case": "protocol altered",
+     "exit": 2,
+     "expected_exit": 2,
+     "output_written": false,
+     "stderr": "INTEGRITY/PRECONDITION FAILURE: remediation protocol altered: 07e1d200e041df76d6d25a637edcb9e6bfc514f9b8c6af123a7c311f4df7f8cb\nNo results were written."
+    },
+    {
+     "case": "protocol missing",
+     "exit": 2,
+     "expected_exit": 2,
+     "output_written": false,
+     "stderr": "INTEGRITY/PRECONDITION FAILURE: remediation protocol missing\nNo results were written."
+    },
+    {
+     "case": "translations.py imports dea_ref",
+     "exit": 3,
+     "expected_exit": 3,
+     "output_written": false,
+     "stderr": "STATIC INDEPENDENCE FAILURE: ['harness/translations.py']\nNo results were written."
+    },
+    {
+     "case": "engine imports dea_ref (from-import)",
+     "exit": 3,
+     "expected_exit": 3,
+     "output_written": false,
+     "stderr": "STATIC INDEPENDENCE FAILURE: ['engines/lts.py']\nNo results were written."
+    }
+   ],
+   "id": "R4",
+   "implementation": "",
+   "source": "",
+   "status": "PASS"
+  },
+  {
+   "claim": "Static independence check is complete",
+   "counterexample": null,
+   "evidence": "The check is a line regex for '^(from|import) .*dea_ref'. It does not detect importlib/__import__, exec, or copying DEA logic verbatim; independence of decision logic was therefore re-inspected manually (see E* checks). Passing the static check is necessary, not sufficient.",
+   "id": "R5",
+   "implementation": "run_audit.py static_independence()",
+   "source": "",
+   "status": "FAIL"
+  },
+  {
+   "claim": "Clean-room run (baseline via DEA_BASELINE) reproduces both result files byte-identically",
+   "counterexample": null,
+   "evidence": {
+    "countermodels_identical": true,
+    "exit": 0,
+    "results_identical": true
+   },
+   "id": "R6",
+   "implementation": "",
+   "source": "",
+   "status": "PASS"
+  },
+  {
+   "claim": "54 translation comparisons, 4 of them ORACLE-EMBEDDING",
+   "counterexample": null,
+   "evidence": {
+    "comparisons": 54,
+    "oracle": [
+     "CTRL-ORACLE-WL[A]/A",
+     "CTRL-ORACLE-WL[B]/A",
+     "CTRL-ORACLE-WL[A]/B",
+     "CTRL-ORACLE-WL[B]/B"
+    ]
+   },
+   "id": "N1",
+   "implementation": "",
+   "source": "",
+   "status": "PASS"
+  },
+  {
+   "claim": "6 proof/refutation records, all machine checks true",
+   "counterexample": null,
+   "evidence": [
+    "PRF-EJ7",
+    "PRF-NAP3",
+    "PRF-NAP-HANF",
+    "PRF-LED4",
+    "PRF-CTRL-WL-MONO",
+    "PRF-CTRL6B"
+   ],
+   "id": "N2",
+   "implementation": "",
+   "source": "",
+   "status": "PASS"
+  },
+  {
+   "claim": "44 regression cases all match v0.3.4.3 expectation",
+   "counterexample": null,
+   "evidence": {
+    "G2": 13,
+    "G3": 9,
+    "G4": 14,
+    "NAP": 8
+   },
+   "id": "N3",
+   "implementation": "",
+   "source": "",
+   "status": "PASS"
+  },
+  {
+   "claim": "Regression expectations are independent of the evaluated outputs",
+   "counterexample": [
+    "S8_TCB_admin_not_role_holder",
+    "S13_transitive_P_orc_e (new)",
+    "N1_term_reopen_cont_cont (new)",
+    "N2_double_term_single_reopen (new)",
+    "M8_self_hold",
+    "diagnostic_bound_depth2 (new)"
+   ],
+   "evidence": "6 of 44 expectations were authored by the same auditor in the same session (2 corrected after the first run: S8, S13; 4 newly constructed). 'All 44 match' therefore contains self-authored oracles; the 38 historical cases carry v0.3.4.2/v0.3.4.1 intent, of which 2 deliberately diverge. Re-derivation of S8 and M8 from the v0.3.4.3 text (p.8-9, p.10) was checked and agrees.",
+   "id": "N4",
+   "implementation": "",
+   "source": "",
+   "status": "FAIL"
+  },
+  {
+   "claim": "T3/H_EJ 'native (A-IDX)' preservation extends to effective multi-principal control",
+   "counterexample": "BM2: P controls a,b,c; nominal scope a, exec b, acc c -> DEA forbids, targets permit",
+   "evidence": {
+    "failures": [
+     [
+      "BM1_pairwise_no_triple",
+      "Bertino_AIDX_HEJ_permits"
+     ],
+     [
+      "BM2_triple_distinct_nominal",
+      "Bertino_AIDX_T3_permits"
+     ],
+     [
+      "BM2_triple_distinct_nominal",
+      "WL07_exists_T3_permits"
+     ],
+     [
+      "BM2_triple_distinct_nominal",
+      "Bertino_AIDX_HEJ_permits"
+     ]
+    ],
+    "rows": [
+     {
+      "Bertino_AIDX_HEJ_permits": true,
+      "Bertino_AIDX_T3_permits": true,
+      "DEA_HEJ_forbids": true,
+      "DEA_T3_forbids": false,
+      "Li_RH_HEJ_permits": false,
+      "Li_RH_T3_permits": true,
+      "WL07_conjunctive_misreading_permits": true,
+      "WL07_exists_T3_permits": true,
+      "model": "BM1_pairwise_no_triple"
+     },
+     {
+      "Bertino_AIDX_HEJ_permits": true,
+      "Bertino_AIDX_T3_permits": true,
+      "DEA_HEJ_forbids": true,
+      "DEA_T3_forbids": true,
+      "Li_RH_HEJ_permits": false,
+      "Li_RH_T3_permits": false,
+      "WL07_conjunctive_misreading_permits": true,
+      "WL07_exists_T3_permits": true,
+      "model": "BM2_triple_distinct_nominal"
+     },
+     {
+      "Bertino_AIDX_HEJ_permits": false,
+      "Bertino_AIDX_T3_permits": false,
+      "DEA_HEJ_forbids": true,
+      "DEA_T3_forbids": true,
+      "Li_RH_HEJ_permits": false,
+      "Li_RH_T3_permits": false,
+      "WL07_conjunctive_misreading_permits": false,
+      "WL07_exists_T3_permits": false,
+      "model": "BM3_triple_identical_nominal"
+     },
+     {
+      "Bertino_AIDX_HEJ_permits": true,
+      "Bertino_AIDX_T3_permits": true,
+      "DEA_HEJ_forbids": false,
+      "DEA_T3_forbids": false,
+      "Li_RH_HEJ_permits": true,
+      "Li_RH_T3_permits": true,
+      "WL07_conjunctive_misreading_permits": false,
+      "WL07_exists_T3_permits": true,
+      "model": "BM4_existential_d_eq_j_ne_e"
+     }
+    ]
+   },
+   "id": "A1",
+   "implementation": "translations.tr_t3_bertino_idx, tr_t3_wl, tr_ej_bertino_idx (nominal identities only)",
+   "source": "DEA p.8 (acts attributed to each controlling principal for T3, H_EJ, H_DE^ext); Eq.31 p.14; Eq.16 p.10",
+   "status": "FAIL"
+  },
+  {
+   "claim": "W&L <!=(EXISTS{s_D,s_E},s_J)> is a disjunction of inequalities (forbids only d=e=j)",
+   "counterexample": null,
+   "evidence": "BM4 (d=j!=e): existential form permits (correct, no T3), conjunctive misreading <!=(sD,sJ)>,<!=(sE,sJ)> forbids (wrong); BM3 (d=e=j): existential forbids.",
+   "id": "A2",
+   "implementation": "engines/r2bac.py holds('ex_l')",
+   "source": "W&L-07 Def 2 form 2, p.6",
+   "status": "PASS"
+  },
+  {
+   "claim": "Principal-as-role (Li RH*) encoding preserves T3 and H_EJ on the controller-intersection models",
+   "counterexample": null,
+   "evidence": {
+    "failures": []
+   },
+   "id": "A3",
+   "implementation": "verify.py check_A (Regime B, roles reinterpreted)",
+   "source": "Li Notation 1-2, Def 3 p.9-10",
+   "status": "PASS"
+  },
+  {
+   "claim": "NAP-3 invariance refuted: an R1-R3-respecting local translation separates m1/m2",
+   "counterexample": null,
+   "evidence": {
+    "image_m1": [
+     [
+      "diag"
+     ],
+     [
+      [
+       "RN",
+       "diag"
+      ]
+     ]
+    ],
+    "image_m2": [
+     [
+      "diag"
+     ],
+     [
+      [
+       "RG",
+       "diag"
+      ]
+     ]
+    ],
+    "note": "Separation of images refutes the invariance premise; it does NOT give a preserving R3 translation. Whether an R3-respecting preserving translation exists is UNDETERMINED (B2).",
+    "satisfiable": [
+     true,
+     true
+    ]
+   },
+   "id": "B1",
+   "implementation": "verify.py r3_image; the package's PRF-NAP3 machine check only executes the R3-VIOLATING label reduction",
+   "source": "original 00-translation-protocol.md R1-R3; NAP-3 record",
+   "status": "PASS"
+  },
+  {
+   "claim": "Existence of an R3-respecting translation of NAP into WSP",
+   "counterexample": null,
+   "evidence": "Neither established nor refuted. Only R3-violating reductions (LABEL, PATH) are exact.",
+   "id": "B2",
+   "implementation": "",
+   "source": "",
+   "status": "UNDETERMINED"
+  },
+  {
+   "claim": "Hanf pair: equal r-type multisets with opposite NAP (machine-checked beyond r<=2)",
+   "counterexample": null,
+   "evidence": {
+    "r=1,L=M=4": {
+     "NAP_A": false,
+     "NAP_B": true,
+     "same_type_multiset": true
+    },
+    "r=2,L=M=6": {
+     "NAP_A": false,
+     "NAP_B": true,
+     "same_type_multiset": true
+    },
+    "r=3,L=M=8": {
+     "NAP_A": false,
+     "NAP_B": true,
+     "same_type_multiset": true
+    },
+    "r=4,L=M=10": {
+     "NAP_A": false,
+     "NAP_B": true,
+     "same_type_multiset": true
+    }
+   },
+   "id": "B3",
+   "implementation": "verify.py canon_ball (independent canonical form, layer-wise permutations)",
+   "source": "",
+   "status": "PASS"
+  },
+  {
+   "claim": "PRF-NAP-HANF supports non-expressibility for arbitrary admissible translations",
+   "counterexample": null,
+   "evidence": "The proven statement is: no translation whose verdict is a function of the multiset of radius-r types (Hanf-local with radius r) preserves NAP. For each fixed r this follows from one witness pair; a uniform family (L=M=2r+2) is verified here for r<=4 and is easily seen to work for all r. This is the class T_loc(r) by DEFINITION. The report's claim that WSP translations with single-user steps and locally generated constraints lie in T_loc(r) is argued informally, not proved; translations with >=2 candidate users per step, or any search/runtime semantics, are outside the class. It therefore does not cover arbitrary admissible translations.",
+   "id": "B4",
+   "implementation": "",
+   "source": "02-remediation-report.md s4; run_audit.py PRF-NAP-HANF",
+   "status": "FAIL"
+  },
+  {
+   "claim": "External locality theorem (Hella, Libkin, Nurmonen & Wong, J.ACM 48(4) 2001) verified",
+   "counterexample": null,
+   "evidence": "Existence and abstract verified via OpenAlex W1975880448 (doi 10.1145/502090.502100): aggregate logic 'satisfies analogs of Hanf's and Gaifman's theorems'. Full text not inspected; the mapping of Bertino Regime A runtime (history, prevention, multiple activations) into that logic is not established. The conditional Bertino-A cells remain conditional.",
+   "id": "B5",
+   "implementation": "",
+   "source": "",
+   "status": "UNDETERMINED"
+  },
+  {
+   "claim": "Diagnostic states are sound w.r.t. semantic NAP (VERIFIED_NAP => NAP; WITNESS => not NAP; UNDETERMINED only under a binding bound)",
+   "counterexample": null,
+   "evidence": {
+    "checked": 105048,
+    "undetermined_at_depth>=|S|": 0,
+    "verified_nap_but_not_NAP": 0,
+    "witness_but_NAP": 0
+   },
+   "id": "B6",
+   "implementation": "dea_ref.nap_diagnostic vs ind_nap",
+   "source": "DEA p.19",
+   "status": "PASS"
+  },
+  {
+   "claim": "NAP-B-LI-RH / NAP-B-RSL-RH (roles-as-states) produce valid RBAC states on all of MC-NAP",
+   "counterexample": {
+    "edges": [
+     [
+      "e1",
+      "0",
+      "1",
+      true
+     ],
+     [
+      "e2",
+      "1",
+      "0",
+      true
+     ]
+    ],
+    "goals": [],
+    "start": "0",
+    "states": [
+     "0",
+     "1"
+    ]
+   },
+   "evidence": "324 of 26262 MC-NAP models have a cycle among allowed edges; their RH* is not a partial order (Li p.10, RSL99 p.47). The engines accept them silently; with patch VP-1 both comparisons fail on exactly these models (81 forward / 324 backward). The reductions hold only for acyclic transition graphs (or after SCC condensation).",
+   "id": "B8",
+   "implementation": "translations.tr_nap_li_rh, tr_nap_rsl_rh",
+   "source": "Li 2007 p.10 Notation 2; RSL99 p.47",
+   "status": "FAIL"
+  },
+  {
+   "claim": "dea_ref.nap agrees with an independent BFS on MC-NAP",
+   "counterexample": null,
+   "evidence": "26262/26262",
+   "id": "B7",
+   "implementation": "",
+   "source": "",
+   "status": "PASS"
+  },
+  {
+   "claim": "CTRL-6b: pointwise closure gives no conflict, window-union closure gives conflict",
+   "counterexample": null,
+   "evidence": {
+    "conflict_A": false,
+    "conflict_B": true,
+    "dea_ref_A": false,
+    "dea_ref_B": true,
+    "theta_E": [
+     0,
+     1
+    ],
+    "theta_J": [
+     2,
+     3
+    ]
+   },
+   "id": "C1",
+   "implementation": "verify.py ind_conflict (DFS closure)",
+   "source": "DEA p.8",
+   "status": "PASS"
+  },
+  {
+   "claim": "72 of 16,807 MC-CTRL models separate the two readings",
+   "counterexample": null,
+   "evidence": "72/16807 (independent recount)",
+   "id": "C2",
+   "implementation": "",
+   "source": "",
+   "status": "PASS"
+  },
+  {
+   "claim": "MC-CTRL contains cyclic control graphs",
+   "counterexample": null,
+   "evidence": "edge slots [('p', 'o'), ('p', 'a'), ('p', 'j'), ('o', 'a'), ('o', 'j')]: all edges point p->o->{a,j}; no cycle and no a<->j edge is representable, so every CTRL preservation result is restricted to DAG control graphs of depth <= 2.",
+   "id": "C3",
+   "implementation": "",
+   "source": "",
+   "status": "FAIL"
+  },
+  {
+   "claim": "Principal-as-role RH encoding preserves Ctrl on arbitrary control graphs",
+   "counterexample": {
+    "RH_cycle_example": [
+     [
+      "r_o_0",
+      "r_p_0"
+     ],
+     [
+      "r_o_1",
+      "r_p_1"
+     ],
+     [
+      "r_o_2",
+      "r_p_2"
+     ],
+     [
+      "r_o_3",
+      "r_p_3"
+     ],
+     [
+      "r_p_0",
+      "r_o_0"
+     ],
+     [
+      "r_p_1",
+      "r_o_1"
+     ]
+    ],
+    "model": {
+     "edges": {
+      "o->p": "EJ",
+      "p->o": "EJ"
+     }
+    },
+    "reading": "A"
+   },
+   "evidence": {
+    "note": "The engine (which does not validate RH) agrees on all samples, but for 3053 of 3299 graphs the produced RH has a cycle, so RH* is not a partial order and the image is not an RBAC state under Li Notation 2 (p.10: 'RH* is a partial order') or RSL99 p.46-47. The reduction is valid only for control graphs whose per-instant (A) or per-window (B) edge sets are acyclic; repairing cycles needs SCC condensation, i.e. a global precomputation.",
+    "stats": {
+     "cyclic_RH": 3053,
+     "cyclic_and_engine_agrees": 3053,
+     "engine_agrees_A": 3299,
+     "engine_agrees_B": 3299,
+     "models": 3299
+    }
+   },
+   "id": "C4",
+   "implementation": "translations._rh_encoding; engines/rbac_li.closure",
+   "source": "Li 2007 p.10 Notation 2; RSL99 Fig.1 p.46",
+   "status": "FAIL"
+  },
+  {
+   "claim": "Bertino Regime-B (recursive Datalog closure) preserves Ctrl on the same general/cyclic graph sample",
+   "counterexample": null,
+   "evidence": "6598/6598 (bounded; RESTATEMENT, not a native reduction)",
+   "id": "C4b",
+   "implementation": "translations.tr_ctrl_bertino_B",
+   "source": "Bertino Prop. 4.1 p.78 (stratified programs)",
+   "status": "PASS"
+  },
+  {
+   "claim": "PRF-CTRL-WL-MONO proof as written: every A-STEP+LOCAL-REL translation errs on m0 or m1",
+   "counterexample": {
+    "m0": {
+     "edges": {}
+    },
+    "m1": {
+     "edges": {
+      "p->a": "E",
+      "p->j": "J"
+     }
+    },
+    "m2": {
+     "edges": {
+      "o->j": "J",
+      "p->a": "E"
+     }
+    }
+   },
+   "evidence": {
+    "DEA_effective": {
+     "m0": true,
+     "m1": false,
+     "m2": true
+    },
+    "note": "The lemma needs every added pair to contain a FRESH user; LOCAL-REL as stated ('pairs containing its endpoints') admits (y,z) pairs on acting users. The pair m0/m1 is therefore insufficient. Corrected argument: compare m1 (p->a, p->j) with m2 (p->a, o->j). Under A-STEP + LOCAL-REL + GENERICITY (contributions invariant under renaming non-acting principals), the images agree on acting users, and pairs on non-acting users cannot affect a run in which only acting users execute steps (lemma). DEA: m1 conflict, m2 none. The conclusion survives under the added genericity assumption.",
+    "some_controller_translation_permits": {
+     "m0": true,
+     "m1": false,
+     "m2": false
+    }
+   },
+   "id": "C5",
+   "implementation": "verify.py some_controller",
+   "source": "W&L-07 Defs 1-5",
+   "status": "FAIL"
+  },
+  {
+   "claim": "Monotonicity lemma (fresh users + pairs containing a fresh user leave the run verdict unchanged)",
+   "counterexample": null,
+   "evidence": "0 violations over enumerated constraint forms incl. EXISTS/FORALL; bounded check, general argument in the package is sound for this hypothesis",
+   "id": "C6",
+   "implementation": "",
+   "source": "",
+   "status": "PASS"
+  },
+  {
+   "claim": "dea_ref.ledger agrees with an independent re-implementation of DEA p.12 on MC-LED",
+   "counterexample": null,
+   "evidence": "2954/2954",
+   "id": "D1",
+   "implementation": "",
+   "source": "",
+   "status": "PASS"
+  },
+  {
+   "claim": "PRF-LED4 witness: identical W2 projection, different DEA verdicts (valid under A-INST-LOCAL)",
+   "counterexample": null,
+   "evidence": {
+    "dea_1": true,
+    "dea_2": false,
+    "model_1": [
+     [
+      "cont",
+      "W2",
+      "X",
+      "beta"
+     ]
+    ],
+    "model_2": [
+     [
+      "cont",
+      "W1",
+      "X",
+      "beta"
+     ],
+     [
+      "cont",
+      "W2",
+      "X",
+      "beta"
+     ]
+    ],
+    "projection": [
+     [
+      "cont",
+      "W2",
+      "X",
+      "beta"
+     ]
+    ],
+    "scope": "Valid only for A-INST-LOCAL. With cross-instance facts or merged instances the projections differ (model_2's merged key history contains two continuations) and the argument no longer applies; LED-B-BER is preserved on MC-LED and G4."
+   },
+   "id": "D2",
+   "implementation": "",
+   "source": "",
+   "status": "PASS"
+  },
+  {
+   "claim": "N1 counterexample: A-MERGE native count encoding over-grants",
+   "counterexample": [
+    [
+     "term",
+     "W1",
+     "x",
+     "beta"
+    ],
+    [
+     "reopen",
+     "W2",
+     "x",
+     "beta",
+     true
+    ],
+    [
+     "cont",
+     "W2",
+     "x",
+     "beta"
+    ],
+    [
+     "cont",
+     "W2",
+     "x",
+     "beta"
+    ]
+   ],
+   "evidence": {
+    "A_MERGE": [
+     2,
+     3
+    ],
+    "Bertino_B": [
+     2
+    ],
+    "DEA": [
+     2
+    ],
+    "events": [
+     [
+      "term",
+      "W1",
+      "x",
+      "beta"
+     ],
+     [
+      "reopen",
+      "W2",
+      "x",
+      "beta",
+      true
+     ],
+     [
+      "cont",
+      "W2",
+      "x",
+      "beta"
+     ],
+     [
+      "cont",
+      "W2",
+      "x",
+      "beta"
+     ]
+    ],
+    "note": "Classification: FAILED-ENCODING for A-MERGE (one encoding). Not a proof: a different native encoding was not excluded."
+   },
+   "id": "D3",
+   "implementation": "",
+   "source": "",
+   "status": "PASS"
+  },
+  {
+   "claim": "All LED-A-BER-INST failures are cross-instance effects",
+   "counterexample": null,
+   "evidence": "386 failing models; 0 with a single DEA workflow",
+   "id": "D4",
+   "implementation": "",
+   "source": "",
+   "status": "PASS"
+  },
+  {
+   "claim": "Case(x) identity is determined by the DEA text",
+   "counterexample": [
+    {
+     "content": "c1",
+     "locator": "L1",
+     "oid": "x"
+    },
+    {
+     "content": "c1",
+     "locator": "L2",
+     "oid": "y"
+    },
+    {
+     "content": "c2",
+     "locator": "L2",
+     "oid": "z"
+    }
+   ],
+   "evidence": {
+    "harness_case": {
+     "x": "z",
+     "y": "z",
+     "z": "z"
+    },
+    "note": "The harness merges transitively (x~y by content, y~z by locator => x~z although x and z share neither content nor locator nor lineage). DEA p.12 says Case(x) is 'derived from recorded content identity, source locator and derivation/provenance links' and that 'superficial similarity alone cannot prove equivalence'; it fixes neither transitivity nor precedence. SameBlocker is an 'explicitly reviewed equivalence class' and is supplied as a label. Both are inputs to every target, not expressed by them.",
+    "objects": [
+     {
+      "content": "c1",
+      "locator": "L1",
+      "oid": "x"
+     },
+     {
+      "content": "c1",
+      "locator": "L2",
+      "oid": "y"
+     },
+     {
+      "content": "c2",
+      "locator": "L2",
+      "oid": "z"
+     }
+    ]
+   },
+   "id": "D5",
+   "implementation": "",
+   "source": "DEA p.12",
+   "status": "UNDETERMINED"
+  },
+  {
+   "claim": "Separation of persistence, authorization, detection, prevention and budget accounting",
+   "counterexample": null,
+   "evidence": {
+    "authorization": "role(R,T)/belong (Bertino), R_ind for reopening",
+    "budget_accounting": "count/max over success or led facts; B=1 only in native encodings (assert)",
+    "detection": "panic only in LED-A-BER-DETECT; never counted as enforcement",
+    "not_modelled": "unique continuation identifiers, atomic decrement, protected ledger updates (DEA p.12 enforcement obligations); reopening independence reduced to a boolean",
+    "persistence": "absent in A-INST; instance merge in A*; declared store in B",
+    "prevention": "cannot_dou (LED-A-BER-INST, LED-B-BER)"
+   },
+   "id": "D6",
+   "implementation": "",
+   "source": "",
+   "status": "PASS"
+  },
+  {
+   "claim": "r2bac.py implements W&L-07 Defs 1-5 incl. p.7 runtime rule and Def 3 partial-plan prerequisite",
+   "counterexample": null,
+   "evidence": "Constraint forms 1-5 and complement relations match p.6; runtime checks universal constraints at every restricted step and others before the last restricted step of the given sequence (Def 5). Def 3 ordering is enforced only in translations._wl_runtime_ordered (DE tests); elsewhere sequences respect the order by construction. ERRATUM: 03-translation-specification.md s0 describes runtime as 'partial plan extends to a valid plan', which is not what the engine (or Def 5) does.",
+   "id": "E1",
+   "implementation": "",
+   "source": "",
+   "status": "PASS"
+  },
+  {
+   "claim": "rbac_li.py implements Li Notation 1-2 / Def 3",
+   "counterexample": null,
+   "evidence": "auth_perms and k-n safety are correct, but RH is not validated: RH* must be a partial order (p.10). Cyclic RH is silently accepted (see C4). Minimal patch provided.",
+   "id": "E2",
+   "implementation": "",
+   "source": "",
+   "status": "FAIL"
+  },
+  {
+   "claim": "rsl99.py implements RSL99 RFOPL",
+   "counterexample": null,
+   "evidence": "Only post-Reduction universal sentences (forall, |.|<=k) are supported; OE/AO and the Reduction algorithm (Theorems 1-2) are not implemented, so property formulas were reduced by hand. RH partial order not validated (same patch).",
+   "id": "E3",
+   "implementation": "",
+   "source": "",
+   "status": "UNDETERMINED"
+  },
+  {
+   "claim": "bertino.py implements Bertino 1999 enforcement",
+   "counterexample": null,
+   "evidence": "Implements CB evaluation (stratified, Prop. 4.1) and reactive prevention via cannot_do*. Bertino's planning component (look-ahead role/user assignment that keeps the CB satisfiable for remaining activations) is not implemented; results are about the reactive fragment.",
+   "id": "E4",
+   "implementation": "",
+   "source": "",
+   "status": "UNDETERMINED"
+  },
+  {
+   "claim": "lts.py implements Basin Def 7",
+   "counterexample": null,
+   "evidence": "An analogue: 'an enabled event without an authorised user'. Basin's obstruction is defined over the release/constraint model of the paper; not re-derived here.",
+   "id": "E5",
+   "implementation": "",
+   "source": "",
+   "status": "UNDETERMINED"
+  },
+  {
+   "claim": "No target decision logic copied from dea_ref",
+   "counterexample": null,
+   "evidence": "Manual inspection: engines contain no DEA predicates; Regime-B rules restate DEA definitions in Datalog (RESTATEMENT label is accurate). The single oracle (tr_ctrl_wl_oracle) re-implements closure inside translations.py and is labelled ORACLE-EMBEDDING.",
+   "id": "E6",
+   "implementation": "",
+   "source": "",
+   "status": "PASS"
+  },
+  {
+   "claim": "Wang & Li 2010 journal definitions compared with ESORICS 2007",
+   "counterexample": null,
+   "evidence": "1880022.1880034.pdf is not present in the workspace (searched whole filesystem); ACM DL returns 403. All W&L 2010 cells remain SOURCE-UNVERIFIED; no W&L-07 result is transferred.",
+   "id": "W1",
+   "implementation": "",
+   "source": "",
+   "status": "NOT_EXECUTED"
+  }
+ ],
+ "package_zip_sha256": "18667ba7c76fd71f193e6061de221ca0120b51892d7d9aac1a011577ab5156fa",
+ "summary": {
+  "FAIL": 9,
+  "NOT_EXECUTED": 1,
+  "PASS": 25,
+  "UNDETERMINED": 6
+ }
+}

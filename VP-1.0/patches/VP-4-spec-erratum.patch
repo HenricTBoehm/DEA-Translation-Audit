@@ -1,0 +1,11 @@
+--- a/03-translation-specification.md
++++ b/03-translation-specification.md
+@@ -10,7 +10,7 @@
+ |---|---|---|
+ | `datalog.py` | Bertino Prop. 4.1, p.78 | bottom-up stratified Datalog with negation, comparisons, `count`/`max` |
+ | `bertino.py` | Bertino Def 2.1 p.71; Tab. I–IV pp.73–76; Defs 4.2, 4.4, 4.7 | u is authorised for T iff ∃R: role(R,T) ∧ belong(u,R). A request is **prevented** iff `cannot_dou(u,T)` (or `cannot_dor` for a role of u) is derivable. If not prevented, `executeu(u,T,k)` and `success(T,k)` are added. `panic` is evaluated afterwards and reported as **detection only**. Regime A checks: native heads only, no native head in a body (non-recursive), native fact predicates only. |
+-| `r2bac.py` | W&L-07 Defs 1–5, pp.6–7 | constraint forms ρ(s1,s2), ρ(∃S,s), ρ(s,∃S). Plans are total; satisfiability is exhaustive. Runtime (Def 5): a step is permitted iff the user is authorised and the partial plan extends to a valid plan. Def 3 predecessor condition is enforced in `_wl_runtime_ordered`. |
++| `r2bac.py` | W&L-07 Defs 1–5, pp.6–7 | constraint forms ρ(s1,s2), ρ(∃S,s), ρ(s,∃S). Plans are total; satisfiability is exhaustive. Runtime (Def 5): a step is permitted iff the user is authorised and the given partial sequence satisfies every universal constraint at each restricted step and every other constraint before the last restricted step [VP-4 erratum: earlier text said 'extends to a valid plan', which neither Def 5 nor the engine does]. Def 3 predecessor condition is enforced in `_wl_runtime_ordered`. |
+ | `rbac_li.py` | Li Notation 1–2 p.9–10, Def 3 | auth_perms via UA ∘ RH* ∘ PA; ssod⟨P,k⟩ safe iff no k−1 users together hold all of P |
+ | `rsl99.py` | RSL99 §3–4, Fig. 1–3, Table 1 | RFOPL over a single snapshot (p.47). Functions `user`, `roles`, `roles*` (with RH closure, Fig. 1), `permissions`; `OE`/`AO` are expanded by universal quantification after Reduction (Theorems 1–2). |
+ | `lts.py` | Basin Defs 1–8; Def 7 p.14 | word enumeration up to \|S\| steps; `obstructed`, `tick_reachable` |

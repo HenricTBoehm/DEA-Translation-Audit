@@ -1,0 +1,54 @@
+--- a/harness/translations.py
++++ b/harness/translations.py
+@@ -226,6 +226,19 @@
+ 
+ 
+ # =============================================================== Ctrl_theta
++
++def _rbac_state_guard(f):
++    """[VP-1] An image whose RH* is not a partial order is not an RBAC state (Li p.10; RSL99 p.47).
++    Report it as a distinct observable so the comparison fails instead of silently closing a cycle."""
++    def g(*a, **k):
++        try:
++            return f(*a, **k)
++        except ValueError:
++            return frozenset(["INVALID_TARGET_STATE"])
++    g.__name__, g.__doc__ = f.__name__, f.__doc__
++    return g
++
++
+ NODES = ["p", "o", "a", "j"]
+ T_E, T_J, T_CHECK = (0, 1), (2, 3), 3
+ 
+@@ -320,6 +333,7 @@
+     return UA, PA, RH
+ 
+ 
++@_rbac_state_guard
+ def tr_ctrl_li_rh(m, IV, semantics):
+     """Regime B reduction into Li 2007: RH* (p.10) supplies the transitive closure;
+     ssod<{p_exec,p_adj},2> unsafe iff a single user (principal) holds both permissions."""
+@@ -327,6 +341,7 @@
+     return frozenset(["effective"]) if rbac_li.safe(UA, PA, RH, [({"p_exec", "p_adj"}, 2)]) else frozenset()
+ 
+ 
++@_rbac_state_guard
+ def tr_ctrl_rsl_rh(m, IV, semantics):
+     """Regime B reduction into RSL99: roles* with role hierarchy (Fig. 1, p.46);
+     Table 1 property 2 (MOD-CP): |permissions(roles*(u)) & cp| <= 1."""
+@@ -544,6 +559,7 @@
+     return frozenset(["NAP"]) if db.get("nap") else frozenset()
+ 
+ 
++@_rbac_state_guard
+ def tr_nap_li_rh(m):
+     """Regime B reduction (roles-as-states) into Li 2007: allowed edge x->y gives RH (r_x, r_y);
+     probe user assigned r_start; goal roles hold p_goal. NAP iff probe lacks p_goal (RH*, p.10)."""
+@@ -580,6 +596,7 @@
+     return frozenset(out)
+ 
+ 
++@_rbac_state_guard
+ def tr_nap_rsl_rh(m):
+     """Roles-as-states into RSL99: RH from allowed edges; probe assigned r_start; goal roles hold p_goal;
+     NAP iff |permissions(roles*(probe)) & {p_goal}| <= 0 holds."""

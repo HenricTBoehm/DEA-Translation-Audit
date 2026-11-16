@@ -1,0 +1,11 @@
+--- a/harness/engines/rsl99.py
++++ b/harness/engines/rsl99.py
+@@ -26,6 +26,8 @@
+                 for (c, d) in list(rel):
+                     if b == c and (a, d) not in rel:
+                         rel.add((a, d)); changed = True
++        if any(a != b and (b, a) in rel for (a, b) in rel):  # [VP-1] RH is a partial order (p.47)
++            raise ValueError("RH* is not a partial order (RSL99 p.47)")
+         self.RHstar = rel
+ 
+     def fn(self, name, x):

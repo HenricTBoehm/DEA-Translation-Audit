@@ -1,0 +1,72 @@
+--- a/harness/run_audit.py
++++ b/harness/run_audit.py
+@@ -51,7 +51,7 @@
+             if not f.endswith(".py") or f in ("run_audit.py", "dea_ref.py", "models.py"):
+                 continue
+             src = open(os.path.join(d, f)).read()
+-            if re.search(r"^\s*(from|import)\s+.*dea_ref", src, re.M):
++            if re.search(r"^\s*(from|import)\s+.*dea_ref", src, re.M) or re.search(r"dea_ref", src.split('"""', 2)[-1] if src.startswith('"""') else src):  # [VP-5]
+                 bad.append(os.path.join(os.path.basename(d), f))
+     return bad
+ 
+@@ -268,6 +268,12 @@
+       tr_ok("EJ-A-BER-2") and tr_ok("EJ-A-WL-2"))
+ 
+ m1, m2 = M.NAP_NAMED["diag_only_p19"], M.NAP_NAMED["diag_goal_twin"]
++
++
++def r3_image(m):
++    """[VP-3] R1-R3-respecting element-local image: steps = actions, SA by whether the action targets a goal."""
++    return (tuple(sorted(e[0] for e in m["edges"])),
++            tuple(sorted(("RG" if e[2] in m["goals"] else "RN", e[0]) for e in m["edges"] if e[3])))
+ proof("PRF-NAP3", "goal-relative NAP", "REFUTED as stated; NON-EXPRESSIBILITY NOT ESTABLISHED for WSP",
+       "Original NAP-3: NAP not expressible in WSP/R2BAC under R3, by an invariance pair.",
+       "Original R3; element-local translations",
+@@ -275,6 +281,7 @@
+       "can separate them; identical images were shown only for translations ignoring edge endpoints. "
+       "(ii) Exact WSP reductions exist (NAP-R-WSP-LABEL, NAP-R-WSP-PATH); they repurpose users, so they violate R3, "
+       "but they show the obstacle is the sort discipline, not expressive power.",
++      r3_image(m1) != r3_image(m2) and                       # [VP-3] R3-respecting separation, executed
+       T.tr_nap_wsp_label(m1) != T.tr_nap_wsp_label(m2) and tr_ok("NAP-R-WSP-LABEL") and tr_ok("NAP-R-WSP-PATH"),
+       {"m1": m1, "m2": m2})
+ 
+@@ -383,18 +390,20 @@
+ 
+ m0 = {"edges": {}}
+ mp = {"edges": {"p->a": "E", "p->j": "J"}}
+-pair_ok = all(dea_ctrl(s)(m0) != dea_ctrl(s)(mp) for s in ("A", "B"))
+-proof("PRF-CTRL-WL-MONO", "Ctrl_theta ExecConflict", "PROVEN-NON-EXPRESSIBLE under stated assumptions (A-STEP + LOCAL-REL)",
++mq = {"edges": {"p->a": "E", "o->j": "J"}}                         # [VP-2] corrected pair m1/m2
++pair_ok = all(dea_ctrl(s)(mp) != dea_ctrl(s)(mq) for s in ("A", "B"))
++proof("PRF-CTRL-WL-MONO", "Ctrl_theta ExecConflict", "PROVEN-NON-EXPRESSIBLE under stated assumptions (A-STEP + LOCAL-REL + GENERICITY) [VP-2]",
+       "No W&L-07 translation preserves ExecConflict if (A-STEP) steps, order, SA and constraints depend only on DEA "
+       "acts and grants, not on the set of non-acting principals, and (LOCAL-REL) each control edge contributes only "
+       "pairs containing its endpoints.",
+-      "W&L-07 Defs 1-5; A-STEP; LOCAL-REL; both DEA closure readings.",
++      "W&L-07 Defs 1-5; A-STEP; LOCAL-REL; GENERICITY (the contribution of an edge is invariant under renaming non-acting principals); both DEA closure readings.",
+       "Lemma (monotonicity): adding fresh users and relation pairs that each contain a fresh user leaves UR, SA and "
+-      "every relation on old users unchanged, so every valid (partial) plan over old users stays valid. DEA pair: "
+-      "m0 (no edges, effective) and m1 = m0 + principal p with p->a in theta_E and p->j in theta_J (conflict). Under "
+-      "A-STEP + LOCAL-REL, tr(m1) extends tr(m0) by fresh user p, so the target permits in m1 and errs. "
++      "every relation on old users unchanged, so every valid (partial) plan over old users stays valid. [VP-2] The pair m0/m1 is insufficient (a translation "
++      "adding (y,z) for every z on each edge x->y is exact on m0 and m1). DEA pair: m1 (p->a in theta_E, p->j in "
++      "theta_J: conflict) and m2 (p->a in theta_E, o->j in theta_J: no conflict). By GENERICITY the images agree on "
++      "acting users {a,j}; by the lemma pairs on non-acting users do not affect the run, so the target errs on one. "
+       "Machine check: lemma verified on all enumerated 2-step instances with one fresh user; pair verified.",
+-      mono_check() and pair_ok, {"m0": m0, "m1": mp})
++      mono_check() and pair_ok, {"m1": mp, "m2": mq})
+ 
+ cmp_ab = sum(1 for m in M.mc_ctrl() if dea_ctrl("A")(m) != dea_ctrl("B")(m))
+ bx = {"edges": {"p->o": "J_early", "o->j": "J_late", "p->a": "E"}}
+@@ -430,7 +439,10 @@
+     RH = {(f"r_{a}", f"r_{b}") for a, b in edges}
+     PA = {("r_e", "p_exec"), ("r_j", "p_adj")}
+     import engines.rbac_li as rl
+-    return not rl.safe(UA, PA, RH, [({"p_exec", "p_adj"}, 2)])
++    try:
++        return not rl.safe(UA, PA, RH, [({"p_exec", "p_adj"}, 2)])
++    except ValueError:                                     # [VP-1] cyclic RH: not an RBAC state
++        return "INVALID_TARGET_STATE"
+ 
+ 
+ EXP_G2 = {k: g2_eval(v) for k, v in M.G2.items()}

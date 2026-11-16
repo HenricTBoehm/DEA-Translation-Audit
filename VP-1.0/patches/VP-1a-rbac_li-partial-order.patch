@@ -1,0 +1,19 @@
+--- a/harness/engines/rbac_li.py
++++ b/harness/engines/rbac_li.py
+@@ -22,7 +22,16 @@
+     return rel
+ 
+ 
++def check_partial_order(RH):
++    """[VP-1] Li Notation 2 (p.10): RH* is a partial order. Reject cyclic RH instead of silently closing it."""
++    star = closure(RH)
++    cyc = sorted((a, b) for (a, b) in star if a != b and (b, a) in star)
++    if cyc:
++        raise ValueError(f"RH* is not a partial order (Li 2007 p.10); cycle through {cyc[0]}")
++
++
+ def auth_perms(UA, PA, RH, u):
++    check_partial_order(RH)                                  # [VP-1]
+     star = closure(RH) | {(r, r) for (_, r) in UA} | {(r, r) for (r, _) in PA}
+     out = set()
+     for (u2, r1) in UA:
