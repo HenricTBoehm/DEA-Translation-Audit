@@ -1,0 +1,21 @@
+{
+  "calls_per_repeat": 1280,
+  "case_checks_ms": {
+    "Norris": {
+      "fit_checks_and_witness_construction_ms": 0.908903,
+      "read_parse_and_check_ms": 0.511416
+    },
+    "Pontius": {
+      "fit_checks_and_witness_construction_ms": 1.940658,
+      "read_parse_and_check_ms": 0.607392
+    }
+  },
+  "four_public_comparisons_and_review_ms": 4.262481,
+  "machine_median_us_per_case": {
+    "C": 277.799,
+    "C_plus_S": 330.179,
+    "D": 403.421
+  },
+  "repeats": 5,
+  "snapshot_aggregation_and_full_report_write_ms": 40.695084
+}

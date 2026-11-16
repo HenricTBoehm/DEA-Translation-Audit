@@ -1,0 +1,3724 @@
+{
+  "bounded_joint_equivalence": {
+    "cases": 324,
+    "status_counts": {
+      "CERTIFIED_STABLE": 72,
+      "SAMPLED_STABLE": 108,
+      "STABILITY_UNDETERMINED": 108,
+      "UNSTABLE": 36
+    }
+  },
+  "combined_metrics": {
+    "external_review": {
+      "absent_relevant_variables_identified_by_external_source": 3,
+      "defective_scopes_flagged_with_matched_evidence": 6,
+      "nondefective_scopes_falsely_flagged": 0,
+      "scopes_with_reference_deficit": 7,
+      "stale_scope_evidence_rejected": 1
+    },
+    "methods": {
+      "C": {
+        "all_targeted_facts": 0,
+        "cases": 16,
+        "certified_stable_claims": 0,
+        "false_certified_stable_claims": 0,
+        "false_complete_scope_claims": 0,
+        "governance_unchanged_from_C": 16,
+        "known_conflict_cleared": 1,
+        "known_control_conflict_cases": 2,
+        "modeled_certified_complete_cases": 0,
+        "reference_relevant_variables": 12,
+        "relevant_absent_from_model": 3,
+        "relevant_explicitly_modeled": 9,
+        "relevant_not_targeted": 12,
+        "relevant_targeted": 0,
+        "targeted_cases": 0,
+        "underlying_unstable_cases": 11,
+        "unnecessary_targeted_facts": 0
+      },
+      "C_plus_S": {
+        "all_targeted_facts": 5,
+        "cases": 16,
+        "certified_stable_claims": 10,
+        "false_certified_stable_claims": 5,
+        "false_complete_scope_claims": 6,
+        "governance_unchanged_from_C": 16,
+        "known_conflict_cleared": 1,
+        "known_control_conflict_cases": 2,
+        "modeled_certified_complete_cases": 14,
+        "reference_relevant_variables": 12,
+        "relevant_absent_from_model": 3,
+        "relevant_explicitly_modeled": 9,
+        "relevant_not_targeted": 7,
+        "relevant_targeted": 5,
+        "targeted_cases": 4,
+        "underlying_unstable_cases": 11,
+        "unnecessary_targeted_facts": 0
+      },
+      "D": {
+        "all_targeted_facts": 5,
+        "cases": 16,
+        "certified_stable_claims": 10,
+        "false_certified_stable_claims": 5,
+        "false_complete_scope_claims": 6,
+        "governance_unchanged_from_C": 16,
+        "known_conflict_cleared": 1,
+        "known_control_conflict_cases": 2,
+        "modeled_certified_complete_cases": 14,
+        "reference_relevant_variables": 12,
+        "relevant_absent_from_model": 3,
+        "relevant_explicitly_modeled": 9,
+        "relevant_not_targeted": 7,
+        "relevant_targeted": 5,
+        "targeted_cases": 4,
+        "underlying_unstable_cases": 11,
+        "unnecessary_targeted_facts": 0
+      }
+    }
+  },
+  "format": "decision-question-audit-v0.1",
+  "independent_review_rechecks": {
+    "Norris": {
+      "before": {
+        "diagnostic": [
+          "CERTIFIED_STABLE",
+          [
+            "ACCEPT"
+          ],
+          []
+        ],
+        "governance": {
+          "passes_gate_with_authority": false,
+          "reason": "REMAINDER: unproved historical bound",
+          "status": "UNDETERMINED",
+          "witnesses": []
+        }
+      },
+      "evidence": [
+        "MISSING_VARIABLE:intercept_enabled"
+      ],
+      "reviewed": {
+        "diagnostic": [
+          "UNSTABLE",
+          [
+            "ACCEPT",
+            "REJECT"
+          ],
+          [
+            "intercept_enabled"
+          ]
+        ],
+        "governance": {
+          "passes_gate_with_authority": false,
+          "reason": "REMAINDER: unproved historical bound",
+          "status": "UNDETERMINED",
+          "witnesses": []
+        }
+      }
+    },
+    "Pontius": {
+      "before": {
+        "diagnostic": [
+          "CERTIFIED_STABLE",
+          [
+            "ACCEPT"
+          ],
+          []
+        ],
+        "governance": {
+          "passes_gate_with_authority": false,
+          "reason": "REMAINDER: unproved historical bound",
+          "status": "UNDETERMINED",
+          "witnesses": []
+        }
+      },
+      "evidence": [
+        "MISSING_VARIABLE:quadratic_enabled"
+      ],
+      "reviewed": {
+        "diagnostic": [
+          "UNSTABLE",
+          [
+            "ACCEPT",
+            "REJECT"
+          ],
+          [
+            "quadratic_enabled"
+          ]
+        ],
+        "governance": {
+          "passes_gate_with_authority": false,
+          "reason": "REMAINDER: unproved historical bound",
+          "status": "UNDETERMINED",
+          "witnesses": []
+        }
+      }
+    },
+    "Q-C": {
+      "before": {
+        "passes_gate_with_authority": true,
+        "reason": "certified empty upper intersection",
+        "status": "NO_CONFLICT_ESTABLISHED",
+        "witnesses": []
+      },
+      "hypothetical_new_attempt": {
+        "passes_gate_with_authority": false,
+        "reason": "witnessed effective control",
+        "status": "CONFLICT",
+        "witnesses": [
+          {
+            "binding": [
+              "decision-root:standard"
+            ],
+            "decision": [
+              "self:p",
+              "p-standard"
+            ],
+            "decision_target": [
+              "artifact",
+              "standard@1"
+            ],
+            "principal": "p",
+            "production": [
+              "self:p",
+              "p-executor",
+              "mutable-production:produce"
+            ]
+          }
+        ]
+      },
+      "reviewed_roots": {
+        "rubric": "rubric@1",
+        "standard": "standard@1"
+      }
+    }
+  },
+  "nonidentifiability": {
+    "pair": [
+      "Q-B",
+      "Q-B0"
+    ],
+    "same_observed_sha256": "58987d27af18ea692859d53e6b53badba517ce407524a25473c61ce39434c8ab"
+  },
+  "public_benchmark_fits": {
+    "Norris": {
+      "certified_coefficients": {
+        "0": "-262323073774029/1000000000000000",
+        "1": "20042336360409/20000000000000"
+      },
+      "documented_formula": "y = B0 + B1*x + e",
+      "injected_omission": 0,
+      "observations": 36,
+      "parameter": "intercept_enabled",
+      "required_terms": [
+        0,
+        1
+      ],
+      "runs": {
+        "published_terms": {
+          "decision": "ACCEPT",
+          "exact_coefficients_as_decimal": {
+            "0": "-0.2623230737740295",
+            "1": "1.002116818020454"
+          },
+          "max_relative_error_exact": "4.38965228e-15",
+          "max_relative_error_qr": "4.71898508e-14",
+          "qr_coefficients_as_decimal": {
+            "0": "-0.2623230737740414",
+            "1": "1.002116818020455"
+          },
+          "terms": [
+            0,
+            1
+          ]
+        },
+        "term_omitted": {
+          "decision": "REJECT",
+          "exact_coefficients_as_decimal": {
+            "1": "1.001742080469786"
+          },
+          "max_relative_error_exact": "1",
+          "max_relative_error_qr": "1",
+          "qr_coefficients_as_decimal": {
+            "1": "1.001742080469786"
+          },
+          "terms": [
+            1
+          ]
+        }
+      },
+      "source_sha256": "5ab6906c68a9c4b2eb1661c0cd7d2a09f5a469a6d4e05b6b691f190f5f7b944f",
+      "tolerance": "1/100000000"
+    },
+    "Pontius": {
+      "certified_coefficients": {
+        "0": "168391447368421/250000000000000000",
+        "1": "732059160401003/1000000000000000000000",
+        "2": "-316081871345029/100000000000000000000000000000"
+      },
+      "documented_formula": "y = B0 + B1*x + B2*(x**2)",
+      "injected_omission": 2,
+      "observations": 40,
+      "parameter": "quadratic_enabled",
+      "required_terms": [
+        0,
+        1,
+        2
+      ],
+      "runs": {
+        "published_terms": {
+          "decision": "ACCEPT",
+          "exact_coefficients_as_decimal": {
+            "0": "0.0006735657894736842",
+            "1": "7.320591604010025e-07",
+            "2": "-3.160818713450292e-15"
+          },
+          "max_relative_error_exact": "7.58556892e-16",
+          "max_relative_error_qr": "2.48883394e-12",
+          "qr_coefficients_as_decimal": {
+            "0": "0.0006735657894753604",
+            "1": "7.320591604009996e-07",
+            "2": "-3.160818713449425e-15"
+          },
+          "terms": [
+            0,
+            1,
+            2
+          ]
+        },
+        "term_omitted": {
+          "decision": "REJECT",
+          "exact_coefficients_as_decimal": {
+            "0": "0.006149684210526316",
+            "1": "7.221025814536341e-07"
+          },
+          "max_relative_error_exact": "8.13004239",
+          "max_relative_error_qr": "8.13004239",
+          "qr_coefficients_as_decimal": {
+            "0": "0.006149684210526628",
+            "1": "7.221025814536339e-07"
+          },
+          "terms": [
+            0,
+            1
+          ]
+        }
+      },
+      "source_sha256": "de60baa5dc66fd804f9316f895bc5aa2b8f791c09d1ecc1ec39f8b199b8c15c7",
+      "tolerance": "1/100000000"
+    }
+  },
+  "public_benchmark_metrics": {
+    "external_review": {
+      "absent_relevant_variables_identified_by_external_source": 2,
+      "defective_scopes_flagged_with_matched_evidence": 2,
+      "nondefective_scopes_falsely_flagged": 0,
+      "scopes_with_reference_deficit": 2,
+      "stale_scope_evidence_rejected": 0
+    },
+    "methods": {
+      "C": {
+        "all_targeted_facts": 0,
+        "cases": 4,
+        "certified_stable_claims": 0,
+        "false_certified_stable_claims": 0,
+        "false_complete_scope_claims": 0,
+        "governance_unchanged_from_C": 4,
+        "known_conflict_cleared": 0,
+        "known_control_conflict_cases": 0,
+        "modeled_certified_complete_cases": 0,
+        "reference_relevant_variables": 4,
+        "relevant_absent_from_model": 2,
+        "relevant_explicitly_modeled": 2,
+        "relevant_not_targeted": 4,
+        "relevant_targeted": 0,
+        "targeted_cases": 0,
+        "underlying_unstable_cases": 4,
+        "unnecessary_targeted_facts": 0
+      },
+      "C_plus_S": {
+        "all_targeted_facts": 2,
+        "cases": 4,
+        "certified_stable_claims": 2,
+        "false_certified_stable_claims": 2,
+        "false_complete_scope_claims": 2,
+        "governance_unchanged_from_C": 4,
+        "known_conflict_cleared": 0,
+        "known_control_conflict_cases": 0,
+        "modeled_certified_complete_cases": 4,
+        "reference_relevant_variables": 4,
+        "relevant_absent_from_model": 2,
+        "relevant_explicitly_modeled": 2,
+        "relevant_not_targeted": 2,
+        "relevant_targeted": 2,
+        "targeted_cases": 2,
+        "underlying_unstable_cases": 4,
+        "unnecessary_targeted_facts": 0
+      },
+      "D": {
+        "all_targeted_facts": 2,
+        "cases": 4,
+        "certified_stable_claims": 2,
+        "false_certified_stable_claims": 2,
+        "false_complete_scope_claims": 2,
+        "governance_unchanged_from_C": 4,
+        "known_conflict_cleared": 0,
+        "known_control_conflict_cases": 0,
+        "modeled_certified_complete_cases": 4,
+        "reference_relevant_variables": 4,
+        "relevant_absent_from_model": 2,
+        "relevant_explicitly_modeled": 2,
+        "relevant_not_targeted": 2,
+        "relevant_targeted": 2,
+        "targeted_cases": 2,
+        "underlying_unstable_cases": 4,
+        "unnecessary_targeted_facts": 0
+      }
+    }
+  },
+  "public_benchmark_variants": {
+    "Norris-known-option": {
+      "C": {
+        "diagnostic": "NOT_APPLICABLE",
+        "governance": {
+          "passes_gate_with_authority": false,
+          "reason": "REMAINDER: unproved historical bound",
+          "status": "UNDETERMINED",
+          "witnesses": []
+        }
+      },
+      "C_plus_S": {
+        "diagnostic": [
+          "UNSTABLE",
+          [
+            "ACCEPT",
+            "REJECT"
+          ],
+          [
+            "intercept_enabled"
+          ]
+        ],
+        "governance": {
+          "passes_gate_with_authority": false,
+          "reason": "REMAINDER: unproved historical bound",
+          "status": "UNDETERMINED",
+          "witnesses": []
+        }
+      },
+      "D": {
+        "diagnostic": [
+          "UNSTABLE",
+          [
+            "ACCEPT",
+            "REJECT"
+          ],
+          [
+            "intercept_enabled"
+          ]
+        ],
+        "governance": {
+          "passes_gate_with_authority": false,
+          "reason": "REMAINDER: unproved historical bound",
+          "status": "UNDETERMINED",
+          "witnesses": []
+        }
+      },
+      "audited_questions": [],
+      "cause": "Q1",
+      "detectable_only_with": "consult original NIST formula and independently compare implementation options",
+      "expected": {
+        "C": "UNDETERMINED",
+        "audit_findings": [],
+        "query": [
+          "intercept_enabled"
+        ],
+        "science": "UNSTABLE"
+      },
+      "observed": {
+        "model": {
+          "artifact": "x@1",
+          "attempt": "NIST-Norris@1",
+          "authorized": true,
+          "binding_verified": true,
+          "bound_complete": true,
+          "commit_version": "bundle@1",
+          "events": [
+            {
+              "actor": "a",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "produce",
+              "inputs": [],
+              "kind": "produce",
+              "order": 0,
+              "time": 2
+            },
+            {
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "seal",
+              "kind": "seal",
+              "order": 0,
+              "pins": {
+                "rubric": "rubric@1"
+              },
+              "time": 3
+            },
+            {
+              "actor": "j",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "commit",
+              "kind": "adjudicate",
+              "order": 0,
+              "roots": {
+                "rubric": "rubric@1"
+              },
+              "time": 5
+            }
+          ],
+          "graph_attested": true,
+          "policy": "coefficient-tolerance-Norris@1",
+          "record_complete": true,
+          "record_start": 1,
+          "snapshot_attested": true,
+          "snapshot_version": "bundle@1"
+        },
+        "remainder": {
+          "actual_attested": true,
+          "attested": false,
+          "issuer": "i",
+          "kind": "U",
+          "uncovered": [],
+          "upper": [],
+          "witnesses": []
+        },
+        "scientific": {
+          "covered": true,
+          "domains": {
+            "intercept_enabled": [
+              0,
+              1
+            ]
+          },
+          "observed": {},
+          "offset": 0,
+          "policy_defined": true,
+          "samples": [],
+          "scope": {
+            "attempt": "NIST-Norris@1",
+            "commit": "bundle@1",
+            "policy": "coefficient-tolerance-Norris@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          },
+          "threshold": 1,
+          "weights": {
+            "intercept_enabled": 1
+          },
+          "world_scope": {
+            "attempt": "NIST-Norris@1",
+            "commit": "bundle@1",
+            "policy": "coefficient-tolerance-Norris@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          }
+        }
+      },
+      "observed_sha256": "bdca1cad2dbecf156e872e4959e7d9471e34b7feac826397b524499e66c5977b",
+      "reference_deficits": [],
+      "reference_outcomes": [
+        "ACCEPT",
+        "REJECT"
+      ],
+      "reference_switch_witnesses": {
+        "intercept_enabled": [
+          {
+            "decision": "REJECT",
+            "values": {
+              "intercept_enabled": 0
+            }
+          },
+          {
+            "decision": "ACCEPT",
+            "values": {
+              "intercept_enabled": 1
+            }
+          }
+        ]
+      },
+      "source": {
+        "binding_requirements": {},
+        "effect_requirements": [
+          "intercept_enabled"
+        ],
+        "missing_world": null,
+        "public_fixture": "Norris",
+        "scope": {
+          "attempt": "NIST-Norris@1",
+          "commit": "bundle@1",
+          "policy": "coefficient-tolerance-Norris@1",
+          "rubric": "rubric@1",
+          "seal": "x@1"
+        },
+        "variable_requirements": [
+          "intercept_enabled"
+        ]
+      },
+      "substantive_value_if_certified": "UNDETERMINED",
+      "truth": {
+        "control_conflict": null,
+        "needed_governance_bindings": [],
+        "worlds": [
+          {
+            "decision": "REJECT",
+            "values": {
+              "intercept_enabled": 0
+            }
+          },
+          {
+            "decision": "ACCEPT",
+            "values": {
+              "intercept_enabled": 1
+            }
+          }
+        ]
+      },
+      "withheld": "synthetic unknown execution setting"
+    },
+    "Norris-omitted-option": {
+      "C": {
+        "diagnostic": "NOT_APPLICABLE",
+        "governance": {
+          "passes_gate_with_authority": false,
+          "reason": "REMAINDER: unproved historical bound",
+          "status": "UNDETERMINED",
+          "witnesses": []
+        }
+      },
+      "C_plus_S": {
+        "diagnostic": [
+          "CERTIFIED_STABLE",
+          [
+            "ACCEPT"
+          ],
+          []
+        ],
+        "governance": {
+          "passes_gate_with_authority": false,
+          "reason": "REMAINDER: unproved historical bound",
+          "status": "UNDETERMINED",
+          "witnesses": []
+        }
+      },
+      "D": {
+        "diagnostic": [
+          "CERTIFIED_STABLE",
+          [
+            "ACCEPT"
+          ],
+          []
+        ],
+        "governance": {
+          "passes_gate_with_authority": false,
+          "reason": "REMAINDER: unproved historical bound",
+          "status": "UNDETERMINED",
+          "witnesses": []
+        }
+      },
+      "audited_questions": [
+        "MISSING_VARIABLE:intercept_enabled"
+      ],
+      "cause": "Q2",
+      "detectable_only_with": "consult original NIST formula and independently compare implementation options",
+      "expected": {
+        "C": "UNDETERMINED",
+        "audit_findings": [
+          "MISSING_VARIABLE:intercept_enabled"
+        ],
+        "query": [],
+        "science": "CERTIFIED_STABLE"
+      },
+      "observed": {
+        "model": {
+          "artifact": "x@1",
+          "attempt": "NIST-Norris@1",
+          "authorized": true,
+          "binding_verified": true,
+          "bound_complete": true,
+          "commit_version": "bundle@1",
+          "events": [
+            {
+              "actor": "a",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "produce",
+              "inputs": [],
+              "kind": "produce",
+              "order": 0,
+              "time": 2
+            },
+            {
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "seal",
+              "kind": "seal",
+              "order": 0,
+              "pins": {
+                "rubric": "rubric@1"
+              },
+              "time": 3
+            },
+            {
+              "actor": "j",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "commit",
+              "kind": "adjudicate",
+              "order": 0,
+              "roots": {
+                "rubric": "rubric@1"
+              },
+              "time": 5
+            }
+          ],
+          "graph_attested": true,
+          "policy": "coefficient-tolerance-Norris@1",
+          "record_complete": true,
+          "record_start": 1,
+          "snapshot_attested": true,
+          "snapshot_version": "bundle@1"
+        },
+        "remainder": {
+          "actual_attested": true,
+          "attested": false,
+          "issuer": "i",
+          "kind": "U",
+          "uncovered": [],
+          "upper": [],
+          "witnesses": []
+        },
+        "scientific": {
+          "covered": true,
+          "domains": {},
+          "observed": {},
+          "offset": 1,
+          "policy_defined": true,
+          "samples": [],
+          "scope": {
+            "attempt": "NIST-Norris@1",
+            "commit": "bundle@1",
+            "policy": "coefficient-tolerance-Norris@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          },
+          "threshold": 1,
+          "weights": {},
+          "world_scope": {
+            "attempt": "NIST-Norris@1",
+            "commit": "bundle@1",
+            "policy": "coefficient-tolerance-Norris@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          }
+        }
+      },
+      "observed_sha256": "6cbc9979db5fcec15a1020608ae4dc149005aa4a79c4e246aed18c0cef069d85",
+      "reference_deficits": [
+        "variable inventory differs"
+      ],
+      "reference_outcomes": [
+        "ACCEPT",
+        "REJECT"
+      ],
+      "reference_switch_witnesses": {
+        "intercept_enabled": [
+          {
+            "decision": "REJECT",
+            "values": {
+              "intercept_enabled": 0
+            }
+          },
+          {
+            "decision": "ACCEPT",
+            "values": {
+              "intercept_enabled": 1
+            }
+          }
+        ]
+      },
+      "source": {
+        "binding_requirements": {},
+        "effect_requirements": [
+          "intercept_enabled"
+        ],
+        "missing_world": null,
+        "public_fixture": "Norris",
+        "scope": {
+          "attempt": "NIST-Norris@1",
+          "commit": "bundle@1",
+          "policy": "coefficient-tolerance-Norris@1",
+          "rubric": "rubric@1",
+          "seal": "x@1"
+        },
+        "variable_requirements": [
+          "intercept_enabled"
+        ]
+      },
+      "substantive_value_if_certified": "ACCEPT",
+      "truth": {
+        "control_conflict": null,
+        "needed_governance_bindings": [],
+        "worlds": [
+          {
+            "decision": "REJECT",
+            "values": {
+              "intercept_enabled": 0
+            }
+          },
+          {
+            "decision": "ACCEPT",
+            "values": {
+              "intercept_enabled": 1
+            }
+          }
+        ]
+      },
+      "withheld": "synthetic removal of whole execution setting"
+    },
+    "Pontius-known-option": {
+      "C": {
+        "diagnostic": "NOT_APPLICABLE",
+        "governance": {
+          "passes_gate_with_authority": false,
+          "reason": "REMAINDER: unproved historical bound",
+          "status": "UNDETERMINED",
+          "witnesses": []
+        }
+      },
+      "C_plus_S": {
+        "diagnostic": [
+          "UNSTABLE",
+          [
+            "ACCEPT",
+            "REJECT"
+          ],
+          [
+            "quadratic_enabled"
+          ]
+        ],
+        "governance": {
+          "passes_gate_with_authority": false,
+          "reason": "REMAINDER: unproved historical bound",
+          "status": "UNDETERMINED",
+          "witnesses": []
+        }
+      },
+      "D": {
+        "diagnostic": [
+          "UNSTABLE",
+          [
+            "ACCEPT",
+            "REJECT"
+          ],
+          [
+            "quadratic_enabled"
+          ]
+        ],
+        "governance": {
+          "passes_gate_with_authority": false,
+          "reason": "REMAINDER: unproved historical bound",
+          "status": "UNDETERMINED",
+          "witnesses": []
+        }
+      },
+      "audited_questions": [],
+      "cause": "Q1",
+      "detectable_only_with": "consult original NIST formula and independently compare implementation options",
+      "expected": {
+        "C": "UNDETERMINED",
+        "audit_findings": [],
+        "query": [
+          "quadratic_enabled"
+        ],
+        "science": "UNSTABLE"
+      },
+      "observed": {
+        "model": {
+          "artifact": "x@1",
+          "attempt": "NIST-Pontius@1",
+          "authorized": true,
+          "binding_verified": true,
+          "bound_complete": true,
+          "commit_version": "bundle@1",
+          "events": [
+            {
+              "actor": "a",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "produce",
+              "inputs": [],
+              "kind": "produce",
+              "order": 0,
+              "time": 2
+            },
+            {
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "seal",
+              "kind": "seal",
+              "order": 0,
+              "pins": {
+                "rubric": "rubric@1"
+              },
+              "time": 3
+            },
+            {
+              "actor": "j",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "commit",
+              "kind": "adjudicate",
+              "order": 0,
+              "roots": {
+                "rubric": "rubric@1"
+              },
+              "time": 5
+            }
+          ],
+          "graph_attested": true,
+          "policy": "coefficient-tolerance-Pontius@1",
+          "record_complete": true,
+          "record_start": 1,
+          "snapshot_attested": true,
+          "snapshot_version": "bundle@1"
+        },
+        "remainder": {
+          "actual_attested": true,
+          "attested": false,
+          "issuer": "i",
+          "kind": "U",
+          "uncovered": [],
+          "upper": [],
+          "witnesses": []
+        },
+        "scientific": {
+          "covered": true,
+          "domains": {
+            "quadratic_enabled": [
+              0,
+              1
+            ]
+          },
+          "observed": {},
+          "offset": 0,
+          "policy_defined": true,
+          "samples": [],
+          "scope": {
+            "attempt": "NIST-Pontius@1",
+            "commit": "bundle@1",
+            "policy": "coefficient-tolerance-Pontius@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          },
+          "threshold": 1,
+          "weights": {
+            "quadratic_enabled": 1
+          },
+          "world_scope": {
+            "attempt": "NIST-Pontius@1",
+            "commit": "bundle@1",
+            "policy": "coefficient-tolerance-Pontius@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          }
+        }
+      },
+      "observed_sha256": "80f2cefe58711bd8245a12c9e9a69bb41aa38760fa6609fc473c9e37fb6ff497",
+      "reference_deficits": [],
+      "reference_outcomes": [
+        "ACCEPT",
+        "REJECT"
+      ],
+      "reference_switch_witnesses": {
+        "quadratic_enabled": [
+          {
+            "decision": "REJECT",
+            "values": {
+              "quadratic_enabled": 0
+            }
+          },
+          {
+            "decision": "ACCEPT",
+            "values": {
+              "quadratic_enabled": 1
+            }
+          }
+        ]
+      },
+      "source": {
+        "binding_requirements": {},
+        "effect_requirements": [
+          "quadratic_enabled"
+        ],
+        "missing_world": null,
+        "public_fixture": "Pontius",
+        "scope": {
+          "attempt": "NIST-Pontius@1",
+          "commit": "bundle@1",
+          "policy": "coefficient-tolerance-Pontius@1",
+          "rubric": "rubric@1",
+          "seal": "x@1"
+        },
+        "variable_requirements": [
+          "quadratic_enabled"
+        ]
+      },
+      "substantive_value_if_certified": "UNDETERMINED",
+      "truth": {
+        "control_conflict": null,
+        "needed_governance_bindings": [],
+        "worlds": [
+          {
+            "decision": "REJECT",
+            "values": {
+              "quadratic_enabled": 0
+            }
+          },
+          {
+            "decision": "ACCEPT",
+            "values": {
+              "quadratic_enabled": 1
+            }
+          }
+        ]
+      },
+      "withheld": "synthetic unknown execution setting"
+    },
+    "Pontius-omitted-option": {
+      "C": {
+        "diagnostic": "NOT_APPLICABLE",
+        "governance": {
+          "passes_gate_with_authority": false,
+          "reason": "REMAINDER: unproved historical bound",
+          "status": "UNDETERMINED",
+          "witnesses": []
+        }
+      },
+      "C_plus_S": {
+        "diagnostic": [
+          "CERTIFIED_STABLE",
+          [
+            "ACCEPT"
+          ],
+          []
+        ],
+        "governance": {
+          "passes_gate_with_authority": false,
+          "reason": "REMAINDER: unproved historical bound",
+          "status": "UNDETERMINED",
+          "witnesses": []
+        }
+      },
+      "D": {
+        "diagnostic": [
+          "CERTIFIED_STABLE",
+          [
+            "ACCEPT"
+          ],
+          []
+        ],
+        "governance": {
+          "passes_gate_with_authority": false,
+          "reason": "REMAINDER: unproved historical bound",
+          "status": "UNDETERMINED",
+          "witnesses": []
+        }
+      },
+      "audited_questions": [
+        "MISSING_VARIABLE:quadratic_enabled"
+      ],
+      "cause": "Q2",
+      "detectable_only_with": "consult original NIST formula and independently compare implementation options",
+      "expected": {
+        "C": "UNDETERMINED",
+        "audit_findings": [
+          "MISSING_VARIABLE:quadratic_enabled"
+        ],
+        "query": [],
+        "science": "CERTIFIED_STABLE"
+      },
+      "observed": {
+        "model": {
+          "artifact": "x@1",
+          "attempt": "NIST-Pontius@1",
+          "authorized": true,
+          "binding_verified": true,
+          "bound_complete": true,
+          "commit_version": "bundle@1",
+          "events": [
+            {
+              "actor": "a",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "produce",
+              "inputs": [],
+              "kind": "produce",
+              "order": 0,
+              "time": 2
+            },
+            {
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "seal",
+              "kind": "seal",
+              "order": 0,
+              "pins": {
+                "rubric": "rubric@1"
+              },
+              "time": 3
+            },
+            {
+              "actor": "j",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "commit",
+              "kind": "adjudicate",
+              "order": 0,
+              "roots": {
+                "rubric": "rubric@1"
+              },
+              "time": 5
+            }
+          ],
+          "graph_attested": true,
+          "policy": "coefficient-tolerance-Pontius@1",
+          "record_complete": true,
+          "record_start": 1,
+          "snapshot_attested": true,
+          "snapshot_version": "bundle@1"
+        },
+        "remainder": {
+          "actual_attested": true,
+          "attested": false,
+          "issuer": "i",
+          "kind": "U",
+          "uncovered": [],
+          "upper": [],
+          "witnesses": []
+        },
+        "scientific": {
+          "covered": true,
+          "domains": {},
+          "observed": {},
+          "offset": 1,
+          "policy_defined": true,
+          "samples": [],
+          "scope": {
+            "attempt": "NIST-Pontius@1",
+            "commit": "bundle@1",
+            "policy": "coefficient-tolerance-Pontius@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          },
+          "threshold": 1,
+          "weights": {},
+          "world_scope": {
+            "attempt": "NIST-Pontius@1",
+            "commit": "bundle@1",
+            "policy": "coefficient-tolerance-Pontius@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          }
+        }
+      },
+      "observed_sha256": "941fde2dfdd68b08a19aa7238c4d454faf3bdc0579d6684061d988b920b59c6b",
+      "reference_deficits": [
+        "variable inventory differs"
+      ],
+      "reference_outcomes": [
+        "ACCEPT",
+        "REJECT"
+      ],
+      "reference_switch_witnesses": {
+        "quadratic_enabled": [
+          {
+            "decision": "REJECT",
+            "values": {
+              "quadratic_enabled": 0
+            }
+          },
+          {
+            "decision": "ACCEPT",
+            "values": {
+              "quadratic_enabled": 1
+            }
+          }
+        ]
+      },
+      "source": {
+        "binding_requirements": {},
+        "effect_requirements": [
+          "quadratic_enabled"
+        ],
+        "missing_world": null,
+        "public_fixture": "Pontius",
+        "scope": {
+          "attempt": "NIST-Pontius@1",
+          "commit": "bundle@1",
+          "policy": "coefficient-tolerance-Pontius@1",
+          "rubric": "rubric@1",
+          "seal": "x@1"
+        },
+        "variable_requirements": [
+          "quadratic_enabled"
+        ]
+      },
+      "substantive_value_if_certified": "ACCEPT",
+      "truth": {
+        "control_conflict": null,
+        "needed_governance_bindings": [],
+        "worlds": [
+          {
+            "decision": "REJECT",
+            "values": {
+              "quadratic_enabled": 0
+            }
+          },
+          {
+            "decision": "ACCEPT",
+            "values": {
+              "quadratic_enabled": 1
+            }
+          }
+        ]
+      },
+      "withheld": "synthetic removal of whole execution setting"
+    }
+  },
+  "synthetic": {
+    "Q-A": {
+      "C": {
+        "diagnostic": "NOT_APPLICABLE",
+        "governance": {
+          "passes_gate_with_authority": false,
+          "reason": "REMAINDER: unproved historical bound",
+          "status": "UNDETERMINED",
+          "witnesses": []
+        }
+      },
+      "C_plus_S": {
+        "diagnostic": [
+          "UNSTABLE",
+          [
+            "ACCEPT",
+            "REJECT"
+          ],
+          [
+            "calibration"
+          ]
+        ],
+        "governance": {
+          "passes_gate_with_authority": false,
+          "reason": "REMAINDER: unproved historical bound",
+          "status": "UNDETERMINED",
+          "witnesses": []
+        }
+      },
+      "D": {
+        "diagnostic": [
+          "UNSTABLE",
+          [
+            "ACCEPT",
+            "REJECT"
+          ],
+          [
+            "calibration"
+          ]
+        ],
+        "governance": {
+          "passes_gate_with_authority": false,
+          "reason": "REMAINDER: unproved historical bound",
+          "status": "UNDETERMINED",
+          "witnesses": []
+        }
+      },
+      "audited_questions": [],
+      "cause": "Q1",
+      "detectable_only_with": "attest which calibration applied",
+      "expected": {
+        "C": "UNDETERMINED",
+        "audit_findings": [],
+        "query": [
+          "calibration"
+        ],
+        "science": "UNSTABLE"
+      },
+      "observed": {
+        "model": {
+          "artifact": "x@1",
+          "attempt": "adjudication@1",
+          "authorized": true,
+          "binding_verified": true,
+          "bound_complete": true,
+          "commit_version": "bundle@1",
+          "events": [
+            {
+              "actor": "a",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "produce",
+              "inputs": [],
+              "kind": "produce",
+              "order": 0,
+              "time": 2
+            },
+            {
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "seal",
+              "kind": "seal",
+              "order": 0,
+              "pins": {
+                "rubric": "rubric@1"
+              },
+              "time": 3
+            },
+            {
+              "actor": "j",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "commit",
+              "kind": "adjudicate",
+              "order": 0,
+              "roots": {
+                "rubric": "rubric@1"
+              },
+              "time": 5
+            }
+          ],
+          "graph_attested": true,
+          "policy": "threshold@1",
+          "record_complete": true,
+          "record_start": 1,
+          "snapshot_attested": true,
+          "snapshot_version": "bundle@1"
+        },
+        "remainder": {
+          "actual_attested": true,
+          "attested": false,
+          "issuer": "i",
+          "kind": "U",
+          "uncovered": [],
+          "upper": [],
+          "witnesses": []
+        },
+        "scientific": {
+          "covered": true,
+          "domains": {
+            "calibration": [
+              0,
+              1
+            ]
+          },
+          "observed": {},
+          "offset": 0,
+          "policy_defined": true,
+          "samples": [],
+          "scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          },
+          "threshold": 1,
+          "weights": {
+            "calibration": 1
+          },
+          "world_scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          }
+        }
+      },
+      "observed_sha256": "e4eaf227a2e3d93c3fbcb514d88726551ca8d9cf31ba460ddd6be6aa11dd096d",
+      "reference_deficits": [],
+      "reference_outcomes": [
+        "ACCEPT",
+        "REJECT"
+      ],
+      "reference_switch_witnesses": {
+        "calibration": [
+          {
+            "decision": "REJECT",
+            "values": {
+              "calibration": 0
+            }
+          },
+          {
+            "decision": "ACCEPT",
+            "values": {
+              "calibration": 1
+            }
+          }
+        ]
+      },
+      "source": {
+        "binding_requirements": {},
+        "effect_requirements": [
+          "calibration"
+        ],
+        "missing_world": null,
+        "scope": {
+          "attempt": "adjudication@1",
+          "commit": "bundle@1",
+          "policy": "threshold@1",
+          "rubric": "rubric@1",
+          "seal": "x@1"
+        },
+        "variable_requirements": [
+          "calibration"
+        ]
+      },
+      "substantive_value_if_certified": "UNDETERMINED",
+      "truth": {
+        "control_conflict": false,
+        "needed_governance_bindings": [],
+        "worlds": [
+          {
+            "decision": "REJECT",
+            "values": {
+              "calibration": 0
+            }
+          },
+          {
+            "decision": "ACCEPT",
+            "values": {
+              "calibration": 1
+            }
+          }
+        ]
+      },
+      "withheld": "one unobserved answer to a known calibration question"
+    },
+    "Q-B": {
+      "C": {
+        "diagnostic": "NOT_APPLICABLE",
+        "governance": {
+          "passes_gate_with_authority": true,
+          "reason": "certified empty upper intersection",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        }
+      },
+      "C_plus_S": {
+        "diagnostic": [
+          "CERTIFIED_STABLE",
+          [
+            "ACCEPT"
+          ],
+          []
+        ],
+        "governance": {
+          "passes_gate_with_authority": true,
+          "reason": "certified empty upper intersection",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        }
+      },
+      "D": {
+        "diagnostic": [
+          "CERTIFIED_STABLE",
+          [
+            "ACCEPT"
+          ],
+          []
+        ],
+        "governance": {
+          "passes_gate_with_authority": true,
+          "reason": "certified empty upper intersection",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        }
+      },
+      "audited_questions": [
+        "MISSING_VARIABLE:calibration"
+      ],
+      "cause": "Q2",
+      "detectable_only_with": "independent procedure specification identifies calibration",
+      "expected": {
+        "C": "NO_CONFLICT_ESTABLISHED",
+        "audit_findings": [
+          "MISSING_VARIABLE:calibration"
+        ],
+        "query": [],
+        "science": "CERTIFIED_STABLE"
+      },
+      "observed": {
+        "model": {
+          "artifact": "x@1",
+          "attempt": "adjudication@1",
+          "authorized": true,
+          "binding_verified": true,
+          "bound_complete": true,
+          "commit_version": "bundle@1",
+          "events": [
+            {
+              "actor": "a",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "produce",
+              "inputs": [],
+              "kind": "produce",
+              "order": 0,
+              "time": 2
+            },
+            {
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "seal",
+              "kind": "seal",
+              "order": 0,
+              "pins": {
+                "rubric": "rubric@1"
+              },
+              "time": 3
+            },
+            {
+              "actor": "j",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "commit",
+              "kind": "adjudicate",
+              "order": 0,
+              "roots": {
+                "rubric": "rubric@1"
+              },
+              "time": 5
+            }
+          ],
+          "graph_attested": true,
+          "policy": "threshold@1",
+          "record_complete": true,
+          "record_start": 1,
+          "snapshot_attested": true,
+          "snapshot_version": "bundle@1"
+        },
+        "remainder": {
+          "actual_attested": true,
+          "attested": true,
+          "issuer": "i",
+          "kind": "Z",
+          "uncovered": [],
+          "upper": [],
+          "witnesses": []
+        },
+        "scientific": {
+          "covered": true,
+          "domains": {},
+          "observed": {},
+          "offset": 1,
+          "policy_defined": true,
+          "samples": [],
+          "scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          },
+          "threshold": 1,
+          "weights": {},
+          "world_scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          }
+        }
+      },
+      "observed_sha256": "58987d27af18ea692859d53e6b53badba517ce407524a25473c61ce39434c8ab",
+      "reference_deficits": [
+        "variable inventory differs"
+      ],
+      "reference_outcomes": [
+        "ACCEPT",
+        "REJECT"
+      ],
+      "reference_switch_witnesses": {
+        "calibration": [
+          {
+            "decision": "REJECT",
+            "values": {
+              "calibration": 0
+            }
+          },
+          {
+            "decision": "ACCEPT",
+            "values": {
+              "calibration": 1
+            }
+          }
+        ]
+      },
+      "source": {
+        "binding_requirements": {},
+        "effect_requirements": [
+          "calibration"
+        ],
+        "missing_world": null,
+        "scope": {
+          "attempt": "adjudication@1",
+          "commit": "bundle@1",
+          "policy": "threshold@1",
+          "rubric": "rubric@1",
+          "seal": "x@1"
+        },
+        "variable_requirements": [
+          "calibration"
+        ]
+      },
+      "substantive_value_if_certified": "ACCEPT",
+      "truth": {
+        "control_conflict": false,
+        "needed_governance_bindings": [],
+        "worlds": [
+          {
+            "decision": "REJECT",
+            "values": {
+              "calibration": 0
+            }
+          },
+          {
+            "decision": "ACCEPT",
+            "values": {
+              "calibration": 1
+            }
+          }
+        ]
+      },
+      "withheld": "calibration field entirely absent from modeled input"
+    },
+    "Q-B0": {
+      "C": {
+        "diagnostic": "NOT_APPLICABLE",
+        "governance": {
+          "passes_gate_with_authority": true,
+          "reason": "certified empty upper intersection",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        }
+      },
+      "C_plus_S": {
+        "diagnostic": [
+          "CERTIFIED_STABLE",
+          [
+            "ACCEPT"
+          ],
+          []
+        ],
+        "governance": {
+          "passes_gate_with_authority": true,
+          "reason": "certified empty upper intersection",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        }
+      },
+      "D": {
+        "diagnostic": [
+          "CERTIFIED_STABLE",
+          [
+            "ACCEPT"
+          ],
+          []
+        ],
+        "governance": {
+          "passes_gate_with_authority": true,
+          "reason": "certified empty upper intersection",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        }
+      },
+      "audited_questions": [],
+      "cause": "indistinguishable control",
+      "detectable_only_with": "same observed bytes as Q-B",
+      "expected": {
+        "C": "NO_CONFLICT_ESTABLISHED",
+        "audit_findings": [],
+        "query": [],
+        "science": "CERTIFIED_STABLE"
+      },
+      "observed": {
+        "model": {
+          "artifact": "x@1",
+          "attempt": "adjudication@1",
+          "authorized": true,
+          "binding_verified": true,
+          "bound_complete": true,
+          "commit_version": "bundle@1",
+          "events": [
+            {
+              "actor": "a",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "produce",
+              "inputs": [],
+              "kind": "produce",
+              "order": 0,
+              "time": 2
+            },
+            {
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "seal",
+              "kind": "seal",
+              "order": 0,
+              "pins": {
+                "rubric": "rubric@1"
+              },
+              "time": 3
+            },
+            {
+              "actor": "j",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "commit",
+              "kind": "adjudicate",
+              "order": 0,
+              "roots": {
+                "rubric": "rubric@1"
+              },
+              "time": 5
+            }
+          ],
+          "graph_attested": true,
+          "policy": "threshold@1",
+          "record_complete": true,
+          "record_start": 1,
+          "snapshot_attested": true,
+          "snapshot_version": "bundle@1"
+        },
+        "remainder": {
+          "actual_attested": true,
+          "attested": true,
+          "issuer": "i",
+          "kind": "Z",
+          "uncovered": [],
+          "upper": [],
+          "witnesses": []
+        },
+        "scientific": {
+          "covered": true,
+          "domains": {},
+          "observed": {},
+          "offset": 1,
+          "policy_defined": true,
+          "samples": [],
+          "scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          },
+          "threshold": 1,
+          "weights": {},
+          "world_scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          }
+        }
+      },
+      "observed_sha256": "58987d27af18ea692859d53e6b53badba517ce407524a25473c61ce39434c8ab",
+      "reference_deficits": [],
+      "reference_outcomes": [
+        "ACCEPT"
+      ],
+      "reference_switch_witnesses": {},
+      "source": {
+        "binding_requirements": {},
+        "effect_requirements": [],
+        "missing_world": null,
+        "scope": {
+          "attempt": "adjudication@1",
+          "commit": "bundle@1",
+          "policy": "threshold@1",
+          "rubric": "rubric@1",
+          "seal": "x@1"
+        },
+        "variable_requirements": []
+      },
+      "substantive_value_if_certified": "ACCEPT",
+      "truth": {
+        "control_conflict": false,
+        "needed_governance_bindings": [],
+        "worlds": [
+          {
+            "decision": "ACCEPT",
+            "values": {}
+          }
+        ]
+      },
+      "withheld": "none"
+    },
+    "Q-C": {
+      "C": {
+        "diagnostic": "NOT_APPLICABLE",
+        "governance": {
+          "passes_gate_with_authority": true,
+          "reason": "certified empty upper intersection",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        }
+      },
+      "C_plus_S": {
+        "diagnostic": [
+          "CERTIFIED_STABLE",
+          [
+            "ACCEPT"
+          ],
+          []
+        ],
+        "governance": {
+          "passes_gate_with_authority": true,
+          "reason": "certified empty upper intersection",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        }
+      },
+      "D": {
+        "diagnostic": [
+          "CERTIFIED_STABLE",
+          [
+            "ACCEPT"
+          ],
+          []
+        ],
+        "governance": {
+          "passes_gate_with_authority": true,
+          "reason": "certified empty upper intersection",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        }
+      },
+      "audited_questions": [
+        "MISSING_BINDING:standard"
+      ],
+      "cause": "Q3 governance",
+      "detectable_only_with": "independent rubric/standard manifest with mandatory role",
+      "expected": {
+        "C": "NO_CONFLICT_ESTABLISHED",
+        "audit_findings": [
+          "MISSING_BINDING:standard"
+        ],
+        "query": [],
+        "science": "CERTIFIED_STABLE"
+      },
+      "observed": {
+        "model": {
+          "artifact": "x@1",
+          "attempt": "adjudication@1",
+          "authorized": true,
+          "binding_verified": true,
+          "bound_complete": true,
+          "commit_version": "bundle@1",
+          "events": [
+            {
+              "actor": "a",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "produce",
+              "inputs": [],
+              "kind": "produce",
+              "order": 0,
+              "time": 2
+            },
+            {
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "seal",
+              "kind": "seal",
+              "order": 0,
+              "pins": {
+                "rubric": "rubric@1"
+              },
+              "time": 3
+            },
+            {
+              "actor": "j",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "commit",
+              "kind": "adjudicate",
+              "order": 0,
+              "roots": {
+                "rubric": "rubric@1"
+              },
+              "time": 5
+            },
+            {
+              "authenticated": true,
+              "channel": "capability",
+              "dst": "a",
+              "dst_artifact": false,
+              "id": "p-executor",
+              "kind": "control",
+              "order": 0,
+              "persistence": "potential_durable",
+              "src": "p",
+              "time": 1
+            },
+            {
+              "authenticated": true,
+              "channel": "criteria",
+              "dst": "standard@1",
+              "dst_artifact": true,
+              "id": "p-standard",
+              "kind": "control",
+              "order": 0,
+              "persistence": "potential_durable",
+              "src": "p",
+              "time": 4
+            }
+          ],
+          "graph_attested": true,
+          "policy": "threshold@1",
+          "record_complete": true,
+          "record_start": 1,
+          "snapshot_attested": true,
+          "snapshot_version": "bundle@1"
+        },
+        "remainder": {
+          "actual_attested": true,
+          "attested": true,
+          "issuer": "i",
+          "kind": "Z",
+          "uncovered": [],
+          "upper": [],
+          "witnesses": []
+        },
+        "scientific": {
+          "covered": true,
+          "domains": {},
+          "observed": {},
+          "offset": 1,
+          "policy_defined": true,
+          "samples": [],
+          "scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          },
+          "threshold": 1,
+          "weights": {},
+          "world_scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          }
+        }
+      },
+      "observed_sha256": "38110faeb1445a08c6191caa8cd95e7abe664693e36b67b5cdfaf36c0d7c36fb",
+      "reference_deficits": [
+        "governance dependency missing"
+      ],
+      "reference_outcomes": [
+        "ACCEPT"
+      ],
+      "reference_switch_witnesses": {},
+      "source": {
+        "binding_requirements": {
+          "standard": "standard@1"
+        },
+        "effect_requirements": [],
+        "missing_world": null,
+        "scope": {
+          "attempt": "adjudication@1",
+          "commit": "bundle@1",
+          "policy": "threshold@1",
+          "rubric": "rubric@1",
+          "seal": "x@1"
+        },
+        "variable_requirements": []
+      },
+      "substantive_value_if_certified": "ACCEPT",
+      "truth": {
+        "control_conflict": true,
+        "needed_governance_bindings": [
+          "standard"
+        ],
+        "worlds": [
+          {
+            "decision": "ACCEPT",
+            "values": {}
+          }
+        ]
+      },
+      "withheld": "the mandatory standard is absent from the trusted dependency claim despite its recorded controller"
+    },
+    "Q-D": {
+      "C": {
+        "diagnostic": "NOT_APPLICABLE",
+        "governance": {
+          "passes_gate_with_authority": true,
+          "reason": "certified empty upper intersection",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        }
+      },
+      "C_plus_S": {
+        "diagnostic": [
+          "CERTIFIED_STABLE",
+          [
+            "ACCEPT"
+          ],
+          []
+        ],
+        "governance": {
+          "passes_gate_with_authority": true,
+          "reason": "certified empty upper intersection",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        }
+      },
+      "D": {
+        "diagnostic": [
+          "CERTIFIED_STABLE",
+          [
+            "ACCEPT"
+          ],
+          []
+        ],
+        "governance": {
+          "passes_gate_with_authority": true,
+          "reason": "certified empty upper intersection",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        }
+      },
+      "audited_questions": [
+        "MISSING_EFFECT:resolver"
+      ],
+      "cause": "Q3 dynamic",
+      "detectable_only_with": "instrument or independently audit the authorized resolver",
+      "expected": {
+        "C": "NO_CONFLICT_ESTABLISHED",
+        "audit_findings": [
+          "MISSING_EFFECT:resolver"
+        ],
+        "query": [],
+        "science": "CERTIFIED_STABLE"
+      },
+      "observed": {
+        "model": {
+          "artifact": "x@1",
+          "attempt": "adjudication@1",
+          "authorized": true,
+          "binding_verified": true,
+          "bound_complete": true,
+          "commit_version": "bundle@1",
+          "events": [
+            {
+              "actor": "a",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "produce",
+              "inputs": [],
+              "kind": "produce",
+              "order": 0,
+              "time": 2
+            },
+            {
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "seal",
+              "kind": "seal",
+              "order": 0,
+              "pins": {
+                "rubric": "rubric@1"
+              },
+              "time": 3
+            },
+            {
+              "actor": "j",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "commit",
+              "kind": "adjudicate",
+              "order": 0,
+              "roots": {
+                "rubric": "rubric@1"
+              },
+              "time": 5
+            }
+          ],
+          "graph_attested": true,
+          "policy": "threshold@1",
+          "record_complete": true,
+          "record_start": 1,
+          "snapshot_attested": true,
+          "snapshot_version": "bundle@1"
+        },
+        "remainder": {
+          "actual_attested": true,
+          "attested": true,
+          "issuer": "i",
+          "kind": "Z",
+          "uncovered": [],
+          "upper": [],
+          "witnesses": []
+        },
+        "scientific": {
+          "covered": true,
+          "domains": {
+            "resolver": [
+              0,
+              1
+            ]
+          },
+          "observed": {},
+          "offset": 1,
+          "policy_defined": true,
+          "samples": [],
+          "scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          },
+          "threshold": 1,
+          "weights": {},
+          "world_scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          }
+        }
+      },
+      "observed_sha256": "0331e5b5edd2f02eb3989743d8d154a69db5cc43e0678c824d03d54ebd6ebc99",
+      "reference_deficits": [
+        "decision effect differs"
+      ],
+      "reference_outcomes": [
+        "ACCEPT",
+        "REJECT"
+      ],
+      "reference_switch_witnesses": {
+        "resolver": [
+          {
+            "decision": "REJECT",
+            "values": {
+              "resolver": 0
+            }
+          },
+          {
+            "decision": "ACCEPT",
+            "values": {
+              "resolver": 1
+            }
+          }
+        ]
+      },
+      "source": {
+        "binding_requirements": {},
+        "effect_requirements": [
+          "resolver"
+        ],
+        "missing_world": null,
+        "scope": {
+          "attempt": "adjudication@1",
+          "commit": "bundle@1",
+          "policy": "threshold@1",
+          "rubric": "rubric@1",
+          "seal": "x@1"
+        },
+        "variable_requirements": [
+          "resolver"
+        ]
+      },
+      "substantive_value_if_certified": "ACCEPT",
+      "truth": {
+        "control_conflict": false,
+        "needed_governance_bindings": [],
+        "worlds": [
+          {
+            "decision": "REJECT",
+            "values": {
+              "resolver": 0
+            }
+          },
+          {
+            "decision": "ACCEPT",
+            "values": {
+              "resolver": 1
+            }
+          }
+        ]
+      },
+      "withheld": "runtime resolver is unconnected in the claimed policy"
+    },
+    "Q-E": {
+      "C": {
+        "diagnostic": "NOT_APPLICABLE",
+        "governance": {
+          "passes_gate_with_authority": true,
+          "reason": "certified empty upper intersection",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        }
+      },
+      "C_plus_S": {
+        "diagnostic": [
+          "CERTIFIED_STABLE",
+          [
+            "ACCEPT"
+          ],
+          []
+        ],
+        "governance": {
+          "passes_gate_with_authority": true,
+          "reason": "certified empty upper intersection",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        }
+      },
+      "D": {
+        "diagnostic": [
+          "CERTIFIED_STABLE",
+          [
+            "ACCEPT"
+          ],
+          []
+        ],
+        "governance": {
+          "passes_gate_with_authority": true,
+          "reason": "certified empty upper intersection",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        }
+      },
+      "audited_questions": [
+        "OMITTED_ADMISSIBLE_WORLD"
+      ],
+      "cause": "Q4",
+      "detectable_only_with": "independently verify admissibility of omitted world",
+      "expected": {
+        "C": "NO_CONFLICT_ESTABLISHED",
+        "audit_findings": [
+          "OMITTED_ADMISSIBLE_WORLD"
+        ],
+        "query": [],
+        "science": "CERTIFIED_STABLE"
+      },
+      "observed": {
+        "model": {
+          "artifact": "x@1",
+          "attempt": "adjudication@1",
+          "authorized": true,
+          "binding_verified": true,
+          "bound_complete": true,
+          "commit_version": "bundle@1",
+          "events": [
+            {
+              "actor": "a",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "produce",
+              "inputs": [],
+              "kind": "produce",
+              "order": 0,
+              "time": 2
+            },
+            {
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "seal",
+              "kind": "seal",
+              "order": 0,
+              "pins": {
+                "rubric": "rubric@1"
+              },
+              "time": 3
+            },
+            {
+              "actor": "j",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "commit",
+              "kind": "adjudicate",
+              "order": 0,
+              "roots": {
+                "rubric": "rubric@1"
+              },
+              "time": 5
+            }
+          ],
+          "graph_attested": true,
+          "policy": "threshold@1",
+          "record_complete": true,
+          "record_start": 1,
+          "snapshot_attested": true,
+          "snapshot_version": "bundle@1"
+        },
+        "remainder": {
+          "actual_attested": true,
+          "attested": true,
+          "issuer": "i",
+          "kind": "Z",
+          "uncovered": [],
+          "upper": [],
+          "witnesses": []
+        },
+        "scientific": {
+          "allowed": [
+            [
+              1
+            ]
+          ],
+          "covered": true,
+          "domains": {
+            "calibration": [
+              0,
+              1
+            ]
+          },
+          "observed": {},
+          "offset": 0,
+          "policy_defined": true,
+          "samples": [],
+          "scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          },
+          "threshold": 1,
+          "weights": {
+            "calibration": 1
+          },
+          "world_scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          }
+        }
+      },
+      "observed_sha256": "9656c39c1a9c64d814ab44e0ac812aba41c3f8eb909d7026a572a407a6de1287",
+      "reference_deficits": [
+        "world omitted"
+      ],
+      "reference_outcomes": [
+        "ACCEPT",
+        "REJECT"
+      ],
+      "reference_switch_witnesses": {
+        "calibration": [
+          {
+            "decision": "REJECT",
+            "values": {
+              "calibration": 0
+            }
+          },
+          {
+            "decision": "ACCEPT",
+            "values": {
+              "calibration": 1
+            }
+          }
+        ]
+      },
+      "source": {
+        "binding_requirements": {},
+        "effect_requirements": [
+          "calibration"
+        ],
+        "missing_world": {
+          "calibration": 0
+        },
+        "scope": {
+          "attempt": "adjudication@1",
+          "commit": "bundle@1",
+          "policy": "threshold@1",
+          "rubric": "rubric@1",
+          "seal": "x@1"
+        },
+        "variable_requirements": [
+          "calibration"
+        ]
+      },
+      "substantive_value_if_certified": "ACCEPT",
+      "truth": {
+        "control_conflict": false,
+        "needed_governance_bindings": [],
+        "worlds": [
+          {
+            "decision": "REJECT",
+            "values": {
+              "calibration": 0
+            }
+          },
+          {
+            "decision": "ACCEPT",
+            "values": {
+              "calibration": 1
+            }
+          }
+        ]
+      },
+      "withheld": "same protected scope allows calibration=0, excluded by false world closure"
+    },
+    "Q-F": {
+      "C": {
+        "diagnostic": "NOT_APPLICABLE",
+        "governance": {
+          "passes_gate_with_authority": false,
+          "reason": "REMAINDER: unproved historical bound",
+          "status": "UNDETERMINED",
+          "witnesses": []
+        }
+      },
+      "C_plus_S": {
+        "diagnostic": [
+          "CERTIFIED_STABLE",
+          [
+            "ACCEPT"
+          ],
+          []
+        ],
+        "governance": {
+          "passes_gate_with_authority": false,
+          "reason": "REMAINDER: unproved historical bound",
+          "status": "UNDETERMINED",
+          "witnesses": []
+        }
+      },
+      "D": {
+        "diagnostic": [
+          "CERTIFIED_STABLE",
+          [
+            "ACCEPT"
+          ],
+          []
+        ],
+        "governance": {
+          "passes_gate_with_authority": false,
+          "reason": "REMAINDER: unproved historical bound",
+          "status": "UNDETERMINED",
+          "witnesses": []
+        }
+      },
+      "audited_questions": [],
+      "cause": "irrelevant open answer",
+      "detectable_only_with": "verified fixed rule and exhaustive domain",
+      "expected": {
+        "C": "UNDETERMINED",
+        "audit_findings": [],
+        "query": [],
+        "science": "CERTIFIED_STABLE"
+      },
+      "observed": {
+        "model": {
+          "artifact": "x@1",
+          "attempt": "adjudication@1",
+          "authorized": true,
+          "binding_verified": true,
+          "bound_complete": true,
+          "commit_version": "bundle@1",
+          "events": [
+            {
+              "actor": "a",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "produce",
+              "inputs": [],
+              "kind": "produce",
+              "order": 0,
+              "time": 2
+            },
+            {
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "seal",
+              "kind": "seal",
+              "order": 0,
+              "pins": {
+                "rubric": "rubric@1"
+              },
+              "time": 3
+            },
+            {
+              "actor": "j",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "commit",
+              "kind": "adjudicate",
+              "order": 0,
+              "roots": {
+                "rubric": "rubric@1"
+              },
+              "time": 5
+            }
+          ],
+          "graph_attested": true,
+          "policy": "threshold@1",
+          "record_complete": true,
+          "record_start": 1,
+          "snapshot_attested": true,
+          "snapshot_version": "bundle@1"
+        },
+        "remainder": {
+          "actual_attested": true,
+          "attested": false,
+          "issuer": "i",
+          "kind": "U",
+          "uncovered": [],
+          "upper": [],
+          "witnesses": []
+        },
+        "scientific": {
+          "covered": true,
+          "domains": {
+            "archive_note": [
+              0,
+              1
+            ]
+          },
+          "observed": {},
+          "offset": 1,
+          "policy_defined": true,
+          "samples": [],
+          "scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          },
+          "threshold": 1,
+          "weights": {},
+          "world_scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          }
+        }
+      },
+      "observed_sha256": "22464ac609096229447a8dbf92de40c8c82c8257cbf80328aa6db90bc6866d83",
+      "reference_deficits": [],
+      "reference_outcomes": [
+        "ACCEPT"
+      ],
+      "reference_switch_witnesses": {},
+      "source": {
+        "binding_requirements": {},
+        "effect_requirements": [],
+        "missing_world": null,
+        "scope": {
+          "attempt": "adjudication@1",
+          "commit": "bundle@1",
+          "policy": "threshold@1",
+          "rubric": "rubric@1",
+          "seal": "x@1"
+        },
+        "variable_requirements": [
+          "archive_note"
+        ]
+      },
+      "substantive_value_if_certified": "ACCEPT",
+      "truth": {
+        "control_conflict": false,
+        "needed_governance_bindings": [],
+        "worlds": [
+          {
+            "decision": "ACCEPT",
+            "values": {
+              "archive_note": 0
+            }
+          },
+          {
+            "decision": "ACCEPT",
+            "values": {
+              "archive_note": 1
+            }
+          }
+        ]
+      },
+      "withheld": "archive note remains unknown; no outcome dependence"
+    },
+    "Q-G": {
+      "C": {
+        "diagnostic": "NOT_APPLICABLE",
+        "governance": {
+          "passes_gate_with_authority": false,
+          "reason": "witnessed effective control",
+          "status": "CONFLICT",
+          "witnesses": [
+            {
+              "binding": [
+                "decision-root:rubric"
+              ],
+              "decision": [
+                "self:p",
+                "p-rubric"
+              ],
+              "decision_target": [
+                "artifact",
+                "rubric@1"
+              ],
+              "principal": "p",
+              "production": [
+                "self:p",
+                "p-executor",
+                "mutable-production:produce"
+              ]
+            }
+          ]
+        }
+      },
+      "C_plus_S": {
+        "diagnostic": [
+          "CERTIFIED_STABLE",
+          [
+            "ACCEPT"
+          ],
+          []
+        ],
+        "governance": {
+          "passes_gate_with_authority": false,
+          "reason": "witnessed effective control",
+          "status": "CONFLICT",
+          "witnesses": [
+            {
+              "binding": [
+                "decision-root:rubric"
+              ],
+              "decision": [
+                "self:p",
+                "p-rubric"
+              ],
+              "decision_target": [
+                "artifact",
+                "rubric@1"
+              ],
+              "principal": "p",
+              "production": [
+                "self:p",
+                "p-executor",
+                "mutable-production:produce"
+              ]
+            }
+          ]
+        }
+      },
+      "D": {
+        "diagnostic": [
+          "CERTIFIED_STABLE",
+          [
+            "ACCEPT"
+          ],
+          []
+        ],
+        "governance": {
+          "passes_gate_with_authority": false,
+          "reason": "witnessed effective control",
+          "status": "CONFLICT",
+          "witnesses": [
+            {
+              "binding": [
+                "decision-root:rubric"
+              ],
+              "decision": [
+                "self:p",
+                "p-rubric"
+              ],
+              "decision_target": [
+                "artifact",
+                "rubric@1"
+              ],
+              "principal": "p",
+              "production": [
+                "self:p",
+                "p-executor",
+                "mutable-production:produce"
+              ]
+            }
+          ]
+        }
+      },
+      "audited_questions": [],
+      "cause": "governance/ongoing state",
+      "detectable_only_with": "no scientific question can change this control witness",
+      "expected": {
+        "C": "CONFLICT",
+        "audit_findings": [],
+        "query": [],
+        "science": "CERTIFIED_STABLE"
+      },
+      "observed": {
+        "model": {
+          "artifact": "x@1",
+          "attempt": "adjudication@1",
+          "authorized": true,
+          "binding_verified": true,
+          "bound_complete": true,
+          "commit_version": "bundle@1",
+          "events": [
+            {
+              "actor": "a",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "produce",
+              "inputs": [],
+              "kind": "produce",
+              "order": 0,
+              "time": 2
+            },
+            {
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "seal",
+              "kind": "seal",
+              "order": 0,
+              "pins": {
+                "rubric": "rubric@1"
+              },
+              "time": 3
+            },
+            {
+              "actor": "j",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "commit",
+              "kind": "adjudicate",
+              "order": 0,
+              "roots": {
+                "rubric": "rubric@1"
+              },
+              "time": 5
+            },
+            {
+              "authenticated": true,
+              "channel": "capability",
+              "dst": "a",
+              "dst_artifact": false,
+              "id": "p-executor",
+              "kind": "control",
+              "order": 0,
+              "persistence": "potential_durable",
+              "src": "p",
+              "time": 1
+            },
+            {
+              "authenticated": true,
+              "channel": "criteria",
+              "dst": "rubric@1",
+              "dst_artifact": true,
+              "id": "p-rubric",
+              "kind": "control",
+              "order": 0,
+              "persistence": "potential_durable",
+              "src": "p",
+              "time": 4
+            }
+          ],
+          "graph_attested": true,
+          "policy": "threshold@1",
+          "record_complete": true,
+          "record_start": 1,
+          "snapshot_attested": true,
+          "snapshot_version": "bundle@1"
+        },
+        "remainder": {
+          "actual_attested": true,
+          "attested": true,
+          "issuer": "i",
+          "kind": "Z",
+          "uncovered": [],
+          "upper": [],
+          "witnesses": []
+        },
+        "scientific": {
+          "covered": true,
+          "domains": {},
+          "observed": {},
+          "offset": 1,
+          "policy_defined": true,
+          "samples": [],
+          "scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          },
+          "threshold": 1,
+          "weights": {},
+          "world_scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          }
+        }
+      },
+      "observed_sha256": "8ec66a96bad3b738177bdfcfb32307fea008c44a9d04584aec4a68e14ab915de",
+      "reference_deficits": [],
+      "reference_outcomes": [
+        "ACCEPT"
+      ],
+      "reference_switch_witnesses": {},
+      "source": {
+        "binding_requirements": {
+          "rubric": "rubric@1"
+        },
+        "effect_requirements": [],
+        "missing_world": null,
+        "scope": {
+          "attempt": "adjudication@1",
+          "commit": "bundle@1",
+          "policy": "threshold@1",
+          "rubric": "rubric@1",
+          "seal": "x@1"
+        },
+        "variable_requirements": []
+      },
+      "substantive_value_if_certified": "ACCEPT",
+      "truth": {
+        "control_conflict": true,
+        "needed_governance_bindings": [],
+        "worlds": [
+          {
+            "decision": "ACCEPT",
+            "values": {}
+          }
+        ]
+      },
+      "withheld": "both governed roles share controller p"
+    },
+    "Q-H": {
+      "C": {
+        "diagnostic": "NOT_APPLICABLE",
+        "governance": {
+          "passes_gate_with_authority": true,
+          "reason": "certified empty upper intersection",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        }
+      },
+      "C_plus_S": {
+        "diagnostic": [
+          "CERTIFIED_STABLE",
+          [
+            "ACCEPT"
+          ],
+          []
+        ],
+        "governance": {
+          "passes_gate_with_authority": true,
+          "reason": "certified empty upper intersection",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        }
+      },
+      "D": {
+        "diagnostic": [
+          "CERTIFIED_STABLE",
+          [
+            "ACCEPT"
+          ],
+          []
+        ],
+        "governance": {
+          "passes_gate_with_authority": true,
+          "reason": "certified empty upper intersection",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        }
+      },
+      "audited_questions": [],
+      "cause": "irrelevant proposed question",
+      "detectable_only_with": "joint outcome comparison across both values",
+      "expected": {
+        "C": "NO_CONFLICT_ESTABLISHED",
+        "audit_findings": [],
+        "query": [],
+        "science": "CERTIFIED_STABLE"
+      },
+      "observed": {
+        "model": {
+          "artifact": "x@1",
+          "attempt": "adjudication@1",
+          "authorized": true,
+          "binding_verified": true,
+          "bound_complete": true,
+          "commit_version": "bundle@1",
+          "events": [
+            {
+              "actor": "a",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "produce",
+              "inputs": [],
+              "kind": "produce",
+              "order": 0,
+              "time": 2
+            },
+            {
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "seal",
+              "kind": "seal",
+              "order": 0,
+              "pins": {
+                "rubric": "rubric@1"
+              },
+              "time": 3
+            },
+            {
+              "actor": "j",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "commit",
+              "kind": "adjudicate",
+              "order": 0,
+              "roots": {
+                "rubric": "rubric@1"
+              },
+              "time": 5
+            }
+          ],
+          "graph_attested": true,
+          "policy": "threshold@1",
+          "record_complete": true,
+          "record_start": 1,
+          "snapshot_attested": true,
+          "snapshot_version": "bundle@1"
+        },
+        "remainder": {
+          "actual_attested": true,
+          "attested": true,
+          "issuer": "i",
+          "kind": "Z",
+          "uncovered": [],
+          "upper": [],
+          "witnesses": []
+        },
+        "scientific": {
+          "covered": true,
+          "domains": {
+            "display_theme": [
+              0,
+              1
+            ]
+          },
+          "observed": {},
+          "offset": 1,
+          "policy_defined": true,
+          "samples": [],
+          "scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          },
+          "threshold": 1,
+          "weights": {},
+          "world_scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          }
+        }
+      },
+      "observed_sha256": "6b9398d6c34bce27bff1366d74fff2ae3a04e1ea85a6e0499515f1ccb06e583a",
+      "reference_deficits": [],
+      "reference_outcomes": [
+        "ACCEPT"
+      ],
+      "reference_switch_witnesses": {},
+      "source": {
+        "binding_requirements": {},
+        "effect_requirements": [],
+        "missing_world": null,
+        "scope": {
+          "attempt": "adjudication@1",
+          "commit": "bundle@1",
+          "policy": "threshold@1",
+          "rubric": "rubric@1",
+          "seal": "x@1"
+        },
+        "variable_requirements": [
+          "display_theme"
+        ]
+      },
+      "substantive_value_if_certified": "ACCEPT",
+      "truth": {
+        "control_conflict": false,
+        "needed_governance_bindings": [],
+        "worlds": [
+          {
+            "decision": "ACCEPT",
+            "values": {
+              "display_theme": 0
+            }
+          },
+          {
+            "decision": "ACCEPT",
+            "values": {
+              "display_theme": 1
+            }
+          }
+        ]
+      },
+      "withheld": "irrelevant candidate query display_theme supplied before science evaluation"
+    },
+    "Q-I": {
+      "C": {
+        "diagnostic": "NOT_APPLICABLE",
+        "governance": {
+          "passes_gate_with_authority": false,
+          "reason": "REMAINDER: unproved historical bound",
+          "status": "UNDETERMINED",
+          "witnesses": []
+        }
+      },
+      "C_plus_S": {
+        "diagnostic": [
+          "SAMPLED_STABLE",
+          [
+            "ACCEPT"
+          ],
+          null
+        ],
+        "governance": {
+          "passes_gate_with_authority": false,
+          "reason": "REMAINDER: unproved historical bound",
+          "status": "UNDETERMINED",
+          "witnesses": []
+        }
+      },
+      "D": {
+        "diagnostic": [
+          "SAMPLED_STABLE",
+          [
+            "ACCEPT"
+          ],
+          null
+        ],
+        "governance": {
+          "passes_gate_with_authority": false,
+          "reason": "REMAINDER: unproved historical bound",
+          "status": "UNDETERMINED",
+          "witnesses": []
+        }
+      },
+      "audited_questions": [],
+      "cause": "Q4 acknowledged",
+      "detectable_only_with": "missing opposite-outcome case or certified coverage",
+      "expected": {
+        "C": "UNDETERMINED",
+        "audit_findings": [],
+        "query": null,
+        "science": "SAMPLED_STABLE"
+      },
+      "observed": {
+        "model": {
+          "artifact": "x@1",
+          "attempt": "adjudication@1",
+          "authorized": true,
+          "binding_verified": true,
+          "bound_complete": true,
+          "commit_version": "bundle@1",
+          "events": [
+            {
+              "actor": "a",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "produce",
+              "inputs": [],
+              "kind": "produce",
+              "order": 0,
+              "time": 2
+            },
+            {
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "seal",
+              "kind": "seal",
+              "order": 0,
+              "pins": {
+                "rubric": "rubric@1"
+              },
+              "time": 3
+            },
+            {
+              "actor": "j",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "commit",
+              "kind": "adjudicate",
+              "order": 0,
+              "roots": {
+                "rubric": "rubric@1"
+              },
+              "time": 5
+            }
+          ],
+          "graph_attested": true,
+          "policy": "threshold@1",
+          "record_complete": true,
+          "record_start": 1,
+          "snapshot_attested": true,
+          "snapshot_version": "bundle@1"
+        },
+        "remainder": {
+          "actual_attested": true,
+          "attested": false,
+          "issuer": "i",
+          "kind": "U",
+          "uncovered": [],
+          "upper": [],
+          "witnesses": []
+        },
+        "scientific": {
+          "covered": false,
+          "domains": {
+            "calibration": [
+              0,
+              1
+            ]
+          },
+          "observed": {},
+          "offset": 0,
+          "policy_defined": true,
+          "samples": [
+            [
+              1
+            ]
+          ],
+          "scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          },
+          "threshold": 1,
+          "weights": {
+            "calibration": 1
+          },
+          "world_scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          }
+        }
+      },
+      "observed_sha256": "f3316aaab74ca8763b5b6022aed704bc0603e90ed97f4a80b68ae1cf52a6fbbe",
+      "reference_deficits": [],
+      "reference_outcomes": [
+        "ACCEPT",
+        "REJECT"
+      ],
+      "reference_switch_witnesses": {
+        "calibration": [
+          {
+            "decision": "REJECT",
+            "values": {
+              "calibration": 0
+            }
+          },
+          {
+            "decision": "ACCEPT",
+            "values": {
+              "calibration": 1
+            }
+          }
+        ]
+      },
+      "source": {
+        "binding_requirements": {},
+        "effect_requirements": [
+          "calibration"
+        ],
+        "missing_world": null,
+        "scope": {
+          "attempt": "adjudication@1",
+          "commit": "bundle@1",
+          "policy": "threshold@1",
+          "rubric": "rubric@1",
+          "seal": "x@1"
+        },
+        "variable_requirements": [
+          "calibration"
+        ]
+      },
+      "substantive_value_if_certified": "UNDETERMINED",
+      "truth": {
+        "control_conflict": false,
+        "needed_governance_bindings": [],
+        "worlds": [
+          {
+            "decision": "REJECT",
+            "values": {
+              "calibration": 0
+            }
+          },
+          {
+            "decision": "ACCEPT",
+            "values": {
+              "calibration": 1
+            }
+          }
+        ]
+      },
+      "withheld": "only one admissible world sampled"
+    },
+    "Q-J": {
+      "C": {
+        "diagnostic": "NOT_APPLICABLE",
+        "governance": {
+          "passes_gate_with_authority": true,
+          "reason": "certified empty upper intersection",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        }
+      },
+      "C_plus_S": {
+        "diagnostic": [
+          "UNSTABLE",
+          [
+            "ACCEPT",
+            "REJECT"
+          ],
+          [
+            "u",
+            "v"
+          ]
+        ],
+        "governance": {
+          "passes_gate_with_authority": true,
+          "reason": "certified empty upper intersection",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        }
+      },
+      "D": {
+        "diagnostic": [
+          "UNSTABLE",
+          [
+            "ACCEPT",
+            "REJECT"
+          ],
+          [
+            "u",
+            "v"
+          ]
+        ],
+        "governance": {
+          "passes_gate_with_authority": true,
+          "reason": "certified empty upper intersection",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        }
+      },
+      "audited_questions": [],
+      "cause": "interaction",
+      "detectable_only_with": "joint variation",
+      "expected": {
+        "C": "NO_CONFLICT_ESTABLISHED",
+        "audit_findings": [],
+        "query": [
+          "u",
+          "v"
+        ],
+        "science": "UNSTABLE"
+      },
+      "observed": {
+        "model": {
+          "artifact": "x@1",
+          "attempt": "adjudication@1",
+          "authorized": true,
+          "binding_verified": true,
+          "bound_complete": true,
+          "commit_version": "bundle@1",
+          "events": [
+            {
+              "actor": "a",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "produce",
+              "inputs": [],
+              "kind": "produce",
+              "order": 0,
+              "time": 2
+            },
+            {
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "seal",
+              "kind": "seal",
+              "order": 0,
+              "pins": {
+                "rubric": "rubric@1"
+              },
+              "time": 3
+            },
+            {
+              "actor": "j",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "commit",
+              "kind": "adjudicate",
+              "order": 0,
+              "roots": {
+                "rubric": "rubric@1"
+              },
+              "time": 5
+            }
+          ],
+          "graph_attested": true,
+          "policy": "threshold@1",
+          "record_complete": true,
+          "record_start": 1,
+          "snapshot_attested": true,
+          "snapshot_version": "bundle@1"
+        },
+        "remainder": {
+          "actual_attested": true,
+          "attested": true,
+          "issuer": "i",
+          "kind": "Z",
+          "uncovered": [],
+          "upper": [],
+          "witnesses": []
+        },
+        "scientific": {
+          "covered": true,
+          "domains": {
+            "u": [
+              0,
+              1
+            ],
+            "v": [
+              0,
+              1
+            ]
+          },
+          "observed": {},
+          "offset": 0,
+          "policy_defined": true,
+          "samples": [],
+          "scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          },
+          "threshold": 2,
+          "weights": {
+            "u": 1,
+            "v": 1
+          },
+          "world_scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          }
+        }
+      },
+      "observed_sha256": "efcff7ff3cb7defb893975bd8210808beb139ff175dba8e4c4237bac37d12461",
+      "reference_deficits": [],
+      "reference_outcomes": [
+        "ACCEPT",
+        "REJECT"
+      ],
+      "reference_switch_witnesses": {
+        "u": [
+          {
+            "decision": "REJECT",
+            "values": {
+              "u": 0,
+              "v": 1
+            }
+          },
+          {
+            "decision": "ACCEPT",
+            "values": {
+              "u": 1,
+              "v": 1
+            }
+          }
+        ],
+        "v": [
+          {
+            "decision": "REJECT",
+            "values": {
+              "u": 1,
+              "v": 0
+            }
+          },
+          {
+            "decision": "ACCEPT",
+            "values": {
+              "u": 1,
+              "v": 1
+            }
+          }
+        ]
+      },
+      "source": {
+        "binding_requirements": {},
+        "effect_requirements": [
+          "u",
+          "v"
+        ],
+        "missing_world": null,
+        "scope": {
+          "attempt": "adjudication@1",
+          "commit": "bundle@1",
+          "policy": "threshold@1",
+          "rubric": "rubric@1",
+          "seal": "x@1"
+        },
+        "variable_requirements": [
+          "u",
+          "v"
+        ]
+      },
+      "substantive_value_if_certified": "UNDETERMINED",
+      "truth": {
+        "control_conflict": false,
+        "needed_governance_bindings": [],
+        "worlds": [
+          {
+            "decision": "REJECT",
+            "values": {
+              "u": 0,
+              "v": 0
+            }
+          },
+          {
+            "decision": "REJECT",
+            "values": {
+              "u": 0,
+              "v": 1
+            }
+          },
+          {
+            "decision": "REJECT",
+            "values": {
+              "u": 1,
+              "v": 0
+            }
+          },
+          {
+            "decision": "ACCEPT",
+            "values": {
+              "u": 1,
+              "v": 1
+            }
+          }
+        ]
+      },
+      "withheld": "one-at-a-time perturbations from (0,0) cannot flip either result"
+    },
+    "Q-K": {
+      "C": {
+        "diagnostic": "NOT_APPLICABLE",
+        "governance": {
+          "passes_gate_with_authority": false,
+          "reason": "REMAINDER: unproved historical bound",
+          "status": "UNDETERMINED",
+          "witnesses": []
+        }
+      },
+      "C_plus_S": {
+        "diagnostic": [
+          "STABILITY_UNDETERMINED",
+          [],
+          null
+        ],
+        "governance": {
+          "passes_gate_with_authority": false,
+          "reason": "REMAINDER: unproved historical bound",
+          "status": "UNDETERMINED",
+          "witnesses": []
+        }
+      },
+      "D": {
+        "diagnostic": [
+          "STABILITY_UNDETERMINED",
+          [],
+          null
+        ],
+        "governance": {
+          "passes_gate_with_authority": false,
+          "reason": "REMAINDER: unproved historical bound",
+          "status": "UNDETERMINED",
+          "witnesses": []
+        }
+      },
+      "audited_questions": [
+        "SOURCE_SCOPE_UNVERIFIED"
+      ],
+      "cause": "Q4 flagged; stale provenance",
+      "detectable_only_with": "version-matched independent dependency evidence",
+      "expected": {
+        "C": "UNDETERMINED",
+        "audit_findings": [
+          "SOURCE_SCOPE_UNVERIFIED"
+        ],
+        "query": null,
+        "science": "STABILITY_UNDETERMINED"
+      },
+      "observed": {
+        "model": {
+          "artifact": "x@1",
+          "attempt": "adjudication@1",
+          "authorized": true,
+          "binding_verified": true,
+          "bound_complete": false,
+          "commit_version": "bundle@1",
+          "events": [
+            {
+              "actor": "a",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "produce",
+              "inputs": [],
+              "kind": "produce",
+              "order": 0,
+              "time": 2
+            },
+            {
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "seal",
+              "kind": "seal",
+              "order": 0,
+              "pins": {
+                "rubric": "rubric@1"
+              },
+              "time": 3
+            },
+            {
+              "actor": "j",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "commit",
+              "kind": "adjudicate",
+              "order": 0,
+              "roots": {
+                "rubric": "rubric@1"
+              },
+              "time": 5
+            }
+          ],
+          "graph_attested": true,
+          "policy": "threshold@1",
+          "record_complete": true,
+          "record_start": 1,
+          "snapshot_attested": true,
+          "snapshot_version": "bundle@1"
+        },
+        "remainder": {
+          "actual_attested": true,
+          "attested": false,
+          "issuer": "i",
+          "kind": "U",
+          "uncovered": [],
+          "upper": [],
+          "witnesses": []
+        },
+        "scientific": {
+          "covered": true,
+          "domains": {
+            "resolver": [
+              0,
+              1
+            ]
+          },
+          "observed": {},
+          "offset": 1,
+          "policy_defined": true,
+          "samples": [],
+          "scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          },
+          "threshold": 1,
+          "weights": {},
+          "world_scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          }
+        }
+      },
+      "observed_sha256": "6004e8ce76357a9297ed78c480e1825eb94201fff45dff8b76f81165686903ce",
+      "reference_deficits": [
+        "decision effect differs"
+      ],
+      "reference_outcomes": [
+        "ACCEPT",
+        "REJECT"
+      ],
+      "reference_switch_witnesses": {
+        "resolver": [
+          {
+            "decision": "REJECT",
+            "values": {
+              "resolver": 0
+            }
+          },
+          {
+            "decision": "ACCEPT",
+            "values": {
+              "resolver": 1
+            }
+          }
+        ]
+      },
+      "source": {
+        "binding_requirements": {},
+        "effect_requirements": [
+          "resolver"
+        ],
+        "missing_world": null,
+        "scope": {
+          "attempt": "adjudication@1",
+          "commit": "bundle@1",
+          "policy": "stale@2",
+          "rubric": "rubric@1",
+          "seal": "x@1"
+        },
+        "variable_requirements": [
+          "resolver"
+        ]
+      },
+      "substantive_value_if_certified": "UNDETERMINED",
+      "truth": {
+        "control_conflict": false,
+        "needed_governance_bindings": [],
+        "worlds": [
+          {
+            "decision": "REJECT",
+            "values": {
+              "resolver": 0
+            }
+          },
+          {
+            "decision": "ACCEPT",
+            "values": {
+              "resolver": 1
+            }
+          }
+        ]
+      },
+      "withheld": "trace coverage explicitly absent; review receipt from another scope"
+    }
+  },
+  "synthetic_metrics": {
+    "external_review": {
+      "absent_relevant_variables_identified_by_external_source": 1,
+      "defective_scopes_flagged_with_matched_evidence": 4,
+      "nondefective_scopes_falsely_flagged": 0,
+      "scopes_with_reference_deficit": 5,
+      "stale_scope_evidence_rejected": 1
+    },
+    "methods": {
+      "C": {
+        "all_targeted_facts": 0,
+        "cases": 12,
+        "certified_stable_claims": 0,
+        "false_certified_stable_claims": 0,
+        "false_complete_scope_claims": 0,
+        "governance_unchanged_from_C": 12,
+        "known_conflict_cleared": 1,
+        "known_control_conflict_cases": 2,
+        "modeled_certified_complete_cases": 0,
+        "reference_relevant_variables": 8,
+        "relevant_absent_from_model": 1,
+        "relevant_explicitly_modeled": 7,
+        "relevant_not_targeted": 8,
+        "relevant_targeted": 0,
+        "targeted_cases": 0,
+        "underlying_unstable_cases": 7,
+        "unnecessary_targeted_facts": 0
+      },
+      "C_plus_S": {
+        "all_targeted_facts": 3,
+        "cases": 12,
+        "certified_stable_claims": 8,
+        "false_certified_stable_claims": 3,
+        "false_complete_scope_claims": 4,
+        "governance_unchanged_from_C": 12,
+        "known_conflict_cleared": 1,
+        "known_control_conflict_cases": 2,
+        "modeled_certified_complete_cases": 10,
+        "reference_relevant_variables": 8,
+        "relevant_absent_from_model": 1,
+        "relevant_explicitly_modeled": 7,
+        "relevant_not_targeted": 5,
+        "relevant_targeted": 3,
+        "targeted_cases": 2,
+        "underlying_unstable_cases": 7,
+        "unnecessary_targeted_facts": 0
+      },
+      "D": {
+        "all_targeted_facts": 3,
+        "cases": 12,
+        "certified_stable_claims": 8,
+        "false_certified_stable_claims": 3,
+        "false_complete_scope_claims": 4,
+        "governance_unchanged_from_C": 12,
+        "known_conflict_cleared": 1,
+        "known_control_conflict_cases": 2,
+        "modeled_certified_complete_cases": 10,
+        "reference_relevant_variables": 8,
+        "relevant_absent_from_model": 1,
+        "relevant_explicitly_modeled": 7,
+        "relevant_not_targeted": 5,
+        "relevant_targeted": 3,
+        "targeted_cases": 2,
+        "underlying_unstable_cases": 7,
+        "unnecessary_targeted_facts": 0
+      }
+    }
+  }
+}
