@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "VP-1.0/verify.py", line 604, in <module>
+    main()
+  File "VP-1.0/verify.py", line 581, in main
+    pkg = repro(a.package_zip, a.baseline, a.skip_repro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "VP-1.0/verify.py", line 54, in repro
+    for line in open(os.path.join(pkg, "SHA256SUMS")):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '<scratch>/dea-v0343-remediation/SHA256SUMS'
+
+real	0m0.800s
+user	0m0.513s
+sys	0m0.264s

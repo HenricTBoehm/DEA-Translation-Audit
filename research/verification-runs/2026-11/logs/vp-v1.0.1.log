@@ -1,0 +1,46 @@
+R1   PASS          Package checksums (SHA256SUMS) verify after clean extraction
+R2   PASS          Baseline PDF SHA-256 equals 51a2553e...7c33
+R3   PASS          Protocol SHA-256 matches the value embedded in run_audit.py
+R4   PASS          Missing/altered inputs exit non-zero and write no results
+R5   FAIL          Static independence check is complete
+R6   PASS          Clean-room run reproduces RP result semantics under the frozen baseline
+N1   PASS          54 translation comparisons, 4 of them ORACLE-EMBEDDING
+N2   PASS          6 proof/refutation records, all machine checks true
+N3   PASS          44 regression cases all match v0.3.4.3 expectation
+N4   FAIL          Regression expectations are independent of the evaluated outputs
+A1   FAIL          T3/H_EJ 'native (A-IDX)' preservation extends to effective multi-principal control
+A2   PASS          W&L <!=(EXISTS{s_D,s_E},s_J)> is a disjunction of inequalities (forbids only d=e=j)
+A3   PASS          Principal-as-role (Li RH*) encoding preserves T3 and H_EJ on the controller-intersection models
+B1   PASS          NAP-3 invariance refuted: an R1-R3-respecting local translation separates m1/m2
+B2   UNDETERMINED  Existence of an R3-respecting translation of NAP into WSP
+B3   PASS          Hanf pair: equal r-type multisets with opposite NAP (machine-checked beyond r<=2)
+B4   FAIL          PRF-NAP-HANF supports non-expressibility for arbitrary admissible translations
+B5   UNDETERMINED  External locality theorem (Hella, Libkin, Nurmonen & Wong, J.ACM 48(4) 2001) verified
+B6   PASS          Diagnostic states are sound w.r.t. semantic NAP (VERIFIED_NAP => NAP; WITNESS => not NAP; UNDETERMIN
+B8   FAIL          NAP-B-LI-RH / NAP-B-RSL-RH (roles-as-states) produce valid RBAC states on all of MC-NAP
+B7   PASS          dea_ref.nap agrees with an independent BFS on MC-NAP
+C1   PASS          CTRL-6b: pointwise closure gives no conflict, window-union closure gives conflict
+C2   PASS          72 of 16,807 MC-CTRL models separate the two readings
+C3   FAIL          MC-CTRL contains cyclic control graphs
+C4   FAIL          Principal-as-role RH encoding preserves Ctrl on arbitrary control graphs
+C4b  PASS          Bertino Regime-B (recursive Datalog closure) preserves Ctrl on the same general/cyclic graph sample
+C5   FAIL          PRF-CTRL-WL-MONO proof as written: every A-STEP+LOCAL-REL translation errs on m0 or m1
+C6   PASS          Monotonicity lemma (fresh users + pairs containing a fresh user leave the run verdict unchanged)
+D1   PASS          dea_ref.ledger agrees with an independent re-implementation of DEA p.12 on MC-LED
+D2   PASS          PRF-LED4 witness: identical W2 projection, different DEA verdicts (valid under A-INST-LOCAL)
+D3   PASS          N1 counterexample: A-MERGE native count encoding over-grants
+D4   PASS          All LED-A-BER-INST failures are cross-instance effects
+D5   UNDETERMINED  Case(x) identity is determined by the DEA text
+D6   PASS          Separation of persistence, authorization, detection, prevention and budget accounting
+E1   PASS          r2bac.py implements W&L-07 Defs 1-5 incl. p.7 runtime rule and Def 3 partial-plan prerequisite
+E2   FAIL          rbac_li.py implements Li Notation 1-2 / Def 3
+E3   UNDETERMINED  rsl99.py implements RSL99 RFOPL
+E4   UNDETERMINED  bertino.py implements Bertino 1999 enforcement
+E5   UNDETERMINED  lts.py implements Basin Def 7
+E6   PASS          No target decision logic copied from dea_ref
+W1   NOT_EXECUTED  Wang & Li 2010 journal definitions compared with ESORICS 2007
+{'PASS': 25, 'FAIL': 9, 'UNDETERMINED': 6, 'NOT_EXECUTED': 1}
+
+real	6m41.359s
+user	6m39.959s
+sys	0m0.613s

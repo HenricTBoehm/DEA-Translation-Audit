@@ -1,0 +1,483 @@
+{
+  "ADR-001": {
+    "admissible_random_recheck": {
+      "disagreements": {
+        "A!=B/act": 289,
+        "A!=B/causal": 411,
+        "A!=B/stage": 464,
+        "A!=C/act": 124,
+        "A!=C/causal": 256,
+        "A!=C/stage": 211,
+        "A:act!=causal": 2533,
+        "A:stage!=causal": 1658,
+        "B:act!=causal": 2655,
+        "B:stage!=causal": 1603,
+        "C!=B/act": 165,
+        "C!=B/causal": 155,
+        "C!=B/stage": 253,
+        "C:act!=causal": 2665,
+        "C:stage!=causal": 1695
+      },
+      "invariant_violations": {
+        "I1_inclusion_A_C_B": 0,
+        "I2_monotone_in_activity": 0,
+        "I3_static_agreement": 0,
+        "I4_no_anachronism_C_causal": 0,
+        "I6_cycle_equal_rows_static": 0
+      },
+      "stats": {
+        "models": 17068,
+        "static_models": 47
+      },
+      "wall_seconds": 18.158,
+      "witnesses": {}
+    },
+    "enumerated_stats": {
+      "models": 470596,
+      "static_models": 256
+    },
+    "full_harness_exit": 0,
+    "invalid_random_chronology": {
+      "classification": "IMPLEMENTATION_DEFECT",
+      "condition": "t_exec <= seal <= t_adj",
+      "count": 2932
+    },
+    "named": {
+      "expected": 11,
+      "independent_configurations_matched": 100,
+      "matched": 11
+    },
+    "nontransitivity": {
+      "Ctrl_C(o,j)": true,
+      "Ctrl_C(p,j)": false,
+      "Ctrl_C(p,o)": true,
+      "model": {
+        "o->j": [
+          2
+        ],
+        "p->o": [
+          3
+        ]
+      },
+      "window": [
+        2,
+        3
+      ]
+    },
+    "output": {
+      "actual_sha256": "e0a8f78777e29ddfe329fbbb15c13b0699a890dd99fa4d0690f347d6b498235d",
+      "byte_equal": true,
+      "complete_json_equal": true,
+      "reference_sha256": "e0a8f78777e29ddfe329fbbb15c13b0699a890dd99fa4d0690f347d6b498235d",
+      "semantic_equal": true,
+      "status": "PASS"
+    },
+    "random_stats": {
+      "models": 20000,
+      "seed": 20261116,
+      "static_models": 56
+    },
+    "relay_properties": {
+      "A/act": {
+        "I4_ignores_post_act_control_CM3": true,
+        "I5a_detects_forward_relay_CM1": false,
+        "I5b_rejects_phantom_CM2": true,
+        "I5c_detects_cross_stage_relay_CM5": false,
+        "I7_counts_pre_seal_producer_control_CM4": false
+      },
+      "A/causal": {
+        "I4_ignores_post_act_control_CM3": true,
+        "I5a_detects_forward_relay_CM1": false,
+        "I5b_rejects_phantom_CM2": true,
+        "I5c_detects_cross_stage_relay_CM5": false,
+        "I7_counts_pre_seal_producer_control_CM4": true
+      },
+      "A/stage": {
+        "I4_ignores_post_act_control_CM3": false,
+        "I5a_detects_forward_relay_CM1": false,
+        "I5b_rejects_phantom_CM2": true,
+        "I5c_detects_cross_stage_relay_CM5": false,
+        "I7_counts_pre_seal_producer_control_CM4": true
+      },
+      "B/act": {
+        "I4_ignores_post_act_control_CM3": true,
+        "I5a_detects_forward_relay_CM1": true,
+        "I5b_rejects_phantom_CM2": false,
+        "I5c_detects_cross_stage_relay_CM5": false,
+        "I7_counts_pre_seal_producer_control_CM4": false
+      },
+      "B/causal": {
+        "I4_ignores_post_act_control_CM3": true,
+        "I5a_detects_forward_relay_CM1": true,
+        "I5b_rejects_phantom_CM2": false,
+        "I5c_detects_cross_stage_relay_CM5": true,
+        "I7_counts_pre_seal_producer_control_CM4": true
+      },
+      "B/stage": {
+        "I4_ignores_post_act_control_CM3": false,
+        "I5a_detects_forward_relay_CM1": true,
+        "I5b_rejects_phantom_CM2": false,
+        "I5c_detects_cross_stage_relay_CM5": false,
+        "I7_counts_pre_seal_producer_control_CM4": true
+      },
+      "C/act": {
+        "I4_ignores_post_act_control_CM3": true,
+        "I5a_detects_forward_relay_CM1": true,
+        "I5b_rejects_phantom_CM2": true,
+        "I5c_detects_cross_stage_relay_CM5": false,
+        "I7_counts_pre_seal_producer_control_CM4": false
+      },
+      "C/causal": {
+        "I4_ignores_post_act_control_CM3": true,
+        "I5a_detects_forward_relay_CM1": true,
+        "I5b_rejects_phantom_CM2": true,
+        "I5c_detects_cross_stage_relay_CM5": true,
+        "I7_counts_pre_seal_producer_control_CM4": true
+      },
+      "C/stage": {
+        "I4_ignores_post_act_control_CM3": false,
+        "I5a_detects_forward_relay_CM1": true,
+        "I5b_rejects_phantom_CM2": true,
+        "I5c_detects_cross_stage_relay_CM5": false,
+        "I7_counts_pre_seal_producer_control_CM4": true
+      }
+    },
+    "violations": {
+      "MC_T_exhaustive": {
+        "I1_inclusion_A_C_B": 0,
+        "I2_monotone_in_activity": 0,
+        "I3_static_agreement": 0,
+        "I4_no_anachronism_C_causal": 0,
+        "I6_cycle_equal_rows_static": 0
+      },
+      "MC_T_random": {
+        "I1_inclusion_A_C_B": 0,
+        "I2_monotone_in_activity": 0,
+        "I3_static_agreement": 0,
+        "I4_no_anachronism_C_causal": 0,
+        "I6_cycle_equal_rows_static": 0
+      }
+    },
+    "wall_seconds": 638.559
+  },
+  "CI": {
+    "first_hosted_pr_run": {
+      "run_id": 43869640730,
+      "status": "PASS"
+    },
+    "manual_github_dispatch": {
+      "reason": "Workflow absent from default branch",
+      "status": "NOT_EXECUTED"
+    },
+    "quick_local_combined": "PASS",
+    "quick_local_technical": "PASS"
+  },
+  "Poblete–DEA": {
+    "archived_PB-3v": "MODEL_INVALID",
+    "archived_outputs": {
+      "poblete-adr001-results.json": {
+        "actual_sha256": "771001987bd36eb79ead90a6bb1c87987cfdc8ba8b8e16ffa2bfb4e52a17fb79",
+        "byte_equal": true,
+        "complete_json_equal": true,
+        "reference_sha256": "771001987bd36eb79ead90a6bb1c87987cfdc8ba8b8e16ffa2bfb4e52a17fb79",
+        "semantic_equal": true,
+        "status": "PASS"
+      },
+      "poblete-v035-results.json": {
+        "actual_sha256": "5571734c1e9efdf365bf7d333903501ec6cf17f81bd41f090ab5d23648736c2b",
+        "byte_equal": true,
+        "complete_json_equal": true,
+        "reference_sha256": "5571734c1e9efdf365bf7d333903501ec6cf17f81bd41f090ab5d23648736c2b",
+        "semantic_equal": true,
+        "status": "PASS"
+      }
+    },
+    "archived_wall_seconds": {
+      "ADR-001": 0.298,
+      "v0.3.5": 0.074
+    },
+    "observed_empirical_control": "UNDETERMINED",
+    "typed_v1.0.1": {
+      "fixture": {
+        "archived_PB-3v": "MODEL_INVALID",
+        "execution_output": {
+          "adjudicated": 3,
+          "produced": 1,
+          "production_stage": [
+            0,
+            1
+          ],
+          "sealed": 1
+        },
+        "hypothetical_edge": {
+          "human->engineering-agent": [
+            2
+          ]
+        },
+        "record_start": 0,
+        "results": {
+          "execution-output": {
+            "hypothetical_complete_with_edge": {
+              "outcome": "NO_CONFLICT_ESTABLISHED",
+              "passes_control_gate": true,
+              "record_complete": true,
+              "witness_principals": []
+            },
+            "hypothetical_complete_without_edge": {
+              "outcome": "NO_CONFLICT_ESTABLISHED",
+              "passes_control_gate": true,
+              "record_complete": true,
+              "witness_principals": []
+            },
+            "hypothetical_incomplete_with_authenticated_witness": {
+              "outcome": "UNDETERMINED",
+              "passes_control_gate": false,
+              "record_complete": false,
+              "witness_principals": []
+            },
+            "publication_evidence_only": {
+              "outcome": "UNDETERMINED",
+              "passes_control_gate": false,
+              "record_complete": false,
+              "witness_principals": []
+            }
+          },
+          "verification-report": {
+            "hypothetical_complete_with_edge": {
+              "outcome": "CONFLICT",
+              "passes_control_gate": false,
+              "record_complete": true,
+              "witness_principals": [
+                "human"
+              ]
+            },
+            "hypothetical_complete_without_edge": {
+              "outcome": "NO_CONFLICT_ESTABLISHED",
+              "passes_control_gate": true,
+              "record_complete": true,
+              "witness_principals": []
+            },
+            "hypothetical_incomplete_with_authenticated_witness": {
+              "outcome": "CONFLICT",
+              "passes_control_gate": false,
+              "record_complete": false,
+              "witness_principals": [
+                "human"
+              ]
+            },
+            "publication_evidence_only": {
+              "outcome": "UNDETERMINED",
+              "passes_control_gate": false,
+              "record_complete": false,
+              "witness_principals": []
+            }
+          }
+        },
+        "variant": "PB-3v-v1.0.1",
+        "verification_report": {
+          "adjudicated": 3,
+          "input": "execution-output",
+          "produced": 2,
+          "production_stage": [
+            2
+          ],
+          "sealed": 2
+        }
+      },
+      "invalid_transitions_rejected": 3,
+      "outcomes_checked": 8,
+      "status": "PASS"
+    }
+  },
+  "RP-1.0": {
+    "countermodels": {
+      "actual_sha256": "934dbbb40c3fc4024d40e2a19b9ff3c8614531ff70bbd620eca6c3c3274985a9",
+      "byte_equal": true,
+      "complete_json_equal": true,
+      "reference_sha256": "934dbbb40c3fc4024d40e2a19b9ff3c8614531ff70bbd620eca6c3c3274985a9",
+      "semantic_equal": true,
+      "status": "PASS"
+    },
+    "counts": {
+      "of_which_oracle_embeddings": 4,
+      "proof_or_refutation_records": 6,
+      "regression_cases": 44,
+      "translation_comparisons": 54
+    },
+    "exit": 0,
+    "proof_machine_checks_passing": 6,
+    "regressions_matching_expectation": 44,
+    "results": {
+      "actual_sha256": "3721e372e93f086dc5052ed0d7d424c4911cf1ec0a64bf9ea82872df29306ada",
+      "byte_equal": false,
+      "complete_json_equal": false,
+      "only_normalized_field": "meta.python",
+      "python_versions": {
+        "actual": "3.12.14",
+        "reference": "3.14.4"
+      },
+      "reference_sha256": "465de1faca4e45e40f1be42de014f40d0c3838873b4d231bae616edd9f15f518",
+      "semantic_equal": true,
+      "status": "PASS"
+    },
+    "translation_row_status": {
+      "non_oracle_agrees_both_directions": 25,
+      "non_oracle_has_counterexample": 25,
+      "oracles_excluded_from_native_claims": 4
+    },
+    "wall_seconds": 278.339
+  },
+  "VP-1.0": {
+    "W1": {
+      "admissible_translation": "UNDETERMINED",
+      "automated": "NOT_EXECUTED",
+      "journal_sha256": "e3e40380bf674ccb891d792a9d16129f39b734471f083c2ab3803d2caa948e4d",
+      "targeted_definition_source_review": "CONFIRMED"
+    },
+    "corrected": {
+      "R6": {
+        "claim": "Clean-room run reproduces RP result semantics under the frozen baseline",
+        "counterexample": null,
+        "evidence": {
+          "countermodels.json": {
+            "byte_equal": true,
+            "semantic_equal": true
+          },
+          "exit": 0,
+          "meta.python": {
+            "actual": "3.12.14",
+            "archived": "3.14.4"
+          },
+          "remediation-results.json": {
+            "byte_equal": false,
+            "semantic_equal": true
+          },
+          "semantic_equal": true
+        },
+        "id": "R6",
+        "implementation": "",
+        "source": "",
+        "status": "PASS"
+      },
+      "R6_archived": {
+        "claim": "Clean-room run (baseline via DEA_BASELINE) reproduces both result files byte-identically",
+        "counterexample": null,
+        "evidence": {
+          "countermodels_identical": true,
+          "exit": 0,
+          "results_identical": true
+        },
+        "id": "R6",
+        "implementation": "",
+        "source": "",
+        "status": "PASS"
+      },
+      "changed_check_records": [
+        "R6"
+      ],
+      "check_records_equal": 40,
+      "check_status": {
+        "A1": "FAIL",
+        "A2": "PASS",
+        "A3": "PASS",
+        "B1": "PASS",
+        "B2": "UNDETERMINED",
+        "B3": "PASS",
+        "B4": "FAIL",
+        "B5": "UNDETERMINED",
+        "B6": "PASS",
+        "B7": "PASS",
+        "B8": "FAIL",
+        "C1": "PASS",
+        "C2": "PASS",
+        "C3": "FAIL",
+        "C4": "FAIL",
+        "C4b": "PASS",
+        "C5": "FAIL",
+        "C6": "PASS",
+        "D1": "PASS",
+        "D2": "PASS",
+        "D3": "PASS",
+        "D4": "PASS",
+        "D5": "UNDETERMINED",
+        "D6": "PASS",
+        "E1": "PASS",
+        "E2": "FAIL",
+        "E3": "UNDETERMINED",
+        "E4": "UNDETERMINED",
+        "E5": "UNDETERMINED",
+        "E6": "PASS",
+        "N1": "PASS",
+        "N2": "PASS",
+        "N3": "PASS",
+        "N4": "FAIL",
+        "R1": "PASS",
+        "R2": "PASS",
+        "R3": "PASS",
+        "R4": "PASS",
+        "R5": "FAIL",
+        "R6": "PASS",
+        "W1": "NOT_EXECUTED"
+      },
+      "exit": 0,
+      "historical_json_sha256": "47ddc1af054eaf2de28135d8d538a4ae09c988654edf5680fa93fe02ba6204ff",
+      "sha256": "9437ae8bcc9d6405279881786602c204ea0b7f44c6112c35cd30e1b51f18573c",
+      "status": "PASS",
+      "summary": {
+        "FAIL": 9,
+        "NOT_EXECUTED": 1,
+        "PASS": 25,
+        "UNDETERMINED": 6
+      },
+      "version": "1.0.1",
+      "wall_seconds": 401.359
+    },
+    "original_direct": {
+      "exit": 1,
+      "result_written": false,
+      "status": "FAIL",
+      "wall_seconds": 0.8
+    },
+    "provenance": {
+      "actual_package_members_match_rp_tree": 30,
+      "actual_package_sha256": "18b39eaf7535f55f42a775846c1b2a9e45d73dd6e33c6f31a40093d5f263aaa7",
+      "archive_byte_identity": false,
+      "historical_archive_available_for_byte_comparison": false,
+      "historical_package_sha256": "18667ba7c76fd71f193e6061de221ca0120b51892d7d9aac1a011577ab5156fa"
+    }
+  },
+  "date": "2026-11-16",
+  "environment": {
+    "platform": "Linux x86_64",
+    "python": "3.12.14",
+    "python_dependencies": []
+  },
+  "integrity": {
+    "baseline_sha256": "51a2553e8bb13fe80bc3f0e6245ba0c4dcbe0a31db03ad577a3f3f26f8c97c33",
+    "crc_and_member_byte_counts": {
+      "ADR-001": 4,
+      "Poblete": 7,
+      "RP-1.0": 30,
+      "VP-1.0": 15
+    },
+    "manifest_entries": {
+      "ADR-001": 5,
+      "Poblete": 8,
+      "RP-1.0": 29,
+      "RP-1.0/original-package": 7,
+      "VP-1.0": 14
+    },
+    "original_manifest_snapshot_sha256": "a035f5366fa1e024fb6b6f8314731ed554004448d9500bb84cae969ba16a6334",
+    "status": "PASS"
+  },
+  "report_version": "1.0.1",
+  "tested_source_commits": {
+    "adr_import": "b483fde801cedfaf04de652abc7c50a03808de7d",
+    "first_technical_commit": "7eca427bcdf1a29ef75fe3a3bb93eceb633df0f8",
+    "main": "2fc5e7f353f1984e663110e3eb0a0d9e38ba7fa4",
+    "poblete_archive": "fb542df11e513faa6a4cc72fd37088f06c1c114f",
+    "poblete_typed": "d5a73f9f654b380731d63b961cf8cacb09ecc0bf",
+    "rp_import": "0e905d1fc26f7272a19814a1fb1876815ca24d77",
+    "vp_import": "1557b84e58a57b1a44122007735620ccc1322457"
+  }
+}

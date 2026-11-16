@@ -1,0 +1,5 @@
+DEA-ADR-001_temporal-effective-control.md: OK
+adr001-regression-cases.json: OK
+adr001_ctrl.py: OK
+results/adr001-results.json: OK
+source-archive/dea-adr-001.zip: OK

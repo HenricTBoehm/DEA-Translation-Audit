@@ -1,0 +1,5 @@
+{"disagreements": {"A!=B/act": 289, "A!=B/causal": 411, "A!=B/stage": 464, "A!=C/act": 124, "A!=C/causal": 256, "A!=C/stage": 211, "A:act!=causal": 2533, "A:stage!=causal": 1658, "B:act!=causal": 2655, "B:stage!=causal": 1603, "C!=B/act": 165, "C!=B/causal": 155, "C!=B/stage": 253, "C:act!=causal": 2665, "C:stage!=causal": 1695}, "invariant_violations": {"I1_inclusion_A_C_B": 0, "I2_monotone_in_activity": 0, "I3_static_agreement": 0, "I4_no_anachronism_C_causal": 0, "I6_cycle_equal_rows_static": 0}, "stats": {"models": 17068, "static_models": 47}, "witnesses": {}}
+
+real	0m18.158s
+user	0m18.110s
+sys	0m0.033s

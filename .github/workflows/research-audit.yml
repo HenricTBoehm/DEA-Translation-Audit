@@ -1,0 +1,23 @@
+name: Research audit
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Integrity and deterministic regressions
+        if: github.event_name == 'pull_request'
+        run: bash research/verification-runs/2026-11/check_repository.sh quick
+      - name: Integrity, regressions, and full ADR-001 reproduction
+        if: github.event_name == 'workflow_dispatch'
+        run: bash research/verification-runs/2026-11/check_repository.sh full

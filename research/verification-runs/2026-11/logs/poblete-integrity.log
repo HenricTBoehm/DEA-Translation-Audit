@@ -1,0 +1,8 @@
+crosswalk-poblete-dea.csv: OK
+poblete-adr001-results.json: OK
+poblete-v035-results.json: OK
+poblete-vs-dea-comparison.md: OK
+poblete-vs-dea-v035-delta.md: OK
+poblete_adr001_check.py: OK
+poblete_v035_check.py: OK
+source-archive/dea-poblete-comparison.zip: OK

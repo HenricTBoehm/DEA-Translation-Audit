@@ -1,0 +1,123 @@
+--- verify.py
++++ verify.py
+@@ -17,6 +17,10 @@
+ """
+ import argparse, hashlib, itertools, json, os, random, shutil, subprocess, sys, tempfile, zipfile
+ from collections import deque
++from pathlib import Path
++
++BASELINE_SHA256 = "51a2553e8bb13fe80bc3f0e6245ba0c4dcbe0a31db03ad577a3f3f26f8c97c33"
++ARCHIVED_VP_RESULTS = Path(os.environ["DEA_VP_ARCHIVED_RESULTS"]) if "DEA_VP_ARCHIVED_RESULTS" in os.environ else None
+
+ CHECKS = []
+
+@@ -35,8 +39,15 @@
+ # ============================================================ R: reproduction and failure modes
+ def extract(zp, dest):
+     with zipfile.ZipFile(zp) as z:
++        names = set(z.namelist())
++        roots = [
++            root for root in ("", "dea-v0343-remediation/")
++            if {root + "SHA256SUMS", root + "harness/run_audit.py"} <= names
++        ]
++        if len(roots) != 1:
++            raise ValueError("expected one recognizable RP archive root")
+         z.extractall(dest)
+-    return os.path.join(dest, "dea-v0343-remediation")
++    return os.path.join(dest, roots[0])
+
+
+ def run(pkg, args, env_extra=None):
+@@ -57,7 +68,10 @@
+             bad.append(f.strip())
+     rec("R1", "Package checksums (SHA256SUMS) verify after clean extraction", "PASS" if not bad else "FAIL",
+         f"{sum(1 for _ in open(os.path.join(pkg, 'SHA256SUMS')))} files checked; mismatches: {bad}")
+-    rec("R2", "Baseline PDF SHA-256 equals 51a2553e...7c33", "PASS" if sha(baseline).startswith("51a2553e8bb1") else "FAIL",
++    if bad:
++        raise SystemExit("RP package manifest mismatch: " + ", ".join(bad))
++
++    rec("R2", "Baseline PDF SHA-256 equals 51a2553e...7c33", "PASS" if sha(baseline) == BASELINE_SHA256 else "FAIL",
+         sha(baseline))
+     ph = sha(os.path.join(pkg, "01-remediation-protocol-v1.md"))
+     emb = [l for l in open(os.path.join(pkg, "harness", "run_audit.py")) if l.startswith("PROTOCOL_SHA")][0]
+@@ -104,14 +118,43 @@
+         return pkg
+     out = os.path.join(tmp, "out", "remediation-results.json")
+     code, so, se = run(pkg, ["--out", out], {"DEA_BASELINE": baseline})
+-    same1 = code == 0 and open(out, "rb").read() == open(os.path.join(pkg, "results", "remediation-results.json"), "rb").read()
+-    same2 = code == 0 and open(os.path.join(tmp, "out", "countermodels.json"), "rb").read() == \
+-        open(os.path.join(pkg, "results", "countermodels.json"), "rb").read()
+-    rec("R6", "Clean-room run (baseline via DEA_BASELINE) reproduces both result files byte-identically",
+-        "PASS" if same1 and same2 else "FAIL", dict(exit=code, results_identical=same1, countermodels_identical=same2))
++    result = compare_rp(Path(out).parent, Path(pkg) / "results", code)
++    rec("R6", "Clean-room run reproduces RP result semantics under the frozen baseline",
++        "PASS" if result["semantic_equal"] else "FAIL", result)
+     return pkg
+
+
++def compare_rp(actual, expected, exit_code):
++    filenames = ("remediation-results.json", "countermodels.json")
++    result = {"exit": exit_code, "semantic_equal": False}
++    if exit_code or not all((actual / name).is_file() for name in filenames):
++        return result
++    for name in filenames:
++        result[name] = {
++            "byte_equal": (actual / name).read_bytes() == (expected / name).read_bytes()
++        }
++    current, archived = [
++        json.loads((directory / filenames[0]).read_bytes()) for directory in (actual, expected)
++    ]
++    expected_version = archived["meta"].get("python")
++    current_version = current["meta"].get("python")
++    current["meta"]["python"] = expected_version
++    result["meta.python"] = {"archived": expected_version, "actual": current_version}
++    result[filenames[0]]["semantic_equal"] = (
++        isinstance(expected_version, str) and isinstance(current_version, str)
++        and canonical_json(current) == canonical_json(archived)
++    )
++    result[filenames[1]]["semantic_equal"] = canonical_json(
++        json.loads((actual / filenames[1]).read_bytes())
++    ) == canonical_json(json.loads((expected / filenames[1]).read_bytes()))
++    result["semantic_equal"] = all(result[name]["semantic_equal"] for name in filenames)
++    return result
++
++
++def canonical_json(value):
++    return json.dumps(value, sort_keys=True, separators=(",", ":"))
++
++
+ # ============================================================ independent DEA re-implementations
+ def ind_closure(nodes, edges):
+     """controllers-of map: ctrl[x] = {p : p ->* x} (reflexive-transitive), by DFS (not dea_ref's fixpoint)."""
+@@ -576,7 +619,7 @@
+     ap.add_argument("--out", default="results/verification-results.json")
+     ap.add_argument("--skip-repro", action="store_true")
+     a = ap.parse_args()
+-    if not os.path.isfile(a.baseline) or sha(a.baseline) != "51a2553e8bb13fe80bc3f0e6245ba0c4dcbe0a31db03ad577a3f3f26f8c97c33":
++    if not os.path.isfile(a.baseline) or sha(a.baseline) != BASELINE_SHA256:
+         sys.stderr.write("baseline missing or altered; nothing written\n"); sys.exit(2)
+     pkg = repro(a.package_zip, a.baseline, a.skip_repro)
+     sys.path.insert(0, os.path.join(pkg, "harness"))
+@@ -593,12 +636,19 @@
+     for c in CHECKS:
+         summ[c["status"]] = summ.get(c["status"], 0) + 1
+     os.makedirs(os.path.dirname(os.path.abspath(a.out)), exist_ok=True)
+-    json.dump({"package_zip_sha256": sha(a.package_zip), "baseline_sha256": sha(a.baseline), "summary": summ,
+-               "checks": CHECKS}, open(a.out, "w"), indent=1, sort_keys=True, default=list)
++    digest = sha(a.package_zip)
++    archived_digest = json.loads(ARCHIVED_VP_RESULTS.read_bytes())["package_zip_sha256"]
++    report = {"verification_version": "1.0.1", "package_zip_sha256": digest,
++              "archived_vp_package_zip_sha256": archived_digest,
++              "same_archive_bytes_as_archived_vp": digest == archived_digest,
++              "baseline_sha256": sha(a.baseline), "summary": summ, "checks": CHECKS}
++    with open(a.out, "w") as output:
++        json.dump(report, output, indent=1, sort_keys=True, default=list)
+     for c in CHECKS:
+         print(f'{c["id"]:4s} {c["status"]:13s} {c["claim"][:100]}')
+     print(summ)
++    return int(any(c["id"] in {"R1", "R2", "R3", "R4", "R6"} and c["status"] == "FAIL" for c in CHECKS))
+
+
+ if __name__ == "__main__":
+-    main()
++    sys.exit(main())
