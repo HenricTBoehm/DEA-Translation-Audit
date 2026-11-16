@@ -1,0 +1,382 @@
+{
+ "adr": "DEA-ADR-001",
+ "status": "proposed, non-normative",
+ "cases": [
+  {
+   "id": "CM1_forward_relay_CTRL6b",
+   "description": "p controls o only at 2, o controls j only at 3 (audit CTRL-6b)",
+   "theta_E": [
+    0,
+    1
+   ],
+   "theta_J": [
+    2,
+    3
+   ],
+   "edges": {
+    "p->a": [
+     0,
+     1
+    ],
+    "p->o": [
+     2
+    ],
+    "o->j": [
+     3
+    ]
+   },
+   "executor": "a",
+   "t_exec": 1,
+   "seal": 1,
+   "adjudicator": "j",
+   "t_adj": 3,
+   "recorded_resets": {},
+   "expected_ExecConflict": true,
+   "expected_j_may_adjudicate_on_control_grounds": false,
+   "semantics": "C (time-respecting), causal window"
+  },
+  {
+   "id": "CM2_reverse_relay_phantom",
+   "description": "o controls j only at 2; p gains o only at 3: the union path p->o->j never existed in causal order",
+   "theta_E": [
+    0,
+    1
+   ],
+   "theta_J": [
+    2,
+    3
+   ],
+   "edges": {
+    "p->a": [
+     0,
+     1
+    ],
+    "o->j": [
+     2
+    ],
+    "p->o": [
+     3
+    ]
+   },
+   "executor": "a",
+   "t_exec": 1,
+   "seal": 1,
+   "adjudicator": "j",
+   "t_adj": 3,
+   "recorded_resets": {},
+   "expected_ExecConflict": false,
+   "expected_j_may_adjudicate_on_control_grounds": true,
+   "semantics": "C (time-respecting), causal window"
+  },
+  {
+   "id": "CM3_anachronistic_adjudicator_control",
+   "description": "j adjudicates at 2; p gains control over j only at 3",
+   "theta_E": [
+    0,
+    1
+   ],
+   "theta_J": [
+    2,
+    3
+   ],
+   "edges": {
+    "p->a": [
+     0,
+     1
+    ],
+    "p->j": [
+     3
+    ]
+   },
+   "executor": "a",
+   "t_exec": 1,
+   "seal": 1,
+   "adjudicator": "j",
+   "t_adj": 2,
+   "recorded_resets": {},
+   "expected_ExecConflict": false,
+   "expected_j_may_adjudicate_on_control_grounds": true,
+   "semantics": "C (time-respecting), causal window"
+  },
+  {
+   "id": "CM4_post_act_producer_control_unsealed",
+   "description": "a executes at 0; p controls a at 1, before the output is sealed at 1",
+   "theta_E": [
+    0,
+    1
+   ],
+   "theta_J": [
+    2,
+    3
+   ],
+   "edges": {
+    "p->a": [
+     1
+    ],
+    "p->j": [
+     2,
+     3
+    ]
+   },
+   "executor": "a",
+   "t_exec": 0,
+   "seal": 1,
+   "adjudicator": "j",
+   "t_adj": 3,
+   "recorded_resets": {},
+   "expected_ExecConflict": true,
+   "expected_j_may_adjudicate_on_control_grounds": false,
+   "semantics": "C (time-respecting), causal window"
+  },
+  {
+   "id": "CM4b_post_seal_producer_control",
+   "description": "as CM4, but the output is sealed at 0, before p controls a",
+   "theta_E": [
+    0,
+    1
+   ],
+   "theta_J": [
+    2,
+    3
+   ],
+   "edges": {
+    "p->a": [
+     1
+    ],
+    "p->j": [
+     2,
+     3
+    ]
+   },
+   "executor": "a",
+   "t_exec": 0,
+   "seal": 0,
+   "adjudicator": "j",
+   "t_adj": 3,
+   "recorded_resets": {},
+   "expected_ExecConflict": false,
+   "expected_j_may_adjudicate_on_control_grounds": true,
+   "semantics": "C (time-respecting), causal window"
+  },
+  {
+   "id": "CM5_cross_stage_relay",
+   "description": "p controls o only during execution; o controls j during adjudication",
+   "theta_E": [
+    0,
+    1
+   ],
+   "theta_J": [
+    2,
+    3
+   ],
+   "edges": {
+    "p->a": [
+     0,
+     1
+    ],
+    "p->o": [
+     1
+    ],
+    "o->j": [
+     2,
+     3
+    ]
+   },
+   "executor": "a",
+   "t_exec": 1,
+   "seal": 1,
+   "adjudicator": "j",
+   "t_adj": 3,
+   "recorded_resets": {},
+   "expected_ExecConflict": true,
+   "expected_j_may_adjudicate_on_control_grounds": false,
+   "semantics": "C (time-respecting), causal window"
+  },
+  {
+   "id": "CM6_static_cycle",
+   "description": "p and o control each other throughout",
+   "theta_E": [
+    0,
+    1
+   ],
+   "theta_J": [
+    2,
+    3
+   ],
+   "edges": {
+    "p->o": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "o->p": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "o->j": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "p->a": [
+     0,
+     1,
+     2,
+     3
+    ]
+   },
+   "executor": "a",
+   "t_exec": 1,
+   "seal": 1,
+   "adjudicator": "j",
+   "t_adj": 3,
+   "recorded_resets": {},
+   "expected_ExecConflict": true,
+   "expected_j_may_adjudicate_on_control_grounds": false,
+   "semantics": "C (time-respecting), causal window"
+  },
+  {
+   "id": "CM7_alternating_mutual_control",
+   "description": "o controls a; o->p at 2, p->o at 3; p controls j",
+   "theta_E": [
+    0,
+    1
+   ],
+   "theta_J": [
+    2,
+    3
+   ],
+   "edges": {
+    "o->a": [
+     0,
+     1
+    ],
+    "o->p": [
+     2
+    ],
+    "p->o": [
+     3
+    ],
+    "p->j": [
+     2,
+     3
+    ]
+   },
+   "executor": "a",
+   "t_exec": 1,
+   "seal": 1,
+   "adjudicator": "j",
+   "t_adj": 3,
+   "recorded_resets": {},
+   "expected_ExecConflict": true,
+   "expected_j_may_adjudicate_on_control_grounds": false,
+   "semantics": "C (time-respecting), causal window"
+  },
+  {
+   "id": "CM8_forward_relay_with_reset",
+   "description": "CM1 plus a recorded, independently authorised reset of o at 3",
+   "theta_E": [
+    0,
+    1
+   ],
+   "theta_J": [
+    2,
+    3
+   ],
+   "edges": {
+    "p->a": [
+     0,
+     1
+    ],
+    "p->o": [
+     2
+    ],
+    "o->j": [
+     3
+    ]
+   },
+   "executor": "a",
+   "t_exec": 1,
+   "seal": 1,
+   "adjudicator": "j",
+   "t_adj": 3,
+   "recorded_resets": {
+    "o": [
+     3
+    ]
+   },
+   "expected_ExecConflict": false,
+   "expected_j_may_adjudicate_on_control_grounds": true,
+   "semantics": "C (time-respecting), causal window, recorded resets"
+  },
+  {
+   "id": "CM9_uncertain_timestamp_widened",
+   "description": "p->o known only to lie in [2,3]; fail-closed widening to {2,3}",
+   "theta_E": [
+    0,
+    1
+   ],
+   "theta_J": [
+    2,
+    3
+   ],
+   "edges": {
+    "p->a": [
+     0,
+     1
+    ],
+    "p->o": [
+     2,
+     3
+    ],
+    "o->j": [
+     3
+    ]
+   },
+   "executor": "a",
+   "t_exec": 1,
+   "seal": 1,
+   "adjudicator": "j",
+   "t_adj": 3,
+   "recorded_resets": {},
+   "expected_ExecConflict": true,
+   "expected_j_may_adjudicate_on_control_grounds": false,
+   "semantics": "C (time-respecting), causal window"
+  },
+  {
+   "id": "CM10_no_common_controller",
+   "description": "distinct controllers throughout",
+   "theta_E": [
+    0,
+    1
+   ],
+   "theta_J": [
+    2,
+    3
+   ],
+   "edges": {
+    "p->a": [
+     0,
+     1
+    ],
+    "o->j": [
+     2,
+     3
+    ]
+   },
+   "executor": "a",
+   "t_exec": 1,
+   "seal": 1,
+   "adjudicator": "j",
+   "t_adj": 3,
+   "recorded_resets": {},
+   "expected_ExecConflict": false,
+   "expected_j_may_adjudicate_on_control_grounds": true,
+   "semantics": "C (time-respecting), causal window"
+  }
+ ]
+}
