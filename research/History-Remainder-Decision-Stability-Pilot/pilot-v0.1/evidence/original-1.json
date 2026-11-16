@@ -1,0 +1,147 @@
+{
+ "cases": {
+  "CM-R1_truncation_without_certificate": {
+   "note": "HC-1: t0=1 hides p's t=0 criteria edit on j; no \u015c0 -> remainder unbounded",
+   "expected": "UNDETERMINED",
+   "HR1_verdict": "UNDETERMINED",
+   "reason": "REMAINDER",
+   "naive_bound_verdict": "UNDETERMINED",
+   "true_conflict": true,
+   "unsound": false
+  },
+  "CM-R2_clean_bootstrap_zero_remainder": {
+   "note": "fresh a2, j2, rubric r issued and sealed by independent d at t0; cone has no pre-t0 history",
+   "expected": "CLEAR",
+   "HR1_verdict": "CLEAR",
+   "reason": [],
+   "naive_bound_verdict": "CLEAR",
+   "true_conflict": false,
+   "unsound": false
+  },
+  "CM-R3_bootstrap_leak_via_uncovered_relay": {
+   "note": "bootstrap of {a2,j2,r} alone is not enough: q enters the cone in-window, its pre-t0 controller p is unrecorded",
+   "expected": "UNDETERMINED",
+   "HR1_verdict": "UNDETERMINED",
+   "reason": "REMAINDER",
+   "naive_bound_verdict": "CLEAR",
+   "true_conflict": true,
+   "unsound": false
+  },
+  "CM-R4_channel_missing_in_bound": {
+   "note": "bound attests credential/capability/artifact of j but not criteria; uncovered channel = remainder",
+   "expected": "UNDETERMINED",
+   "HR1_verdict": "UNDETERMINED",
+   "reason": "REMAINDER",
+   "naive_bound_verdict": "CLEAR",
+   "true_conflict": true,
+   "unsound": false
+  },
+  "CM-R5_loose_bound_blocks_without_conflict_claim": {
+   "note": "\u015c0 says p *could* have edited rubric r; sound but loose -> block, reason BOUND, not CONFLICT",
+   "expected": "UNDETERMINED",
+   "HR1_verdict": "UNDETERMINED",
+   "reason": "BOUND_ONLY_WITNESS p",
+   "naive_bound_verdict": "UNDETERMINED",
+   "true_conflict": false,
+   "unsound": false
+  },
+  "CM-R6_state_dependent_reset_unsound": {
+   "note": "revocation triggered by a *bounded* token fires only in \u015c and erases p's true token -> false CLEAR",
+   "expected": "CONFLICT(true) / CLEAR(abstract)",
+   "HR1_verdict": "CLEAR",
+   "reason": [],
+   "naive_bound_verdict": "CLEAR",
+   "true_conflict": true,
+   "unsound": true
+  },
+  "CM-R7_self_attested_bound": {
+   "note": "certificate for \u015c0 issued by p, a member of P_x",
+   "expected": "UNDETERMINED",
+   "HR1_verdict": "UNDETERMINED",
+   "reason": "CERT_NOT_INDEPENDENT",
+   "naive_bound_verdict": "UNDETERMINED",
+   "true_conflict": false,
+   "unsound": false
+  },
+  "CM-R8_certified_actual_pre_state_witness": {
+   "note": "certified *actual* pre-t0 token is a witness, not merely a bound",
+   "expected": "CONFLICT",
+   "HR1_verdict": "CONFLICT",
+   "reason": [
+    "p"
+   ],
+   "naive_bound_verdict": "CONFLICT",
+   "true_conflict": true,
+   "unsound": false
+  }
+ },
+ "lemma_test": {
+  "A_premises_hold": {
+   "n": 20000,
+   "false_clear": 0,
+   "false_conflict": 0,
+   "clear": 9938,
+   "undet": 1847,
+   "conflict": 8215
+  },
+  "B_cone_bound_dropped": {
+   "n": 20000,
+   "false_clear": 1974,
+   "false_conflict": 0,
+   "clear": 11920,
+   "undet": 0,
+   "conflict": 8080
+  },
+  "C_state_dependent_reset": {
+   "n": 20000,
+   "false_clear": 77,
+   "false_conflict": 170,
+   "clear": 7052,
+   "undet": 5634,
+   "conflict": 7314
+  },
+  "D_loose_bound_0.10": {
+   "n": 20000,
+   "false_clear": 0,
+   "false_conflict": 0,
+   "clear": 8036,
+   "undet": 3654,
+   "conflict": 8310
+  },
+  "E_loose_bound_0.30": {
+   "n": 20000,
+   "false_clear": 0,
+   "false_conflict": 0,
+   "clear": 5247,
+   "undet": 6510,
+   "conflict": 8243
+  },
+  "F_bound_on_cone_only": {
+   "n": 20000,
+   "false_clear": 0,
+   "false_conflict": 0,
+   "clear": 9982,
+   "undet": 1876,
+   "conflict": 8142
+  }
+ },
+ "over_blocking": {
+  "A_premises_hold": {
+   "truly_free": 9938,
+   "blocked": 0,
+   "remainder_block_rate": 0.0
+  },
+  "D_loose_bound_0.10": {
+   "truly_free": 9852,
+   "blocked": 1816,
+   "remainder_block_rate": 0.1843
+  },
+  "E_loose_bound_0.30": {
+   "truly_free": 9931,
+   "blocked": 4684,
+   "remainder_block_rate": 0.4717
+  }
+ },
+ "seed": 20261116,
+ "all_expectations_met": true
+}

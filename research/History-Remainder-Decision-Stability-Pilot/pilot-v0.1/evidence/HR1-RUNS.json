@@ -1,0 +1,73 @@
+{
+  "archived_sha256": "a41ffa9a445f1cfa1c90f562af6a65d74f7e7496b29bbafc52b835f3a57ce7c1",
+  "platform": "x86_64",
+  "python": "3.12.14",
+  "runs": [
+    {
+      "PYTHONHASHSEED": 0,
+      "RNG_seed": 20261116,
+      "archived_bytes_equal": false,
+      "archived_named_equal": true,
+      "n_per_regime": 20000,
+      "observed_wall_seconds_concurrent": 8.598,
+      "record": "evidence/original-0.json",
+      "sha256": "5e9a27167406d465fbf2ed4977ac5e47ea83d1d6af7e7b74b245f0b0a3c1f6d4",
+      "variant": "original"
+    },
+    {
+      "PYTHONHASHSEED": 1,
+      "RNG_seed": 20261116,
+      "archived_bytes_equal": false,
+      "archived_named_equal": true,
+      "n_per_regime": 20000,
+      "observed_wall_seconds_concurrent": 8.459,
+      "record": "evidence/original-1.json",
+      "sha256": "b644916fd4b0520ac4a9fff484f72207fffc8f404be14d9994447d3d9dec60ca",
+      "variant": "original"
+    },
+    {
+      "PYTHONHASHSEED": 42,
+      "RNG_seed": 20261116,
+      "archived_bytes_equal": false,
+      "archived_named_equal": true,
+      "n_per_regime": 20000,
+      "observed_wall_seconds_concurrent": 9.959,
+      "record": "evidence/original-42.json",
+      "sha256": "6a397c0d890a6430bc3488ff37f3cce53622ac94376bc23fbfc6827618d8473d",
+      "variant": "original"
+    },
+    {
+      "PYTHONHASHSEED": 0,
+      "RNG_seed": 20261116,
+      "archived_bytes_equal": false,
+      "archived_named_equal": true,
+      "n_per_regime": 20000,
+      "observed_wall_seconds_concurrent": 14.388,
+      "record": "evidence/deterministic.json",
+      "sha256": "067aa9fd277ee5cd00fcad96a034890aac380ac99e98d71ad6ad635c73715ffc",
+      "variant": "deterministic"
+    },
+    {
+      "PYTHONHASHSEED": 1,
+      "RNG_seed": 20261116,
+      "archived_bytes_equal": false,
+      "archived_named_equal": true,
+      "n_per_regime": 20000,
+      "observed_wall_seconds_concurrent": 13.086,
+      "record": "evidence/deterministic.json",
+      "sha256": "067aa9fd277ee5cd00fcad96a034890aac380ac99e98d71ad6ad635c73715ffc",
+      "variant": "deterministic"
+    },
+    {
+      "PYTHONHASHSEED": 42,
+      "RNG_seed": 20261116,
+      "archived_bytes_equal": false,
+      "archived_named_equal": true,
+      "n_per_regime": 20000,
+      "observed_wall_seconds_concurrent": 12.377,
+      "record": "evidence/deterministic.json",
+      "sha256": "067aa9fd277ee5cd00fcad96a034890aac380ac99e98d71ad6ad635c73715ffc",
+      "variant": "deterministic"
+    }
+  ]
+}

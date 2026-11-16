@@ -1,0 +1,22 @@
+{
+  "A": {
+    "calls_per_repeat": 1200,
+    "median_us_per_case": 1.748,
+    "repeats": 5
+  },
+  "B": {
+    "calls_per_repeat": 1200,
+    "median_us_per_case": 73.801,
+    "repeats": 5
+  },
+  "C": {
+    "calls_per_repeat": 1200,
+    "median_us_per_case": 393.761,
+    "repeats": 5
+  },
+  "D": {
+    "calls_per_repeat": 1200,
+    "median_us_per_case": 521.944,
+    "repeats": 5
+  }
+}

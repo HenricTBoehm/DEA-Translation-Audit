@@ -1,0 +1,2858 @@
+{
+  "case_order": [
+    "named",
+    "finite",
+    "random"
+  ],
+  "diagnostic_claims": [
+    "fixed substantive procedure and effect interpretation",
+    "world-domain coverage"
+  ],
+  "finite_metrics": {
+    "A": {
+      "counts": {
+        "clear_invalid": 0,
+        "conflict_truth": 32,
+        "conservative_holds_among_eligible": 0,
+        "false_clear_control": 32,
+        "false_positive_conflict": 0,
+        "gate_passes": 96,
+        "invalid_truth": 0,
+        "nonconflict_truth": 64,
+        "true_eligible": 64
+      },
+      "n": 96,
+      "outcomes": {
+        "NO_CONFLICT_ESTABLISHED": 96
+      }
+    },
+    "B": {
+      "counts": {
+        "clear_invalid": 0,
+        "conflict_truth": 32,
+        "conservative_holds_among_eligible": 0,
+        "false_clear_control": 32,
+        "false_positive_conflict": 0,
+        "gate_passes": 96,
+        "invalid_truth": 0,
+        "nonconflict_truth": 64,
+        "true_eligible": 64
+      },
+      "n": 96,
+      "outcomes": {
+        "NO_CONFLICT_ESTABLISHED": 96
+      }
+    },
+    "C": {
+      "counts": {
+        "BOUND": 12,
+        "REMAINDER": 46,
+        "clear_invalid": 0,
+        "conflict_truth": 32,
+        "conservative_holds_among_eligible": 42,
+        "false_clear_control": 0,
+        "false_positive_conflict": 0,
+        "gate_passes": 22,
+        "invalid_truth": 0,
+        "nonconflict_truth": 64,
+        "true_eligible": 64
+      },
+      "n": 96,
+      "outcomes": {
+        "CONFLICT": 16,
+        "NO_CONFLICT_ESTABLISHED": 22,
+        "UNDETERMINED": 58
+      }
+    },
+    "D": {
+      "counts": {
+        "BOUND": 12,
+        "REMAINDER": 46,
+        "clear_invalid": 0,
+        "conflict_truth": 32,
+        "conservative_holds_among_eligible": 42,
+        "false_clear_control": 0,
+        "false_positive_conflict": 0,
+        "gate_passes": 22,
+        "invalid_truth": 0,
+        "nonconflict_truth": 64,
+        "true_eligible": 64
+      },
+      "n": 96,
+      "outcomes": {
+        "CONFLICT": 16,
+        "NO_CONFLICT_ESTABLISHED": 22,
+        "UNDETERMINED": 58
+      }
+    },
+    "incremental": {
+      "all_substantive_facts": 116,
+      "covered_query_comparisons": 58,
+      "governance_unknown": 58,
+      "minimal_substantive_facts": 29,
+      "outcome_insensitive": 29,
+      "stable_and_conFLICT": 8,
+      "targeted_query": 29
+    },
+    "stability": {
+      "CERTIFIED_STABLE": 48,
+      "UNSTABLE": 48
+    }
+  },
+  "finite_specs": "fixtures.parameters()",
+  "governance_claims_by_arm": {
+    "A": [
+      "role declaration",
+      "disposition authority"
+    ],
+    "B": [
+      "role declaration",
+      "disposition authority",
+      "canonical identities",
+      "event coverage/order",
+      "mandatory roots/links",
+      "seal bindings",
+      "eval/commit snapshot binding"
+    ],
+    "C": [
+      "role declaration",
+      "disposition authority",
+      "canonical identities",
+      "event coverage/order",
+      "mandatory roots/links",
+      "seal bindings",
+      "eval/commit snapshot binding",
+      "historical bound scope",
+      "certified actual effects",
+      "independent issuer",
+      "transformer and reset evidence"
+    ],
+    "D": [
+      "role declaration",
+      "disposition authority",
+      "canonical identities",
+      "event coverage/order",
+      "mandatory roots/links",
+      "seal bindings",
+      "eval/commit snapshot binding",
+      "historical bound scope",
+      "certified actual effects",
+      "independent issuer",
+      "transformer and reset evidence"
+    ]
+  },
+  "named": {
+    "S01": {
+      "evaluation": {
+        "A": {
+          "passes_gate_with_authority": true,
+          "reason": "declared roles distinct",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        },
+        "B": {
+          "passes_gate_with_authority": true,
+          "reason": "authenticated roles and version-bound procedural provenance",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        },
+        "C": {
+          "passes_gate_with_authority": true,
+          "reason": "certified empty upper intersection",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        },
+        "D": {
+          "diagnostic": {
+            "coverage": "finite fixture exhaustive",
+            "minimal_substantive_query": [],
+            "outcomes": [
+              "ACCEPT"
+            ],
+            "scope": {
+              "attempt": "adjudication@1",
+              "commit": "bundle@1",
+              "policy": "threshold@1",
+              "rubric": "rubric@1",
+              "seal": "x@1"
+            },
+            "status": "CERTIFIED_STABLE",
+            "witness_worlds": {
+              "ACCEPT": {
+                "archive_context": 0,
+                "calibration": 0
+              }
+            },
+            "world_count": 4
+          },
+          "governance": {
+            "passes_gate_with_authority": true,
+            "reason": "certified empty upper intersection",
+            "status": "NO_CONFLICT_ESTABLISHED",
+            "witnesses": []
+          }
+        },
+        "truth": {
+          "authorized": true,
+          "conflict": false,
+          "principals": [],
+          "valid": true
+        }
+      },
+      "input": {
+        "model": {
+          "artifact": "x@1",
+          "attempt": "adjudication@1",
+          "authorized": true,
+          "binding_verified": true,
+          "bound_complete": true,
+          "commit_version": "bundle@1",
+          "events": [
+            {
+              "actor": "a",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "produce",
+              "inputs": [],
+              "kind": "produce",
+              "order": 0,
+              "time": 2
+            },
+            {
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "seal",
+              "kind": "seal",
+              "order": 0,
+              "pins": {
+                "rubric": "rubric@1"
+              },
+              "time": 3
+            },
+            {
+              "actor": "j",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "commit",
+              "kind": "adjudicate",
+              "order": 0,
+              "roots": {
+                "rubric": "rubric@1"
+              },
+              "time": 5
+            }
+          ],
+          "graph_attested": true,
+          "policy": "threshold@1",
+          "record_complete": true,
+          "record_start": 1,
+          "snapshot_attested": true,
+          "snapshot_version": "bundle@1"
+        },
+        "oracle": {
+          "authorized": true,
+          "prestate": [],
+          "valid": true
+        },
+        "remainder": {
+          "actual_attested": true,
+          "attested": true,
+          "issuer": "i",
+          "kind": "Z",
+          "uncovered": [],
+          "upper": [],
+          "witnesses": []
+        },
+        "scientific": {
+          "covered": true,
+          "domains": {
+            "archive_context": [
+              0,
+              1
+            ],
+            "calibration": [
+              0,
+              1
+            ]
+          },
+          "observed": {},
+          "offset": 1,
+          "policy_defined": true,
+          "samples": [],
+          "scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          },
+          "threshold": 1,
+          "weights": {},
+          "world_scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          }
+        }
+      }
+    },
+    "S02": {
+      "evaluation": {
+        "A": {
+          "passes_gate_with_authority": true,
+          "reason": "declared roles distinct",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        },
+        "B": {
+          "passes_gate_with_authority": true,
+          "reason": "authenticated roles and version-bound procedural provenance",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        },
+        "C": {
+          "passes_gate_with_authority": false,
+          "reason": "witnessed effective control",
+          "status": "CONFLICT",
+          "witnesses": [
+            {
+              "binding": [
+                "decision-root:rubric"
+              ],
+              "decision": [
+                "self:p",
+                "rubric-control"
+              ],
+              "decision_target": [
+                "artifact",
+                "rubric@1"
+              ],
+              "principal": "p",
+              "production": [
+                "self:p",
+                "producer-control",
+                "mutable-production:produce"
+              ]
+            }
+          ]
+        },
+        "D": {
+          "diagnostic": {
+            "coverage": "finite fixture exhaustive",
+            "minimal_substantive_query": [],
+            "outcomes": [
+              "ACCEPT"
+            ],
+            "scope": {
+              "attempt": "adjudication@1",
+              "commit": "bundle@1",
+              "policy": "threshold@1",
+              "rubric": "rubric@1",
+              "seal": "x@1"
+            },
+            "status": "CERTIFIED_STABLE",
+            "witness_worlds": {
+              "ACCEPT": {
+                "archive_context": 0,
+                "calibration": 0
+              }
+            },
+            "world_count": 4
+          },
+          "governance": {
+            "passes_gate_with_authority": false,
+            "reason": "witnessed effective control",
+            "status": "CONFLICT",
+            "witnesses": [
+              {
+                "binding": [
+                  "decision-root:rubric"
+                ],
+                "decision": [
+                  "self:p",
+                  "rubric-control"
+                ],
+                "decision_target": [
+                  "artifact",
+                  "rubric@1"
+                ],
+                "principal": "p",
+                "production": [
+                  "self:p",
+                  "producer-control",
+                  "mutable-production:produce"
+                ]
+              }
+            ]
+          }
+        },
+        "truth": {
+          "authorized": true,
+          "conflict": true,
+          "principals": [
+            "p"
+          ],
+          "valid": true
+        }
+      },
+      "input": {
+        "model": {
+          "artifact": "x@1",
+          "attempt": "adjudication@1",
+          "authorized": true,
+          "binding_verified": true,
+          "bound_complete": true,
+          "commit_version": "bundle@1",
+          "events": [
+            {
+              "actor": "a",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "produce",
+              "inputs": [],
+              "kind": "produce",
+              "order": 0,
+              "time": 2
+            },
+            {
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "seal",
+              "kind": "seal",
+              "order": 0,
+              "pins": {
+                "rubric": "rubric@1"
+              },
+              "time": 3
+            },
+            {
+              "actor": "j",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "commit",
+              "kind": "adjudicate",
+              "order": 0,
+              "roots": {
+                "rubric": "rubric@1"
+              },
+              "time": 5
+            },
+            {
+              "authenticated": true,
+              "channel": "capability",
+              "dst": "a",
+              "dst_artifact": false,
+              "id": "producer-control",
+              "kind": "control",
+              "order": 0,
+              "persistence": "potential_durable",
+              "src": "p",
+              "time": 1
+            },
+            {
+              "authenticated": true,
+              "channel": "criteria",
+              "dst": "rubric@1",
+              "dst_artifact": true,
+              "id": "rubric-control",
+              "kind": "control",
+              "order": 1,
+              "persistence": "potential_durable",
+              "src": "p",
+              "time": 1
+            }
+          ],
+          "graph_attested": true,
+          "policy": "threshold@1",
+          "record_complete": true,
+          "record_start": 1,
+          "snapshot_attested": true,
+          "snapshot_version": "bundle@1"
+        },
+        "oracle": {
+          "authorized": true,
+          "prestate": [],
+          "valid": true
+        },
+        "remainder": {
+          "actual_attested": true,
+          "attested": true,
+          "issuer": "i",
+          "kind": "Z",
+          "uncovered": [],
+          "upper": [],
+          "witnesses": []
+        },
+        "scientific": {
+          "covered": true,
+          "domains": {
+            "archive_context": [
+              0,
+              1
+            ],
+            "calibration": [
+              0,
+              1
+            ]
+          },
+          "observed": {},
+          "offset": 1,
+          "policy_defined": true,
+          "samples": [],
+          "scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          },
+          "threshold": 1,
+          "weights": {},
+          "world_scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          }
+        }
+      }
+    },
+    "S03": {
+      "evaluation": {
+        "A": {
+          "passes_gate_with_authority": true,
+          "reason": "declared roles distinct",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        },
+        "B": {
+          "passes_gate_with_authority": true,
+          "reason": "authenticated roles and version-bound procedural provenance",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        },
+        "C": {
+          "passes_gate_with_authority": false,
+          "reason": "REMAINDER: unproved historical bound",
+          "status": "UNDETERMINED",
+          "witnesses": []
+        },
+        "D": {
+          "diagnostic": {
+            "coverage": "finite fixture exhaustive",
+            "minimal_substantive_query": [],
+            "outcomes": [
+              "ACCEPT"
+            ],
+            "scope": {
+              "attempt": "adjudication@1",
+              "commit": "bundle@1",
+              "policy": "threshold@1",
+              "rubric": "rubric@1",
+              "seal": "x@1"
+            },
+            "status": "CERTIFIED_STABLE",
+            "witness_worlds": {
+              "ACCEPT": {
+                "archive_context": 0,
+                "calibration": 0
+              }
+            },
+            "world_count": 4
+          },
+          "governance": {
+            "passes_gate_with_authority": false,
+            "reason": "REMAINDER: unproved historical bound",
+            "status": "UNDETERMINED",
+            "witnesses": []
+          }
+        },
+        "truth": {
+          "authorized": true,
+          "conflict": false,
+          "principals": [],
+          "valid": true
+        }
+      },
+      "input": {
+        "model": {
+          "artifact": "x@1",
+          "attempt": "adjudication@1",
+          "authorized": true,
+          "binding_verified": true,
+          "bound_complete": true,
+          "commit_version": "bundle@1",
+          "events": [
+            {
+              "actor": "a",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "produce",
+              "inputs": [],
+              "kind": "produce",
+              "order": 0,
+              "time": 2
+            },
+            {
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "seal",
+              "kind": "seal",
+              "order": 0,
+              "pins": {
+                "rubric": "rubric@1"
+              },
+              "time": 3
+            },
+            {
+              "actor": "j",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "commit",
+              "kind": "adjudicate",
+              "order": 0,
+              "roots": {
+                "rubric": "rubric@1"
+              },
+              "time": 5
+            }
+          ],
+          "graph_attested": true,
+          "policy": "threshold@1",
+          "record_complete": true,
+          "record_start": 1,
+          "snapshot_attested": true,
+          "snapshot_version": "bundle@1"
+        },
+        "oracle": {
+          "authorized": true,
+          "prestate": [],
+          "valid": true
+        },
+        "remainder": {
+          "actual_attested": true,
+          "attested": false,
+          "issuer": "i",
+          "kind": "U",
+          "uncovered": [],
+          "upper": [],
+          "witnesses": []
+        },
+        "scientific": {
+          "covered": true,
+          "domains": {
+            "archive_context": [
+              0,
+              1
+            ],
+            "calibration": [
+              0,
+              1
+            ]
+          },
+          "observed": {},
+          "offset": 1,
+          "policy_defined": true,
+          "samples": [],
+          "scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          },
+          "threshold": 1,
+          "weights": {},
+          "world_scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          }
+        }
+      }
+    },
+    "S04": {
+      "evaluation": {
+        "A": {
+          "passes_gate_with_authority": true,
+          "reason": "declared roles distinct",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        },
+        "B": {
+          "passes_gate_with_authority": true,
+          "reason": "authenticated roles and version-bound procedural provenance",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        },
+        "C": {
+          "passes_gate_with_authority": false,
+          "reason": "REMAINDER: unproved historical bound",
+          "status": "UNDETERMINED",
+          "witnesses": []
+        },
+        "D": {
+          "diagnostic": {
+            "coverage": "finite fixture exhaustive",
+            "minimal_substantive_query": [
+              "calibration"
+            ],
+            "outcomes": [
+              "ACCEPT",
+              "REJECT"
+            ],
+            "scope": {
+              "attempt": "adjudication@1",
+              "commit": "bundle@1",
+              "policy": "threshold@1",
+              "rubric": "rubric@1",
+              "seal": "x@1"
+            },
+            "status": "UNSTABLE",
+            "witness_worlds": {
+              "ACCEPT": {
+                "archive_context": 0,
+                "calibration": 1
+              },
+              "REJECT": {
+                "archive_context": 0,
+                "calibration": 0
+              }
+            },
+            "world_count": 4
+          },
+          "governance": {
+            "passes_gate_with_authority": false,
+            "reason": "REMAINDER: unproved historical bound",
+            "status": "UNDETERMINED",
+            "witnesses": []
+          }
+        },
+        "truth": {
+          "authorized": true,
+          "conflict": false,
+          "principals": [],
+          "valid": true
+        }
+      },
+      "input": {
+        "model": {
+          "artifact": "x@1",
+          "attempt": "adjudication@1",
+          "authorized": true,
+          "binding_verified": true,
+          "bound_complete": true,
+          "commit_version": "bundle@1",
+          "events": [
+            {
+              "actor": "a",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "produce",
+              "inputs": [],
+              "kind": "produce",
+              "order": 0,
+              "time": 2
+            },
+            {
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "seal",
+              "kind": "seal",
+              "order": 0,
+              "pins": {
+                "rubric": "rubric@1"
+              },
+              "time": 3
+            },
+            {
+              "actor": "j",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "commit",
+              "kind": "adjudicate",
+              "order": 0,
+              "roots": {
+                "rubric": "rubric@1"
+              },
+              "time": 5
+            }
+          ],
+          "graph_attested": true,
+          "policy": "threshold@1",
+          "record_complete": true,
+          "record_start": 1,
+          "snapshot_attested": true,
+          "snapshot_version": "bundle@1"
+        },
+        "oracle": {
+          "authorized": true,
+          "prestate": [],
+          "valid": true
+        },
+        "remainder": {
+          "actual_attested": true,
+          "attested": false,
+          "issuer": "i",
+          "kind": "U",
+          "uncovered": [],
+          "upper": [],
+          "witnesses": []
+        },
+        "scientific": {
+          "covered": true,
+          "domains": {
+            "archive_context": [
+              0,
+              1
+            ],
+            "calibration": [
+              0,
+              1
+            ]
+          },
+          "observed": {},
+          "offset": 0,
+          "policy_defined": true,
+          "samples": [],
+          "scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          },
+          "threshold": 1,
+          "weights": {
+            "calibration": 1
+          },
+          "world_scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          }
+        }
+      }
+    },
+    "S05": {
+      "evaluation": {
+        "A": {
+          "passes_gate_with_authority": true,
+          "reason": "declared roles distinct",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        },
+        "B": {
+          "passes_gate_with_authority": false,
+          "reason": "event admission",
+          "status": "MODEL_INVALID",
+          "witnesses": []
+        },
+        "C": {
+          "passes_gate_with_authority": false,
+          "reason": "event admission",
+          "status": "MODEL_INVALID",
+          "witnesses": []
+        },
+        "D": {
+          "diagnostic": {
+            "reason": "unresolved or incompatible fixed scope",
+            "status": "STABILITY_UNDETERMINED"
+          },
+          "governance": {
+            "passes_gate_with_authority": false,
+            "reason": "event admission",
+            "status": "MODEL_INVALID",
+            "witnesses": []
+          }
+        },
+        "truth": {
+          "authorized": true,
+          "conflict": false,
+          "principals": [],
+          "valid": false
+        }
+      },
+      "input": {
+        "model": {
+          "artifact": "x@1",
+          "attempt": "adjudication@1",
+          "authorized": true,
+          "binding_verified": true,
+          "bound_complete": true,
+          "commit_version": "bundle@1",
+          "events": [
+            {
+              "actor": "a",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "produce",
+              "inputs": [],
+              "kind": "produce",
+              "order": 0,
+              "time": 2
+            },
+            {
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "seal",
+              "kind": "seal",
+              "order": 0,
+              "pins": {
+                "rubric": "rubric@1"
+              },
+              "time": 3
+            },
+            {
+              "actor": "j",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "commit",
+              "kind": "adjudicate",
+              "order": 0,
+              "roots": {
+                "rubric": "rubric@2"
+              },
+              "time": 5
+            }
+          ],
+          "graph_attested": true,
+          "policy": "threshold@1",
+          "record_complete": true,
+          "record_start": 1,
+          "snapshot_attested": true,
+          "snapshot_version": "bundle@1"
+        },
+        "oracle": {
+          "authorized": true,
+          "prestate": [],
+          "valid": false
+        },
+        "remainder": {
+          "actual_attested": true,
+          "attested": true,
+          "issuer": "i",
+          "kind": "Z",
+          "uncovered": [],
+          "upper": [],
+          "witnesses": []
+        },
+        "scientific": {
+          "covered": true,
+          "domains": {
+            "archive_context": [
+              0,
+              1
+            ],
+            "calibration": [
+              0,
+              1
+            ]
+          },
+          "observed": {},
+          "offset": 1,
+          "policy_defined": true,
+          "samples": [],
+          "scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          },
+          "threshold": 1,
+          "weights": {},
+          "world_scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@2",
+            "seal": "x@1"
+          }
+        }
+      }
+    },
+    "S06": {
+      "evaluation": {
+        "A": {
+          "passes_gate_with_authority": true,
+          "reason": "declared roles distinct",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        },
+        "B": {
+          "passes_gate_with_authority": true,
+          "reason": "authenticated roles and version-bound procedural provenance",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        },
+        "C": {
+          "passes_gate_with_authority": false,
+          "reason": "witnessed effective control",
+          "status": "CONFLICT",
+          "witnesses": [
+            {
+              "binding": [
+                "decision-root:rubric"
+              ],
+              "decision": [
+                "self:p",
+                "rubric-control-late"
+              ],
+              "decision_target": [
+                "artifact",
+                "rubric@1"
+              ],
+              "principal": "p",
+              "production": [
+                "self:p",
+                "producer-control",
+                "mutable-production:produce"
+              ]
+            }
+          ]
+        },
+        "D": {
+          "diagnostic": {
+            "coverage": "finite fixture exhaustive",
+            "minimal_substantive_query": [],
+            "outcomes": [
+              "ACCEPT"
+            ],
+            "scope": {
+              "attempt": "adjudication@1",
+              "commit": "bundle@1",
+              "policy": "threshold@1",
+              "rubric": "rubric@1",
+              "seal": "x@1"
+            },
+            "status": "CERTIFIED_STABLE",
+            "witness_worlds": {
+              "ACCEPT": {
+                "archive_context": 0,
+                "calibration": 0
+              }
+            },
+            "world_count": 4
+          },
+          "governance": {
+            "passes_gate_with_authority": false,
+            "reason": "witnessed effective control",
+            "status": "CONFLICT",
+            "witnesses": [
+              {
+                "binding": [
+                  "decision-root:rubric"
+                ],
+                "decision": [
+                  "self:p",
+                  "rubric-control-late"
+                ],
+                "decision_target": [
+                  "artifact",
+                  "rubric@1"
+                ],
+                "principal": "p",
+                "production": [
+                  "self:p",
+                  "producer-control",
+                  "mutable-production:produce"
+                ]
+              }
+            ]
+          }
+        },
+        "truth": {
+          "authorized": true,
+          "conflict": true,
+          "principals": [
+            "p"
+          ],
+          "valid": true
+        }
+      },
+      "input": {
+        "model": {
+          "artifact": "x@1",
+          "attempt": "adjudication@1",
+          "authorized": true,
+          "binding_verified": true,
+          "bound_complete": true,
+          "commit_version": "bundle@1",
+          "events": [
+            {
+              "actor": "a",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "produce",
+              "inputs": [],
+              "kind": "produce",
+              "order": 0,
+              "time": 2
+            },
+            {
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "seal",
+              "kind": "seal",
+              "order": 0,
+              "pins": {
+                "rubric": "rubric@1"
+              },
+              "time": 3
+            },
+            {
+              "actor": "j",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "commit",
+              "kind": "adjudicate",
+              "order": 0,
+              "roots": {
+                "rubric": "rubric@1"
+              },
+              "time": 5
+            },
+            {
+              "authenticated": true,
+              "channel": "capability",
+              "dst": "a",
+              "dst_artifact": false,
+              "id": "producer-control",
+              "kind": "control",
+              "order": 0,
+              "persistence": "potential_durable",
+              "src": "p",
+              "time": 1
+            },
+            {
+              "authenticated": true,
+              "channel": "criteria",
+              "dst": "rubric@1",
+              "dst_artifact": true,
+              "id": "rubric-control-late",
+              "kind": "control",
+              "order": 0,
+              "persistence": "potential_durable",
+              "src": "p",
+              "time": 4
+            }
+          ],
+          "graph_attested": true,
+          "policy": "threshold@1",
+          "record_complete": true,
+          "record_start": 1,
+          "snapshot_attested": true,
+          "snapshot_version": "bundle@1"
+        },
+        "oracle": {
+          "authorized": true,
+          "prestate": [],
+          "valid": true
+        },
+        "remainder": {
+          "actual_attested": true,
+          "attested": true,
+          "issuer": "i",
+          "kind": "Z",
+          "uncovered": [],
+          "upper": [],
+          "witnesses": []
+        },
+        "scientific": {
+          "covered": true,
+          "domains": {
+            "archive_context": [
+              0,
+              1
+            ],
+            "calibration": [
+              0,
+              1
+            ]
+          },
+          "observed": {},
+          "offset": 1,
+          "policy_defined": true,
+          "samples": [],
+          "scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          },
+          "threshold": 1,
+          "weights": {},
+          "world_scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          }
+        }
+      }
+    },
+    "S07": {
+      "evaluation": {
+        "A": {
+          "passes_gate_with_authority": true,
+          "reason": "declared roles distinct",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        },
+        "B": {
+          "passes_gate_with_authority": true,
+          "reason": "authenticated roles and version-bound procedural provenance",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        },
+        "C": {
+          "passes_gate_with_authority": true,
+          "reason": "certified empty upper intersection",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        },
+        "D": {
+          "diagnostic": {
+            "coverage": "finite fixture exhaustive",
+            "minimal_substantive_query": [],
+            "outcomes": [
+              "ACCEPT"
+            ],
+            "scope": {
+              "attempt": "adjudication@1",
+              "commit": "bundle@1",
+              "policy": "threshold@1",
+              "rubric": "rubric@1",
+              "seal": "x@1"
+            },
+            "status": "CERTIFIED_STABLE",
+            "witness_worlds": {
+              "ACCEPT": {
+                "archive_context": 0,
+                "calibration": 0
+              }
+            },
+            "world_count": 4
+          },
+          "governance": {
+            "passes_gate_with_authority": true,
+            "reason": "certified empty upper intersection",
+            "status": "NO_CONFLICT_ESTABLISHED",
+            "witnesses": []
+          }
+        },
+        "truth": {
+          "authorized": true,
+          "conflict": false,
+          "principals": [],
+          "valid": true
+        }
+      },
+      "input": {
+        "model": {
+          "artifact": "x@1",
+          "attempt": "adjudication@1",
+          "authorized": true,
+          "binding_verified": true,
+          "bound_complete": true,
+          "commit_version": "bundle@1",
+          "events": [
+            {
+              "actor": "a",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "produce",
+              "inputs": [],
+              "kind": "produce",
+              "order": 0,
+              "time": 2
+            },
+            {
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "seal",
+              "kind": "seal",
+              "order": 0,
+              "pins": {
+                "rubric": "rubric@1"
+              },
+              "time": 3
+            },
+            {
+              "actor": "j",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "commit",
+              "kind": "adjudicate",
+              "order": 0,
+              "roots": {
+                "rubric": "rubric@1"
+              },
+              "time": 5
+            },
+            {
+              "authenticated": true,
+              "channel": "capability",
+              "dst": "a",
+              "dst_artifact": false,
+              "id": "producer-control",
+              "kind": "control",
+              "order": 0,
+              "persistence": "potential_durable",
+              "src": "p",
+              "time": 1
+            },
+            {
+              "actor": "p",
+              "artifact": "rubric@1",
+              "authenticated": true,
+              "id": "read",
+              "kind": "read",
+              "order": 0,
+              "time": 4
+            }
+          ],
+          "graph_attested": true,
+          "policy": "threshold@1",
+          "record_complete": true,
+          "record_start": 1,
+          "snapshot_attested": true,
+          "snapshot_version": "bundle@1"
+        },
+        "oracle": {
+          "authorized": true,
+          "prestate": [],
+          "valid": true
+        },
+        "remainder": {
+          "actual_attested": true,
+          "attested": true,
+          "issuer": "i",
+          "kind": "Z",
+          "uncovered": [],
+          "upper": [],
+          "witnesses": []
+        },
+        "scientific": {
+          "covered": true,
+          "domains": {
+            "archive_context": [
+              0,
+              1
+            ],
+            "calibration": [
+              0,
+              1
+            ]
+          },
+          "observed": {},
+          "offset": 1,
+          "policy_defined": true,
+          "samples": [],
+          "scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          },
+          "threshold": 1,
+          "weights": {},
+          "world_scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          }
+        }
+      }
+    },
+    "S08": {
+      "evaluation": {
+        "A": {
+          "passes_gate_with_authority": true,
+          "reason": "declared roles distinct",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        },
+        "B": {
+          "passes_gate_with_authority": true,
+          "reason": "authenticated roles and version-bound procedural provenance",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        },
+        "C": {
+          "passes_gate_with_authority": false,
+          "reason": "BOUND: possible intersection only",
+          "status": "UNDETERMINED",
+          "witnesses": []
+        },
+        "D": {
+          "diagnostic": {
+            "coverage": "finite fixture exhaustive",
+            "minimal_substantive_query": [],
+            "outcomes": [
+              "ACCEPT"
+            ],
+            "scope": {
+              "attempt": "adjudication@1",
+              "commit": "bundle@1",
+              "policy": "threshold@1",
+              "rubric": "rubric@1",
+              "seal": "x@1"
+            },
+            "status": "CERTIFIED_STABLE",
+            "witness_worlds": {
+              "ACCEPT": {
+                "archive_context": 0,
+                "calibration": 0
+              }
+            },
+            "world_count": 4
+          },
+          "governance": {
+            "passes_gate_with_authority": false,
+            "reason": "BOUND: possible intersection only",
+            "status": "UNDETERMINED",
+            "witnesses": []
+          }
+        },
+        "truth": {
+          "authorized": true,
+          "conflict": false,
+          "principals": [],
+          "valid": true
+        }
+      },
+      "input": {
+        "model": {
+          "artifact": "x@1",
+          "attempt": "adjudication@1",
+          "authorized": true,
+          "binding_verified": true,
+          "bound_complete": true,
+          "commit_version": "bundle@1",
+          "events": [
+            {
+              "actor": "a",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "produce",
+              "inputs": [],
+              "kind": "produce",
+              "order": 0,
+              "time": 2
+            },
+            {
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "seal",
+              "kind": "seal",
+              "order": 0,
+              "pins": {
+                "rubric": "rubric@1"
+              },
+              "time": 3
+            },
+            {
+              "actor": "j",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "commit",
+              "kind": "adjudicate",
+              "order": 0,
+              "roots": {
+                "rubric": "rubric@1"
+              },
+              "time": 5
+            },
+            {
+              "authenticated": true,
+              "channel": "capability",
+              "dst": "a",
+              "dst_artifact": false,
+              "id": "producer-control",
+              "kind": "control",
+              "order": 0,
+              "persistence": "potential_durable",
+              "src": "p",
+              "time": 1
+            }
+          ],
+          "graph_attested": true,
+          "policy": "threshold@1",
+          "record_complete": true,
+          "record_start": 1,
+          "snapshot_attested": true,
+          "snapshot_version": "bundle@1"
+        },
+        "oracle": {
+          "authorized": true,
+          "prestate": [],
+          "valid": true
+        },
+        "remainder": {
+          "actual_attested": true,
+          "attested": true,
+          "issuer": "i",
+          "kind": "B",
+          "uncovered": [],
+          "upper": [
+            {
+              "authenticated": true,
+              "channel": "criteria",
+              "id": "historical:p:rubric@1:criteria",
+              "principal": "p",
+              "target": "rubric@1",
+              "target_artifact": true
+            }
+          ],
+          "witnesses": []
+        },
+        "scientific": {
+          "covered": true,
+          "domains": {
+            "archive_context": [
+              0,
+              1
+            ],
+            "calibration": [
+              0,
+              1
+            ]
+          },
+          "observed": {},
+          "offset": 1,
+          "policy_defined": true,
+          "samples": [],
+          "scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          },
+          "threshold": 1,
+          "weights": {},
+          "world_scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          }
+        }
+      }
+    },
+    "S09": {
+      "evaluation": {
+        "A": {
+          "passes_gate_with_authority": true,
+          "reason": "declared roles distinct",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        },
+        "B": {
+          "passes_gate_with_authority": true,
+          "reason": "authenticated roles and version-bound procedural provenance",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        },
+        "C": {
+          "passes_gate_with_authority": false,
+          "reason": "REMAINDER: unproved historical bound",
+          "status": "UNDETERMINED",
+          "witnesses": []
+        },
+        "D": {
+          "diagnostic": {
+            "coverage": "finite fixture exhaustive",
+            "minimal_substantive_query": [
+              "archive_context"
+            ],
+            "outcomes": [
+              "ACCEPT",
+              "REJECT"
+            ],
+            "scope": {
+              "attempt": "adjudication@1",
+              "commit": "bundle@1",
+              "policy": "threshold@1",
+              "rubric": "rubric@1",
+              "seal": "x@1"
+            },
+            "status": "UNSTABLE",
+            "witness_worlds": {
+              "ACCEPT": {
+                "archive_context": 1,
+                "calibration": 0
+              },
+              "REJECT": {
+                "archive_context": 0,
+                "calibration": 0
+              }
+            },
+            "world_count": 4
+          },
+          "governance": {
+            "passes_gate_with_authority": false,
+            "reason": "REMAINDER: unproved historical bound",
+            "status": "UNDETERMINED",
+            "witnesses": []
+          }
+        },
+        "truth": {
+          "authorized": true,
+          "conflict": true,
+          "principals": [
+            "p"
+          ],
+          "valid": true
+        }
+      },
+      "input": {
+        "model": {
+          "artifact": "x@1",
+          "attempt": "adjudication@1",
+          "authorized": true,
+          "binding_verified": true,
+          "bound_complete": true,
+          "commit_version": "bundle@1",
+          "events": [
+            {
+              "actor": "a",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "produce",
+              "inputs": [],
+              "kind": "produce",
+              "order": 0,
+              "time": 2
+            },
+            {
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "seal",
+              "kind": "seal",
+              "order": 0,
+              "pins": {
+                "rubric": "rubric@1"
+              },
+              "time": 3
+            },
+            {
+              "actor": "j",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "commit",
+              "kind": "adjudicate",
+              "order": 0,
+              "roots": {
+                "rubric": "rubric@1"
+              },
+              "time": 5
+            },
+            {
+              "authenticated": true,
+              "channel": "capability",
+              "dst": "a",
+              "dst_artifact": false,
+              "id": "producer-control",
+              "kind": "control",
+              "order": 0,
+              "persistence": "potential_durable",
+              "src": "p",
+              "time": 1
+            },
+            {
+              "authenticated": true,
+              "channel": "criteria",
+              "dst": "j",
+              "dst_artifact": false,
+              "id": "relay",
+              "kind": "control",
+              "order": 0,
+              "persistence": "potential_durable",
+              "src": "relay",
+              "time": 4
+            }
+          ],
+          "graph_attested": true,
+          "policy": "threshold@1",
+          "record_complete": true,
+          "record_start": 1,
+          "snapshot_attested": true,
+          "snapshot_version": "bundle@1"
+        },
+        "oracle": {
+          "authorized": true,
+          "prestate": [
+            {
+              "authenticated": true,
+              "channel": "credential",
+              "id": "historical:p:relay:credential",
+              "principal": "p",
+              "target": "relay",
+              "target_artifact": false
+            }
+          ],
+          "valid": true
+        },
+        "remainder": {
+          "actual_attested": true,
+          "attested": false,
+          "issuer": "i",
+          "kind": "U",
+          "uncovered": [
+            [
+              "relay",
+              "credential"
+            ]
+          ],
+          "upper": [],
+          "witnesses": []
+        },
+        "scientific": {
+          "covered": true,
+          "domains": {
+            "archive_context": [
+              0,
+              1
+            ],
+            "calibration": [
+              0,
+              1
+            ]
+          },
+          "observed": {},
+          "offset": 0,
+          "policy_defined": true,
+          "samples": [],
+          "scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          },
+          "threshold": 1,
+          "weights": {
+            "archive_context": 1
+          },
+          "world_scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          }
+        }
+      }
+    },
+    "S10": {
+      "evaluation": {
+        "A": {
+          "passes_gate_with_authority": true,
+          "reason": "declared roles distinct",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        },
+        "B": {
+          "passes_gate_with_authority": true,
+          "reason": "authenticated roles and version-bound procedural provenance",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        },
+        "C": {
+          "passes_gate_with_authority": false,
+          "reason": "witnessed effective control",
+          "status": "CONFLICT",
+          "witnesses": [
+            {
+              "binding": [
+                "decision-root:rubric"
+              ],
+              "decision": [
+                "historical:p:rubric@1:criteria"
+              ],
+              "decision_target": [
+                "artifact",
+                "rubric@1"
+              ],
+              "principal": "p",
+              "production": [
+                "self:p",
+                "producer-control",
+                "mutable-production:produce"
+              ]
+            }
+          ]
+        },
+        "D": {
+          "diagnostic": {
+            "coverage": "finite fixture exhaustive",
+            "minimal_substantive_query": [],
+            "outcomes": [
+              "ACCEPT"
+            ],
+            "scope": {
+              "attempt": "adjudication@1",
+              "commit": "bundle@1",
+              "policy": "threshold@1",
+              "rubric": "rubric@1",
+              "seal": "x@1"
+            },
+            "status": "CERTIFIED_STABLE",
+            "witness_worlds": {
+              "ACCEPT": {
+                "archive_context": 0,
+                "calibration": 0
+              }
+            },
+            "world_count": 4
+          },
+          "governance": {
+            "passes_gate_with_authority": false,
+            "reason": "witnessed effective control",
+            "status": "CONFLICT",
+            "witnesses": [
+              {
+                "binding": [
+                  "decision-root:rubric"
+                ],
+                "decision": [
+                  "historical:p:rubric@1:criteria"
+                ],
+                "decision_target": [
+                  "artifact",
+                  "rubric@1"
+                ],
+                "principal": "p",
+                "production": [
+                  "self:p",
+                  "producer-control",
+                  "mutable-production:produce"
+                ]
+              }
+            ]
+          }
+        },
+        "truth": {
+          "authorized": true,
+          "conflict": true,
+          "principals": [
+            "p"
+          ],
+          "valid": true
+        }
+      },
+      "input": {
+        "model": {
+          "artifact": "x@1",
+          "attempt": "adjudication@1",
+          "authorized": true,
+          "binding_verified": true,
+          "bound_complete": true,
+          "commit_version": "bundle@1",
+          "events": [
+            {
+              "actor": "a",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "produce",
+              "inputs": [],
+              "kind": "produce",
+              "order": 0,
+              "time": 2
+            },
+            {
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "seal",
+              "kind": "seal",
+              "order": 0,
+              "pins": {
+                "rubric": "rubric@1"
+              },
+              "time": 3
+            },
+            {
+              "actor": "j",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "commit",
+              "kind": "adjudicate",
+              "order": 0,
+              "roots": {
+                "rubric": "rubric@1"
+              },
+              "time": 5
+            },
+            {
+              "authenticated": true,
+              "channel": "capability",
+              "dst": "a",
+              "dst_artifact": false,
+              "id": "producer-control",
+              "kind": "control",
+              "order": 0,
+              "persistence": "potential_durable",
+              "src": "p",
+              "time": 1
+            },
+            {
+              "authenticated": true,
+              "channels": [
+                "credential"
+              ],
+              "id": "reset",
+              "independent": true,
+              "kind": "reset",
+              "neutralized": true,
+              "order": 0,
+              "scope_proved": true,
+              "target": "rubric@1",
+              "target_artifact": true,
+              "time": 4
+            }
+          ],
+          "graph_attested": true,
+          "policy": "threshold@1",
+          "record_complete": true,
+          "record_start": 1,
+          "snapshot_attested": true,
+          "snapshot_version": "bundle@1"
+        },
+        "oracle": {
+          "authorized": true,
+          "prestate": [
+            {
+              "authenticated": true,
+              "channel": "criteria",
+              "id": "historical:p:rubric@1:criteria",
+              "principal": "p",
+              "target": "rubric@1",
+              "target_artifact": true
+            }
+          ],
+          "valid": true
+        },
+        "remainder": {
+          "actual_attested": true,
+          "attested": true,
+          "issuer": "i",
+          "kind": "B",
+          "uncovered": [],
+          "upper": [
+            {
+              "authenticated": true,
+              "channel": "criteria",
+              "id": "historical:p:rubric@1:criteria",
+              "principal": "p",
+              "target": "rubric@1",
+              "target_artifact": true
+            }
+          ],
+          "witnesses": [
+            {
+              "authenticated": true,
+              "channel": "criteria",
+              "id": "historical:p:rubric@1:criteria",
+              "principal": "p",
+              "target": "rubric@1",
+              "target_artifact": true
+            }
+          ]
+        },
+        "scientific": {
+          "covered": true,
+          "domains": {
+            "archive_context": [
+              0,
+              1
+            ],
+            "calibration": [
+              0,
+              1
+            ]
+          },
+          "observed": {},
+          "offset": 1,
+          "policy_defined": true,
+          "samples": [],
+          "scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          },
+          "threshold": 1,
+          "weights": {},
+          "world_scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          }
+        }
+      }
+    },
+    "S11": {
+      "evaluation": {
+        "A": {
+          "passes_gate_with_authority": true,
+          "reason": "declared roles distinct",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        },
+        "B": {
+          "passes_gate_with_authority": true,
+          "reason": "authenticated roles and version-bound procedural provenance",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        },
+        "C": {
+          "passes_gate_with_authority": true,
+          "reason": "certified empty upper intersection",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        },
+        "D": {
+          "diagnostic": {
+            "coverage": "finite fixture exhaustive",
+            "minimal_substantive_query": [],
+            "outcomes": [
+              "ACCEPT"
+            ],
+            "scope": {
+              "attempt": "adjudication@1",
+              "commit": "bundle@1",
+              "policy": "threshold@1",
+              "rubric": "rubric@1",
+              "seal": "x@1"
+            },
+            "status": "CERTIFIED_STABLE",
+            "witness_worlds": {
+              "ACCEPT": {
+                "archive_context": 0,
+                "calibration": 0
+              }
+            },
+            "world_count": 4
+          },
+          "governance": {
+            "passes_gate_with_authority": true,
+            "reason": "certified empty upper intersection",
+            "status": "NO_CONFLICT_ESTABLISHED",
+            "witnesses": []
+          }
+        },
+        "truth": {
+          "authorized": true,
+          "conflict": false,
+          "principals": [],
+          "valid": true
+        }
+      },
+      "input": {
+        "model": {
+          "artifact": "x@1",
+          "attempt": "adjudication@1",
+          "authorized": true,
+          "binding_verified": true,
+          "bound_complete": true,
+          "commit_version": "bundle@1",
+          "events": [
+            {
+              "actor": "a",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "produce",
+              "inputs": [],
+              "kind": "produce",
+              "order": 0,
+              "time": 2
+            },
+            {
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "seal",
+              "kind": "seal",
+              "order": 0,
+              "pins": {
+                "rubric": "rubric@1"
+              },
+              "time": 3
+            },
+            {
+              "actor": "j",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "commit",
+              "kind": "adjudicate",
+              "order": 0,
+              "roots": {
+                "rubric": "rubric@1"
+              },
+              "time": 5
+            },
+            {
+              "authenticated": true,
+              "channel": "capability",
+              "dst": "a",
+              "dst_artifact": false,
+              "id": "producer-control",
+              "kind": "control",
+              "order": 0,
+              "persistence": "potential_durable",
+              "src": "p",
+              "time": 1
+            },
+            {
+              "authenticated": true,
+              "channels": [
+                "criteria"
+              ],
+              "id": "reset",
+              "independent": true,
+              "kind": "reset",
+              "neutralized": true,
+              "order": 0,
+              "scope_proved": true,
+              "target": "rubric@1",
+              "target_artifact": true,
+              "time": 4
+            }
+          ],
+          "graph_attested": true,
+          "policy": "threshold@1",
+          "record_complete": true,
+          "record_start": 1,
+          "snapshot_attested": true,
+          "snapshot_version": "bundle@1"
+        },
+        "oracle": {
+          "authorized": true,
+          "prestate": [
+            {
+              "authenticated": true,
+              "channel": "criteria",
+              "id": "historical:p:rubric@1:criteria",
+              "principal": "p",
+              "target": "rubric@1",
+              "target_artifact": true
+            }
+          ],
+          "valid": true
+        },
+        "remainder": {
+          "actual_attested": true,
+          "attested": true,
+          "issuer": "i",
+          "kind": "B",
+          "uncovered": [],
+          "upper": [
+            {
+              "authenticated": true,
+              "channel": "criteria",
+              "id": "historical:p:rubric@1:criteria",
+              "principal": "p",
+              "target": "rubric@1",
+              "target_artifact": true
+            }
+          ],
+          "witnesses": [
+            {
+              "authenticated": true,
+              "channel": "criteria",
+              "id": "historical:p:rubric@1:criteria",
+              "principal": "p",
+              "target": "rubric@1",
+              "target_artifact": true
+            }
+          ]
+        },
+        "scientific": {
+          "covered": true,
+          "domains": {
+            "archive_context": [
+              0,
+              1
+            ],
+            "calibration": [
+              0,
+              1
+            ]
+          },
+          "observed": {},
+          "offset": 1,
+          "policy_defined": true,
+          "samples": [],
+          "scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          },
+          "threshold": 1,
+          "weights": {},
+          "world_scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          }
+        }
+      }
+    },
+    "S12": {
+      "evaluation": {
+        "A": {
+          "passes_gate_with_authority": true,
+          "reason": "declared roles distinct",
+          "status": "NO_CONFLICT_ESTABLISHED",
+          "witnesses": []
+        },
+        "B": {
+          "passes_gate_with_authority": false,
+          "reason": "missing version-bound procedural provenance",
+          "status": "UNDETERMINED",
+          "witnesses": []
+        },
+        "C": {
+          "passes_gate_with_authority": false,
+          "reason": "REMAINDER: certified complete decision dependencies",
+          "status": "UNDETERMINED",
+          "witnesses": []
+        },
+        "D": {
+          "diagnostic": {
+            "reason": "unresolved or incompatible fixed scope",
+            "status": "STABILITY_UNDETERMINED"
+          },
+          "governance": {
+            "passes_gate_with_authority": false,
+            "reason": "REMAINDER: certified complete decision dependencies",
+            "status": "UNDETERMINED",
+            "witnesses": []
+          }
+        },
+        "truth": {
+          "authorized": true,
+          "conflict": false,
+          "principals": [],
+          "valid": true
+        }
+      },
+      "input": {
+        "model": {
+          "artifact": "x@1",
+          "attempt": "adjudication@1",
+          "authorized": true,
+          "binding_verified": true,
+          "bound_complete": false,
+          "commit_version": "bundle@1",
+          "events": [
+            {
+              "actor": "a",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "produce",
+              "inputs": [],
+              "kind": "produce",
+              "order": 0,
+              "time": 2
+            },
+            {
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "seal",
+              "kind": "seal",
+              "order": 0,
+              "pins": {
+                "rubric": "rubric@1"
+              },
+              "time": 3
+            },
+            {
+              "actor": "j",
+              "artifact": "x@1",
+              "authenticated": true,
+              "id": "commit",
+              "kind": "adjudicate",
+              "order": 0,
+              "roots": {
+                "rubric": "rubric@1"
+              },
+              "time": 5
+            }
+          ],
+          "graph_attested": true,
+          "policy": "threshold@1",
+          "record_complete": true,
+          "record_start": 1,
+          "snapshot_attested": true,
+          "snapshot_version": "bundle@1"
+        },
+        "oracle": {
+          "authorized": true,
+          "hidden_dependencies": [
+            {
+              "authenticated": true,
+              "from": "rubric@1",
+              "role": "resolver",
+              "to": "resolver@1"
+            }
+          ],
+          "prestate": [],
+          "valid": true
+        },
+        "remainder": {
+          "actual_attested": true,
+          "attested": true,
+          "issuer": "i",
+          "kind": "Z",
+          "uncovered": [],
+          "upper": [],
+          "witnesses": []
+        },
+        "scientific": {
+          "covered": true,
+          "domains": {
+            "archive_context": [
+              0,
+              1
+            ],
+            "calibration": [
+              0,
+              1
+            ]
+          },
+          "observed": {},
+          "offset": 1,
+          "policy_defined": false,
+          "samples": [],
+          "scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          },
+          "threshold": 1,
+          "weights": {},
+          "world_scope": {
+            "attempt": "adjudication@1",
+            "commit": "bundle@1",
+            "policy": "threshold@1",
+            "rubric": "rubric@1",
+            "seal": "x@1"
+          }
+        }
+      }
+    }
+  },
+  "named_metrics": {
+    "A": {
+      "counts": {
+        "clear_invalid": 1,
+        "conflict_truth": 4,
+        "conservative_holds_among_eligible": 0,
+        "false_clear_control": 4,
+        "false_positive_conflict": 0,
+        "gate_passes": 12,
+        "invalid_truth": 1,
+        "nonconflict_truth": 8,
+        "true_eligible": 7
+      },
+      "n": 12,
+      "outcomes": {
+        "NO_CONFLICT_ESTABLISHED": 12
+      }
+    },
+    "B": {
+      "counts": {
+        "clear_invalid": 0,
+        "conflict_truth": 4,
+        "conservative_holds_among_eligible": 1,
+        "false_clear_control": 4,
+        "false_positive_conflict": 0,
+        "gate_passes": 10,
+        "invalid_truth": 1,
+        "nonconflict_truth": 8,
+        "true_eligible": 7
+      },
+      "n": 12,
+      "outcomes": {
+        "MODEL_INVALID": 1,
+        "NO_CONFLICT_ESTABLISHED": 10,
+        "UNDETERMINED": 1
+      }
+    },
+    "C": {
+      "counts": {
+        "BOUND": 1,
+        "REMAINDER": 4,
+        "clear_invalid": 0,
+        "conflict_truth": 4,
+        "conservative_holds_among_eligible": 4,
+        "false_clear_control": 0,
+        "false_positive_conflict": 0,
+        "gate_passes": 3,
+        "invalid_truth": 1,
+        "nonconflict_truth": 8,
+        "true_eligible": 7
+      },
+      "n": 12,
+      "outcomes": {
+        "CONFLICT": 3,
+        "MODEL_INVALID": 1,
+        "NO_CONFLICT_ESTABLISHED": 3,
+        "UNDETERMINED": 5
+      }
+    },
+    "D": {
+      "counts": {
+        "BOUND": 1,
+        "REMAINDER": 4,
+        "clear_invalid": 0,
+        "conflict_truth": 4,
+        "conservative_holds_among_eligible": 4,
+        "false_clear_control": 0,
+        "false_positive_conflict": 0,
+        "gate_passes": 3,
+        "invalid_truth": 1,
+        "nonconflict_truth": 8,
+        "true_eligible": 7
+      },
+      "n": 12,
+      "outcomes": {
+        "CONFLICT": 3,
+        "MODEL_INVALID": 1,
+        "NO_CONFLICT_ESTABLISHED": 3,
+        "UNDETERMINED": 5
+      }
+    },
+    "incremental": {
+      "all_substantive_facts": 8,
+      "covered_query_comparisons": 4,
+      "governance_unknown": 5,
+      "minimal_substantive_facts": 2,
+      "outcome_insensitive": 2,
+      "stable_and_conFLICT": 3,
+      "targeted_query": 2
+    },
+    "stability": {
+      "CERTIFIED_STABLE": 8,
+      "STABILITY_UNDETERMINED": 2,
+      "UNSTABLE": 2
+    }
+  },
+  "random_draw_digest": "307a8aa65820d5725d5e6b082a3865806d8cd8892300aac873318c4245e28d0e",
+  "random_metrics": {
+    "A": {
+      "counts": {
+        "clear_invalid": 0,
+        "conflict_truth": 349,
+        "conservative_holds_among_eligible": 0,
+        "false_clear_control": 349,
+        "false_positive_conflict": 0,
+        "gate_passes": 1000,
+        "invalid_truth": 0,
+        "nonconflict_truth": 651,
+        "true_eligible": 651
+      },
+      "n": 1000,
+      "outcomes": {
+        "NO_CONFLICT_ESTABLISHED": 1000
+      }
+    },
+    "B": {
+      "counts": {
+        "clear_invalid": 0,
+        "conflict_truth": 349,
+        "conservative_holds_among_eligible": 0,
+        "false_clear_control": 349,
+        "false_positive_conflict": 0,
+        "gate_passes": 1000,
+        "invalid_truth": 0,
+        "nonconflict_truth": 651,
+        "true_eligible": 651
+      },
+      "n": 1000,
+      "outcomes": {
+        "NO_CONFLICT_ESTABLISHED": 1000
+      }
+    },
+    "C": {
+      "counts": {
+        "BOUND": 110,
+        "REMAINDER": 467,
+        "clear_invalid": 0,
+        "conflict_truth": 349,
+        "conservative_holds_among_eligible": 403,
+        "false_clear_control": 0,
+        "false_positive_conflict": 0,
+        "gate_passes": 248,
+        "invalid_truth": 0,
+        "nonconflict_truth": 651,
+        "true_eligible": 651
+      },
+      "n": 1000,
+      "outcomes": {
+        "CONFLICT": 175,
+        "NO_CONFLICT_ESTABLISHED": 248,
+        "UNDETERMINED": 577
+      }
+    },
+    "D": {
+      "counts": {
+        "BOUND": 110,
+        "REMAINDER": 467,
+        "clear_invalid": 0,
+        "conflict_truth": 349,
+        "conservative_holds_among_eligible": 403,
+        "false_clear_control": 0,
+        "false_positive_conflict": 0,
+        "gate_passes": 248,
+        "invalid_truth": 0,
+        "nonconflict_truth": 651,
+        "true_eligible": 651
+      },
+      "n": 1000,
+      "outcomes": {
+        "CONFLICT": 175,
+        "NO_CONFLICT_ESTABLISHED": 248,
+        "UNDETERMINED": 577
+      }
+    },
+    "incremental": {
+      "all_substantive_facts": 1154,
+      "covered_query_comparisons": 577,
+      "governance_unknown": 577,
+      "minimal_substantive_facts": 303,
+      "outcome_insensitive": 274,
+      "stable_and_conFLICT": 82,
+      "targeted_query": 303
+    },
+    "stability": {
+      "CERTIFIED_STABLE": 493,
+      "UNSTABLE": 507
+    }
+  },
+  "random_unique": 96,
+  "seed": 20261116,
+  "stability_probes": {
+    "correlated_worlds": {
+      "actual": {
+        "coverage": "finite fixture exhaustive",
+        "minimal_substantive_query": [
+          "archive_context"
+        ],
+        "outcomes": [
+          "ACCEPT",
+          "REJECT"
+        ],
+        "scope": {
+          "attempt": "adjudication@1",
+          "commit": "bundle@1",
+          "policy": "threshold@1",
+          "rubric": "rubric@1",
+          "seal": "x@1"
+        },
+        "status": "UNSTABLE",
+        "witness_worlds": {
+          "ACCEPT": {
+            "archive_context": 1,
+            "calibration": 1
+          },
+          "REJECT": {
+            "archive_context": 0,
+            "calibration": 0
+          }
+        },
+        "world_count": 2
+      },
+      "expected": "UNSTABLE",
+      "input": {
+        "allowed": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "covered": true,
+        "domains": {
+          "archive_context": [
+            0,
+            1
+          ],
+          "calibration": [
+            0,
+            1
+          ]
+        },
+        "observed": {},
+        "offset": 0,
+        "policy_defined": true,
+        "samples": [],
+        "scope": {
+          "attempt": "adjudication@1",
+          "commit": "bundle@1",
+          "policy": "threshold@1",
+          "rubric": "rubric@1",
+          "seal": "x@1"
+        },
+        "threshold": 1,
+        "weights": {
+          "archive_context": 1,
+          "calibration": 1
+        },
+        "world_scope": {
+          "attempt": "adjudication@1",
+          "commit": "bundle@1",
+          "policy": "threshold@1",
+          "rubric": "rubric@1",
+          "seal": "x@1"
+        }
+      }
+    },
+    "different_rubric": {
+      "actual": {
+        "reason": "unresolved or incompatible fixed scope",
+        "status": "STABILITY_UNDETERMINED"
+      },
+      "expected": "STABILITY_UNDETERMINED",
+      "input": {
+        "covered": true,
+        "domains": {
+          "archive_context": [
+            0,
+            1
+          ],
+          "calibration": [
+            0,
+            1
+          ]
+        },
+        "observed": {},
+        "offset": 1,
+        "policy_defined": true,
+        "samples": [],
+        "scope": {
+          "attempt": "adjudication@1",
+          "commit": "bundle@1",
+          "policy": "threshold@1",
+          "rubric": "rubric@1",
+          "seal": "x@1"
+        },
+        "threshold": 1,
+        "weights": {},
+        "world_scope": {
+          "attempt": "adjudication@1",
+          "commit": "bundle@1",
+          "policy": "threshold@1",
+          "rubric": "rubric@2",
+          "seal": "x@1"
+        }
+      }
+    },
+    "disagreement_in_sample": {
+      "actual": {
+        "coverage": "samples",
+        "minimal_substantive_query": null,
+        "outcomes": [
+          "ACCEPT",
+          "REJECT"
+        ],
+        "scope": {
+          "attempt": "adjudication@1",
+          "commit": "bundle@1",
+          "policy": "threshold@1",
+          "rubric": "rubric@1",
+          "seal": "x@1"
+        },
+        "status": "UNSTABLE",
+        "witness_worlds": {
+          "ACCEPT": {
+            "archive_context": 0,
+            "calibration": 1
+          },
+          "REJECT": {
+            "archive_context": 0,
+            "calibration": 0
+          }
+        },
+        "world_count": 2
+      },
+      "expected": "UNSTABLE",
+      "input": {
+        "covered": false,
+        "domains": {
+          "archive_context": [
+            0,
+            1
+          ],
+          "calibration": [
+            0,
+            1
+          ]
+        },
+        "observed": {},
+        "offset": 0,
+        "policy_defined": true,
+        "samples": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "scope": {
+          "attempt": "adjudication@1",
+          "commit": "bundle@1",
+          "policy": "threshold@1",
+          "rubric": "rubric@1",
+          "seal": "x@1"
+        },
+        "threshold": 1,
+        "weights": {
+          "calibration": 1
+        },
+        "world_scope": {
+          "attempt": "adjudication@1",
+          "commit": "bundle@1",
+          "policy": "threshold@1",
+          "rubric": "rubric@1",
+          "seal": "x@1"
+        }
+      }
+    },
+    "empty": {
+      "actual": {
+        "reason": "no established admissible world",
+        "status": "STABILITY_UNDETERMINED"
+      },
+      "expected": "STABILITY_UNDETERMINED",
+      "input": {
+        "allowed": [],
+        "covered": true,
+        "domains": {
+          "archive_context": [
+            0,
+            1
+          ],
+          "calibration": [
+            0,
+            1
+          ]
+        },
+        "observed": {},
+        "offset": 1,
+        "policy_defined": true,
+        "samples": [],
+        "scope": {
+          "attempt": "adjudication@1",
+          "commit": "bundle@1",
+          "policy": "threshold@1",
+          "rubric": "rubric@1",
+          "seal": "x@1"
+        },
+        "threshold": 1,
+        "weights": {},
+        "world_scope": {
+          "attempt": "adjudication@1",
+          "commit": "bundle@1",
+          "policy": "threshold@1",
+          "rubric": "rubric@1",
+          "seal": "x@1"
+        }
+      }
+    },
+    "matching_sample": {
+      "actual": {
+        "coverage": "samples",
+        "minimal_substantive_query": null,
+        "outcomes": [
+          "ACCEPT"
+        ],
+        "scope": {
+          "attempt": "adjudication@1",
+          "commit": "bundle@1",
+          "policy": "threshold@1",
+          "rubric": "rubric@1",
+          "seal": "x@1"
+        },
+        "status": "SAMPLED_STABLE",
+        "witness_worlds": {
+          "ACCEPT": {
+            "archive_context": 0,
+            "calibration": 0
+          }
+        },
+        "world_count": 1
+      },
+      "expected": "SAMPLED_STABLE",
+      "input": {
+        "covered": false,
+        "domains": {
+          "archive_context": [
+            0,
+            1
+          ],
+          "calibration": [
+            0,
+            1
+          ]
+        },
+        "observed": {},
+        "offset": 1,
+        "policy_defined": true,
+        "samples": [
+          [
+            0,
+            0
+          ]
+        ],
+        "scope": {
+          "attempt": "adjudication@1",
+          "commit": "bundle@1",
+          "policy": "threshold@1",
+          "rubric": "rubric@1",
+          "seal": "x@1"
+        },
+        "threshold": 1,
+        "weights": {},
+        "world_scope": {
+          "attempt": "adjudication@1",
+          "commit": "bundle@1",
+          "policy": "threshold@1",
+          "rubric": "rubric@1",
+          "seal": "x@1"
+        }
+      }
+    }
+  }
+}
