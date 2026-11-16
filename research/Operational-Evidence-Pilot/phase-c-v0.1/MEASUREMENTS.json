@@ -1,0 +1,72 @@
+{
+  "C00": {
+    "adjudicator_commit_denied": 46.22779,
+    "checked": 48.330557,
+    "collect": 24.316913,
+    "commit": 57.53364,
+    "committer_direct_insert_denied": 18.937973,
+    "privileges_before": 20.705522,
+    "real": 32.47082,
+    "select_control": 20.048137,
+    "setup": 74.70009
+  },
+  "C01": {
+    "checked": 21.14183,
+    "collect": 48.551708,
+    "commit": 70.727677,
+    "privileges_before": 59.900248,
+    "publish": 45.438169,
+    "real": 47.299085,
+    "setup": 81.503129,
+    "writer_edit_denied": 20.139093,
+    "writer_select_denied": 51.491021
+  },
+  "C02": {
+    "base": 25.84336,
+    "checked": 19.289806,
+    "collect": 24.315113,
+    "commit": 31.460359,
+    "privileges_before": 52.217379,
+    "publish": 18.517648,
+    "real": 24.747825,
+    "select_alternative": 20.382798,
+    "select_base": 21.408183,
+    "selector_create_denied": 31.991318,
+    "selector_edit_denied": 50.926019,
+    "setup": 44.887025
+  },
+  "C03": {
+    "checked": 18.638279,
+    "collect": 51.021468,
+    "commit": 43.052243,
+    "privileges_after_revoke": 72.422661,
+    "privileges_before": 32.983,
+    "publish": 49.337796,
+    "real": 36.376083,
+    "revoke_writer": 16.615898,
+    "revoked_insert_denied": 21.065209,
+    "select_old_publication": 76.783434,
+    "setup": 41.051143
+  },
+  "C04": {
+    "checked": 24.707158,
+    "collect": 21.898012,
+    "competing_select_while_locked": 184.508718,
+    "fresh": 23.605688,
+    "fresh_checked": 49.096037,
+    "locked_commit_release": 1.542087,
+    "locked_commit_to_pending": 26.606123,
+    "missing_check_denied": 31.279753,
+    "no_stale_decisions": 17.171343,
+    "pending_visible_count": 30.98998,
+    "privileges_before": 26.601761,
+    "publish": 27.834392,
+    "racy": 27.915715,
+    "racy_commit_denied": 59.143597,
+    "select_after_commit": 37.76435,
+    "setup": 46.947668,
+    "stale": 58.558678,
+    "stale_commit_denied": 41.674849,
+    "switch": 53.369475
+  }
+}

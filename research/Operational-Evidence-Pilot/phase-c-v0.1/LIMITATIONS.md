@@ -1,0 +1,7 @@
+# Residual evidence boundaries
+
+- Credentials belong to separately authenticated test roles in an operator-controlled cluster. Mapping these to independently accountable human or organizational principals was not tested.
+- The test administrator/owner can change server, grants, tables or the logger. Native records and a read-only observer on that same server do not supply an external tamper-proof ledger. Historical rights are verified for the actually executed grant/revoke window. A native current catalog cannot establish all earlier or off-system authorizations.
+- Exact-version integrity is established for the tested path and finite schema. The sealed score and versions are immutable for normal tested roles, conditional on trusted administrator/configuration. No cryptographic attestation of arbitrary evaluations or general evidence capture completeness is established.
+- C04 protects the assessment binding against updates to the guarded resolver row. It does not provide a global snapshot across unrelated data, different services or externally editable files. The durability check is a subsequent independent database session; crash recovery, replica visibility and distributed commit are outside the experiment.
+- No external policy adjudication, private holdout, formal novelty comparison, cross-system production burden, human attestation or normative DEA integration was performed. The C02 resolver hypothesis remains separate from D1 and SR-1.
