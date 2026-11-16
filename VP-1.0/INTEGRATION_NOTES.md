@@ -28,3 +28,7 @@ A portable extraction fix should be implemented in a separate PR or clearly patc
 ## Publication scope
 
 The unchanged `VP-1.0` original files and original ZIP are archived on a **draft branch** to permit review. No verification patches are applied to RP-1.0 here, the DEA v0.3.4.3 baseline is unchanged, and no external copyrighted paper PDFs are included. Do not merge before resolving the extraction prerequisite, validating the claim/evidence matrix against original sources, and separating mathematical proofs from finite tests.
+
+## Local full re-run (additional evidence)
+
+Using a local-only extraction fix to accept the flat RP-1.0 ZIP, the full `verify.py` procedure terminated with exit 0. The 40 other check records matched the submitted result data, and `countermodels.json` reproduced byte-identically. Check R6 failed **byte identity of `remediation-results.json` only**: a unified diff identified exactly one metadata field (`meta.python`: `3.14.4` in the submitted RP-1.0 results versus `3.13.5` in this runtime). Thus the substantive results reproduced, but the submitted claim of cross-environment byte-identical result JSON does not hold. Result statuses for this local run: 24 PASS, 10 FAIL, 6 UNDETERMINED, 1 NOT EXECUTED. The original `VP-1.0/verify.py` and `VP-1.0/results/verification-results.json` were not rewritten. A robust remedy should normalize or separately record environment-dependent metadata rather than weaken semantic comparisons.
