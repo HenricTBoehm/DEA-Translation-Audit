@@ -1,0 +1,86 @@
+{
+  "archived_PB-3v": "MODEL_INVALID",
+  "execution_output": {
+    "adjudicated": 3,
+    "produced": 1,
+    "production_stage": [
+      0,
+      1
+    ],
+    "sealed": 1
+  },
+  "hypothetical_edge": {
+    "human->engineering-agent": [
+      2
+    ]
+  },
+  "record_start": 0,
+  "results": {
+    "execution-output": {
+      "hypothetical_complete_with_edge": {
+        "outcome": "NO_CONFLICT_ESTABLISHED",
+        "passes_control_gate": true,
+        "record_complete": true,
+        "witness_principals": []
+      },
+      "hypothetical_complete_without_edge": {
+        "outcome": "NO_CONFLICT_ESTABLISHED",
+        "passes_control_gate": true,
+        "record_complete": true,
+        "witness_principals": []
+      },
+      "hypothetical_incomplete_with_authenticated_witness": {
+        "outcome": "UNDETERMINED",
+        "passes_control_gate": false,
+        "record_complete": false,
+        "witness_principals": []
+      },
+      "publication_evidence_only": {
+        "outcome": "UNDETERMINED",
+        "passes_control_gate": false,
+        "record_complete": false,
+        "witness_principals": []
+      }
+    },
+    "verification-report": {
+      "hypothetical_complete_with_edge": {
+        "outcome": "CONFLICT",
+        "passes_control_gate": false,
+        "record_complete": true,
+        "witness_principals": [
+          "human"
+        ]
+      },
+      "hypothetical_complete_without_edge": {
+        "outcome": "NO_CONFLICT_ESTABLISHED",
+        "passes_control_gate": true,
+        "record_complete": true,
+        "witness_principals": []
+      },
+      "hypothetical_incomplete_with_authenticated_witness": {
+        "outcome": "CONFLICT",
+        "passes_control_gate": false,
+        "record_complete": false,
+        "witness_principals": [
+          "human"
+        ]
+      },
+      "publication_evidence_only": {
+        "outcome": "UNDETERMINED",
+        "passes_control_gate": false,
+        "record_complete": false,
+        "witness_principals": []
+      }
+    }
+  },
+  "variant": "PB-3v-v1.0.1",
+  "verification_report": {
+    "adjudicated": 3,
+    "input": "execution-output",
+    "produced": 2,
+    "production_stage": [
+      2
+    ],
+    "sealed": 2
+  }
+}

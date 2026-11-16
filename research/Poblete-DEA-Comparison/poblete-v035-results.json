@@ -1,0 +1,90 @@
+{
+ "PB-1_human_can_alter_executor_during_execution": {
+  "reading": "Human holds the executor's workspace credentials or can revise its contract/context while Stages 5-6 run (not reported; p.9 manual context transfer, p.30 no explicit identity/authorization mechanism)",
+  "as_reported": {
+   "outcome": "CONFLICT",
+   "witness_principals": [
+    "j",
+    "p"
+   ],
+   "event_order_ok": true,
+   "MayAdjudicate_control_part": false
+  },
+  "hypothetical_complete": {
+   "outcome": "CONFLICT",
+   "witness_principals": [
+    "j",
+    "p"
+   ],
+   "event_order_ok": true,
+   "MayAdjudicate_control_part": false
+  }
+ },
+ "PB-2_only_independent_pre_stage_manifest": {
+  "reading": "Human's only influence is the Stage-4 authorization, treated as an independently issued pre-stage manifest (DEA p.8: does not establish control)",
+  "as_reported": {
+   "outcome": "UNDETERMINED",
+   "witness_principals": [],
+   "event_order_ok": true,
+   "MayAdjudicate_control_part": false
+  },
+  "hypothetical_complete": {
+   "outcome": "NO_CONFLICT_ESTABLISHED",
+   "witness_principals": [],
+   "event_order_ok": true,
+   "MayAdjudicate_control_part": true
+  }
+ },
+ "PB-3_post_seal_context_injection_before_verification_x": {
+  "reading": "Human relays context to the agent only after the execution evidence is persisted (Stage 6), before Stage 7; object = execution output x",
+  "as_reported": {
+   "outcome": "UNDETERMINED",
+   "witness_principals": [],
+   "event_order_ok": true,
+   "MayAdjudicate_control_part": false
+  },
+  "hypothetical_complete": {
+   "outcome": "NO_CONFLICT_ESTABLISHED",
+   "witness_principals": [],
+   "event_order_ok": true,
+   "MayAdjudicate_control_part": true
+  }
+ },
+ "PB-3v_same_reading_object_is_verification_report": {
+  "reading": "As PB-3, but the object judged is the Stage-7 verification report produced by the same agent",
+  "as_reported": {
+   "outcome": "CONFLICT",
+   "witness_principals": [
+    "j",
+    "p"
+   ],
+   "event_order_ok": true,
+   "MayAdjudicate_control_part": false
+  },
+  "hypothetical_complete": {
+   "outcome": "CONFLICT",
+   "witness_principals": [
+    "j",
+    "p"
+   ],
+   "event_order_ok": true,
+   "MayAdjudicate_control_part": false
+  }
+ },
+ "PB-4_planner_relay_via_human_during_execution": {
+  "reading": "Planner output copied unchecked into the executor's instructions during execution (Fig. 8, p.29), modelled as an unmediated planner->executor criteria edge; the planner has no control edge to the acceptor",
+  "as_reported": {
+   "outcome": "UNDETERMINED",
+   "witness_principals": [],
+   "event_order_ok": true,
+   "MayAdjudicate_control_part": false
+  },
+  "hypothetical_complete": {
+   "outcome": "NO_CONFLICT_ESTABLISHED",
+   "witness_principals": [],
+   "event_order_ok": true,
+   "MayAdjudicate_control_part": true
+  }
+ },
+ "_note": "A positive witness is reported as CONFLICT even when the record is incomplete (v0.3.5 p.11: a recorded witness yields CONFLICT). PB-2 'hypothetical_complete' additionally assumes the record start t0 covers the Stage-4 authorization (v0.3.5 O2, p.38, lookback open)."
+}
