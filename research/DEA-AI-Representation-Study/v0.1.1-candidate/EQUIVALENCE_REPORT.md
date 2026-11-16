@@ -1,6 +1,6 @@
 # Equivalence, independent comparator review and C review sheet
 
-The stated 172 views, 688 roundtrips, R1–R12 coverage, lexical check and length ratio 1.466 are user-reported v0.1 results. They were not replicated. The exact original E1–E6 numbering beyond E4 still requires source reconciliation. Technical checks proposed for the actual treatment files include independently reading every old/new rule pair, bounded differential execution, roundtrips, schema/neutral bytes equality, rename reversal/lexicon, token-length measurements and the E4 judgment study. A roundtrip establishes representation preservation for the tested inputs; it cannot establish human interpretation.
+The stated 172 views, 688 roundtrips, R1–R12 coverage, lexical check and length ratio 1.466 are user-reported v0.1 results. They were not replicated. Original section 4 defines E1 coverage, E2 roundtrip, E3 vocabulary, E4 human derivation, E5 length, E6 defect handling. Technical checks proposed for the actual treatment files include independently reading every old/new rule pair, bounded differential execution, roundtrips, schema/neutral bytes equality, rename reversal/lexicon, token-length measurements and the E4 judgment study. A roundtrip establishes representation preservation for the tested inputs; it cannot establish human interpretation.
 
 ## B · neutral reference outline for a reviewer
 
@@ -23,10 +23,24 @@ An independent non-DEA developer should review B against the full R1–R12 sourc
 | HistoryClosed, RecordComplete | Distinct scope assertions and admissible incompleteness | Define history_closed and dependencies_closed separately | Treating closure as independently proven truth loses X-TRUST |
 | WellFormedEvents | Source version dependent; P-01 recognizes partial authenticated evidence | Use the exact bounded grammar/completion routine with INVALID versus abstain | Missingness misclassified as contradiction |
 
-For each row Henric records source pinpoint, actual C fragment, intended and observed meanings, acceptable/study-only/rewrite verdict, mismatching R IDs, counterexample if any, and acceptance plus prompt digest and date. For C′ map each actual C identifier using a lexer-aware, one-to-one dictionary such as Ctrl→InfluenceLinks, EffectiveControllers→SupportedInfluencers, Bound*→RequiredVersionClosure and J*→EvaluationInfluenceSet only after aligning definitions. Do not substitute substrings or wire keys. Check bidirectional transform, parse tree equality modulo name map, neutral labels, all code/prose occurrences, token ratios and injected vocabulary. Map the corrected study score predicate independently from normative MayExecute. Both C and C′ remain unbuilt and unapproved.
+For each row Henric records source pinpoint, actual C fragment, intended and observed meanings, acceptable/study-only/rewrite verdict, mismatching R IDs, counterexample if any, and acceptance plus prompt digest and date. For C′ map each actual C identifier using a lexer-aware, one-to-one dictionary such as Ctrl→InfluenceLinks, EffectiveControllers→SupportedInfluencers, Bound*→RequiredVersionClosure and J*→EvaluationInfluenceSet only after aligning definitions. Do not substitute substrings or wire keys. Check bidirectional transform, parse tree equality modulo name map, neutral labels, all code/prose occurrences, token ratios and injected vocabulary. Map the corrected study score predicate independently from normative MayExecute. C and C′ are now emitted from one tokenized rule body. Human approval remains open.
 
 ## E4 · blinded derivation
 
 Before batching, two independent assessors derive and lock verdict plus accepted proof certificates for public review cases. Include matched boundary families for rights/rank/lifecycle, common principal, witness additions, partial flags (two axes), revoke/reset/no-op and history persistence. Recruit reviewers independent of treatment authoring. Give each a neutral task instruction, no reference or study hypothesis; notation may still reveal origin. Randomize order and use a four-condition Latin square within reviewer blocks; distribute each family across conditions and rotate assignment across reviewers. One reviewer never sees equivalent versions of the same case. Require two independently assigned readers per condition/item cell. Record individual derivations, elapsed effort, ambiguity and rater disagreement. A blinded third adjudicator separately classifies discrepancies without erasing original disagreement. Compare against locked reference only after collection.
 
 Twenty cases are a smoke screen. 19/20 meets an observed 95% threshold, but even 20/20 has one-sided exact 95% lower bound about 86%. A 95% lower bound with zero failures needs at least 59 independent item families for one arm or 86 per arm using a four-arm Bonferroni adjustment under ideal independence; repeated judgments of the same family are not extra cases. Report uncertainty and rater/family clustering. A small review can flag defects but does not meet the stronger precision claim. Treat any material rule disagreement as a blocker. Classify errors as wrong rule, ambiguous rendering, unsupported evidence, proof mismatch or operator error. Publish revisions by rule/source and rerun with fresh families and readers unaware of the earlier answers. No new operative rules justified by rater mistakes. **E4 NOT EXECUTED.**
+
+## Reconciliation with the exact v0.1 rules
+
+| Original rules | Treatment |
+|---|---|
+| R1 | Fixed setting and threshold policy retained. |
+| R2 | Exact common wire fields, integer/null types and row locators are explicit. Root existence is a bind precondition. |
+| R3–R5 | Rank extensions, rights/revocation, successor and field-specific reset/no-op lineage retained. |
+| R6 | Frozen view retained. B explicitly clears the undefined score chooser. In C the score-right predicate now names the actual SR-1 operation. |
+| R7–R10 | Exact root/read graph, prospective and surviving routes, common person and both coverage axes retained. |
+| R11 | Corrected in all four representations. The open-history check orders only listed stages and checks the restricted structural contradictions. It does not require absent stages or complete replay. |
+| R12 | Conditional coverage and non-inferences retained. |
+
+This is a source-level audit. E4 must independently cover partial-history ordering, branch precedence and the separate coverage axes. No E4 was performed.

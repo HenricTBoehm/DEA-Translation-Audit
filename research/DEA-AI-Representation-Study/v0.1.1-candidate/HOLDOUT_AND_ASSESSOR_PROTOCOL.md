@@ -1,6 +1,6 @@
 # Holdout and assessor interfaces
 
-O1 and O2 require reconciliation with the original protocol's exact definitions after intake. Pending that, use these conservative gates: O1 independently replay and cross-check each locked private case and its complete certificate ledger; O2 custody/security review of item novelty and evaluator isolation plus attempted leakage probes. Neither executed. No actual H was created.
+Original O1 is Henric's C-fidelity review; O2 is independent B authorship/review. Case verification and custody are under O4. All remain open. No actual H was created.
 
 Custodian maintains a private canonical evidence ledger and a separate assessor-only world and certificate ledger. Generate structurally different cases and attest non-duplication against public P/G by normalized structure (event types, order constraints, version/rights/dependency graph), not renaming or secret IDs alone. A second assessor independently checks replay, scope, admissible alternatives, labels and contradictory/missing evidence handling; lock mapping and handle discrepancies before participant output. Keep membership, salts/keys and low-entropy cases private. An unkeyed public hash does not hide small enumerable inputs. Protect raw artifacts in authorized private storage with access logs and separation from public GitHub.
 

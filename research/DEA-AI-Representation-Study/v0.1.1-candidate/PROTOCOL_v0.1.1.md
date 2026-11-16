@@ -1,6 +1,6 @@
 # DEA as an AI Working Formalism · Representation Study v0.1.1
 
-**DRAFT REVISION — NOT FROZEN — NO CONFIRMATORY MODEL RUN. Partial candidate pending verified v0.1 intake.** This protocol component can be reviewed independently. The original ZIP and its Python modules were unavailable as bytes in this run. The treatment source, builder, and Python scoring suite have not been revised or verified.
+**DRAFT REVISION — NOT FROZEN — NO CONFIRMATORY MODEL RUN. Implementation candidate.** Exact original members are retained under original/. Independent review and empirical readiness remain open.
 
 ## Question and conditions
 
@@ -19,6 +19,6 @@ Primary C–B compares useful structured representations as packages. B–A asse
 
 Across arms only the rule section varies. Serialize evidence once using a frozen UTF-8 neutral canonical schema with stable row locators, and inject the same bytes in each prompt. Common legend explains all keys, numeric or null ranks, both closure flags, unauthenticated information semantics and row locators. Common response syntax, system message, delimiters, examples (prefer none), tools/retrieval policy, budget, language and sampling parameters. Hash actual sent bytes per arm/item and verify evidence segment equality before submission. No decoder mode privilege unique to an arm. Condition-specific evidence renderings may be tested later, under a separate package-effect question. Measure actual per-model tokenizer lengths and report remaining input-length imbalance. Do not pad with irrelevant text to hit length parity.
 
-The original R1–R12 are frozen pending intake. Preserve every rule by an explicit old-to-new semantic map, not by copying headings alone. No change to the frozen oracle, event grammar, model semantics or historical packages. The public B outline in EQUIVALENCE_REPORT.md is a specification aid pending the R1–R12 crosswalk, not a released prompt. Use the checked PR #13 SR-1 policy and exact version bounds as the reference. See the equivalence report, scoring contract and statistical plan before selecting models or cases.
+R1–R12 have been reconciled with the original. Preserve every rule by an explicit old-to-new semantic map, not by copying headings alone. No change to the frozen oracle, event grammar, model semantics or historical packages. The implemented B retains the original structured state and transition representation. Use the checked PR #13 SR-1 policy and exact version bounds as the reference. See the equivalence report, scoring contract and statistical plan before selecting models or cases.
 
 The public calibration pool and synthetic checker fixtures may diagnose implementation defects only. E4, independent B review, Henric's C review, O1/O2 and authorized assessor custody are gates. No private holdouts were made, and no model run was performed for this revision. After these gates, a bounded pilot can test logistics and measurement on public material. It cannot support a confirmatory representation claim.

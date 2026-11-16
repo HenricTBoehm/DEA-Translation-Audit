@@ -1,0 +1,8 @@
+{
+  "exact_original_members": 5,
+  "pr13_vendor_hashes_checked": 3,
+  "raw_rule_blocks": 36,
+  "rule_order": "R1–R12",
+  "cprime_replacement_and_control_rule_lexicon": "PASS",
+  "scope": "Hosted static verification of source blocks only; Python and human tests are separate."
+}
