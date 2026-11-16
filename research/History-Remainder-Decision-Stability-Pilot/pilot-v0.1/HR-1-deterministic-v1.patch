@@ -1,0 +1,11 @@
+--- hr1_remainder.py
++++ hr1_deterministic.py
+@@ -149,7 +149,7 @@
+         for reg in R:
+             ev, true = rand_model(rnd, nonmono=reg.startswith("C"))
+             C = cone(ev, {"x", "j", "r", "a"})
+-            certified = {t for t in true if rnd.random() < .5}          # part of the true pre-state is certified actual
++            certified = {t for t in sorted(true) if rnd.random() < .5}          # part of the true pre-state is certified actual
+             extra_p = {"D_loose_bound_0.10": .10, "E_loose_bound_0.30": .30, "C_state_dependent_reset": .30}.get(reg, 0.0)
+             spurious = {(s, z, c) for s in ("p", "q", "o") for z in NODES if s != z for c in CH if rnd.random() < extra_p * .2}
+             if reg.startswith("F"):
