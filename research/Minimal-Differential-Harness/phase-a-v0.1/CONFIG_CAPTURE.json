@@ -1,0 +1,9 @@
+{
+  "actual_download_time": "NOT EXECUTED",
+  "binary_install_and_verification_s": 0.328818213998602,
+  "description": "One timed local replay of configuration steps using already downloaded official assets",
+  "human_authoring_minutes": "NOT EXECUTED",
+  "opa_version": "Version: 1.22.4\nBuild Commit: ba39415db4b3c90cd68942a74b3cc2223ec2b23c-dirty\nBuild Timestamp: 2026-11-12T10:00:27Z\nBuild Hostname: \nGo Version: go1.27.4\nPlatform: linux/amd64\nRego Version: v1\nWebAssembly: available\n",
+  "python_and_evidence_preflight_s": 0.3017720679999911,
+  "rego_compile_check_s": 0.04895417299849214
+}

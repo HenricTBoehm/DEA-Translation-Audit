@@ -1,0 +1,231 @@
+{
+  "counts": {
+    "D0/derived": {
+      "matches_sr1_conditional": [
+        26,
+        38
+      ],
+      "releases_against_actual_conflict": [
+        "K1-F",
+        "K2-F",
+        "K3-F",
+        "X-TRUST",
+        "M1-material",
+        "M3-indirect",
+        "M5-retract-effect",
+        "same-time-resolved",
+        "frozen-read-original",
+        "partial-reset",
+        "reset-unbound",
+        "two-witness-versions"
+      ],
+      "releases_against_justified_conflict": [
+        "K1-F",
+        "K2-F",
+        "K3-F",
+        "M1-material",
+        "M3-indirect",
+        "M5-retract-effect",
+        "same-time-resolved",
+        "frozen-read-original",
+        "partial-reset",
+        "reset-unbound",
+        "two-witness-versions"
+      ],
+      "verdicts": {
+        "MODEL_INVALID": 8,
+        "NO_CONFLICT_ESTABLISHED": 18,
+        "UNDETERMINED": 12
+      }
+    },
+    "D0/raw": {
+      "matches_sr1_conditional": [
+        26,
+        38
+      ],
+      "releases_against_actual_conflict": [
+        "K1-F",
+        "K2-F",
+        "K3-F",
+        "X-TRUST",
+        "M1-material",
+        "M3-indirect",
+        "M5-retract-effect",
+        "same-time-resolved",
+        "frozen-read-original",
+        "partial-reset",
+        "reset-unbound",
+        "two-witness-versions"
+      ],
+      "releases_against_justified_conflict": [
+        "K1-F",
+        "K2-F",
+        "K3-F",
+        "M1-material",
+        "M3-indirect",
+        "M5-retract-effect",
+        "same-time-resolved",
+        "frozen-read-original",
+        "partial-reset",
+        "reset-unbound",
+        "two-witness-versions"
+      ],
+      "verdicts": {
+        "MODEL_INVALID": 8,
+        "NO_CONFLICT_ESTABLISHED": 18,
+        "UNDETERMINED": 12
+      }
+    },
+    "D1/derived": {
+      "matches_sr1_conditional": [
+        32,
+        38
+      ],
+      "releases_against_actual_conflict": [
+        "K1-F",
+        "K2-F",
+        "X-TRUST",
+        "M3-indirect",
+        "frozen-read-original",
+        "two-witness-versions"
+      ],
+      "releases_against_justified_conflict": [
+        "K1-F",
+        "K2-F",
+        "M3-indirect",
+        "frozen-read-original",
+        "two-witness-versions"
+      ],
+      "verdicts": {
+        "CONFLICT": 6,
+        "MODEL_INVALID": 8,
+        "NO_CONFLICT_ESTABLISHED": 12,
+        "UNDETERMINED": 12
+      }
+    },
+    "D1/raw": {
+      "matches_sr1_conditional": [
+        32,
+        38
+      ],
+      "releases_against_actual_conflict": [
+        "K1-F",
+        "K2-F",
+        "X-TRUST",
+        "M3-indirect",
+        "frozen-read-original",
+        "two-witness-versions"
+      ],
+      "releases_against_justified_conflict": [
+        "K1-F",
+        "K2-F",
+        "M3-indirect",
+        "frozen-read-original",
+        "two-witness-versions"
+      ],
+      "verdicts": {
+        "CONFLICT": 6,
+        "MODEL_INVALID": 8,
+        "NO_CONFLICT_ESTABLISHED": 12,
+        "UNDETERMINED": 12
+      }
+    },
+    "OPA/derived": {
+      "matches_sr1_conditional": [
+        38,
+        38
+      ],
+      "releases_against_actual_conflict": [
+        "X-TRUST"
+      ],
+      "releases_against_justified_conflict": [],
+      "verdicts": {
+        "CONFLICT": 12,
+        "MODEL_INVALID": 8,
+        "NO_CONFLICT_ESTABLISHED": 7,
+        "UNDETERMINED": 11
+      }
+    },
+    "OPA/raw": {
+      "matches_sr1_conditional": [
+        38,
+        38
+      ],
+      "releases_against_actual_conflict": [
+        "X-TRUST"
+      ],
+      "releases_against_justified_conflict": [],
+      "verdicts": {
+        "CONFLICT": 12,
+        "MODEL_INVALID": 8,
+        "NO_CONFLICT_ESTABLISHED": 7,
+        "UNDETERMINED": 11
+      }
+    }
+  },
+  "distinct_wire_views": 31,
+  "public_executions": 38,
+  "status": "EXPLORATORY \u2013 NOT SCORED \u2013 NOT FREEZE VALIDATION",
+  "verdict_disagreements": {
+    "derived/D0-D1": [
+      "K3-F",
+      "M1-material",
+      "M5-retract-effect",
+      "same-time-resolved",
+      "partial-reset",
+      "reset-unbound"
+    ],
+    "derived/D0-OPA": [
+      "K1-F",
+      "K2-F",
+      "K3-F",
+      "M1-material",
+      "M3-indirect",
+      "M5-retract-effect",
+      "same-time-resolved",
+      "frozen-read-original",
+      "partial-reset",
+      "reset-unbound",
+      "open-global-proved-positive",
+      "two-witness-versions"
+    ],
+    "derived/D1-OPA": [
+      "K1-F",
+      "K2-F",
+      "M3-indirect",
+      "frozen-read-original",
+      "open-global-proved-positive",
+      "two-witness-versions"
+    ],
+    "raw/D0-D1": [
+      "K3-F",
+      "M1-material",
+      "M5-retract-effect",
+      "same-time-resolved",
+      "partial-reset",
+      "reset-unbound"
+    ],
+    "raw/D0-OPA": [
+      "K1-F",
+      "K2-F",
+      "K3-F",
+      "M1-material",
+      "M3-indirect",
+      "M5-retract-effect",
+      "same-time-resolved",
+      "frozen-read-original",
+      "partial-reset",
+      "reset-unbound",
+      "open-global-proved-positive",
+      "two-witness-versions"
+    ],
+    "raw/D1-OPA": [
+      "K1-F",
+      "K2-F",
+      "M3-indirect",
+      "frozen-read-original",
+      "open-global-proved-positive",
+      "two-witness-versions"
+    ]
+  }
+}

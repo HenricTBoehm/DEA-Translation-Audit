@@ -1,0 +1,168 @@
+{
+  "environment": {
+    "cpu_affinity": [
+      0
+    ],
+    "machine": "x86_64",
+    "opa_version_output": "Version: 1.22.4\nBuild Commit: ba39415db4b3c90cd68942a74b3cc2223ec2b23c-dirty\nBuild Timestamp: 2026-11-12T10:00:27Z\nBuild Hostname: \nGo Version: go1.27.4\nPlatform: linux/amd64\nRego Version: v1\nWebAssembly: available\nNote: the _static binaries are deprecated and will not be published in a future release. The regular binary is statically linked too.\n",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "python": "3.12.14"
+  },
+  "rows": {
+    "D0/derived": {
+      "child_peak_kib": {
+        "max": 0,
+        "median": 0.0,
+        "min": 0
+      },
+      "cpu_ms": {
+        "max": 0.8120000000000003,
+        "median": 0.47799999999999926,
+        "min": 0.4170000000000007
+      },
+      "wall_ms": {
+        "max": 0.803519,
+        "median": 0.4702945,
+        "min": 0.410181
+      },
+      "worker_peak_kib": {
+        "max": 14596,
+        "median": 14596.0,
+        "min": 14596
+      }
+    },
+    "D0/raw": {
+      "child_peak_kib": {
+        "max": 0,
+        "median": 0.0,
+        "min": 0
+      },
+      "cpu_ms": {
+        "max": 6.494,
+        "median": 3.833999999999997,
+        "min": 2.8810000000000087
+      },
+      "wall_ms": {
+        "max": 6.484309,
+        "median": 3.824616,
+        "min": 2.870419
+      },
+      "worker_peak_kib": {
+        "max": 14596,
+        "median": 14596.0,
+        "min": 14596
+      }
+    },
+    "D1/derived": {
+      "child_peak_kib": {
+        "max": 0,
+        "median": 0.0,
+        "min": 0
+      },
+      "cpu_ms": {
+        "max": 0.9909999999999919,
+        "median": 0.5139999999999936,
+        "min": 0.4269999999999968
+      },
+      "wall_ms": {
+        "max": 0.982979,
+        "median": 0.5044230000000001,
+        "min": 0.420248
+      },
+      "worker_peak_kib": {
+        "max": 14596,
+        "median": 14596.0,
+        "min": 14596
+      }
+    },
+    "D1/raw": {
+      "child_peak_kib": {
+        "max": 0,
+        "median": 0.0,
+        "min": 0
+      },
+      "cpu_ms": {
+        "max": 5.886000000000003,
+        "median": 3.404500000000005,
+        "min": 2.815999999999999
+      },
+      "wall_ms": {
+        "max": 5.876202,
+        "median": 3.3954415,
+        "min": 2.807014
+      },
+      "worker_peak_kib": {
+        "max": 14596,
+        "median": 14596.0,
+        "min": 14596
+      }
+    },
+    "OPA/derived": {
+      "child_peak_kib": {
+        "max": 32692,
+        "median": 32180.0,
+        "min": 31924
+      },
+      "cpu_ms": {
+        "max": 666.483,
+        "median": 604.7155,
+        "min": 568.5179999999999
+      },
+      "wall_ms": {
+        "max": 693.481905,
+        "median": 632.789532,
+        "min": 593.566086
+      },
+      "worker_peak_kib": {
+        "max": 14596,
+        "median": 14596.0,
+        "min": 14596
+      }
+    },
+    "OPA/raw": {
+      "child_peak_kib": {
+        "max": 32816,
+        "median": 32308.0,
+        "min": 32056
+      },
+      "cpu_ms": {
+        "max": 756.446,
+        "median": 613.1265,
+        "min": 571.681
+      },
+      "wall_ms": {
+        "max": 786.536638,
+        "median": 643.898044,
+        "min": 599.820642
+      },
+      "worker_peak_kib": {
+        "max": 14596,
+        "median": 14596.0,
+        "min": 14596
+      }
+    },
+    "producer/derived": {
+      "child_peak_kib": {
+        "max": 0,
+        "median": 0.0,
+        "min": 0
+      },
+      "cpu_ms": {
+        "max": 6.645999999999999,
+        "median": 3.8879999999999955,
+        "min": 2.8560000000000114
+      },
+      "wall_ms": {
+        "max": 6.636204,
+        "median": 3.8777855,
+        "min": 2.848355
+      },
+      "worker_peak_kib": {
+        "max": 14596,
+        "median": 14596.0,
+        "min": 14596
+      }
+    }
+  },
+  "sample": "one full corpus per fresh worker; OPA CLI startup per request included"
+}
