@@ -4,7 +4,7 @@
 
 | Crosswalk | Reviewed journal definitions | Finding |
 |---|---|---|
-| C1a, C1b | Defs. 1–4, pp. 40:6–7 | **CONFIRMED** native user equality, inequality and existential step-set constraints for identity-level assignments. Example \\(\neq(\exists\{s_D,s_E\},s_J)\\) rejects exactly the nominal all-three-equal triple. Distinct assigned users can share a controller; native inequality alone permits that case. No W&L-07 run is transferred. |
+| C1a, C1b | Defs. 1–4, pp. 40:6–7 | **CONFIRMED** native user equality, inequality and existential step-set constraints for identity-level assignments. Example `!=(EXISTS{s_D,s_E}, s_J)` rejects exactly the nominal all-three-equal triple. Distinct assigned users can share a controller; native inequality alone permits that case. No W&L-07 run is transferred. |
 | C1c | Defs. 1–2, pp. 40:6–7 | **UNDETERMINED** for a native optional-gate encoding. The source supports declared binary relations. A synthetic user for a missing gate changes the domain and must be identified as a reduction. |
 | C2, C2t | Defs. 1–5, pp. 40:6–8 and §6, pp. 40:24–26 | **CONFIRMED** that binary relations enter the model as inputs and the §6 games vary user availability. A precomputed co-control relation still imports an external result. Admissible expressibility and the required temporal-control translation remain **UNDETERMINED**. |
 | C3 | Defs. 2, 4–5, pp. 40:6–8 | **CONFIRMED** valid plan is an authorization and constraint predicate on step assignments. An independent epistemic validity interpretation would require a translation argument. |

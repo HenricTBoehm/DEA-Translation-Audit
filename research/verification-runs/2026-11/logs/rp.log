@@ -1,0 +1,66 @@
+EJ-A-BER-1                 A        n=  1440 fwd=FAIL(160)   bwd=FAIL(512)
+EJ-A-BER-2                 A        n=  1440 fwd=ok          bwd=ok
+EJ-B-BER                   B        n=  1440 fwd=ok          bwd=ok
+EJ-A-WL-1                  A        n=  1440 fwd=ok          bwd=FAIL(608)
+EJ-A-WL-2                  A        n=  1440 fwd=ok          bwd=ok
+EJ-A-LI                    A        n=  1440 fwd=ok          bwd=FAIL(100)
+EJ-A-RSL                   A        n=  1440 fwd=ok          bwd=FAIL(100)
+EJ-B-LI-HIST               B        n=  1440 fwd=ok          bwd=ok
+EJ-B-RSL-HIST              B        n=  1440 fwd=ok          bwd=ok
+T3-A-BER-1                 A        n=   243 fwd=FAIL(36)    bwd=ok
+T3-A-BER-2                 A        n=   243 fwd=ok          bwd=ok
+T3-A-WL                    A        n=   243 fwd=ok          bwd=ok
+T3-B-RSL-HIST              B        n=   243 fwd=ok          bwd=ok
+T3-B-LI-HIST               B        n=   243 fwd=ok          bwd=ok
+DE-A-WL-1                  A        n=    12 fwd=FAIL(6)     bwd=ok
+DE-A-WL-2                  A        n=    12 fwd=ok          bwd=FAIL(4)
+DE-B-WL                    B        n=    12 fwd=ok          bwd=ok
+DE-A-BER                   A        n=    12 fwd=ok          bwd=ok
+CTRL-A-WL-snap/A           A        n= 16807 fwd=ok          bwd=FAIL(8160)
+CTRL-ORACLE-WL[A]/A        oracle   n= 16807 fwd=ok          bwd=ok
+CTRL-B-BER[A]/A            B        n= 16807 fwd=ok          bwd=ok
+CTRL-B-LI-RH[A]/A          B        n= 16807 fwd=ok          bwd=ok
+CTRL-B-RSL-RH[A]/A         B        n= 16807 fwd=ok          bwd=ok
+CTRL-ORACLE-WL[B]/A        oracle   n= 16807 fwd=FAIL(72)    bwd=ok
+CTRL-B-BER[B]/A            B        n= 16807 fwd=FAIL(72)    bwd=ok
+CTRL-B-LI-RH[B]/A          B        n= 16807 fwd=FAIL(72)    bwd=ok
+CTRL-B-RSL-RH[B]/A         B        n= 16807 fwd=FAIL(72)    bwd=ok
+CTRL-A-LI/A                A        n= 16807 fwd=ok          bwd=FAIL(8160)
+CTRL-A-RSL-CU/A            A        n= 16807 fwd=ok          bwd=FAIL(8160)
+CTRL-A-WL-snap/B           A        n= 16807 fwd=ok          bwd=FAIL(8232)
+CTRL-ORACLE-WL[A]/B        oracle   n= 16807 fwd=ok          bwd=FAIL(72)
+CTRL-B-BER[A]/B            B        n= 16807 fwd=ok          bwd=FAIL(72)
+CTRL-B-LI-RH[A]/B          B        n= 16807 fwd=ok          bwd=FAIL(72)
+CTRL-B-RSL-RH[A]/B         B        n= 16807 fwd=ok          bwd=FAIL(72)
+CTRL-ORACLE-WL[B]/B        oracle   n= 16807 fwd=ok          bwd=ok
+CTRL-B-BER[B]/B            B        n= 16807 fwd=ok          bwd=ok
+CTRL-B-LI-RH[B]/B          B        n= 16807 fwd=ok          bwd=ok
+CTRL-B-RSL-RH[B]/B         B        n= 16807 fwd=ok          bwd=ok
+CTRL-A-LI/B                A        n= 16807 fwd=ok          bwd=FAIL(8232)
+CTRL-A-RSL-CU/B            A        n= 16807 fwd=ok          bwd=FAIL(8232)
+LED-A-BER-INST             A        n=  2954 fwd=FAIL(2)     bwd=FAIL(384)
+LED-A-BER-DETECT           A        n=  2954 fwd=FAIL(792)   bwd=FAIL(384)
+LED-A-BER-MERGE            A*       n=  2954 fwd=ok          bwd=ok
+LED-B-BER                  B        n=  2954 fwd=ok          bwd=ok
+LED-A-WL                   A        n=  2954 fwd=ok          bwd=FAIL(756)
+NAP-A-WSP-1                A        n= 26262 fwd=FAIL(26)    bwd=FAIL(13818)
+NAP-A-WSP-2                A        n= 26262 fwd=FAIL(4202)  bwd=FAIL(8200)
+NAP-R-WSP-LABEL            R3-viola n= 26262 fwd=ok          bwd=ok
+NAP-R-WSP-PATH             R3-viola n= 26262 fwd=ok          bwd=ok
+NAP-B-BER                  B        n= 26262 fwd=ok          bwd=ok
+NAP-B-LI-RH                B        n= 26262 fwd=ok          bwd=ok
+NAP-B-RSL-RH               B        n= 26262 fwd=ok          bwd=ok
+NAP-A-BAS-OBS              A        n= 26262 fwd=FAIL(334)   bwd=FAIL(13510)
+NAP-B-BAS-TICK             B        n= 26262 fwd=ok          bwd=ok
+PRF-EJ7            check=True  REFUTED (original claim withdrawn)
+PRF-NAP3           check=True  REFUTED as stated; NON-EXPRESSIBILITY NOT ESTABLISHED for WSP
+PRF-NAP-HANF       check=True  PROVEN-NON-EXPRESSIBLE under stated assumptions (class T_loc(r), r<=2 checked)
+PRF-LED4           check=True  PROVEN-NON-EXPRESSIBLE under stated assumptions (A-INST-LOCAL)
+PRF-CTRL-WL-MONO   check=True  PROVEN-NON-EXPRESSIBLE under stated assumptions (A-STEP + LOCAL-REL)
+PRF-CTRL6B         check=True  ARCHITECTURAL AMBIGUITY (outcome-relevant)
+regression mismatches vs v0.3.4.3 expectation: []
+wrote remediation-results.json
+
+real	4m38.339s
+user	4m37.883s
+sys	0m0.166s

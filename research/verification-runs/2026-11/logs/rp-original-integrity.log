@@ -1,0 +1,15 @@
+00-translation-protocol.md: OK
+dea-v0343-crosswalk.csv: OK
+dea-v0343-sources.md: OK
+dea-v0343-translation-audit.md: OK
+dea-v0343-translation-results.json: OK
+dea-v0343-translation-tests.py: OK
+dea-v0343-translation-audit.zip: OK
+Archive:  dea-v0343-translation-audit.zip
+    testing: 00-translation-protocol.md   OK
+    testing: dea-v0343-crosswalk.csv   OK
+    testing: dea-v0343-sources.md     OK
+    testing: dea-v0343-translation-audit.md   OK
+    testing: dea-v0343-translation-results.json   OK
+    testing: dea-v0343-translation-tests.py   OK
+No errors detected in compressed data of dea-v0343-translation-audit.zip.

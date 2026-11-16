@@ -1,0 +1,9 @@
+{"MC_T_exhaustive": {"I1_inclusion_A_C_B": 0, "I2_monotone_in_activity": 0, "I3_static_agreement": 0, "I4_no_anachronism_C_causal": 0, "I6_cycle_equal_rows_static": 0}, "MC_T_random": {"I1_inclusion_A_C_B": 0, "I2_monotone_in_activity": 0, "I3_static_agreement": 0, "I4_no_anachronism_C_causal": 0, "I6_cycle_equal_rows_static": 0}}
+{"A:stage!=causal": 128344, "A:act!=causal": 70168, "B:stage!=causal": 127736, "B:act!=causal": 72696, "C:stage!=causal": 128512, "C:act!=causal": 71552, "A!=C/causal": 3640, "A!=B/causal": 6896, "C!=B/causal": 3256, "A!=C/stage": 4320, "A!=B/stage": 8064, "A!=C/act": 2256, "A!=B/act": 4368, "C!=B/stage": 3744, "C!=B/act": 2112}
+{"C!=B/stage": 294, "A!=B/stage": 543, "C!=B/act": 184, "A!=B/act": 323, "A!=C/causal": 304, "A!=B/causal": 476, "C:stage!=causal": 2081, "C:act!=causal": 3396, "A:stage!=causal": 2050, "A:act!=causal": 3231, "B:stage!=causal": 1963, "B:act!=causal": 3384, "C!=B/causal": 172, "A!=C/act": 139, "A!=C/stage": 249}
+{'models': 470596, 'static_models': 256} {'models': 20000, 'static_models': 56}
+regression: 11 / 11
+
+real	10m38.559s
+user	10m36.816s
+sys	0m0.610s

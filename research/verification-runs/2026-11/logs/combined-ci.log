@@ -1,0 +1,79 @@
+./01-remediation-protocol-v1.md: OK
+./02-remediation-report.md: OK
+./03-translation-specification.md: OK
+./04-crosswalk.csv: OK
+./05-countermodel-catalogue.md: OK
+./06-change-log.md: OK
+./07-contribution-assessment.md: OK
+./README.md: OK
+./harness/dea_ref.py: OK
+./harness/engines/__init__.py: OK
+./harness/engines/bertino.py: OK
+./harness/engines/datalog.py: OK
+./harness/engines/lts.py: OK
+./harness/engines/r2bac.py: OK
+./harness/engines/rbac_li.py: OK
+./harness/engines/rsl99.py: OK
+./harness/models.py: OK
+./harness/run_audit.py: OK
+./harness/translations.py: OK
+./original-package/00-translation-protocol.md: OK
+./original-package/ORIGINAL_SHA256SUMS: OK
+./original-package/dea-v0343-crosswalk.csv: OK
+./original-package/dea-v0343-sources.md: OK
+./original-package/dea-v0343-translation-audit.md: OK
+./original-package/dea-v0343-translation-audit.zip: OK
+./original-package/dea-v0343-translation-results.json: OK
+./original-package/dea-v0343-translation-tests.py: OK
+./results/countermodels.json: OK
+./results/remediation-results.json: OK
+00-translation-protocol.md: OK
+dea-v0343-crosswalk.csv: OK
+dea-v0343-sources.md: OK
+dea-v0343-translation-audit.md: OK
+dea-v0343-translation-results.json: OK
+dea-v0343-translation-tests.py: OK
+dea-v0343-translation-audit.zip: OK
+./README.md: OK
+./claim-evidence-table.csv: OK
+./counterexamples.md: OK
+./crosswalk-corrections.csv: OK
+./patches/CHANGELOG.md: OK
+./patches/VP-1a-rbac_li-partial-order.patch: OK
+./patches/VP-1b-rsl99-partial-order.patch: OK
+./patches/VP-1c-translations-state-guard.patch: OK
+./patches/VP-2-3-5-run_audit.patch: OK
+./patches/VP-4-spec-erratum.patch: OK
+./patches/patched-remediation-results.json: OK
+./results/verification-results.json: OK
+./verification-report.md: OK
+./verify.py: OK
+DEA-ADR-001_temporal-effective-control.md: OK
+adr001-regression-cases.json: OK
+adr001_ctrl.py: OK
+results/adr001-results.json: OK
+source-archive/dea-adr-001.zip: OK
+PASS: 11 independent fixtures, 100 decisions and witness sets
+CONFIRMED: 2932/20000 archived random models seal after adjudication
+PASS: VP archive layouts and semantic/byte comparator
+crosswalk-poblete-dea.csv: OK
+poblete-adr001-results.json: OK
+poblete-v035-results.json: OK
+poblete-vs-dea-comparison.md: OK
+poblete-vs-dea-v035-delta.md: OK
+poblete_adr001_check.py: OK
+poblete_v035_check.py: OK
+source-archive/dea-poblete-comparison.zip: OK
+PB-1_human_can_alter_executor_during_execution ExecConflict= True ['j', 'p']
+PB-2_only_independent_pre_stage_manifest ExecConflict= False []
+PB-3_post_seal_context_injection_before_verification_x ExecConflict= False []
+PB-3v_same_reading_object_is_verification_report ExecConflict= True ['j', 'p']
+PB-4_planner_relay_via_human_during_execution ExecConflict= False []
+PB-1_human_can_alter_executor_during_execution CONFLICT | CONFLICT
+PB-2_only_independent_pre_stage_manifest UNDETERMINED | NO_CONFLICT_ESTABLISHED
+PB-3_post_seal_context_injection_before_verification_x UNDETERMINED | NO_CONFLICT_ESTABLISHED
+PB-3v_same_reading_object_is_verification_report CONFLICT | CONFLICT
+PB-4_planner_relay_via_human_during_execution UNDETERMINED | NO_CONFLICT_ESTABLISHED
+PASS: 3 invalid transitions rejected, 8 typed control decisions verified
+PASS: Poblete archives and typed regression
+PASS: repository checks (quick)

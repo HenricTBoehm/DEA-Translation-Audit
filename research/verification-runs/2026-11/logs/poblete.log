@@ -1,0 +1,18 @@
+PB-1_human_can_alter_executor_during_execution ExecConflict= True ['j', 'p']
+PB-2_only_independent_pre_stage_manifest ExecConflict= False []
+PB-3_post_seal_context_injection_before_verification_x ExecConflict= False []
+PB-3v_same_reading_object_is_verification_report ExecConflict= True ['j', 'p']
+PB-4_planner_relay_via_human_during_execution ExecConflict= False []
+
+real	0m0.298s
+user	0m0.175s
+sys	0m0.127s
+PB-1_human_can_alter_executor_during_execution CONFLICT | CONFLICT
+PB-2_only_independent_pre_stage_manifest UNDETERMINED | NO_CONFLICT_ESTABLISHED
+PB-3_post_seal_context_injection_before_verification_x UNDETERMINED | NO_CONFLICT_ESTABLISHED
+PB-3v_same_reading_object_is_verification_report CONFLICT | CONFLICT
+PB-4_planner_relay_via_human_during_execution UNDETERMINED | NO_CONFLICT_ESTABLISHED
+
+real	0m0.074s
+user	0m0.050s
+sys	0m0.023s

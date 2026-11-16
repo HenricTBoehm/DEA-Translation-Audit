@@ -15,6 +15,8 @@ def check(condition, reason):
 
 
 def main():
+    subprocess.run(["bash", str(VP / "verification-v1.0.1/run.sh"), "--help"],
+                   check=True, capture_output=True, text=True)
     with tempfile.TemporaryDirectory() as scratch:
         root = Path(scratch)
         module_path = root / "verify.py"

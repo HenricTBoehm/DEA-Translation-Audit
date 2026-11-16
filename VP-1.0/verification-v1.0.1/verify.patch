@@ -8,9 +8,9 @@
 +
 +BASELINE_SHA256 = "51a2553e8bb13fe80bc3f0e6245ba0c4dcbe0a31db03ad577a3f3f26f8c97c33"
 +ARCHIVED_VP_RESULTS = Path(os.environ["DEA_VP_ARCHIVED_RESULTS"]) if "DEA_VP_ARCHIVED_RESULTS" in os.environ else None
- 
+
  CHECKS = []
- 
+
 @@ -35,8 +39,15 @@
  # ============================================================ R: reproduction and failure modes
  def extract(zp, dest):
@@ -25,8 +25,8 @@
          z.extractall(dest)
 -    return os.path.join(dest, "dea-v0343-remediation")
 +    return os.path.join(dest, roots[0])
- 
- 
+
+
  def run(pkg, args, env_extra=None):
 @@ -57,7 +68,7 @@
              bad.append(f.strip())
@@ -50,8 +50,8 @@
 +    rec("R6", "Clean-room run reproduces RP result semantics under the frozen baseline",
 +        "PASS" if result["semantic_equal"] else "FAIL", result)
      return pkg
- 
- 
+
+
 +def compare_rp(actual, expected, exit_code):
 +    filenames = ("remediation-results.json", "countermodels.json")
 +    result = {"exit": exit_code, "semantic_equal": False}
@@ -113,8 +113,8 @@
          print(f'{c["id"]:4s} {c["status"]:13s} {c["claim"][:100]}')
      print(summ)
 +    return int(any(c["id"] == "R6" and c["status"] == "FAIL" for c in CHECKS))
- 
- 
+
+
  if __name__ == "__main__":
 -    main()
 +    sys.exit(main())

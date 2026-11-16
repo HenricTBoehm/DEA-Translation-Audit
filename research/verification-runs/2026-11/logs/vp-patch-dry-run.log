@@ -1,0 +1,10 @@
+VP-1.0/patches/VP-1a-rbac_li-partial-order.patch
+checking file harness/engines/rbac_li.py
+VP-1.0/patches/VP-1b-rsl99-partial-order.patch
+checking file harness/engines/rsl99.py
+VP-1.0/patches/VP-1c-translations-state-guard.patch
+checking file harness/translations.py
+VP-1.0/patches/VP-2-3-5-run_audit.patch
+checking file harness/run_audit.py
+VP-1.0/patches/VP-4-spec-erratum.patch
+checking file 03-translation-specification.md
