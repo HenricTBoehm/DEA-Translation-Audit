@@ -1,0 +1,1128 @@
+{
+  "cases": {
+    "C00": {
+      "E1_client_operations": {
+        "adjudicator_commit_denied": {
+          "login": "adjudicator",
+          "result": {
+            "message": "permission denied for function bind_decision",
+            "sqlstate": "42501"
+          }
+        },
+        "checked": {
+          "login": "adjudicator",
+          "result": {
+            "epoch": 1,
+            "singleton": true,
+            "version": "v0"
+          }
+        },
+        "commit": {
+          "login": "committer",
+          "result": {
+            "accepted": true,
+            "actor": "committer",
+            "epoch": 1,
+            "token": "real",
+            "version": "v0"
+          }
+        },
+        "committer_direct_insert_denied": {
+          "login": "committer",
+          "result": {
+            "message": "permission denied for table decisions",
+            "sqlstate": "42501"
+          }
+        },
+        "privileges_before": {
+          "login": "observer",
+          "result": {
+            "adjudicator": {
+              "MayAdjudicate": true,
+              "MayCommit": false,
+              "MayCreateVersion": false,
+              "MayModifyCriterion": false,
+              "MaySelectVersion": false
+            },
+            "committer": {
+              "MayAdjudicate": false,
+              "MayCommit": true,
+              "MayCreateVersion": false,
+              "MayModifyCriterion": false,
+              "MaySelectVersion": false
+            },
+            "observer": {
+              "MayAdjudicate": false,
+              "MayCommit": false,
+              "MayCreateVersion": false,
+              "MayModifyCriterion": false,
+              "MaySelectVersion": false
+            },
+            "selector": {
+              "MayAdjudicate": false,
+              "MayCommit": false,
+              "MayCreateVersion": false,
+              "MayModifyCriterion": false,
+              "MaySelectVersion": true
+            },
+            "writer": {
+              "MayAdjudicate": false,
+              "MayCommit": false,
+              "MayCreateVersion": true,
+              "MayModifyCriterion": false,
+              "MaySelectVersion": false
+            }
+          }
+        },
+        "real": {
+          "login": "adjudicator",
+          "result": {
+            "accepted": true,
+            "actor": "adjudicator",
+            "digest": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "epoch": 1,
+            "policy": "ge@1",
+            "score_id": "x@1",
+            "token": "real",
+            "version": "v0"
+          }
+        },
+        "select_control": {
+          "login": "selector",
+          "result": ""
+        },
+        "setup": {
+          "login": "pilot_admin",
+          "result": ""
+        }
+      },
+      "E2_server_log_checks": {
+        "logged_statement_actor": {
+          "adjudicator_commit_denied": "adjudicator",
+          "checked": "adjudicator",
+          "commit": "committer",
+          "committer_direct_insert_denied": "committer",
+          "privileges_before": "observer",
+          "real": "adjudicator",
+          "select_control": "selector",
+          "setup": "pilot_admin"
+        }
+      },
+      "E2_server_rows": {
+        "active": [
+          {
+            "epoch": 1,
+            "singleton": true,
+            "version": "v0"
+          }
+        ],
+        "criteria": [
+          {
+            "author": "pilot_admin",
+            "digest": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "threshold": 0,
+            "version": "v0"
+          }
+        ],
+        "decisions": [
+          {
+            "accepted": true,
+            "actor": "committer",
+            "epoch": 1,
+            "token": "real",
+            "version": "v0"
+          }
+        ],
+        "evaluations": [
+          {
+            "accepted": true,
+            "actor": "adjudicator",
+            "digest": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "epoch": 1,
+            "policy": "ge@1",
+            "score_id": "x@1",
+            "token": "real",
+            "version": "v0"
+          }
+        ],
+        "sealed_score": [
+          {
+            "id": "x@1",
+            "value": 0
+          }
+        ],
+        "selection_events": [
+          {
+            "actor": "pilot_admin",
+            "epoch": 0,
+            "old_version": null,
+            "version": "v0"
+          },
+          {
+            "actor": "selector",
+            "epoch": 1,
+            "old_version": "v0",
+            "version": "v0"
+          }
+        ]
+      },
+      "E3_assessor_checks": {
+        "arithmetic_and_commit_match": true,
+        "consumed": "v0",
+        "independent_digest_match": true,
+        "published_by": "pilot_admin",
+        "selected_by": "selector",
+        "threshold": 0
+      },
+      "chain": {
+        "absence_of_out_of_scope_mutation_or_missing_events": "UNKNOWN",
+        "consumed_version_to_commit": "VERIFIED",
+        "consumed_version_to_persisting_writer_effect": "NOT OBSERVABLE",
+        "operation_to_resolver_state": "VERIFIED",
+        "permission_to_operation": "VERIFIED",
+        "principal_to_permission": "VERIFIED",
+        "resolver_state_to_consumed_version": "VERIFIED"
+      }
+    },
+    "C01": {
+      "E1_client_operations": {
+        "checked": {
+          "login": "adjudicator",
+          "result": {
+            "epoch": 0,
+            "singleton": true,
+            "version": "v0"
+          }
+        },
+        "commit": {
+          "login": "committer",
+          "result": {
+            "accepted": true,
+            "actor": "committer",
+            "epoch": 0,
+            "token": "real",
+            "version": "v0"
+          }
+        },
+        "privileges_before": {
+          "login": "observer",
+          "result": {
+            "adjudicator": {
+              "MayAdjudicate": true,
+              "MayCommit": false,
+              "MayCreateVersion": false,
+              "MayModifyCriterion": false,
+              "MaySelectVersion": false
+            },
+            "committer": {
+              "MayAdjudicate": false,
+              "MayCommit": true,
+              "MayCreateVersion": false,
+              "MayModifyCriterion": false,
+              "MaySelectVersion": false
+            },
+            "observer": {
+              "MayAdjudicate": false,
+              "MayCommit": false,
+              "MayCreateVersion": false,
+              "MayModifyCriterion": false,
+              "MaySelectVersion": false
+            },
+            "selector": {
+              "MayAdjudicate": false,
+              "MayCommit": false,
+              "MayCreateVersion": false,
+              "MayModifyCriterion": false,
+              "MaySelectVersion": true
+            },
+            "writer": {
+              "MayAdjudicate": false,
+              "MayCommit": false,
+              "MayCreateVersion": true,
+              "MayModifyCriterion": false,
+              "MaySelectVersion": false
+            }
+          }
+        },
+        "publish": {
+          "login": "writer",
+          "result": ""
+        },
+        "real": {
+          "login": "adjudicator",
+          "result": {
+            "accepted": true,
+            "actor": "adjudicator",
+            "digest": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "epoch": 0,
+            "policy": "ge@1",
+            "score_id": "x@1",
+            "token": "real",
+            "version": "v0"
+          }
+        },
+        "setup": {
+          "login": "pilot_admin",
+          "result": ""
+        },
+        "writer_edit_denied": {
+          "login": "writer",
+          "result": {
+            "message": "permission denied for table criteria",
+            "sqlstate": "42501"
+          }
+        },
+        "writer_select_denied": {
+          "login": "writer",
+          "result": {
+            "message": "permission denied for table active",
+            "sqlstate": "42501"
+          }
+        }
+      },
+      "E2_server_log_checks": {
+        "logged_statement_actor": {
+          "checked": "adjudicator",
+          "commit": "committer",
+          "privileges_before": "observer",
+          "publish": "writer",
+          "real": "adjudicator",
+          "setup": "pilot_admin",
+          "writer_edit_denied": "writer",
+          "writer_select_denied": "writer"
+        }
+      },
+      "E2_server_rows": {
+        "active": [
+          {
+            "epoch": 0,
+            "singleton": true,
+            "version": "v0"
+          }
+        ],
+        "criteria": [
+          {
+            "author": "pilot_admin",
+            "digest": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "threshold": 0,
+            "version": "v0"
+          },
+          {
+            "author": "writer",
+            "digest": "b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2",
+            "threshold": 1,
+            "version": "v1"
+          }
+        ],
+        "decisions": [
+          {
+            "accepted": true,
+            "actor": "committer",
+            "epoch": 0,
+            "token": "real",
+            "version": "v0"
+          }
+        ],
+        "evaluations": [
+          {
+            "accepted": true,
+            "actor": "adjudicator",
+            "digest": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "epoch": 0,
+            "policy": "ge@1",
+            "score_id": "x@1",
+            "token": "real",
+            "version": "v0"
+          }
+        ],
+        "sealed_score": [
+          {
+            "id": "x@1",
+            "value": 0
+          }
+        ],
+        "selection_events": [
+          {
+            "actor": "pilot_admin",
+            "epoch": 0,
+            "old_version": null,
+            "version": "v0"
+          }
+        ]
+      },
+      "E3_assessor_checks": {
+        "arithmetic_and_commit_match": true,
+        "consumed": "v0",
+        "independent_digest_match": true,
+        "published_by": "pilot_admin",
+        "selected_by": "pilot_admin",
+        "threshold": 0
+      },
+      "chain": {
+        "absence_of_out_of_scope_mutation_or_missing_events": "UNKNOWN",
+        "consumed_version_to_commit": "VERIFIED",
+        "consumed_version_to_persisting_writer_effect": "NOT OBSERVABLE",
+        "operation_to_resolver_state": "VERIFIED",
+        "permission_to_operation": "VERIFIED",
+        "principal_to_permission": "VERIFIED",
+        "resolver_state_to_consumed_version": "VERIFIED",
+        "writer_to_unauthorized_selection": "CONTRADICTED"
+      }
+    },
+    "C02": {
+      "E1_client_operations": {
+        "base": {
+          "login": "adjudicator",
+          "result": {
+            "accepted": true,
+            "actor": "adjudicator",
+            "digest": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "epoch": 1,
+            "policy": "ge@1",
+            "score_id": "x@1",
+            "token": "base",
+            "version": "v0"
+          }
+        },
+        "checked": {
+          "login": "adjudicator",
+          "result": {
+            "epoch": 2,
+            "singleton": true,
+            "version": "v1"
+          }
+        },
+        "commit": {
+          "login": "committer",
+          "result": {
+            "accepted": false,
+            "actor": "committer",
+            "epoch": 2,
+            "token": "real",
+            "version": "v1"
+          }
+        },
+        "privileges_before": {
+          "login": "observer",
+          "result": {
+            "adjudicator": {
+              "MayAdjudicate": true,
+              "MayCommit": false,
+              "MayCreateVersion": false,
+              "MayModifyCriterion": false,
+              "MaySelectVersion": false
+            },
+            "committer": {
+              "MayAdjudicate": false,
+              "MayCommit": true,
+              "MayCreateVersion": false,
+              "MayModifyCriterion": false,
+              "MaySelectVersion": false
+            },
+            "observer": {
+              "MayAdjudicate": false,
+              "MayCommit": false,
+              "MayCreateVersion": false,
+              "MayModifyCriterion": false,
+              "MaySelectVersion": false
+            },
+            "selector": {
+              "MayAdjudicate": false,
+              "MayCommit": false,
+              "MayCreateVersion": false,
+              "MayModifyCriterion": false,
+              "MaySelectVersion": true
+            },
+            "writer": {
+              "MayAdjudicate": false,
+              "MayCommit": false,
+              "MayCreateVersion": true,
+              "MayModifyCriterion": false,
+              "MaySelectVersion": false
+            }
+          }
+        },
+        "publish": {
+          "login": "writer",
+          "result": ""
+        },
+        "real": {
+          "login": "adjudicator",
+          "result": {
+            "accepted": false,
+            "actor": "adjudicator",
+            "digest": "b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2",
+            "epoch": 2,
+            "policy": "ge@1",
+            "score_id": "x@1",
+            "token": "real",
+            "version": "v1"
+          }
+        },
+        "select_alternative": {
+          "login": "selector",
+          "result": ""
+        },
+        "select_base": {
+          "login": "selector",
+          "result": ""
+        },
+        "selector_create_denied": {
+          "login": "selector",
+          "result": {
+            "message": "permission denied for table criteria",
+            "sqlstate": "42501"
+          }
+        },
+        "selector_edit_denied": {
+          "login": "selector",
+          "result": {
+            "message": "permission denied for table criteria",
+            "sqlstate": "42501"
+          }
+        },
+        "setup": {
+          "login": "pilot_admin",
+          "result": ""
+        }
+      },
+      "E2_server_log_checks": {
+        "logged_statement_actor": {
+          "base": "adjudicator",
+          "checked": "adjudicator",
+          "commit": "committer",
+          "privileges_before": "observer",
+          "publish": "writer",
+          "real": "adjudicator",
+          "select_alternative": "selector",
+          "select_base": "selector",
+          "selector_create_denied": "selector",
+          "selector_edit_denied": "selector",
+          "setup": "pilot_admin"
+        }
+      },
+      "E2_server_rows": {
+        "active": [
+          {
+            "epoch": 2,
+            "singleton": true,
+            "version": "v1"
+          }
+        ],
+        "criteria": [
+          {
+            "author": "pilot_admin",
+            "digest": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "threshold": 0,
+            "version": "v0"
+          },
+          {
+            "author": "writer",
+            "digest": "b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2",
+            "threshold": 1,
+            "version": "v1"
+          }
+        ],
+        "decisions": [
+          {
+            "accepted": false,
+            "actor": "committer",
+            "epoch": 2,
+            "token": "real",
+            "version": "v1"
+          }
+        ],
+        "evaluations": [
+          {
+            "accepted": true,
+            "actor": "adjudicator",
+            "digest": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "epoch": 1,
+            "policy": "ge@1",
+            "score_id": "x@1",
+            "token": "base",
+            "version": "v0"
+          },
+          {
+            "accepted": false,
+            "actor": "adjudicator",
+            "digest": "b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2",
+            "epoch": 2,
+            "policy": "ge@1",
+            "score_id": "x@1",
+            "token": "real",
+            "version": "v1"
+          }
+        ],
+        "sealed_score": [
+          {
+            "id": "x@1",
+            "value": 0
+          }
+        ],
+        "selection_events": [
+          {
+            "actor": "pilot_admin",
+            "epoch": 0,
+            "old_version": null,
+            "version": "v0"
+          },
+          {
+            "actor": "selector",
+            "epoch": 1,
+            "old_version": "v0",
+            "version": "v0"
+          },
+          {
+            "actor": "selector",
+            "epoch": 2,
+            "old_version": "v0",
+            "version": "v1"
+          }
+        ]
+      },
+      "E3_assessor_checks": {
+        "arithmetic_and_commit_match": true,
+        "consumed": "v1",
+        "independent_digest_match": true,
+        "published_by": "writer",
+        "selected_by": "selector",
+        "threshold": 1
+      },
+      "chain": {
+        "absence_of_out_of_scope_mutation_or_missing_events": "UNKNOWN",
+        "consumed_version_to_commit": "VERIFIED",
+        "consumed_version_to_persisting_writer_effect": "VERIFIED",
+        "operation_to_resolver_state": "VERIFIED",
+        "permission_to_operation": "VERIFIED",
+        "principal_to_permission": "VERIFIED",
+        "resolver_state_to_consumed_version": "VERIFIED"
+      }
+    },
+    "C03": {
+      "E1_client_operations": {
+        "checked": {
+          "login": "adjudicator",
+          "result": {
+            "epoch": 1,
+            "singleton": true,
+            "version": "v1"
+          }
+        },
+        "commit": {
+          "login": "committer",
+          "result": {
+            "accepted": false,
+            "actor": "committer",
+            "epoch": 1,
+            "token": "real",
+            "version": "v1"
+          }
+        },
+        "privileges_after_revoke": {
+          "login": "observer",
+          "result": {
+            "adjudicator": {
+              "MayAdjudicate": true,
+              "MayCommit": false,
+              "MayCreateVersion": false,
+              "MayModifyCriterion": false,
+              "MaySelectVersion": false
+            },
+            "committer": {
+              "MayAdjudicate": false,
+              "MayCommit": true,
+              "MayCreateVersion": false,
+              "MayModifyCriterion": false,
+              "MaySelectVersion": false
+            },
+            "observer": {
+              "MayAdjudicate": false,
+              "MayCommit": false,
+              "MayCreateVersion": false,
+              "MayModifyCriterion": false,
+              "MaySelectVersion": false
+            },
+            "selector": {
+              "MayAdjudicate": false,
+              "MayCommit": false,
+              "MayCreateVersion": false,
+              "MayModifyCriterion": false,
+              "MaySelectVersion": true
+            },
+            "writer": {
+              "MayAdjudicate": false,
+              "MayCommit": false,
+              "MayCreateVersion": false,
+              "MayModifyCriterion": false,
+              "MaySelectVersion": false
+            }
+          }
+        },
+        "privileges_before": {
+          "login": "observer",
+          "result": {
+            "adjudicator": {
+              "MayAdjudicate": true,
+              "MayCommit": false,
+              "MayCreateVersion": false,
+              "MayModifyCriterion": false,
+              "MaySelectVersion": false
+            },
+            "committer": {
+              "MayAdjudicate": false,
+              "MayCommit": true,
+              "MayCreateVersion": false,
+              "MayModifyCriterion": false,
+              "MaySelectVersion": false
+            },
+            "observer": {
+              "MayAdjudicate": false,
+              "MayCommit": false,
+              "MayCreateVersion": false,
+              "MayModifyCriterion": false,
+              "MaySelectVersion": false
+            },
+            "selector": {
+              "MayAdjudicate": false,
+              "MayCommit": false,
+              "MayCreateVersion": false,
+              "MayModifyCriterion": false,
+              "MaySelectVersion": true
+            },
+            "writer": {
+              "MayAdjudicate": false,
+              "MayCommit": false,
+              "MayCreateVersion": true,
+              "MayModifyCriterion": false,
+              "MaySelectVersion": false
+            }
+          }
+        },
+        "publish": {
+          "login": "writer",
+          "result": ""
+        },
+        "real": {
+          "login": "adjudicator",
+          "result": {
+            "accepted": false,
+            "actor": "adjudicator",
+            "digest": "b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2",
+            "epoch": 1,
+            "policy": "ge@1",
+            "score_id": "x@1",
+            "token": "real",
+            "version": "v1"
+          }
+        },
+        "revoke_writer": {
+          "login": "pilot_admin",
+          "result": ""
+        },
+        "revoked_insert_denied": {
+          "login": "writer",
+          "result": {
+            "message": "permission denied for table criteria",
+            "sqlstate": "42501"
+          }
+        },
+        "select_old_publication": {
+          "login": "selector",
+          "result": ""
+        },
+        "setup": {
+          "login": "pilot_admin",
+          "result": ""
+        }
+      },
+      "E2_server_log_checks": {
+        "logged_statement_actor": {
+          "checked": "adjudicator",
+          "commit": "committer",
+          "privileges_after_revoke": "observer",
+          "privileges_before": "observer",
+          "publish": "writer",
+          "real": "adjudicator",
+          "revoke_writer": "pilot_admin",
+          "revoked_insert_denied": "writer",
+          "select_old_publication": "selector",
+          "setup": "pilot_admin"
+        }
+      },
+      "E2_server_rows": {
+        "active": [
+          {
+            "epoch": 1,
+            "singleton": true,
+            "version": "v1"
+          }
+        ],
+        "criteria": [
+          {
+            "author": "pilot_admin",
+            "digest": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "threshold": 0,
+            "version": "v0"
+          },
+          {
+            "author": "writer",
+            "digest": "b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2",
+            "threshold": 1,
+            "version": "v1"
+          }
+        ],
+        "decisions": [
+          {
+            "accepted": false,
+            "actor": "committer",
+            "epoch": 1,
+            "token": "real",
+            "version": "v1"
+          }
+        ],
+        "evaluations": [
+          {
+            "accepted": false,
+            "actor": "adjudicator",
+            "digest": "b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2",
+            "epoch": 1,
+            "policy": "ge@1",
+            "score_id": "x@1",
+            "token": "real",
+            "version": "v1"
+          }
+        ],
+        "sealed_score": [
+          {
+            "id": "x@1",
+            "value": 0
+          }
+        ],
+        "selection_events": [
+          {
+            "actor": "pilot_admin",
+            "epoch": 0,
+            "old_version": null,
+            "version": "v0"
+          },
+          {
+            "actor": "selector",
+            "epoch": 1,
+            "old_version": "v0",
+            "version": "v1"
+          }
+        ]
+      },
+      "E3_assessor_checks": {
+        "arithmetic_and_commit_match": true,
+        "consumed": "v1",
+        "independent_digest_match": true,
+        "published_by": "writer",
+        "selected_by": "selector",
+        "threshold": 1
+      },
+      "chain": {
+        "absence_of_out_of_scope_mutation_or_missing_events": "UNKNOWN",
+        "consumed_version_to_commit": "VERIFIED",
+        "consumed_version_to_persisting_writer_effect": "VERIFIED",
+        "operation_to_resolver_state": "VERIFIED",
+        "permission_to_operation": "VERIFIED",
+        "principal_to_permission": "VERIFIED",
+        "resolver_state_to_consumed_version": "VERIFIED"
+      }
+    },
+    "C04": {
+      "E1_client_operations": {
+        "checked": {
+          "login": "adjudicator",
+          "result": {
+            "epoch": 0,
+            "singleton": true,
+            "version": "v0"
+          }
+        },
+        "competing_select_while_locked": {
+          "login": "selector",
+          "result": {
+            "message": "canceling statement due to lock timeout",
+            "sqlstate": "55P03"
+          }
+        },
+        "fresh": {
+          "login": "adjudicator",
+          "result": {
+            "accepted": false,
+            "actor": "adjudicator",
+            "digest": "b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2",
+            "epoch": 1,
+            "policy": "ge@1",
+            "score_id": "x@1",
+            "token": "fresh",
+            "version": "v1"
+          }
+        },
+        "fresh_checked": {
+          "login": "adjudicator",
+          "result": {
+            "epoch": 1,
+            "singleton": true,
+            "version": "v1"
+          }
+        },
+        "locked_commit": {
+          "login": "committer",
+          "result": {
+            "accepted": false,
+            "actor": "committer",
+            "epoch": 1,
+            "token": "fresh",
+            "version": "v1"
+          }
+        },
+        "missing_check_denied": {
+          "login": "committer",
+          "result": {
+            "message": "checked version differs from consumed version",
+            "sqlstate": "23514"
+          }
+        },
+        "no_stale_decisions": {
+          "login": "observer",
+          "result": "0"
+        },
+        "pending_visible_count": {
+          "login": "observer",
+          "result": "0"
+        },
+        "privileges_before": {
+          "login": "observer",
+          "result": {
+            "adjudicator": {
+              "MayAdjudicate": true,
+              "MayCommit": false,
+              "MayCreateVersion": false,
+              "MayModifyCriterion": false,
+              "MaySelectVersion": false
+            },
+            "committer": {
+              "MayAdjudicate": false,
+              "MayCommit": true,
+              "MayCreateVersion": false,
+              "MayModifyCriterion": false,
+              "MaySelectVersion": false
+            },
+            "observer": {
+              "MayAdjudicate": false,
+              "MayCommit": false,
+              "MayCreateVersion": false,
+              "MayModifyCriterion": false,
+              "MaySelectVersion": false
+            },
+            "selector": {
+              "MayAdjudicate": false,
+              "MayCommit": false,
+              "MayCreateVersion": false,
+              "MayModifyCriterion": false,
+              "MaySelectVersion": true
+            },
+            "writer": {
+              "MayAdjudicate": false,
+              "MayCommit": false,
+              "MayCreateVersion": true,
+              "MayModifyCriterion": false,
+              "MaySelectVersion": false
+            }
+          }
+        },
+        "publish": {
+          "login": "writer",
+          "result": ""
+        },
+        "racy": {
+          "login": "adjudicator",
+          "result": {
+            "accepted": false,
+            "actor": "adjudicator",
+            "digest": "b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2",
+            "epoch": 1,
+            "policy": "ge@1",
+            "score_id": "x@1",
+            "token": "racy",
+            "version": "v1"
+          }
+        },
+        "racy_commit_denied": {
+          "login": "committer",
+          "result": {
+            "message": "checked version differs from consumed version",
+            "sqlstate": "23514"
+          }
+        },
+        "select_after_commit": {
+          "login": "selector",
+          "result": ""
+        },
+        "setup": {
+          "login": "pilot_admin",
+          "result": ""
+        },
+        "stale": {
+          "login": "adjudicator",
+          "result": {
+            "accepted": true,
+            "actor": "adjudicator",
+            "digest": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "epoch": 0,
+            "policy": "ge@1",
+            "score_id": "x@1",
+            "token": "stale",
+            "version": "v0"
+          }
+        },
+        "stale_commit_denied": {
+          "login": "committer",
+          "result": {
+            "message": "selected version changed after evaluation",
+            "sqlstate": "40001"
+          }
+        },
+        "switch": {
+          "login": "selector",
+          "result": ""
+        }
+      },
+      "E2_server_log_checks": {
+        "logged_statement_actor": {
+          "checked": "adjudicator",
+          "competing_select_while_locked": "selector",
+          "fresh": "adjudicator",
+          "fresh_checked": "adjudicator",
+          "locked_commit": "committer",
+          "missing_check_denied": "committer",
+          "no_stale_decisions": "observer",
+          "pending_visible_count": "observer",
+          "privileges_before": "observer",
+          "publish": "writer",
+          "racy": "adjudicator",
+          "racy_commit_denied": "committer",
+          "select_after_commit": "selector",
+          "setup": "pilot_admin",
+          "stale": "adjudicator",
+          "stale_commit_denied": "committer",
+          "switch": "selector"
+        }
+      },
+      "E2_server_rows": {
+        "active": [
+          {
+            "epoch": 2,
+            "singleton": true,
+            "version": "v0"
+          }
+        ],
+        "criteria": [
+          {
+            "author": "pilot_admin",
+            "digest": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "threshold": 0,
+            "version": "v0"
+          },
+          {
+            "author": "writer",
+            "digest": "b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2",
+            "threshold": 1,
+            "version": "v1"
+          }
+        ],
+        "decisions": [
+          {
+            "accepted": false,
+            "actor": "committer",
+            "epoch": 1,
+            "token": "fresh",
+            "version": "v1"
+          }
+        ],
+        "evaluations": [
+          {
+            "accepted": true,
+            "actor": "adjudicator",
+            "digest": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "epoch": 0,
+            "policy": "ge@1",
+            "score_id": "x@1",
+            "token": "stale",
+            "version": "v0"
+          },
+          {
+            "accepted": false,
+            "actor": "adjudicator",
+            "digest": "b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2",
+            "epoch": 1,
+            "policy": "ge@1",
+            "score_id": "x@1",
+            "token": "fresh",
+            "version": "v1"
+          },
+          {
+            "accepted": false,
+            "actor": "adjudicator",
+            "digest": "b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2",
+            "epoch": 1,
+            "policy": "ge@1",
+            "score_id": "x@1",
+            "token": "racy",
+            "version": "v1"
+          }
+        ],
+        "sealed_score": [
+          {
+            "id": "x@1",
+            "value": 0
+          }
+        ],
+        "selection_events": [
+          {
+            "actor": "pilot_admin",
+            "epoch": 0,
+            "old_version": null,
+            "version": "v0"
+          },
+          {
+            "actor": "selector",
+            "epoch": 1,
+            "old_version": "v0",
+            "version": "v1"
+          },
+          {
+            "actor": "selector",
+            "epoch": 2,
+            "old_version": "v1",
+            "version": "v0"
+          }
+        ]
+      },
+      "E3_assessor_checks": {
+        "arithmetic_and_commit_match": true,
+        "consumed": "v1",
+        "independent_digest_match": true,
+        "published_by": "writer",
+        "selected_by": "selector",
+        "threshold": 1
+      },
+      "chain": {
+        "absence_of_out_of_scope_mutation_or_missing_events": "UNKNOWN",
+        "consumed_version_to_commit": "VERIFIED",
+        "consumed_version_to_persisting_writer_effect": "VERIFIED",
+        "operation_to_resolver_state": "VERIFIED",
+        "permission_to_operation": "VERIFIED",
+        "principal_to_permission": "VERIFIED",
+        "resolver_state_to_consumed_version": "VERIFIED",
+        "stale_or_unchecked_use_to_commit": "CONTRADICTED"
+      }
+    }
+  },
+  "postgresql": "17.11 (Debian 17.11-0+deb13u1)",
+  "status": "EXPLORATORY \u2013 NOT SCORED \u2013 NOT FREEZE VALIDATION"
+}
