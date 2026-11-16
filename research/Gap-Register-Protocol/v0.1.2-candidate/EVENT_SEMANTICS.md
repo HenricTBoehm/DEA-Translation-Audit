@@ -1,0 +1,29 @@
+# Finite neutral event grammar
+
+## Domain
+
+One attempt, policy `sum-thresholds@1`, output `x@1`, artifact stems r/s/t with versions @0/@1/@2, and fixed fields threshold/layout, each binary. The initial @0 contents are trusted constants (zeros). The initial named keys ka for p, kq for q, kj for j and ki for the synthetic issuer have fixed canonical bindings, are live before the first event and have no mutable field rights until granted. kj is the evaluation operator. ki administers rights and certified resets. Only ka and kq can receive editable score/field rights. This experiment assumes no key alias/delegation after bootstrap, no key reuse/reinstatement and no unnamed write channel. Each future real adapter must authenticate these premises independently. Key possession is exclusive in the synthetic profile.
+
+Each event has `id`, `kind`, `key`, `time`, `rank` and precisely the kind-specific fields below. Integer event IDs, times and ranks range from 0 through 15. IDs and ranks are unique in a complete attempt. Time is nondecreasing by rank. Distinct ranks resolve equal times. A key and its permissions must both be valid at its act. Permission intervals are half-open from a grant until its retract; key validity is half-open from bootstrap until revoke. Subsequent grants to a revoked key are invalid. Retraction after revocation is possible while a recorded permission remains active, but cannot reactivate the key.
+
+| Event | Specific fields | Authority and effect |
+|---|---|---|
+| grant/retract | subject, target, channel | ki; one permission tuple, target x with score or r/s/t with threshold/layout. Grant absent right or retract active right only. |
+| revoke | subject | ki; irrevocably stop accepting future acts under ka or kq. |
+| modify | base, version, channel, value | Active writable field under the event key. Create immediate unused successor of current head. Copy the other field and its lineage. A changed value attributes the surviving channel effect to this act; a no-op retains the earlier source. |
+| reset | base, version, channel | ki; authorized independently observed successful restoration of exactly that channel to its @0 value in a fresh immediate successor. Remove that channel's lineage there only. Copy every other value and lineage. |
+| produce | version, value | ka/kq/kj; x@1 with score 0–3 if authorized to choose score; otherwise fixed score 0. |
+| seal | version, policy | kj; freeze x@1 and the exact evaluation policy. |
+| bind | version, root, policy | kj; after seal, select root version and freeze the existing version catalog for this evaluation. |
+| read | version, parent | kj; first the bound root with null parent, then observed child dependencies of already used nodes. At most one version per stem. Every node must exist at bind. |
+| adjudicate | version, policy | kj; after the required reads, recheck seal coordinates and finish the attempt. |
+
+Each lifecycle event occurs exactly once in the order produce < seal < bind < adjudicate. Commit is adjudicate and the last event of the bounded attempt. Reads occur between bind and commit. Versions are logical immutable IDs within the synthetic scope. For operational data the adapter must bind them to authenticated content identities and observed reads. The resolver freezes exact contents at bind; a later creation cannot replace them. An authorized successor can be selected for a new binding or a subsequent attempt. The current experiment has no second binding in an attempt.
+
+A potential evaluation route exists at bind when a consumed version is that stem's current head, a successor slot exists, and the principal can choose the successor's threshold immediately before bind under an active right. This describes the alternatives allowed by the experiment's binding procedure, holding the authenticated policy and criterion role fixed. A deliberately pinned older version has no such current route. Historical lineage recorded on consumed older versions remains eligible. Revoking a key or permission does not mutate any version. Resetting layout with a surviving threshold proves only layout neutralization. A certified threshold reset on an unused successor cannot affect the previously bound version.
+
+## Observed profile and validation
+
+The synthetic evidence boundary provides authenticated events, facts and independently assessed receipt claims; it never makes a timestamp authentic simply by parsing it. Unauthenticated or missing whole events are omitted and their collection closure is opened. A missing rank on an otherwise authenticated event is null; enumerate admissible assignments of distinct free ranks respecting time and all observed ranks. An unresolved rank blocks a positive or a clearance even if only one assignment survives; the profile requires a verified rank. Contradictory authenticated ranks, duplicate IDs, a supplied rank outside the alphabet, a witnessed action after revoke, or no admissible closed assignment are INVALID. When a field other than rank cannot be authenticated the adapter withholds the affected record, with reason logged on the assessor side.
+
+Closed history specifies all non-read events. Dependency closure covers the selected reads. An open read view admits an observed prefix-closed subtree or no reads. The omitted root, if needed, requires a free rank between bind and adjudicate. Open history uses sound rejection of certain contradictions in the projection (grammar, lifecycle order, unique recorded writes, observed revoke chronology); otherwise it abstains. The open-history branch does not search for every possible unknown event or certify that a completion exists, so UNDETERMINED includes unresolved validation. No CLEAR/CONFLICT issues from open history in this profile. Open relative to global dependencies is distinct from open scoped history.
