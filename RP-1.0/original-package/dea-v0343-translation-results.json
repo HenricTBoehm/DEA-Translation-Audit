@@ -1,0 +1,1200 @@
+{
+ "meta": {
+  "protocol_sha256": "c8d7beb067e50fdcafc89fb79a8207bb3925068daba7c710b5f90590c6752006",
+  "protocol_sha256_expected": "c8d7beb067e50fdcafc89fb79a8207bb3925068daba7c710b5f90590c6752006",
+  "protocol_intact": true,
+  "baseline_sha256": "51a2553e8bb13fe80bc3f0e6245ba0c4dcbe0a31db03ad577a3f3f26f8c97c33",
+  "baseline_intact": true,
+  "sources_unavailable": [
+   "Ahn & Sandhu 1999 (RSL99)",
+   "Wang & Li 2010 (TISSEC)"
+  ],
+  "caveat": "Finite agreement on enumerated model classes is not a proof of general equivalence."
+ },
+ "results": [
+  {
+   "id": "EJ-1",
+   "kind": "translation",
+   "construct": "H_EJ / ExecConflict (uniform grants)",
+   "target": "Bertino 1999",
+   "regime": "A",
+   "translation": "cannot_dou(U,T_adj) <- executeu(U,T_exec,K); user(u,T_adj) from grants",
+   "models": 162,
+   "forward_preserved": false,
+   "forward_failures": 40,
+   "forward_first_counterexample": {
+    "model": {
+     "n": 2,
+     "exec": [
+      "a",
+      "b"
+     ],
+     "adj": [
+      "a",
+      "a"
+     ],
+     "disp": [
+      "Accept",
+      "Accept"
+     ],
+     "grants": [
+      [
+       "a",
+       0,
+       "Accept"
+      ],
+      [
+       "a",
+       1,
+       "Accept"
+      ]
+     ],
+     "exec_perm_revoked": []
+    },
+    "dea": [
+     "1"
+    ],
+    "target": []
+   },
+   "backward_preserved": true,
+   "backward_failures": 0,
+   "backward_first_counterexample": null,
+   "note": "cannot_dou/2 has no activation or object argument (Table III, p.75)"
+  },
+  {
+   "id": "EJ-2",
+   "kind": "translation",
+   "construct": "AuthorizedForDisposition + ExecConflict (disposition-specific grants)",
+   "target": "Bertino 1999",
+   "regime": "A",
+   "translation": "as EJ-1",
+   "models": 324,
+   "forward_preserved": false,
+   "forward_failures": 40,
+   "forward_first_counterexample": {
+    "model": {
+     "n": 2,
+     "exec": [
+      "a",
+      "b"
+     ],
+     "adj": [
+      "a",
+      "a"
+     ],
+     "disp": [
+      "Accept",
+      "Accept"
+     ],
+     "grants": [
+      [
+       "a",
+       0,
+       "Accept"
+      ],
+      [
+       "a",
+       1,
+       "Accept"
+      ]
+     ],
+     "exec_perm_revoked": []
+    },
+    "dea": [
+     "1"
+    ],
+    "target": []
+   },
+   "backward_preserved": false,
+   "backward_failures": 116,
+   "backward_first_counterexample": {
+    "model": {
+     "n": 1,
+     "exec": [
+      "a"
+     ],
+     "adj": [
+      "b"
+     ],
+     "disp": [
+      "Accept"
+     ],
+     "grants": [
+      [
+       "b",
+       0,
+       "Hold"
+      ]
+     ],
+     "exec_perm_revoked": []
+    },
+    "dea": [],
+    "target": [
+     "0"
+    ]
+   },
+   "note": "role/user authorisation (Table I, p.73) cannot depend on object or disposition"
+  },
+  {
+   "id": "EJ-3",
+   "kind": "translation",
+   "construct": "Eq.16 complete",
+   "target": "Bertino 1999",
+   "regime": "B",
+   "translation": "aux obj/granted/assigned + two panic rules (detection reading)",
+   "models": 324,
+   "forward_preserved": true,
+   "forward_failures": 0,
+   "forward_first_counterexample": null,
+   "backward_preserved": true,
+   "backward_failures": 0,
+   "backward_first_counterexample": null,
+   "note": "Preserved; the auxiliary vocabulary carries the DEA content"
+  },
+  {
+   "id": "EJ-4",
+   "kind": "translation",
+   "construct": "H_EJ / ExecConflict (uniform grants)",
+   "target": "Wang & Li ESORICS'07 (proxy)",
+   "regime": "A",
+   "translation": "steps s_exec_k, s_adj_k; SA from grants; C = {!=(s_adj_k, s_exec_k)}",
+   "models": 162,
+   "forward_preserved": true,
+   "forward_failures": 0,
+   "forward_first_counterexample": null,
+   "backward_preserved": true,
+   "backward_failures": 0,
+   "backward_first_counterexample": null,
+   "note": "Requires the output count fixed in S (Def 2)"
+  },
+  {
+   "id": "EJ-5",
+   "kind": "translation",
+   "construct": "AuthorizedForDisposition (disposition-specific grants)",
+   "target": "Wang & Li ESORICS'07 (proxy)",
+   "regime": "A",
+   "translation": "as EJ-4",
+   "models": 324,
+   "forward_preserved": true,
+   "forward_failures": 0,
+   "forward_first_counterexample": null,
+   "backward_preserved": false,
+   "backward_failures": 140,
+   "backward_first_counterexample": {
+    "model": {
+     "n": 1,
+     "exec": [
+      "a"
+     ],
+     "adj": [
+      "b"
+     ],
+     "disp": [
+      "Accept"
+     ],
+     "grants": [
+      [
+       "b",
+       0,
+       "Hold"
+      ]
+     ],
+     "exec_perm_revoked": []
+    },
+    "dea": [],
+    "target": [
+     "0"
+    ]
+   },
+   "note": "SA is role-step authorisation (Def 2); a step carries no disposition value"
+  },
+  {
+   "id": "EJ-6",
+   "kind": "translation",
+   "construct": "ExecConflict vs static SSoD (with revocation)",
+   "target": "Li-Tripunitara-Bizri 2007",
+   "regime": "A",
+   "translation": "SSoD <{p_exec,p_adj},2> on current UA/PA",
+   "models": 648,
+   "forward_preserved": false,
+   "forward_failures": 128,
+   "forward_first_counterexample": {
+    "model": {
+     "n": 2,
+     "exec": [
+      "a",
+      "b"
+     ],
+     "adj": [
+      "a",
+      "a"
+     ],
+     "disp": [
+      "Accept",
+      "Accept"
+     ],
+     "grants": [
+      [
+       "a",
+       0,
+       "Accept"
+      ],
+      [
+       "a",
+       1,
+       "Accept"
+      ]
+     ],
+     "exec_perm_revoked": []
+    },
+    "dea": [
+     "1"
+    ],
+    "target": []
+   },
+   "backward_preserved": false,
+   "backward_failures": 94,
+   "backward_first_counterexample": {
+    "model": {
+     "n": 1,
+     "exec": [
+      "a"
+     ],
+     "adj": [
+      "a"
+     ],
+     "disp": [
+      "Accept"
+     ],
+     "grants": [
+      [
+       "a",
+       0,
+       "Accept"
+      ]
+     ],
+     "exec_perm_revoked": [
+      "a"
+     ]
+    },
+    "dea": [],
+    "target": [
+     "0"
+    ]
+   },
+   "note": "Over-restrictive (cross-output) and under-restrictive (Li p.3 revoke/reassign)"
+  },
+  {
+   "id": "EJ-7",
+   "kind": "claim",
+   "construct": "AuthorizedForDisposition",
+   "statement": "Invariance: two DEA models differing only in the granted disposition (grant Hold vs grant Accept, assignment Accept) have identical images under every Regime-A translation into Bertino Tables I-III or W&L Defs 1-4, but different DEA outcomes",
+   "holds": true,
+   "witness": {
+    "m1": "grant (b,0,Accept), assign (b,0,Accept): effective",
+    "m2": "grant (b,0,Hold), assign (b,0,Accept): not effective",
+    "reason": "no native symbol takes a disposition argument; success/abort reinterpretation is barred by P2"
+   },
+   "note": "NOT-EXPRESSIBLE in Regime A for these two targets (by invariance); expressible in Regime B (EJ-3)"
+  },
+  {
+   "id": "EJ-8",
+   "kind": "translation",
+   "construct": "ExecConflict, single output, all dispositions",
+   "target": "Bertino 1999",
+   "regime": "A",
+   "translation": "cannot_dou(U,T_adj) <- executeu(U,T_exec,K)",
+   "models": 36,
+   "forward_preserved": true,
+   "forward_failures": 0,
+   "forward_first_counterexample": null,
+   "backward_preserved": true,
+   "backward_failures": 0,
+   "backward_first_counterexample": null,
+   "note": "v0.3.4.3 guard is disposition-independent, so a single-output instance is natively expressible (under v0.3.4.2 Acc-only it was not: self-Hold)"
+  },
+  {
+   "id": "EJ-9",
+   "kind": "claim",
+   "construct": "MayCompute =/=> MayAccept (Eq.17)",
+   "statement": "Satisfiable in every target with independent permissions (Bertino roles, W&L SA, Li PA): a user authorised for T_exec but not T_adj is a model",
+   "holds": true,
+   "witness": {
+    "model": "SA={(RE,s_exec),(RJ,s_adj)}, UR={(u,RE)}"
+   },
+   "note": "Non-implication is native everywhere; falsifiable only where authority is derived (Bertino role dominance p.70, Li RH p.10) -> deployment obligation, not a semantic mismatch of tr"
+  },
+  {
+   "id": "NAP-1",
+   "kind": "translation",
+   "construct": "NAP",
+   "target": "Wang & Li ESORICS'07 WSP (proxy)",
+   "regime": "A",
+   "translation": "S = all carrier actions; SA from edge authorisation; NAP_T := not satisfiable",
+   "models": 26262,
+   "forward_preserved": false,
+   "forward_failures": 26,
+   "forward_first_counterexample": {
+    "model": {
+     "states": [
+      "0"
+     ],
+     "start": "0",
+     "goals": [],
+     "edges": []
+    },
+    "dea": [
+     "NAP"
+    ],
+    "target": []
+   },
+   "backward_preserved": false,
+   "backward_failures": 13818,
+   "backward_first_counterexample": {
+    "model": {
+     "states": [
+      "0"
+     ],
+     "start": "0",
+     "goals": [
+      "0"
+     ],
+     "edges": [
+      [
+       "e0",
+       "0",
+       "0",
+       false
+      ]
+     ]
+    },
+    "dea": [],
+    "target": [
+     "NAP"
+    ]
+   },
+   "note": ""
+  },
+  {
+   "id": "NAP-2",
+   "kind": "translation",
+   "construct": "NAP",
+   "target": "Wang & Li ESORICS'07 WSP (proxy)",
+   "regime": "A",
+   "translation": "S = authorised actions; NAP_T := S empty",
+   "models": 26262,
+   "forward_preserved": false,
+   "forward_failures": 4202,
+   "forward_first_counterexample": {
+    "model": {
+     "states": [
+      "0"
+     ],
+     "start": "0",
+     "goals": [],
+     "edges": [
+      [
+       "e0",
+       "0",
+       "0",
+       true
+      ]
+     ]
+    },
+    "dea": [
+     "NAP"
+    ],
+    "target": []
+   },
+   "backward_preserved": false,
+   "backward_failures": 8200,
+   "backward_first_counterexample": {
+    "model": {
+     "states": [
+      "0"
+     ],
+     "start": "0",
+     "goals": [
+      "0"
+     ],
+     "edges": []
+    },
+    "dea": [],
+    "target": [
+     "NAP"
+    ]
+   },
+   "note": ""
+  },
+  {
+   "id": "NAP-3",
+   "kind": "claim",
+   "construct": "NAP",
+   "statement": "Invariance: m1 (diag loops, goal unreachable) and m2 (diag reaches goal) have the same step set, authorisation and constraint set, hence identical images under any Regime-A/B WSP translation satisfying R3; DEA verdicts differ",
+   "holds": true,
+   "witness": {
+    "m1": {
+     "states": [
+      "0",
+      "1"
+     ],
+     "start": "0",
+     "goals": [
+      "1"
+     ],
+     "edges": [
+      [
+       "diag",
+       "0",
+       "0",
+       true
+      ]
+     ]
+    },
+    "m2": {
+     "states": [
+      "0",
+      "1"
+     ],
+     "start": "0",
+     "goals": [
+      "1"
+     ],
+     "edges": [
+      [
+       "diag",
+       "0",
+       "1",
+       true
+      ]
+     ]
+    },
+    "NAP(m1)": true,
+    "NAP(m2)": false
+   },
+   "note": "NOT-EXPRESSIBLE in WSP/R2BAC under R3: WSP has no state, effect or goal symbol"
+  },
+  {
+   "id": "NAP-4",
+   "kind": "translation",
+   "construct": "NAP",
+   "target": "WSP via reduction (users := edges)",
+   "regime": "R3-violating reduction",
+   "translation": "slots 1..|S|; authorised 'users' = allowed edges + idle; rho_chain(u,v) iff dst(u)=src(v); goal on last slot",
+   "models": 26262,
+   "forward_preserved": true,
+   "forward_failures": 0,
+   "forward_first_counterexample": null,
+   "backward_preserved": true,
+   "backward_failures": 0,
+   "backward_first_counterexample": null,
+   "note": "Verdict-preserving but repurposes users: shows the NAP mismatch is not computational weakness of WSP"
+  },
+  {
+   "id": "NAP-5",
+   "kind": "translation",
+   "construct": "NAP",
+   "target": "Bertino 1999 logic program",
+   "regime": "B",
+   "translation": "reach/1 positive recursion over aux edge/3; nap <- not goal_reached",
+   "models": 26262,
+   "forward_preserved": true,
+   "forward_failures": 0,
+   "forward_first_counterexample": null,
+   "backward_preserved": true,
+   "backward_failures": 0,
+   "backward_first_counterexample": null,
+   "note": "Preserved for finite discrete models; hybrid flows (DEA Eq.50) need a finite abstraction"
+  },
+  {
+   "id": "NAP-6",
+   "kind": "translation",
+   "construct": "NAP",
+   "target": "Basin et al. obstruction (Def 7)",
+   "regime": "A",
+   "translation": "NAP_T := some reachable trace is obstructed",
+   "models": 26262,
+   "forward_preserved": false,
+   "forward_failures": 334,
+   "forward_first_counterexample": {
+    "model": {
+     "states": [
+      "0"
+     ],
+     "start": "0",
+     "goals": [],
+     "edges": []
+    },
+    "dea": [
+     "NAP"
+    ],
+    "target": []
+   },
+   "backward_preserved": false,
+   "backward_failures": 13510,
+   "backward_first_counterexample": {
+    "model": {
+     "states": [
+      "0"
+     ],
+     "start": "0",
+     "goals": [
+      "0"
+     ],
+     "edges": [
+      [
+       "e0",
+       "0",
+       "0",
+       false
+      ]
+     ]
+    },
+    "dea": [],
+    "target": [
+     "NAP"
+    ]
+   },
+   "note": "Different property: obstruction is universal over control-flow options, NAP existential over goal paths"
+  },
+  {
+   "id": "NAP-7",
+   "kind": "translation",
+   "construct": "NAP",
+   "target": "Basin et al. CSP with goal-as-termination",
+   "regime": "B",
+   "translation": "W' := process that may terminate (checkmark) exactly in goal states; NAP_T := no authorised trace ends in checkmark",
+   "models": 26262,
+   "forward_preserved": true,
+   "forward_failures": 0,
+   "forward_first_counterexample": null,
+   "backward_preserved": true,
+   "backward_failures": 0,
+   "backward_first_counterexample": null,
+   "note": "Trace reachability; preserved"
+  },
+  {
+   "id": "NAP-8",
+   "kind": "claim",
+   "construct": "verified vs undetermined",
+   "statement": "Depth-2 search on depth-3 goal yields 'undetermined', not NAP",
+   "holds": true,
+   "witness": {
+    "bounded2": "undetermined",
+    "bounded3": "witness"
+   },
+   "note": "No compared formalism has a three-valued verdict; all four decide finite instances. Standard in bounded model checking (background, not source-verified here)"
+  },
+  {
+   "id": "CTRL-1",
+   "kind": "translation",
+   "construct": "Ctrl_theta / ExecConflict",
+   "target": "Wang & Li ESORICS'07 (proxy)",
+   "regime": "A (snapshot)",
+   "translation": "rho_co from configuration at check time (runtime re-check, W&L p.7); C={rho_co-bar(s_J,s_E)}",
+   "models": 7776,
+   "forward_preserved": false,
+   "forward_failures": 592,
+   "forward_first_counterexample": {
+    "model": {
+     "edges": {
+      "o->a": "J",
+      "o->j": "J"
+     }
+    },
+    "dea": [
+     "effective"
+    ],
+    "target": []
+   },
+   "backward_preserved": false,
+   "backward_failures": 2592,
+   "backward_first_counterexample": {
+    "model": {
+     "edges": {
+      "o->a": "E",
+      "o->j": "J"
+     }
+    },
+    "dea": [],
+    "target": [
+     "effective"
+    ]
+   },
+   "note": ""
+  },
+  {
+   "id": "CTRL-2",
+   "kind": "translation",
+   "construct": "Ctrl_theta / ExecConflict",
+   "target": "Wang & Li ESORICS'07 (proxy)",
+   "regime": "A (compiled B)",
+   "translation": "B := DEA-derived co-control relation per (thetaJ, thetaE) pair",
+   "models": 7776,
+   "forward_preserved": true,
+   "forward_failures": 0,
+   "forward_first_counterexample": null,
+   "backward_preserved": true,
+   "backward_failures": 0,
+   "backward_first_counterexample": null,
+   "note": "Preserved by construction: the DEA content is in computing B, which W&L leave outside the model (Def 1)"
+  },
+  {
+   "id": "CTRL-3",
+   "kind": "translation",
+   "construct": "Ctrl_theta / ExecConflict",
+   "target": "Bertino 1999 pseudo-roles",
+   "regime": "A",
+   "translation": "role Ctrl_p per principal, belong/2 fixed at t=0; cannot_dou(U,T_adj) <- belong(U,Ctrl_p), belong(V,Ctrl_p), executeu(V,T_exec,K)",
+   "models": 7776,
+   "forward_preserved": false,
+   "forward_failures": 1530,
+   "forward_first_counterexample": {
+    "model": {
+     "edges": {
+      "o->a": "E",
+      "o->j": "E"
+     }
+    },
+    "dea": [
+     "effective"
+    ],
+    "target": []
+   },
+   "backward_preserved": false,
+   "backward_failures": 1530,
+   "backward_first_counterexample": {
+    "model": {
+     "edges": {
+      "o->a": "E",
+      "o->j": "J"
+     }
+    },
+    "dea": [],
+    "target": [
+     "effective"
+    ]
+   },
+   "note": ""
+  },
+  {
+   "id": "CTRL-4",
+   "kind": "translation",
+   "construct": "Ctrl_theta / ExecConflict",
+   "target": "Bertino 1999",
+   "regime": "B",
+   "translation": "aux ctrl_edge(P,A,T) + positive recursive ctrl*/3 per instant + window facts",
+   "models": 7776,
+   "forward_preserved": true,
+   "forward_failures": 0,
+   "forward_first_counterexample": null,
+   "backward_preserved": true,
+   "backward_failures": 0,
+   "backward_first_counterexample": null,
+   "note": "Preserved; recursion is positive (stratified)"
+  },
+  {
+   "id": "CTRL-5",
+   "kind": "translation",
+   "construct": "Ctrl_theta / ExecConflict",
+   "target": "Li-Tripunitara-Bizri 2007",
+   "regime": "A",
+   "translation": "users atomic; SSoD counts distinct users",
+   "models": 7776,
+   "forward_preserved": true,
+   "forward_failures": 0,
+   "forward_first_counterexample": null,
+   "backward_preserved": false,
+   "backward_failures": 3888,
+   "backward_first_counterexample": {
+    "model": {
+     "edges": {
+      "o->a": "E",
+      "o->j": "J"
+     }
+    },
+    "dea": [],
+    "target": [
+     "effective"
+    ]
+   },
+   "note": "No relation between users in the RBAC state (p.9-10)"
+  },
+  {
+   "id": "CTRL-6",
+   "kind": "claim",
+   "construct": "Ctrl_theta (DEA-internal)",
+   "statement": "Per-instant transitive closure and closure over the window union give different ExecConflict verdicts on some model",
+   "holds": false,
+   "witness": {
+    "model": null,
+    "per_instant": null,
+    "window_union": null
+   },
+   "note": "v0.3.4.3 p.8 does not fix when the closure is taken; outcome-relevant ambiguity (UNDETERMINED in DEA itself)"
+  },
+  {
+   "id": "CTRL-6b",
+   "kind": "claim",
+   "construct": "Ctrl_theta (DEA-internal boundary case)",
+   "statement": "Hand-built: p->o at t=2 only, o->j at t=3 only, p->a in thetaE. Per-instant closure: no conflict; window-union closure: conflict",
+   "holds": true,
+   "witness": {
+    "model": {
+     "edges": {
+      "p->o": "J_early",
+      "o->j": "J_late",
+      "p->a": "E"
+     }
+    },
+    "per_instant": false,
+    "window_union": true
+   },
+   "note": "Outcome depends on an unstated choice in v0.3.4.3 p.8 (when the transitive closure is taken)"
+  },
+  {
+   "id": "CTRL-REG",
+   "kind": "claim",
+   "construct": "Ctrl_theta regression (G2 S1-S13)",
+   "statement": "All scenarios evaluate as expected under v0.3.4.3; divergences from v0.3.4.2 intent are listed, not reconciled",
+   "holds": true,
+   "witness": {
+    "matrix": {
+     "S1_compliant": {
+      "v0343_HEJ": false,
+      "expected_v0343": false,
+      "v0342_intent": false,
+      "wl_snapshot_agrees": true
+     },
+     "S2_shared_credential": {
+      "v0343_HEJ": true,
+      "expected_v0343": true,
+      "v0342_intent": true,
+      "wl_snapshot_agrees": true
+     },
+     "S3_same_model": {
+      "v0343_HEJ": false,
+      "expected_v0343": false,
+      "v0342_intent": false,
+      "wl_snapshot_agrees": true
+     },
+     "S4_read_access": {
+      "v0343_HEJ": false,
+      "expected_v0343": false,
+      "v0342_intent": false,
+      "wl_snapshot_agrees": true
+     },
+     "S5_controller_behind_E_and_J": {
+      "v0343_HEJ": true,
+      "expected_v0343": true,
+      "v0342_intent": true,
+      "wl_snapshot_agrees": true
+     },
+     "S6_E_writes_J_decision": {
+      "v0343_HEJ": true,
+      "expected_v0343": true,
+      "v0342_intent": true,
+      "wl_snapshot_agrees": true
+     },
+     "S7_D_alters_E_caps": {
+      "v0343_HEJ": false,
+      "expected_v0343": false,
+      "v0342_intent": false,
+      "wl_snapshot_agrees": true
+     },
+     "S8_TCB_admin_no_role": {
+      "v0343_HEJ": true,
+      "expected_v0343": true,
+      "v0342_intent": false,
+      "wl_snapshot_agrees": true
+     },
+     "S9_TCB_admin_is_D": {
+      "v0343_HEJ": true,
+      "expected_v0343": true,
+      "v0342_intent": true,
+      "wl_snapshot_agrees": true
+     },
+     "S10_orchestrator_tokens": {
+      "v0343_HEJ": true,
+      "expected_v0343": true,
+      "v0342_intent": true,
+      "wl_snapshot_agrees": true
+     },
+     "S11_E_supplies_verifier": {
+      "v0343_HEJ": true,
+      "expected_v0343": true,
+      "v0342_intent": true,
+      "wl_snapshot_agrees": true
+     },
+     "S12_rubric_in_prestage_manifest": {
+      "v0343_HEJ": false,
+      "expected_v0343": false,
+      "v0342_intent": false,
+      "wl_snapshot_agrees": true
+     },
+     "S13_transitive_P_orc_e": {
+      "v0343_HEJ": true,
+      "expected_v0343": true,
+      "v0342_intent": null,
+      "wl_snapshot_agrees": true
+     }
+    },
+    "divergent_from_v0342": [
+     "S8_TCB_admin_no_role"
+    ]
+   },
+   "note": "Regression scenarios are time-invariant, so they cannot discriminate snapshot from history translations"
+  },
+  {
+   "id": "LED-1",
+   "kind": "translation",
+   "construct": "case/blocker ledger",
+   "target": "Bertino 1999 (C6 / R6,1 pattern)",
+   "regime": "A",
+   "translation": "panic <- count(success(T_cont,K),n), n > B within the workflow instance",
+   "models": 2954,
+   "forward_preserved": false,
+   "forward_failures": 976,
+   "forward_first_counterexample": {
+    "model": {
+     "B": 1,
+     "events": [
+      [
+       "cont",
+       "W1",
+       "X",
+       "beta"
+      ],
+      [
+       "cont",
+       "W1",
+       "X",
+       "gamma"
+      ]
+     ]
+    },
+    "dea": [
+     "0",
+     "1"
+    ],
+    "target": [
+     "0"
+    ]
+   },
+   "backward_preserved": false,
+   "backward_failures": 312,
+   "backward_first_counterexample": {
+    "model": {
+     "B": 1,
+     "events": [
+      [
+       "cont",
+       "W1",
+       "X",
+       "beta"
+      ],
+      [
+       "cont",
+       "W2",
+       "X",
+       "beta"
+      ]
+     ]
+    },
+    "dea": [
+     "0"
+    ],
+    "target": [
+     "0",
+     "1"
+    ]
+   },
+   "note": "Execution predicates are instance-local (p.72 C6 'within the same workflow'; p.94)"
+  },
+  {
+   "id": "LED-2",
+   "kind": "translation",
+   "construct": "case/blocker ledger",
+   "target": "Wang & Li ESORICS'07 (proxy)",
+   "regime": "A",
+   "translation": "no counting constraint form",
+   "models": 2954,
+   "forward_preserved": true,
+   "forward_failures": 0,
+   "forward_first_counterexample": null,
+   "backward_preserved": false,
+   "backward_failures": 756,
+   "backward_first_counterexample": {
+    "model": {
+     "B": 1,
+     "events": [
+      [
+       "cont",
+       "W1",
+       "X",
+       "beta"
+      ],
+      [
+       "cont",
+       "W1",
+       "X",
+       "beta"
+      ]
+     ]
+    },
+    "dea": [
+     "0"
+    ],
+    "target": [
+     "0",
+     "1"
+    ]
+   },
+   "note": ""
+  },
+  {
+   "id": "LED-3",
+   "kind": "translation",
+   "construct": "case/blocker ledger",
+   "target": "Bertino 1999",
+   "regime": "B",
+   "translation": "aux persistent ledger_count(C,beta,N), case_of/blocker per instance, closed(C,beta), reopen via ctrl*",
+   "models": 2954,
+   "forward_preserved": true,
+   "forward_failures": 0,
+   "forward_first_counterexample": null,
+   "backward_preserved": true,
+   "backward_failures": 0,
+   "backward_first_counterexample": null,
+   "note": "Preserved; persistence across instances is the added structure"
+  },
+  {
+   "id": "LED-4",
+   "kind": "claim",
+   "construct": "case/blocker ledger",
+   "statement": "Invariance: two event sequences with identical per-instance projections but different case identity give different DEA outcomes",
+   "holds": true,
+   "witness": {
+    "note": "Bertino Regime A sees two single-continuation instances in both cases"
+   },
+   "note": "NOT-EXPRESSIBLE in Bertino Regime A (no cross-instance term). Warner & Atluri 2006 inter-instance constraints are the closest known prior formalism (SECONDARY via W&L-07 p.15): UNDETERMINED"
+  },
+  {
+   "id": "LED-REG",
+   "kind": "claim",
+   "construct": "ledger regression (G4)",
+   "statement": "DEA v0.3.4.3 grants vs Bertino Regime A on v0.3.4.2 attack/liveness set",
+   "holds": true,
+   "witness": {
+    "A1_renamed_workflows_x5": {
+     "dea_grants": 1,
+     "bertino_A_grants": 5
+    },
+    "A3_restaging_same_workflow": {
+     "dea_grants": 1,
+     "bertino_A_grants": 1
+    },
+    "A4_relabelled_same_content": {
+     "dea_grants": 1,
+     "bertino_A_grants": 4
+    },
+    "A6_reextraction_same_locator": {
+     "dea_grants": 1,
+     "bertino_A_grants": 4
+    },
+    "A7_near_duplicate_shifted_locator": {
+     "dea_grants": 4,
+     "bertino_A_grants": 4
+    },
+    "A8_self_reopen": {
+     "dea_grants": 1,
+     "bertino_A_grants": 2
+    },
+    "L1_new_object_same_blocker": {
+     "dea_grants": 2,
+     "bertino_A_grants": 2
+    },
+    "L2_same_object_new_blocker": {
+     "dea_grants": 2,
+     "bertino_A_grants": 2
+    },
+    "L3_independent_reopen": {
+     "dea_grants": 2,
+     "bertino_A_grants": 2
+    }
+   },
+   "note": "A7 is a DEA residual (Case(x) misses it); no translation can repair a missing identity link"
+  },
+  {
+   "id": "T3-1",
+   "kind": "translation",
+   "construct": "T3 (two outputs)",
+   "target": "Bertino 1999",
+   "regime": "A",
+   "translation": "cannot_dou(U,T_acc) <- executeu(U,T_scope,_), executeu(U,T_exec,K)",
+   "models": 243,
+   "forward_preserved": false,
+   "forward_failures": 36,
+   "forward_first_counterexample": {
+    "model": {
+     "scope": "a",
+     "exec": [
+      "a",
+      "b"
+     ],
+     "acc": [
+      "a",
+      "a"
+     ]
+    },
+    "dea": [
+     "1"
+    ],
+    "target": []
+   },
+   "backward_preserved": true,
+   "backward_failures": 0,
+   "backward_first_counterexample": null,
+   "note": ""
+  },
+  {
+   "id": "T3-2",
+   "kind": "translation",
+   "construct": "T3 (static outputs)",
+   "target": "Wang & Li ESORICS'07 (proxy)",
+   "regime": "A",
+   "translation": "<!=(EXISTS{s_scope,s_exec_k}, s_acc_k)> per output",
+   "models": 243,
+   "forward_preserved": true,
+   "forward_failures": 0,
+   "forward_first_counterexample": null,
+   "backward_preserved": true,
+   "backward_failures": 0,
+   "backward_first_counterexample": null,
+   "note": ""
+  },
+  {
+   "id": "T3-3",
+   "kind": "translation",
+   "construct": "T3",
+   "target": "Bertino 1999",
+   "regime": "B",
+   "translation": "aux obj(K,X): cannot_accept(U,X) <- executeu(U,T_scope,_), executeu(U,T_exec,K), obj(K,X)",
+   "models": 243,
+   "forward_preserved": true,
+   "forward_failures": 0,
+   "forward_first_counterexample": null,
+   "backward_preserved": true,
+   "backward_failures": 0,
+   "backward_first_counterexample": null,
+   "note": ""
+  },
+  {
+   "id": "T3-4",
+   "kind": "claim",
+   "construct": "T3 vs H_EJ (DEA-internal)",
+   "statement": "Every T3 instance is an H_EJ instance (T3 = DefineScope & H_EJ), so Eq.31 is entailed by Eq.32",
+   "holds": true,
+   "witness": null,
+   "note": "T3 adds no constraint content once Eq.32 holds; it is a label"
+  },
+  {
+   "id": "T3-5",
+   "kind": "claim",
+   "construct": "transition binding",
+   "statement": "Bertino/W&L instance-local semantics give the DEA p.9 verdict natively: scope(I1), exec(I2), accept(I3) by one user raises no per-instance rule",
+   "holds": true,
+   "witness": {
+    "instances": {
+     "I1": [
+      "scope"
+     ],
+     "I2": [
+      "exec"
+     ],
+     "I3": [
+      "accept"
+     ]
+    }
+   },
+   "note": "Binding to one transition is native (instance-local predicates, Bertino p.71; W&L plan per instance)"
+  },
+  {
+   "id": "DE-1",
+   "kind": "translation",
+   "construct": "H_DE^ext",
+   "target": "Bertino 1999 / W&L-07",
+   "regime": "A",
+   "translation": "mandatory gate step with != constraints",
+   "models": 12,
+   "forward_preserved": false,
+   "forward_failures": 6,
+   "forward_first_counterexample": {
+    "model": {
+     "scope": "a",
+     "ext": "b",
+     "gate": "a"
+    },
+    "dea": [
+     "ok"
+    ],
+    "target": []
+   },
+   "backward_preserved": true,
+   "backward_failures": 0,
+   "backward_first_counterexample": null,
+   "note": ""
+  },
+  {
+   "id": "DE-2",
+   "kind": "translation",
+   "construct": "H_DE^ext",
+   "target": "Bertino 1999 / W&L-07",
+   "regime": "A",
+   "translation": "no gate step",
+   "models": 12,
+   "forward_preserved": true,
+   "forward_failures": 0,
+   "forward_first_counterexample": null,
+   "backward_preserved": false,
+   "backward_failures": 4,
+   "backward_first_counterexample": {
+    "model": {
+     "scope": "a",
+     "ext": "a",
+     "gate": "a"
+    },
+    "dea": [],
+    "target": [
+     "ok"
+    ]
+   },
+   "note": ""
+  },
+  {
+   "id": "DE-3",
+   "kind": "translation",
+   "construct": "H_DE^ext",
+   "target": "Wang & Li ESORICS'07 (proxy)",
+   "regime": "B",
+   "translation": "pseudo-user nu; native form 2 <rho*(EXISTS{s_gate,s_scope}, s_ext)>, gate < ext in the partial order",
+   "models": 12,
+   "forward_preserved": true,
+   "forward_failures": 0,
+   "forward_first_counterexample": null,
+   "backward_preserved": true,
+   "backward_failures": 0,
+   "backward_first_counterexample": null,
+   "note": "Preserved with one declared auxiliary constant and a native constraint form"
+  },
+  {
+   "id": "REV-1",
+   "kind": "claim",
+   "construct": "reverse",
+   "statement": "Binding of duty <=(s1,s2)> (W&L Def 2 ex.4), cardinality C1 and per-activation SoD C5 (Bertino p.72), SSoD k-n policies (Li Notation 1) have no DEA counterpart",
+   "holds": true,
+   "witness": null,
+   "note": "DEA is a fixed set of invariants, not a constraint language; it is a strict fragment w.r.t. these targets"
+  }
+ ]
+}
