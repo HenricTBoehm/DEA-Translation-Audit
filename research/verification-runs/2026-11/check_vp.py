@@ -5,6 +5,7 @@ import subprocess
 import tempfile
 import zipfile
 from pathlib import Path
+from unittest.mock import patch
 
 VP = Path(__file__).resolve().parents[3] / "VP-1.0"
 
@@ -41,6 +42,17 @@ def main():
             pass
         else:
             raise AssertionError("missing archive root accepted")
+
+        with zipfile.ZipFile(archive, "w") as package:
+            package.writestr("SHA256SUMS", "0" * 64 + "  harness/run_audit.py\n")
+            package.writestr("harness/run_audit.py", "# intentionally mismatched fixture")
+        with patch.object(module.tempfile, "mkdtemp", return_value=str(root / "bad-package")):
+            try:
+                module.repro(archive, None, False)
+            except SystemExit as exc:
+                check("RP package manifest mismatch" in str(exc), exc)
+            else:
+                raise AssertionError("verification continued after manifest mismatch")
 
         expected, actual = root / "expected", root / "actual"
         for directory in (expected, actual):

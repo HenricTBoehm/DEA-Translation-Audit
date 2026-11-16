@@ -28,16 +28,19 @@
 
 
  def run(pkg, args, env_extra=None):
-@@ -57,7 +68,7 @@
+@@ -57,7 +68,10 @@
              bad.append(f.strip())
      rec("R1", "Package checksums (SHA256SUMS) verify after clean extraction", "PASS" if not bad else "FAIL",
          f"{sum(1 for _ in open(os.path.join(pkg, 'SHA256SUMS')))} files checked; mismatches: {bad}")
 -    rec("R2", "Baseline PDF SHA-256 equals 51a2553e...7c33", "PASS" if sha(baseline).startswith("51a2553e8bb1") else "FAIL",
++    if bad:
++        raise SystemExit("RP package manifest mismatch: " + ", ".join(bad))
++
 +    rec("R2", "Baseline PDF SHA-256 equals 51a2553e...7c33", "PASS" if sha(baseline) == BASELINE_SHA256 else "FAIL",
          sha(baseline))
      ph = sha(os.path.join(pkg, "01-remediation-protocol-v1.md"))
      emb = [l for l in open(os.path.join(pkg, "harness", "run_audit.py")) if l.startswith("PROTOCOL_SHA")][0]
-@@ -104,14 +115,43 @@
+@@ -104,14 +118,43 @@
          return pkg
      out = os.path.join(tmp, "out", "remediation-results.json")
      code, so, se = run(pkg, ["--out", out], {"DEA_BASELINE": baseline})
@@ -86,7 +89,7 @@
  # ============================================================ independent DEA re-implementations
  def ind_closure(nodes, edges):
      """controllers-of map: ctrl[x] = {p : p ->* x} (reflexive-transitive), by DFS (not dea_ref's fixpoint)."""
-@@ -576,7 +616,7 @@
+@@ -576,7 +619,7 @@
      ap.add_argument("--out", default="results/verification-results.json")
      ap.add_argument("--skip-repro", action="store_true")
      a = ap.parse_args()
@@ -95,7 +98,7 @@
          sys.stderr.write("baseline missing or altered; nothing written\n"); sys.exit(2)
      pkg = repro(a.package_zip, a.baseline, a.skip_repro)
      sys.path.insert(0, os.path.join(pkg, "harness"))
-@@ -593,12 +633,19 @@
+@@ -593,12 +636,19 @@
      for c in CHECKS:
          summ[c["status"]] = summ.get(c["status"], 0) + 1
      os.makedirs(os.path.dirname(os.path.abspath(a.out)), exist_ok=True)
@@ -112,7 +115,7 @@
      for c in CHECKS:
          print(f'{c["id"]:4s} {c["status"]:13s} {c["claim"][:100]}')
      print(summ)
-+    return int(any(c["id"] == "R6" and c["status"] == "FAIL" for c in CHECKS))
++    return int(any(c["id"] in {"R1", "R2", "R3", "R4", "R6"} and c["status"] == "FAIL" for c in CHECKS))
 
 
  if __name__ == "__main__":
