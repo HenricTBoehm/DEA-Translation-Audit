@@ -1,0 +1,873 @@
+{
+ "MC_T_exhaustive": {
+  "activity_options": [
+   [],
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ],
+   [
+    3
+   ],
+   [
+    1,
+    2
+   ],
+   [
+    0,
+    1,
+    2,
+    3
+   ]
+  ],
+  "disagreements": {
+   "A!=B/act": 4368,
+   "A!=B/causal": 6896,
+   "A!=B/stage": 8064,
+   "A!=C/act": 2256,
+   "A!=C/causal": 3640,
+   "A!=C/stage": 4320,
+   "A:act!=causal": 70168,
+   "A:stage!=causal": 128344,
+   "B:act!=causal": 72696,
+   "B:stage!=causal": 127736,
+   "C!=B/act": 2112,
+   "C!=B/causal": 3256,
+   "C!=B/stage": 3744,
+   "C:act!=causal": 71552,
+   "C:stage!=causal": 128512
+  },
+  "invariant_violations": {
+   "I1_inclusion_A_C_B": 0,
+   "I2_monotone_in_activity": 0,
+   "I3_static_agreement": 0,
+   "I4_no_anachronism_C_causal": 0,
+   "I6_cycle_equal_rows_static": 0
+  },
+  "slots": [
+   "p->a",
+   "p->o",
+   "o->p",
+   "o->j",
+   "o->a",
+   "p->j"
+  ],
+  "stats": {
+   "models": 470596,
+   "static_models": 256
+  },
+  "witnesses": {}
+ },
+ "MC_T_random": {
+  "disagreements": {
+   "A!=B/act": 323,
+   "A!=B/causal": 476,
+   "A!=B/stage": 543,
+   "A!=C/act": 139,
+   "A!=C/causal": 304,
+   "A!=C/stage": 249,
+   "A:act!=causal": 3231,
+   "A:stage!=causal": 2050,
+   "B:act!=causal": 3384,
+   "B:stage!=causal": 1963,
+   "C!=B/act": 184,
+   "C!=B/causal": 172,
+   "C!=B/stage": 294,
+   "C:act!=causal": 3396,
+   "C:stage!=causal": 2081
+  },
+  "invariant_violations": {
+   "I1_inclusion_A_C_B": 0,
+   "I2_monotone_in_activity": 0,
+   "I3_static_agreement": 0,
+   "I4_no_anachronism_C_causal": 0,
+   "I6_cycle_equal_rows_static": 0
+  },
+  "n": 20000,
+  "seed": 20261116,
+  "stats": {
+   "models": 20000,
+   "static_models": 56
+  },
+  "witnesses": {}
+ },
+ "countermodels": {
+  "CM10_no_common_controller": {
+   "A/act": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "A/causal": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "A/stage": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "B/act": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "B/causal": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "B/stage": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "C/act": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "C/causal": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "C/stage": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "description": "distinct controllers throughout",
+   "expected_proposed": false,
+   "matches_expected": true
+  },
+  "CM1_forward_relay_CTRL6b": {
+   "A/act": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "A/causal": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "A/stage": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "B/act": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "B/causal": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "B/stage": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "C/act": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "C/causal": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "C/stage": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "description": "p controls o only at 2, o controls j only at 3 (audit CTRL-6b)",
+   "expected_proposed": true,
+   "matches_expected": true
+  },
+  "CM2_reverse_relay_phantom": {
+   "A/act": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "A/causal": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "A/stage": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "B/act": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "B/causal": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "B/stage": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "C/act": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "C/causal": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "C/stage": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "description": "o controls j only at 2; p gains o only at 3: the union path p->o->j never existed in causal order",
+   "expected_proposed": false,
+   "matches_expected": true
+  },
+  "CM3_anachronistic_adjudicator_control": {
+   "A/act": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "A/causal": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "A/stage": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "B/act": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "B/causal": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "B/stage": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "C/act": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "C/causal": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "C/stage": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "description": "j adjudicates at 2; p gains control over j only at 3",
+   "expected_proposed": false,
+   "matches_expected": true
+  },
+  "CM4_post_act_producer_control_unsealed": {
+   "A/act": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "A/causal": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "A/stage": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "B/act": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "B/causal": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "B/stage": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "C/act": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "C/causal": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "C/stage": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "description": "a executes at 0; p controls a at 1, before the output is sealed at 1",
+   "expected_proposed": true,
+   "matches_expected": true
+  },
+  "CM4b_post_seal_producer_control": {
+   "A/act": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "A/causal": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "A/stage": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "B/act": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "B/causal": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "B/stage": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "C/act": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "C/causal": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "C/stage": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "description": "as CM4, but the output is sealed at 0, before p controls a",
+   "expected_proposed": false,
+   "matches_expected": true
+  },
+  "CM5_cross_stage_relay": {
+   "A/act": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "A/causal": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "A/stage": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "B/act": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "B/causal": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "B/stage": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "C/act": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "C/causal": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "C/stage": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "description": "p controls o only during execution; o controls j during adjudication",
+   "expected_proposed": true,
+   "matches_expected": true
+  },
+  "CM6_static_cycle": {
+   "A/act": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "o",
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "A/causal": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "o",
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "A/stage": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "o",
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "B/act": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "o",
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "B/causal": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "o",
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "B/stage": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "o",
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "C/act": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "o",
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "C/causal": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "o",
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "C/stage": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "o",
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "description": "p and o control each other throughout",
+   "expected_proposed": true,
+   "matches_expected": true
+  },
+  "CM7_alternating_mutual_control": {
+   "A/act": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "o"
+    ],
+    "j_may_adjudicate": false
+   },
+   "A/causal": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "o"
+    ],
+    "j_may_adjudicate": false
+   },
+   "A/stage": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "o"
+    ],
+    "j_may_adjudicate": false
+   },
+   "B/act": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "o"
+    ],
+    "j_may_adjudicate": false
+   },
+   "B/causal": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "o"
+    ],
+    "j_may_adjudicate": false
+   },
+   "B/stage": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "o"
+    ],
+    "j_may_adjudicate": false
+   },
+   "C/act": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "o"
+    ],
+    "j_may_adjudicate": false
+   },
+   "C/causal": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "o"
+    ],
+    "j_may_adjudicate": false
+   },
+   "C/stage": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "o"
+    ],
+    "j_may_adjudicate": false
+   },
+   "description": "o controls a; o->p at 2, p->o at 3; p controls j",
+   "expected_proposed": true,
+   "matches_expected": true
+  },
+  "CM8_forward_relay_with_reset": {
+   "A/act": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "A/causal": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "A/stage": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "B/act": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "B/causal": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "B/stage": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "C/act": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "C/causal": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "C/stage": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "CR/causal": {
+    "ExecConflict": false,
+    "common_controllers": [],
+    "j_may_adjudicate": true
+   },
+   "description": "CM1 plus a recorded, independently authorised reset of o at 3",
+   "expected_proposed": false,
+   "matches_expected": true
+  },
+  "CM9_uncertain_timestamp_widened": {
+   "A/act": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "A/causal": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "A/stage": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "B/act": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "B/causal": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "B/stage": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "C/act": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "C/causal": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "C/stage": {
+    "ExecConflict": true,
+    "common_controllers": [
+     "p"
+    ],
+    "j_may_adjudicate": false
+   },
+   "description": "p->o known only to lie in [2,3]; fail-closed widening to {2,3}",
+   "expected_proposed": true,
+   "matches_expected": true
+  }
+ },
+ "nontransitivity_C": {
+  "Ctrl_C(o,j)": true,
+  "Ctrl_C(p,j)": false,
+  "Ctrl_C(p,o)": true,
+  "model": {
+   "o->j": [
+    2
+   ],
+   "p->o": [
+    3
+   ]
+  },
+  "window": [
+   2,
+   3
+  ]
+ },
+ "relay_properties": {
+  "A/act": {
+   "I4_ignores_post_act_control_CM3": true,
+   "I5a_detects_forward_relay_CM1": false,
+   "I5b_rejects_phantom_CM2": true,
+   "I5c_detects_cross_stage_relay_CM5": false,
+   "I7_counts_pre_seal_producer_control_CM4": false
+  },
+  "A/causal": {
+   "I4_ignores_post_act_control_CM3": true,
+   "I5a_detects_forward_relay_CM1": false,
+   "I5b_rejects_phantom_CM2": true,
+   "I5c_detects_cross_stage_relay_CM5": false,
+   "I7_counts_pre_seal_producer_control_CM4": true
+  },
+  "A/stage": {
+   "I4_ignores_post_act_control_CM3": false,
+   "I5a_detects_forward_relay_CM1": false,
+   "I5b_rejects_phantom_CM2": true,
+   "I5c_detects_cross_stage_relay_CM5": false,
+   "I7_counts_pre_seal_producer_control_CM4": true
+  },
+  "B/act": {
+   "I4_ignores_post_act_control_CM3": true,
+   "I5a_detects_forward_relay_CM1": true,
+   "I5b_rejects_phantom_CM2": false,
+   "I5c_detects_cross_stage_relay_CM5": false,
+   "I7_counts_pre_seal_producer_control_CM4": false
+  },
+  "B/causal": {
+   "I4_ignores_post_act_control_CM3": true,
+   "I5a_detects_forward_relay_CM1": true,
+   "I5b_rejects_phantom_CM2": false,
+   "I5c_detects_cross_stage_relay_CM5": true,
+   "I7_counts_pre_seal_producer_control_CM4": true
+  },
+  "B/stage": {
+   "I4_ignores_post_act_control_CM3": false,
+   "I5a_detects_forward_relay_CM1": true,
+   "I5b_rejects_phantom_CM2": false,
+   "I5c_detects_cross_stage_relay_CM5": false,
+   "I7_counts_pre_seal_producer_control_CM4": true
+  },
+  "C/act": {
+   "I4_ignores_post_act_control_CM3": true,
+   "I5a_detects_forward_relay_CM1": true,
+   "I5b_rejects_phantom_CM2": true,
+   "I5c_detects_cross_stage_relay_CM5": false,
+   "I7_counts_pre_seal_producer_control_CM4": false
+  },
+  "C/causal": {
+   "I4_ignores_post_act_control_CM3": true,
+   "I5a_detects_forward_relay_CM1": true,
+   "I5b_rejects_phantom_CM2": true,
+   "I5c_detects_cross_stage_relay_CM5": true,
+   "I7_counts_pre_seal_producer_control_CM4": true
+  },
+  "C/stage": {
+   "I4_ignores_post_act_control_CM3": false,
+   "I5a_detects_forward_relay_CM1": true,
+   "I5b_rejects_phantom_CM2": true,
+   "I5c_detects_cross_stage_relay_CM5": false,
+   "I7_counts_pre_seal_producer_control_CM4": true
+  }
+ },
+ "theta_E": [
+  0,
+  1
+ ],
+ "theta_J": [
+  2,
+  3
+ ],
+ "time_domain": [
+  0,
+  1,
+  2,
+  3
+ ]
+}
