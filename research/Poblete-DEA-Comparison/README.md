@@ -56,3 +56,16 @@ This validates reproducibility **of the given computations**, not their truth fo
 - The scripts emit results but contain no standalone automatic proof/test assertions beyond producing JSON. Regression assertions comparing with archived JSON are shown above.
 
 See `REVIEW_NOTES.md` for the detailed acceptance criteria. No normative change to DEA v0.3.4.3, ADR-001, or v0.3.5 results from this archive.
+
+## Versioned verification report fixture
+
+`bash research/Poblete-DEA-Comparison/check_regressions.sh` verifies the eight original hashes, reruns both source scripts, compares both JSON files byte-for-byte and checks the separately versioned [typed replacement](typed-v1.0.1/results.json). The original PB-3v verdict remains archived and inadmissible under the original stage typing. The typed replacement records a separate report production event and seal at 2, a Stage-8 decision about the report at 3, and a distinct input artifact already sealed at 1. It keeps lookback start 0 as an explicit fixture assumption.
+
+| Evidence | Execution output | Verification report |
+|---|---|---|
+| Publication alone | UNDETERMINED | UNDETERMINED |
+| Complete hypothetical record with effective report-production edge at 2 | NO_CONFLICT_ESTABLISHED | CONFLICT |
+| Incomplete hypothetical record with that authenticated edge | UNDETERMINED | CONFLICT |
+| Complete hypothetical record without that edge | NO_CONFLICT_ESTABLISHED | NO_CONFLICT_ESTABLISHED |
+
+These are isolated control-gate results. They establish neither overall authorization nor an empirical conflict in the published experiment.
